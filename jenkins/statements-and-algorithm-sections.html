@@ -1,0 +1,1165 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>11 Statements and Algorithm Sections‣ Modelica® Language Specification version 3.6-dev</title>
+<!--Generated on Fri Apr 30 16:20:48 2021 by LaTeXML (version 0.8.5) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on April 30, 2021.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="css/MLS.css" type="text/css">
+<link rel="stylesheet" href="css/MLS-navbar-left.css" type="text/css">
+<script src="LaTeXML-maybeMathjax.js" type="text/javascript"></script>
+<link rel="up" href="MLS.html" title="Modelica® Language Specification version 3.6-dev">
+<link rel="start" href="MLS.html" title="Modelica® Language Specification version 3.6-dev">
+<link rel="prev" href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="next" href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="bibliography" href="bib.html" title="References ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="index" href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6-dev">
+<meta name="keywords" lang="en" content="algorithm, assert, assignment statement, break, else, elseif, elsewhen, for, for-statement, if, if-statement, loop, section, simple, statement, terminate, then, when, when-statement, while, while-statement">
+</head>
+<body>
+<nav class="ltx_page_navbar"><a href="MLS.html" title="Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6-dev</span></a>
+<div class="ltx_TOC">
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></span>
+<ul class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#algorithm-sections" title="11.1 Algorithm Sections ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.1 </span>Algorithm Sections</span></a>
+<ul class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#initial-algorithm-sections" title="11.1.1 Initial Algorithm Sections ‣ 11.1 Algorithm Sections ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.1.1 </span>Initial Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#execution-of-an-algorithm-in-a-model" title="11.1.2 Execution of an algorithm in a model ‣ 11.1 Algorithm Sections ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.1.2 </span>Execution of an algorithm in a model</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#execution-of-the-algorithm-in-a-function" title="11.1.3 Execution of the algorithm in a function ‣ 11.1 Algorithm Sections ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.1.3 </span>Execution of the algorithm in a function</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#statements" title="11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2 </span>Statements</span></a>
+<ul class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a href="#simple-assignment-statements" title="11.2.1 Simple Assignment Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.1 </span>Simple Assignment Statements</span></a>
+<ul class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#assignments-from-called-functions-with-multiple-results" title="11.2.1.1 Assignments from Called Functions with Multiple Results ‣ 11.2.1 Simple Assignment Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.1.1 </span>Assignments from Called Functions with Multiple Results</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#restrictions-on-assigned-variables" title="11.2.1.2 Restrictions on assigned variables ‣ 11.2.1 Simple Assignment Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.1.2 </span>Restrictions on assigned variables</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a href="#for-statement" title="11.2.2 For-statement ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.2 </span>For-statement</span></a>
+<ul class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#implicit-iteration-ranges" title="11.2.2.1 Implicit Iteration Ranges ‣ 11.2.2 For-statement ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.2.1 </span>Implicit Iteration Ranges</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#types-as-iteration-ranges" title="11.2.2.2 Types as Iteration Ranges ‣ 11.2.2 For-statement ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.2.2 </span>Types as Iteration Ranges</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#nested-for-loops-and-reduction-expressions-with-multiple-iterators" title="11.2.2.3 Nested For-Loops and Reduction Expressions with Multiple Iterators ‣ 11.2.2 For-statement ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.2.3 </span>Nested For-Loops and Reduction Expressions with Multiple Iterators</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#while-statement" title="11.2.3 While-Statement ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.3 </span>While-Statement</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#break-statement" title="11.2.4 Break-Statement ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.4 </span>Break-Statement</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#return-statements" title="11.2.5 Return-Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.5 </span>Return-Statements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#if-statement" title="11.2.6 If-Statement ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.6 </span>If-Statement</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a href="#when-statements" title="11.2.7 When-Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.7 </span>When-Statements</span></a>
+<ul class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#restrictions-on-where-a-when-statement-may-occur" title="11.2.7.1 Restrictions on Where a When-statement may occur ‣ 11.2.7 When-Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.7.1 </span>Restrictions on Where a When-statement may occur</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#restrictions-on-statements-within-when-statements" title="11.2.7.2 Restrictions on Statements within When-Statements ‣ 11.2.7 When-Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.7.2 </span>Restrictions on Statements within When-Statements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#defining-when-statements-by-if-statements" title="11.2.7.3 Defining When-Statements by If-Statements ‣ 11.2.7 When-Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.7.3 </span>Defining When-Statements by If-Statements</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a href="#special-statements" title="11.2.8 Special Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.8 </span>Special Statements</span></a>
+<ul class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#assert-statement" title="11.2.8.1 Assert Statement ‣ 11.2.8 Special Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.8.1 </span>Assert Statement</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#terminate-statement" title="11.2.8.2 Terminate Statement ‣ 11.2.8 Special Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2.8.2 </span>Terminate Statement</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_index"><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div>
+<a href="MLS.html" title="Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6-dev</span></a><a href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a><a href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter" lang="en">
+<h1 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter">Chapter 11 </span>Statements and Algorithm Sections</h1>
+<div class="ltx_dates">(April 30, 2021)</div>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Whereas equations are very well suited for physical modeling, there are
+situations where computations are more conveniently expressed as
+algorithms, i.e., sequences of statements. In this chapter we describe
+the algorithmic constructs that are available in Modelica.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Statements are imperative constructs allowed in algorithm sections.</p>
+</div>
+<section id="algorithm-sections" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">11.1 </span>Algorithm Sections</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">An <em class="ltx_emph ltx_font_italic">algorithm section</em> is a part of a class definition comprised of the keyword <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">algorithm</span> followed by a sequence of statements.
+The formal syntax is as follows:</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,YWxnb3JpdGhtLXNlY3Rpb24gOgogICBbIGluaXRpYWwgXSBhbGdvcml0aG0geyBzdGF0ZW1lbnQgIjsiIHwgYW5ub3RhdGlvbiAiOyIgfQ==">⬇</a></div>
+<div id="lstnumberx2368" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">algorithm-section</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx2369" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">initial</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">annotation</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+</div>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p class="ltx_p">Like an equation, an algorithm section relates variables, i.e., constrains the values that these variables can take simultaneously.
+In contrast to an equation section, an algorithm section distinguishes inputs from outputs:
+An algorithm section specifies how to compute output variables as a function of given input variables.
+A Modelica tool may actually invert an algorithm section, i.e., compute inputs from given outputs, e.g., by search (generate and test), or by deriving an inverse algorithm symbolically.</p>
+</div>
+<div id="S1.p3" class="ltx_para">
+<p class="ltx_p">Equation equality <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">=</span> or any other kind of equation (see <a href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">chapter</span> <span class="ltx_text ltx_ref_tag">8</span></a>) shall not be used in an algorithm section.
+</p>
+</div>
+<section id="initial-algorithm-sections" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">11.1.1 </span>Initial Algorithm Sections</h3>
+
+<div id="S1.SS1.p1" class="ltx_para">
+<p class="ltx_p">See <a href="equations.html#initialization-initial-equation-and-initial-algorithm" title="8.6 Initialization, initial equation, and initial algorithm ‣ Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">8.6</span></a> for a description of both initial algorithm sections and
+initial equation sections.</p>
+</div>
+</section>
+<section id="execution-of-an-algorithm-in-a-model" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">11.1.2 </span>Execution of an algorithm in a model</h3>
+
+<div id="S1.SS2.p1" class="ltx_para">
+<p class="ltx_p">An algorithm section is conceptually a code fragment that remains
+together and the statements of an algorithm section are executed in the
+order of appearance. Whenever an algorithm section is invoked, all
+variables appearing on the left hand side of the assignment operator
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">:=</span> are initialized (at least conceptually):</p>
+<ul id="S1.I1" class="ltx_itemize">
+<li id="S1.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">A continuous-time variable is initialized with its start value (i.e. the
+value of the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">start</span> attribute).</p>
+</div>
+</li>
+<li id="S1.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">A discrete-time variable <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">v</span> is initialized with <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">pre</span>(<span class="ltx_text ltx_lst_identifier">v</span>)</span>.</p>
+</div>
+</li>
+<li id="S1.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">If at least one element of an array appears on the left hand side of
+the assignment operator, then the complete array is initialized in
+this algorithm section.</p>
+</div>
+</li>
+<li id="S1.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">A parameter assigned in an initial algorithm, <a href="equations.html#initialization-initial-equation-and-initial-algorithm" title="8.6 Initialization, initial equation, and initial algorithm ‣ Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">8.6</span></a>,
+is initialized with its start-value (i.e. the value of the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">start</span> attribute).</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S1.SS2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Initialization is performed, in order that an algorithm section
+cannot introduce a “memory” (except in the case of discrete-time variables assigned in the algorithm), which could invalidate the assumptions of a
+numerical integration algorithm. Note, a Modelica tool may change the
+evaluation of an algorithm section, provided the result is identical to
+the case, as if the above conceptual processing is performed.</span></p>
+</div>
+<div id="S1.SS2.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">An algorithm section is treated as an atomic vector-equation,
+which is sorted together with all other equations. For the sorting
+process (BLT), every algorithm section with N different left-hand side
+variables, is treated as an atomic N-dimensional vector-equation
+containing all variables appearing in the algorithm section. This
+guarantees that all N equations end up in an algebraic loop and the
+statements of the algorithm section remain together.</span></p>
+</div>
+<div id="S1.SS2.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Example:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bW9kZWwgVGVzdCAvLyB3cm9uZyBNb2RlbGljYSBtb2RlbCAoaGFzIDQgZXF1YXRpb25zIGZvciAyIHVua25vd25zKQogIFJlYWwgeFsyXShzdGFydD17LTExLCAtMjJ9KTsKYWxnb3JpdGhtIC8vIGNvbmNlcHR1YWxseTogeCA9IHsxLC0yMn0KICB4WzFdIDo9IDE7CmFsZ29yaXRobSAvLyBjb25jZXB0dWFsbHk6IHggPSB7LTExLDJ9CiAgeFsyXSA6PSAyOwplbmQgVGVzdDs=">⬇</a></div>
+<div id="lstnumberx2370" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Test</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>wrong<span class="ltx_text ltx_lst_space"> </span>Modelica<span class="ltx_text ltx_lst_space"> </span>model<span class="ltx_text ltx_lst_space"> </span>(has<span class="ltx_text ltx_lst_space"> </span>4<span class="ltx_text ltx_lst_space"> </span>equations<span class="ltx_text ltx_lst_space"> </span>for<span class="ltx_text ltx_lst_space"> </span>2<span class="ltx_text ltx_lst_space"> </span>unknowns)</span>
+</div>
+<div id="lstnumberx2371" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[2](<span class="ltx_text ltx_lst_identifier">start</span>={-11,<span class="ltx_text ltx_lst_space"> </span>-22});
+</div>
+<div id="lstnumberx2372" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>conceptually:<span class="ltx_text ltx_lst_space"> </span>x<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{1,-22}</span>
+</div>
+<div id="lstnumberx2373" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">x</span>[1]<span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span>1;
+</div>
+<div id="lstnumberx2374" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>conceptually:<span class="ltx_text ltx_lst_space"> </span>x<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{-11,2}</span>
+</div>
+<div id="lstnumberx2375" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">x</span>[2]<span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span>2;
+</div>
+<div id="lstnumberx2376" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Test</span>;
+</div>
+</div>
+</div>
+<div id="S1.SS2.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The conceptual part indicate that if the variable is assigned unconditionally
+in the algorithm before it is used the initialization can be omitted.
+This is usually the case, except for algorithms with when-statements,
+and especially for initial algorithms.</span>]</p>
+</div>
+</section>
+<section id="execution-of-the-algorithm-in-a-function" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">11.1.3 </span>Execution of the algorithm in a function</h3>
+
+<div id="S1.SS3.p1" class="ltx_para">
+<p class="ltx_p">See <a href="functions.html#initialization-and-binding-equations-of-components-in-functions" title="12.4.4 Initialization and Binding Equations of Components in Functions ‣ 12.4 Function Call ‣ Chapter 12 Functions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">12.4.4</span></a>.</p>
+</div>
+</section>
+</section>
+<section id="statements" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">11.2 </span>Statements</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">Statements are imperative constructs allowed in algorithm sections. A
+flattened statement is identical to the corresponding nonflattened
+statement.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p">Names in statements are found as follows:</p>
+<ul id="S2.I1" class="ltx_itemize">
+<li id="S2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">If the name occurs inside an expression: it is first found among the
+lexically enclosing reduction functions (see <a href="arrays.html#reduction-functions-and-operators" title="10.3.4 Reduction Functions and Operators ‣ 10.3 Built-in Array Functions ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">10.3.4</span></a>) in order
+starting from the inner-most, and if not found it proceeds as if it
+were outside an expression:</p>
+</div>
+</li>
+<li id="S2.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Names in a statement are first found among the lexically enclosing
+for-statements in order starting from the inner-most, and if not
+found:</p>
+</div>
+</li>
+<li id="S2.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Names in a statement shall be found by looking up in the partially
+flattened enclosing class of the algorithm section.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p class="ltx_p">The syntax of statements is as follows:</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,c3RhdGVtZW50IDoKICAoIGNvbXBvbmVudC1yZWZlcmVuY2UgKCAiOj0iIGV4cHJlc3Npb24gfCBmdW5jdGlvbi1jYWxsLWFyZ3MgKQogICAgfCAiKCIgb3V0cHV0LWV4cHJlc3Npb24tbGlzdCAiKSIgIjo9IiBjb21wb25lbnQtcmVmZXJlbmNlIGZ1bmN0aW9uLWNhbGwtYXJncwogICAgfCBicmVhawogICAgfCByZXR1cm4KICAgIHwgaWYtc3RhdGVtZW50CiAgICB8IGZvci1zdGF0ZW1lbnQKICAgIHwgd2hpbGUtc3RhdGVtZW50CiAgICB8IHdoZW4tc3RhdGVtZW50ICkKICBjb21tZW50">⬇</a></div>
+<div id="lstnumberx2377" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx2378" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-reference</span><span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">":="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-call-args</span><span class="ltx_text ltx_lst_space"> </span>)
+</div>
+<div id="lstnumberx2379" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">output-expression-list</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">")"</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">":="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-reference</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-call-args</span>
+</div>
+<div id="lstnumberx2380" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">break</span>
+</div>
+<div id="lstnumberx2381" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">return</span>
+</div>
+<div id="lstnumberx2382" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">if-statement</span>
+</div>
+<div id="lstnumberx2383" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">for-statement</span>
+</div>
+<div id="lstnumberx2384" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">while-statement</span>
+</div>
+<div id="lstnumberx2385" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">when-statement</span><span class="ltx_text ltx_lst_space"> </span>)
+</div>
+<div id="lstnumberx2386" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">comment</span>
+</div>
+</div>
+</div>
+<section id="simple-assignment-statements" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">11.2.1 </span>Simple Assignment Statements</h3>
+
+<div id="S2.SS1.p1" class="ltx_para">
+<p class="ltx_p">The syntax of <em class="ltx_emph ltx_font_italic">simple assignment statement</em> is as follows:</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Y29tcG9uZW50LXJlZmVyZW5jZSAiOj0iIGV4cHJlc3Npb24=">⬇</a></div>
+<div id="lstnumberx2387" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">component-reference</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">":="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span>
+</div>
+</div>
+</div>
+<div id="S2.SS1.p2" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;">expression</span> is evaluated.
+The resulting value is stored into the variable denoted by <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;">component-reference</span>.</p>
+</div>
+<div id="S2.SS1.p3" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">expression</span> must not have higher variability than the assigned component, see <a href="operators-and-expressions.html#variability-of-expressions" title="3.8 Variability of Expressions ‣ Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">3.8</span></a>.</p>
+</div>
+<div id="S2.SS1.p4" class="ltx_para">
+<p class="ltx_p">Assignment to array variables with subscripts is described in <a href="arrays.html#array-indexing" title="10.5 Array Indexing ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">10.5</span></a>.</p>
+</div>
+<section id="assignments-from-called-functions-with-multiple-results" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">11.2.1.1 </span>Assignments from Called Functions with Multiple Results</h4>
+
+<div id="S2.SS1.SSS1.p1" class="ltx_para">
+<p class="ltx_p">There is a special form of assignment statement that is used only when the right-hand side contains a call to a function with multiple results.
+The left-hand side contains a parenthesized, comma-separated list of variables receiving the results from the function call.
+A function with <math id="S2.SS1.SSS1.p1.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> results needs <math id="S2.SS1.SSS1.p1.m2" class="ltx_Math" alttext="m\leq n" display="inline"><mrow><mi>m</mi><mo>≤</mo><mi>n</mi></mrow></math> receiving variables on the left-hand side, and the variables are assigned from left to right.</p>
+</div>
+<div id="S2.SS1.SSS1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,KG91dDEsIG91dDIsIG91dDMpIDo9IGZ1bmN0aW9uX25hbWUoaW4xLCBpbjIsIGluMywgaW40KTs=">⬇</a></div>
+<div id="lstnumberx2388" class="ltx_listingline">(<span class="ltx_text ltx_lst_identifier">out1</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">out2</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">out3</span>)<span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">function_name</span>(<span class="ltx_text ltx_lst_identifier">in1</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">in2</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">in3</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">in4</span>);
+</div>
+</div>
+</div>
+<div id="S2.SS1.SSS1.p3" class="ltx_para">
+<p class="ltx_p">It is possible to omit receiving variables from this list:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,KG91dDEsICwgb3V0MykgOj0gZnVuY3Rpb25fbmFtZShpbjEsIGluMiwgaW4zLCBpbjQpOw==">⬇</a></div>
+<div id="lstnumberx2389" class="ltx_listingline">(<span class="ltx_text ltx_lst_identifier">out1</span>,<span class="ltx_text ltx_lst_space"> </span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">out3</span>)<span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">function_name</span>(<span class="ltx_text ltx_lst_identifier">in1</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">in2</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">in3</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">in4</span>);
+</div>
+</div>
+</div>
+<div id="S2.SS1.SSS1.p4" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example:
+The function <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">f</span> called below has three results and two inputs:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,KGEsIGIsIGMpIDo9IGYoMS4wLCAyLjApOwooeFsxXSwgeFsyXSwgeFsxXSkgOj0gZigzLCA0KTs=">⬇</a></div>
+<div id="lstnumberx2390" class="ltx_listingline">(<span class="ltx_text ltx_lst_identifier">a</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c</span>)<span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">f</span>(1.0,<span class="ltx_text ltx_lst_space"> </span>2.0);
+</div>
+<div id="lstnumberx2391" class="ltx_listingline">(<span class="ltx_text ltx_lst_identifier">x</span>[1],<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[2],<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[1])<span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">f</span>(3,<span class="ltx_text ltx_lst_space"> </span>4);
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">In the second example above <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">x</span><span class="ltx_text ltx_font_upright">[1]</span></span> is assigned twice: first with the first output, and then with the third output. For that case the following will give the same result:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,KCwgeFsyXSwgeFsxXSkgOj0gZigzLDQpOw==">⬇</a></div>
+<div id="lstnumberx2392" class="ltx_listingline">(,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[2],<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[1])<span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">f</span>(3,4);
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+<div id="S2.SS1.SSS1.p5" class="ltx_para">
+<p class="ltx_p">The syntax of an assignment statement with a call to a function with
+multiple results is as follows:</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,IigiIG91dHB1dC1leHByZXNzaW9uLWxpc3QgIikiICI6PSIgY29tcG9uZW50LXJlZmVyZW5jZSBmdW5jdGlvbi1jYWxsLWFyZ3M=">⬇</a></div>
+<div id="lstnumberx2393" class="ltx_listingline">
+<span class="ltx_text ltx_lst_string" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">output-expression-list</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">")"</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">":="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-reference</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-call-args</span>
+</div>
+</div>
+</div>
+<div id="S2.SS1.SSS1.p6" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Also see <a href="equations.html#simple-equality-equations" title="8.3.1 Simple Equality Equations ‣ 8.3 Equations in Equation Sections ‣ Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">8.3.1</span></a> regarding calling functions with
+multiple results within equations.</span>]</p>
+</div>
+</section>
+<section id="restrictions-on-assigned-variables" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">11.2.1.2 </span>Restrictions on assigned variables</h4>
+
+<div id="S2.SS1.SSS2.p1" class="ltx_para">
+<p class="ltx_p">Only components of the specialized classes <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">type</span>, <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">record</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">record</span></span>, and <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">connector</span> may appear as left-hand-side in algorithms.
+This applies both to simple assignment statements, and the parenthesized, comma-separated list of variables for functions with multiple results.</p>
+</div>
+</section>
+</section>
+<section id="for-statement" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">11.2.2 </span>For-statement</h3>
+
+<div id="S2.SS2.p1" class="ltx_para">
+<p class="ltx_p">The syntax of a for-statement is as follows:</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Zm9yIGZvci1pbmRpY2VzIGxvb3AKICB7IHN0YXRlbWVudCAiOyIgfQplbmQgZm9y">⬇</a></div>
+<div id="lstnumberx2394" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">for-indices</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span>
+</div>
+<div id="lstnumberx2395" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx2396" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span>
+</div>
+</div>
+<p class="ltx_p">For-statements may optionally use several iterators (<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span>-<span class="ltx_text ltx_lst_identifier">indices</span></span>), see
+<a href="#nested-for-loops-and-reduction-expressions-with-multiple-iterators" title="11.2.2.3 Nested For-Loops and Reduction Expressions with Multiple Iterators ‣ 11.2.2 For-statement ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">11.2.2.3</span></a> for more information:</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Zm9yLWluZGljZXM6CiAgIGZvci1pbmRleCB7IiwiIGZvci1pbmRleH0KCmZvci1pbmRleDoKICAgSURFTlQgWyBpbiAgZXhwcmVzc2lvbiBd">⬇</a></div>
+<div id="lstnumberx2397" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">for-indices</span>:
+</div>
+<div id="lstnumberx2398" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">for-index</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">for-index</span>}
+</div>
+<div id="lstnumberx2399" class="ltx_listingline">
+</div>
+<div id="lstnumberx2400" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">for-index</span>:
+</div>
+<div id="lstnumberx2401" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+</div>
+<p class="ltx_p">The following is an example of a prefix of a for-statement:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Zm9yIElERU5UIGluIGV4cHJlc3Npb24gbG9vcA==">⬇</a></div>
+<div id="lstnumberx2402" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">IDENT</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span>
+</div>
+</div>
+<p class="ltx_p">The rules for for-statements are the same as for for-expressions in <a href="equations.html#explicit-iteration-ranges-of-for-equations" title="8.3.2.1 Explicit Iteration Ranges of For-Equations ‣ 8.3.2 For-Equations – Repetitive Equation Structures ‣ 8.3 Equations in Equation Sections ‣ Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">8.3.2.1</span></a> – except that the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">expression</span> of a for-statement is not restricted to a parameter expression.</p>
+</div>
+<div id="S2.SS2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Zm9yIGkgaW4gMSA6IDEwIGxvb3AgLy8gaSB0YWtlcyB0aGUgdmFsdWVzIDEsIDIsIDMsICRcbGRvdHMkLCAxMApmb3IgciBpbiAxLjAgOiAxLjUgOiA1LjUgbG9vcCAvLyByIHRha2VzIHRoZSB2YWx1ZXMgMS4wLCAyLjUsIDQuMCwgNS41CmZvciBpIGluIHsxLCAzLCA2LCA3fSBsb29wIC8vIGkgdGFrZXMgdGhlIHZhbHVlcyAxLCAzLCA2LCA3CmZvciBpIGluIFR3b0VudW1zIGxvb3AgLy8gaSB0YWtlcyB0aGUgdmFsdWVzIFR3b0VudW1zLm9uZSwgVHdvRW51bXMudHdvCiAgICAgICAgLy8gZm9yIFR3b0VudW1zID0gZW51bWVyYXRpb24ob25lLCB0d28p">⬇</a></div>
+<div id="lstnumberx2403" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1<span class="ltx_text ltx_lst_space"> </span>:<span class="ltx_text ltx_lst_space"> </span>10<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>i<span class="ltx_text ltx_lst_space"> </span>takes<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>values<span class="ltx_text ltx_lst_space"> </span>1,<span class="ltx_text ltx_lst_space"> </span>2,<span class="ltx_text ltx_lst_space"> </span>3,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx2403.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathcolor="#127500" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span>10</span>
+</div>
+<div id="lstnumberx2404" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">r</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1.0<span class="ltx_text ltx_lst_space"> </span>:<span class="ltx_text ltx_lst_space"> </span>1.5<span class="ltx_text ltx_lst_space"> </span>:<span class="ltx_text ltx_lst_space"> </span>5.5<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>r<span class="ltx_text ltx_lst_space"> </span>takes<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>values<span class="ltx_text ltx_lst_space"> </span>1.0,<span class="ltx_text ltx_lst_space"> </span>2.5,<span class="ltx_text ltx_lst_space"> </span>4.0,<span class="ltx_text ltx_lst_space"> </span>5.5</span>
+</div>
+<div id="lstnumberx2405" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>{1,<span class="ltx_text ltx_lst_space"> </span>3,<span class="ltx_text ltx_lst_space"> </span>6,<span class="ltx_text ltx_lst_space"> </span>7}<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>i<span class="ltx_text ltx_lst_space"> </span>takes<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>values<span class="ltx_text ltx_lst_space"> </span>1,<span class="ltx_text ltx_lst_space"> </span>3,<span class="ltx_text ltx_lst_space"> </span>6,<span class="ltx_text ltx_lst_space"> </span>7</span>
+</div>
+<div id="lstnumberx2406" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">TwoEnums</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>i<span class="ltx_text ltx_lst_space"> </span>takes<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>values<span class="ltx_text ltx_lst_space"> </span>TwoEnums.one,<span class="ltx_text ltx_lst_space"> </span>TwoEnums.two</span>
+</div>
+<div id="lstnumberx2407" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">        </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>for<span class="ltx_text ltx_lst_space"> </span>TwoEnums<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>enumeration(one,<span class="ltx_text ltx_lst_space"> </span>two)</span>
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The loop-variable may hide other variables as in the following example. Using another name for the loop-variable is, however, strongly recommended.</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICBjb25zdGFudCBJbnRlZ2VyIGogPSA0OwogIFJlYWwgeFtqXTsKZXF1YXRpb24KICBmb3IgaiBpbiAxOmogbG9vcCAvLyBUaGUgbG9vcC12YXJpYWJsZSBqIHRha2VzIHRoZSB2YWx1ZXMgMSwgMiwgMywgNAogICAgeFtqXSA9IGo7IC8vIFVzZXMgdGhlIGxvb3AtdmFyaWFibGUgagogIGVuZCBmb3I7">⬇</a></div>
+<div id="lstnumberx2408" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">constant</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Integer</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>4;
+</div>
+<div id="lstnumberx2409" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[<span class="ltx_text ltx_lst_identifier">j</span>];
+</div>
+<div id="lstnumberx2410" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span>
+</div>
+<div id="lstnumberx2411" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>The<span class="ltx_text ltx_lst_space"> </span>loop-variable<span class="ltx_text ltx_lst_space"> </span>j<span class="ltx_text ltx_lst_space"> </span>takes<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>values<span class="ltx_text ltx_lst_space"> </span>1,<span class="ltx_text ltx_lst_space"> </span>2,<span class="ltx_text ltx_lst_space"> </span>3,<span class="ltx_text ltx_lst_space"> </span>4</span>
+</div>
+<div id="lstnumberx2412" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">x</span>[<span class="ltx_text ltx_lst_identifier">j</span>]<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span>;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Uses<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>loop-variable<span class="ltx_text ltx_lst_space"> </span>j</span>
+</div>
+<div id="lstnumberx2413" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span>;
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+<section id="implicit-iteration-ranges" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">11.2.2.1 </span>Implicit Iteration Ranges</h4>
+
+<div id="S2.SS2.SSS1.p1" class="ltx_para">
+<p class="ltx_p">An iterator <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">IDENT</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">range</span>-<span class="ltx_text ltx_lst_identifier">expr</span></span> without the <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">range</span>-<span class="ltx_text ltx_lst_identifier">expr</span></span> requires that the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">IDENT</span> appears as the subscript of one or several subscripted expressions, where the expressions are not part of an array in a component of an expandable connector.
+The dimension size of the array expression in the indexed position is used to deduce the <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">range</span>-<span class="ltx_text ltx_lst_identifier">expr</span></span> as <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">1:<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">size</span>(<span class="ltx_text ltx_lst_identifier">array</span>-<span class="ltx_text ltx_lst_identifier">expression</span>,<span class="ltx_text ltx_lst_identifier">indexpos</span>)</span> if the indices are a subtype of <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">Integer</span>, or as <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">E</span>.<span class="ltx_text ltx_lst_identifier">e1</span>:<span class="ltx_text ltx_lst_identifier">E</span>.<span class="ltx_text ltx_lst_identifier">en</span></span> if the indices are of an enumeration type <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">E</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">enumeration</span>(<span class="ltx_text ltx_lst_identifier">e1</span>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.SS2.SSS1.p1.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">en</span>)</span>, or as <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keyword" style="color:#003378;">false</span>:<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span></span> if the indices are of type <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">Boolean</span>.
+If it is used to subscript several expressions, their ranges must be identical.
+The <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">IDENT</span> may also, inside a reduction expression, array constructor expression, for-statement, or for-equation, occur freely outside of subscript positions, but only as a reference to the variable <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">IDENT</span>, and not for deducing ranges.</p>
+</div>
+<div id="S2.SS2.SSS1.p2" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">IDENT</span> may also be used as a subscript for an array in a component of an expandable connector
+but it is only seen as a reference to the variable <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">IDENT</span> and cannot be used for deducing ranges.</p>
+</div>
+<div id="S2.SS2.SSS1.p3" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICBSZWFsIHhbNF07CiAgUmVhbCB4c3F1YXJlZFs6XSA9IHt4W2ldICogeFtpXSBmb3IgaX07CiAgLy8gU2FtZSBhczoge3hbaV0gKiB4W2ldIGZvciBpIGluIDEgOiBzaXplKHgsIDEpfQogIFJlYWwgeHNxdWFyZWQyW3NpemUoeCwgMSldOwogIFJlYWwgeHNxdWFyZWQzW3NpemUoeCwgMSldOwplcXVhdGlvbgogIGZvciBpIGxvb3AgLy8gU2FtZSBhczogZm9yIGkgaW4gMSA6IHNpemUoeCwgMSkgbG9vcCAkXGxkb3RzJAogICAgeHNxdWFyZWQyW2ldID0geFtpXV4yOwogIGVuZCBmb3I7CmFsZ29yaXRobQogIGZvciBpIGxvb3AgLy8gU2FtZSBhczogZm9yIGkgaW4gMSA6IHNpemUoeCwgMSkgbG9vcCAkXGxkb3RzJAogICAgeHNxdWFyZWQzW2ldIDo9IHhbaV1eMjsKICBlbmQgZm9yOw==">⬇</a></div>
+<div id="lstnumberx2414" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[4];
+</div>
+<div id="lstnumberx2415" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xsquared</span>[:]<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_identifier">x</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span>*<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span>};
+</div>
+<div id="lstnumberx2416" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Same<span class="ltx_text ltx_lst_space"> </span>as:<span class="ltx_text ltx_lst_space"> </span>{x[i]<span class="ltx_text ltx_lst_space"> </span>*<span class="ltx_text ltx_lst_space"> </span>x[i]<span class="ltx_text ltx_lst_space"> </span>for<span class="ltx_text ltx_lst_space"> </span>i<span class="ltx_text ltx_lst_space"> </span>in<span class="ltx_text ltx_lst_space"> </span>1<span class="ltx_text ltx_lst_space"> </span>:<span class="ltx_text ltx_lst_space"> </span>size(x,<span class="ltx_text ltx_lst_space"> </span>1)}</span>
+</div>
+<div id="lstnumberx2417" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xsquared2</span>[<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">size</span>(<span class="ltx_text ltx_lst_identifier">x</span>,<span class="ltx_text ltx_lst_space"> </span>1)];
+</div>
+<div id="lstnumberx2418" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xsquared3</span>[<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">size</span>(<span class="ltx_text ltx_lst_identifier">x</span>,<span class="ltx_text ltx_lst_space"> </span>1)];
+</div>
+<div id="lstnumberx2419" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span>
+</div>
+<div id="lstnumberx2420" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Same<span class="ltx_text ltx_lst_space"> </span>as:<span class="ltx_text ltx_lst_space"> </span>for<span class="ltx_text ltx_lst_space"> </span>i<span class="ltx_text ltx_lst_space"> </span>in<span class="ltx_text ltx_lst_space"> </span>1<span class="ltx_text ltx_lst_space"> </span>:<span class="ltx_text ltx_lst_space"> </span>size(x,<span class="ltx_text ltx_lst_space"> </span>1)<span class="ltx_text ltx_lst_space"> </span>loop<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx2420.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathcolor="#127500" mathvariant="normal">…</mi></math></span>
+</div>
+<div id="lstnumberx2421" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">xsquared2</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[<span class="ltx_text ltx_lst_identifier">i</span>]^2;
+</div>
+<div id="lstnumberx2422" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span>;
+</div>
+<div id="lstnumberx2423" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx2424" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Same<span class="ltx_text ltx_lst_space"> </span>as:<span class="ltx_text ltx_lst_space"> </span>for<span class="ltx_text ltx_lst_space"> </span>i<span class="ltx_text ltx_lst_space"> </span>in<span class="ltx_text ltx_lst_space"> </span>1<span class="ltx_text ltx_lst_space"> </span>:<span class="ltx_text ltx_lst_space"> </span>size(x,<span class="ltx_text ltx_lst_space"> </span>1)<span class="ltx_text ltx_lst_space"> </span>loop<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx2424.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathcolor="#127500" mathvariant="normal">…</mi></math></span>
+</div>
+<div id="lstnumberx2425" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">xsquared3</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[<span class="ltx_text ltx_lst_identifier">i</span>]^2;
+</div>
+<div id="lstnumberx2426" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span>;
+</div>
+</div>
+</div>
+<div id="S2.SS2.SSS1.p4" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,dHlwZSBGb3VyRW51bXMgPSBlbnVtZXJhdGlvbihvbmUsIHR3bywgdGhyZWUsIGZvdXIpOwpSZWFsIHhlW0ZvdXJFbnVtc10gPSB4OwpSZWFsIHhzcXVhcmVkM1tGb3VyRW51bXNdID0ge3hlW2ldICogeGVbaV0gZm9yIGl9OwpSZWFsIHhzcXVhcmVkNFtGb3VyRW51bXNdID0ge3hlW2ldICogeGVbaV0gZm9yIGkgaW4gRm91ckVudW1zfTsKUmVhbCB4c3F1YXJlZDVbRm91ckVudW1zXSA9IHt4W2ldICogeFtpXSBmb3IgaX07">⬇</a></div>
+<div id="lstnumberx2427" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">type</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">FourEnums</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">enumeration</span>(<span class="ltx_text ltx_lst_identifier">one</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">two</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">three</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">four</span>);
+</div>
+<div id="lstnumberx2428" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xe</span>[<span class="ltx_text ltx_lst_identifier">FourEnums</span>]<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>;
+</div>
+<div id="lstnumberx2429" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xsquared3</span>[<span class="ltx_text ltx_lst_identifier">FourEnums</span>]<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_identifier">xe</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span>*<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xe</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span>};
+</div>
+<div id="lstnumberx2430" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xsquared4</span>[<span class="ltx_text ltx_lst_identifier">FourEnums</span>]<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_identifier">xe</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span>*<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xe</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">FourEnums</span>};
+</div>
+<div id="lstnumberx2431" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xsquared5</span>[<span class="ltx_text ltx_lst_identifier">FourEnums</span>]<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_identifier">x</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span>*<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span>};
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+<div id="S2.SS2.SSS1.p5" class="ltx_para">
+<p class="ltx_p">The size of an array – the iteration range – is evaluated on entry to the for-loop and the array size shall not change during the execution of the for-loop.</p>
+</div>
+</section>
+<section id="types-as-iteration-ranges" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">11.2.2.2 </span>Types as Iteration Ranges</h4>
+
+<div id="S2.SS2.SSS2.p1" class="ltx_para">
+<p class="ltx_p">The iteration range can be specified as <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">Boolean</span> or as an enumeration type. This means iteration over the type from min to max, i.e. for <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">Boolean</span> it is the same as <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keyword" style="color:#003378;">false</span>:<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span></span> and for an enumeration <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">E</span> it is the same as <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">E</span>.<span class="ltx_text ltx_lst_identifier">min</span>:<span class="ltx_text ltx_lst_identifier">E</span>.<span class="ltx_text ltx_lst_identifier">max</span></span>. This can be used for <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">for</span> loops and reduction expressions.</p>
+</div>
+<div id="S2.SS2.SSS2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICB0eXBlIEZvdXJFbnVtcyA9IGVudW1lcmF0aW9uKG9uZSwgdHdvLCB0aHJlZSwgZm91cik7CiAgUmVhbCB4ZVtGb3VyRW51bXNdOwogIFJlYWwgeHNxdWFyZWQxW0ZvdXJFbnVtc107CiAgUmVhbCB4c3F1YXJlZDJbRm91ckVudW1zXSA9IHt4ZVtpXSAqIHhlW2ldIGZvciBpIGluIEZvdXJFbnVtc307CmVxdWF0aW9uCiAgZm9yIGkgaW4gRm91ckVudW1zIGxvb3AKICAgIHhzcXVhcmVkMVtpXSA9IHhlW2ldXjI7CiAgZW5kIGZvcjs=">⬇</a></div>
+<div id="lstnumberx2432" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">type</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">FourEnums</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">enumeration</span>(<span class="ltx_text ltx_lst_identifier">one</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">two</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">three</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">four</span>);
+</div>
+<div id="lstnumberx2433" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xe</span>[<span class="ltx_text ltx_lst_identifier">FourEnums</span>];
+</div>
+<div id="lstnumberx2434" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xsquared1</span>[<span class="ltx_text ltx_lst_identifier">FourEnums</span>];
+</div>
+<div id="lstnumberx2435" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xsquared2</span>[<span class="ltx_text ltx_lst_identifier">FourEnums</span>]<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_identifier">xe</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span>*<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xe</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">FourEnums</span>};
+</div>
+<div id="lstnumberx2436" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span>
+</div>
+<div id="lstnumberx2437" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">FourEnums</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span>
+</div>
+<div id="lstnumberx2438" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">xsquared1</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">xe</span>[<span class="ltx_text ltx_lst_identifier">i</span>]^2;
+</div>
+<div id="lstnumberx2439" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span>;
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</section>
+<section id="nested-for-loops-and-reduction-expressions-with-multiple-iterators" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">11.2.2.3 </span>Nested For-Loops and Reduction Expressions with Multiple Iterators</h4>
+
+<div id="S2.SS2.SSS3.p1" class="ltx_para">
+<p class="ltx_p">The notation with several iterators is a shorthand notation for nested for-statements or for-equations (or reduction expressions).
+For for-statements or for-equations it can be expanded into the usual form by replacing each ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">,</span>’ by “<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span></span>” and adding extra “<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span></span>”.
+For reduction expressions it can be expanded into the usual form by replacing each ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">,</span>’ by “<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span></span>” and prepending the reduction expression with “<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">functionName</span>(</span>”.</p>
+</div>
+<div id="S2.SS2.SSS3.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICBSZWFsIHhbNCwzXTsKYWxnb3JpdGhtCiAgZm9yIGosIGkgaW4gMToyIGxvb3AKICAgIC8vIFRoZSBsb29wIHZhcmlhYmxlIGogdGFrZXMgdGhlIHZhbHVlcyAxLCAyLCAzLCA0IChkdWUgdG8gdXNlKQogICAgLy8gVGhlIGxvb3AgdmFyaWFibGUgaSB0YWtlcyB0aGUgdmFsdWVzIDEsIDIgKGdpdmVuIHJhbmdlKQogICAgeFtqLGldIDo9IGoraTsKICBlbmQgZm9yOw==">⬇</a></div>
+<div id="lstnumberx2440" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[4,3];
+</div>
+<div id="lstnumberx2441" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx2442" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:2<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span>
+</div>
+<div id="lstnumberx2443" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>The<span class="ltx_text ltx_lst_space"> </span>loop<span class="ltx_text ltx_lst_space"> </span>variable<span class="ltx_text ltx_lst_space"> </span>j<span class="ltx_text ltx_lst_space"> </span>takes<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>values<span class="ltx_text ltx_lst_space"> </span>1,<span class="ltx_text ltx_lst_space"> </span>2,<span class="ltx_text ltx_lst_space"> </span>3,<span class="ltx_text ltx_lst_space"> </span>4<span class="ltx_text ltx_lst_space"> </span>(due<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>use)</span>
+</div>
+<div id="lstnumberx2444" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>The<span class="ltx_text ltx_lst_space"> </span>loop<span class="ltx_text ltx_lst_space"> </span>variable<span class="ltx_text ltx_lst_space"> </span>i<span class="ltx_text ltx_lst_space"> </span>takes<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>values<span class="ltx_text ltx_lst_space"> </span>1,<span class="ltx_text ltx_lst_space"> </span>2<span class="ltx_text ltx_lst_space"> </span>(given<span class="ltx_text ltx_lst_space"> </span>range)</span>
+</div>
+<div id="lstnumberx2445" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">x</span>[<span class="ltx_text ltx_lst_identifier">j</span>,<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span>+<span class="ltx_text ltx_lst_identifier">i</span>;
+</div>
+<div id="lstnumberx2446" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span>;
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</section>
+</section>
+<section id="while-statement" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">11.2.3 </span>While-Statement</h3>
+
+<div id="S2.SS3.p1" class="ltx_para">
+<p class="ltx_p">The while-statement has the following syntax:</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,d2hpbGUgZXhwcmVzc2lvbiBsb29wCiAgeyBzdGF0ZW1lbnQgIjsiIH0KZW5kIHdoaWxl">⬇</a></div>
+<div id="lstnumberx2447" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">while</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span>
+</div>
+<div id="lstnumberx2448" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx2449" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">while</span>
+</div>
+</div>
+<p class="ltx_p">The <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">expression</span> of a while-statement shall be a scalar <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">Boolean</span> expression. The while-statement corresponds to while-statements in programming languages, and is formally defined as follows:</p>
+<ol id="S2.I2" class="ltx_enumerate">
+<li id="S2.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="S2.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">expression</span> of the while-statement is evaluated.</p>
+</div>
+</li>
+<li id="S2.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="S2.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">If the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">expression</span> of the while-statement is false, the execution
+continues after the while-statement.</p>
+</div>
+</li>
+<li id="S2.I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="S2.I2.i3.p1" class="ltx_para">
+<p class="ltx_p">If the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">expression</span> of the while-statement is true, the entire body of
+the while-statement is executed (except if a break-statement, see
+<a href="#break-statement" title="11.2.4 Break-Statement ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">11.2.4</span></a>, or a return-statement, see <a href="#return-statements" title="11.2.5 Return-Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">11.2.5</span></a>, is executed),
+and then execution proceeds at step 1.</p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+<section id="break-statement" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">11.2.4 </span>Break-Statement</h3>
+
+<div id="S2.SS4.p1" class="ltx_para">
+<p class="ltx_p">The break-statement breaks the execution of the innermost while- or for-loop enclosing the break-statement and continues execution after the while- or for-loop.
+It can only be used in a while- or for-loop in an algorithm section.
+It has the following syntax:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,YnJlYWs7">⬇</a></div>
+<div id="lstnumberx2450" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keyword" style="color:#003378;">break</span>;
+</div>
+</div>
+</div>
+<div id="S2.SS4.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example:
+(Note that this could alternatively use <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">return</span>).</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnVuY3Rpb24gZmluZFZhbHVlICJSZXR1cm5zIHBvc2l0aW9uIG9mIHZhbCBvciAwIGlmIG5vdCBmb3VuZCIKICBpbnB1dCBJbnRlZ2VyIHhbOl07CiAgaW5wdXQgSW50ZWdlciB2YWw7CiAgb3V0cHV0IEludGVnZXIgaW5kZXg7CmFsZ29yaXRobQogIGluZGV4IDo9IHNpemUoeCwgMSk7CiAgd2hpbGUgaW5kZXggPj0gMSBsb29wCiAgICBpZiB4W2luZGV4XSA9PSB2YWwgdGhlbgogICAgICBicmVhazsKICAgIGVsc2UKICAgICAgaW5kZXggOj0gaW5kZXggLSAxOwogICAgZW5kIGlmOwogIGVuZCB3aGlsZTsKZW5kIGZpbmRWYWx1ZTs=">⬇</a></div>
+<div id="lstnumberx2451" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">findValue</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"Returns<span class="ltx_text ltx_lst_space"> </span>position<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>val<span class="ltx_text ltx_lst_space"> </span>or<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space"> </span>if<span class="ltx_text ltx_lst_space"> </span>not<span class="ltx_text ltx_lst_space"> </span>found"</span>
+</div>
+<div id="lstnumberx2452" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Integer</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[:];
+</div>
+<div id="lstnumberx2453" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Integer</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">val</span>;
+</div>
+<div id="lstnumberx2454" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Integer</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">index</span>;
+</div>
+<div id="lstnumberx2455" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx2456" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">index</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">size</span>(<span class="ltx_text ltx_lst_identifier">x</span>,<span class="ltx_text ltx_lst_space"> </span>1);
+</div>
+<div id="lstnumberx2457" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">while</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">index</span><span class="ltx_text ltx_lst_space"> </span>&gt;=<span class="ltx_text ltx_lst_space"> </span>1<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span>
+</div>
+<div id="lstnumberx2458" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>[<span class="ltx_text ltx_lst_identifier">index</span>]<span class="ltx_text ltx_lst_space"> </span>==<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">val</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2459" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">break</span>;
+</div>
+<div id="lstnumberx2460" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span>
+</div>
+<div id="lstnumberx2461" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_identifier">index</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">index</span><span class="ltx_text ltx_lst_space"> </span>-<span class="ltx_text ltx_lst_space"> </span>1;
+</div>
+<div id="lstnumberx2462" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span>;
+</div>
+<div id="lstnumberx2463" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">while</span>;
+</div>
+<div id="lstnumberx2464" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">findValue</span>;
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</section>
+<section id="return-statements" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">11.2.5 </span>Return-Statements</h3>
+
+<div id="S2.SS5.p1" class="ltx_para">
+<p class="ltx_p">Can only be used inside functions, see <a href="functions.html#function-return-statements" title="12.1.2 Function return-statements ‣ 12.1 Function Declaration ‣ Chapter 12 Functions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">12.1.2</span></a>.</p>
+</div>
+</section>
+<section id="if-statement" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">11.2.6 </span>If-Statement</h3>
+
+<div id="S2.SS6.p1" class="ltx_para">
+<p class="ltx_p">If-statements have the following syntax:</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aWYgZXhwcmVzc2lvbiB0aGVuCiAgeyBzdGF0ZW1lbnQgIjsiIH0KICB7IGVsc2VpZiBleHByZXNzaW9uIHRoZW4KICAgIHsgc3RhdGVtZW50ICI7IiB9CiAgfQogIFsgZWxzZQogICAgeyBzdGF0ZW1lbnQgIjsiIH0KICBdCmVuZCBpZjs=">⬇</a></div>
+<div id="lstnumberx2465" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2466" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx2467" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">elseif</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2468" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx2469" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>}
+</div>
+<div id="lstnumberx2470" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span>
+</div>
+<div id="lstnumberx2471" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx2472" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>]
+</div>
+<div id="lstnumberx2473" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span>;
+</div>
+</div>
+</div>
+<div id="S2.SS6.p2" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">expression</span> of an if- or elseif-clause must be scalar <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">Boolean</span> expression. One if-clause, and zero or more elseif-clauses, and an optional else-clause together form a list of branches. One or zero of the bodies of these if-, elseif- and else-clauses is selected, by evaluating the conditions of the if- and elseif-clauses sequentially until a condition that evaluates to true is found. If none of the conditions evaluate to true the body of the else-clause is selected (if an else-clause exists, otherwise no body is selected). In an algorithm section, the selected body is then executed. The bodies that are not selected have no effect on that model evaluation.</p>
+</div>
+</section>
+<section id="when-statements" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">11.2.7 </span>When-Statements</h3>
+
+<div id="S2.SS7.p1" class="ltx_para">
+<p class="ltx_p">A when-statement has the following syntax:</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,d2hlbiBleHByZXNzaW9uIHRoZW4KICB7IHN0YXRlbWVudCAiOyIgfQogIHsgZWxzZXdoZW4gZXhwcmVzc2lvbiB0aGVuCiAgeyBzdGF0ZW1lbnQgIjsiIH0gfQplbmQgd2hlbg==">⬇</a></div>
+<div id="lstnumberx2474" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2475" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx2476" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">elsewhen</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2477" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}<span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx2478" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span>
+</div>
+</div>
+</div>
+<div id="S2.SS7.p2" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">expression</span> of a when-statement shall be a discrete-time <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">Boolean</span> scalar or vector expression.
+The statements within a when-statement are activated only at the instant when the scalar or any one of the elements of the vector-expression becomes true.</p>
+</div>
+<div id="S2.SS7.p3" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example:
+Algorithms are activated when <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">x</span> becomes &gt; 2:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,d2hlbiB4ID4gMiB0aGVuCiAgeTEgOj0gc2luKHgpOwogIHkzIDo9IDIqeCArIHkxK3kyOwplbmQgd2hlbjs=">⬇</a></div>
+<div id="lstnumberx2479" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>2<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2480" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">y1</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">sin</span>(<span class="ltx_text ltx_lst_identifier">x</span>);
+</div>
+<div id="lstnumberx2481" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">y3</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span>2*<span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">y1</span>+<span class="ltx_text ltx_lst_identifier">y2</span>;
+</div>
+<div id="lstnumberx2482" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span>;
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The statements inside the when-statement are activated on the positive edge of any of the expressions
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">x</span><span class="ltx_text ltx_lst_space ltx_font_upright"> </span><span class="ltx_text ltx_font_upright">&gt;<span class="ltx_text ltx_lst_space"> </span>2</span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_upright" style="color:#543D08;">sample</span><span class="ltx_text ltx_font_upright">(0,<span class="ltx_text ltx_lst_space"> </span>2)</span></span>, or <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">x</span><span class="ltx_text ltx_lst_space ltx_font_upright"> </span><span class="ltx_text ltx_font_upright">&lt;<span class="ltx_text ltx_lst_space"> </span>5</span></span>:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,d2hlbiB7eCA+IDIsIHNhbXBsZSgwLDIpLCB4IDwgNX0gdGhlbgogIHkxIDo9IHNpbih4KTsKICB5MyA6PSAyKnggKyB5MSt5MjsKZW5kIHdoZW47">⬇</a></div>
+<div id="lstnumberx2483" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>2,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">sample</span>(0,2),<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>&lt;<span class="ltx_text ltx_lst_space"> </span>5}<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2484" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">y1</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">sin</span>(<span class="ltx_text ltx_lst_identifier">x</span>);
+</div>
+<div id="lstnumberx2485" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">y3</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span>2*<span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">y1</span>+<span class="ltx_text ltx_lst_identifier">y2</span>;
+</div>
+<div id="lstnumberx2486" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span>;
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">For when-statements in algorithm sections the order is significant
+and it is advisable to have only one assignment within the
+when-statement and instead use several algorithm sections having
+when-statements with identical conditions, e.g.:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,YWxnb3JpdGhtCiAgd2hlbiB4ID4gMiB0aGVuCiAgICB5MSA6PSBzaW4oeCk7CiAgZW5kIHdoZW47CmVxdWF0aW9uCiAgeTIgPSBzaW4oeTEpOwphbGdvcml0aG0KICB3aGVuIHggPiAyIHRoZW4KICAgIHkzIDo9IDIqeCAreTEreTI7CiAgZW5kIHdoZW47">⬇</a></div>
+<div id="lstnumberx2487" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx2488" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>2<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2489" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">y1</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">sin</span>(<span class="ltx_text ltx_lst_identifier">x</span>);
+</div>
+<div id="lstnumberx2490" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span>;
+</div>
+<div id="lstnumberx2491" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span>
+</div>
+<div id="lstnumberx2492" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">y2</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">sin</span>(<span class="ltx_text ltx_lst_identifier">y1</span>);
+</div>
+<div id="lstnumberx2493" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx2494" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>2<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2495" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">y3</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span>2*<span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_identifier">y1</span>+<span class="ltx_text ltx_lst_identifier">y2</span>;
+</div>
+<div id="lstnumberx2496" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span>;
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Merging the when-statements can lead to less efficient code and
+different models with different behavior depending on the order of the
+assignment to <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">y1</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">y3</span> in the algorithm.</span>]</p>
+</div>
+<section id="restrictions-on-where-a-when-statement-may-occur" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">11.2.7.1 </span>Restrictions on Where a When-statement may occur</h4>
+
+<div id="S2.SS7.SSS1.p1" class="ltx_para">
+<ul id="S2.I3" class="ltx_itemize">
+<li id="S2.I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I3.i1.p1" class="ltx_para">
+<p class="ltx_p">A when-statement shall not be used within a function.</p>
+</div>
+</li>
+<li id="S2.I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I3.i2.p1" class="ltx_para">
+<p class="ltx_p">When-statements shall not occur inside initial algorithms.</p>
+</div>
+</li>
+<li id="S2.I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I3.i3.p1" class="ltx_para">
+<p class="ltx_p">When-statements cannot be nested.</p>
+</div>
+</li>
+<li id="S2.I3.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I3.i4.p1" class="ltx_para">
+<p class="ltx_p">When-statements shall not occur inside while, if, and for-clauses in
+algorithms.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S2.SS7.SSS1.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example:
+The following nested when-statement is invalid:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,d2hlbiB4ID4gMiB0aGVuCiAgd2hlbiB5MSA+IDMgdGhlbgogICAgeTIgOj0gc2luKHgpOwogIGVuZCB3aGVuOwplbmQgd2hlbjs=">⬇</a></div>
+<div id="lstnumberx2497" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>2<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2498" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">y1</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>3<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2499" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">y2</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">sin</span>(<span class="ltx_text ltx_lst_identifier">x</span>);
+</div>
+<div id="lstnumberx2500" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span>;
+</div>
+<div id="lstnumberx2501" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span>;
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</section>
+<section id="restrictions-on-statements-within-when-statements" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">11.2.7.2 </span>Restrictions on Statements within When-Statements</h4>
+
+<div id="S2.SS7.SSS2.p1" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">In contrast to when-equations, <a href="equations.html#restrictions-on-equations-within-when-equations" title="8.3.5.3 Restrictions on Equations within When-Equations ‣ 8.3.5 When-Equations ‣ 8.3 Equations in Equation Sections ‣ Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">8.3.5.3</span></a>,
+there are no additional restrictions within when-statements:</span></p>
+<ul id="S2.I4" class="ltx_itemize">
+<li id="S2.I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I4.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">In algorithms, all assignment statements are already restricted to left-hand-side variables.
+</span></p>
+</div>
+</li>
+<li id="S2.I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I4.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">If at least one element of an array appears on the left-hand-side of the assignment operator inside
+a when-statement, it is as if the entire array appears in the left-hand-side
+according to </span><a href="#execution-of-an-algorithm-in-a-model" title="11.1.2 Execution of an algorithm in a model ‣ 11.1 Algorithm Sections ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref ltx_font_italic"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">11.1.2</span></a><span class="ltx_text ltx_font_italic">.
+Thus, there is no need to restrict the indices to parameter expressions.</span></p>
+</div>
+</li>
+<li id="S2.I4.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I4.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">For-clauses and if-clauses are not problematic inside when-statements in algorithms, since
+all left-hand-side variables inside when-statements are assigned to their pre-values
+before the start of the algorithm, according to </span><a href="#execution-of-an-algorithm-in-a-model" title="11.1.2 Execution of an algorithm in a model ‣ 11.1 Algorithm Sections ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref ltx_font_italic"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">11.1.2</span></a><span class="ltx_text ltx_font_italic">.</span></p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">]</p>
+</div>
+</section>
+<section id="defining-when-statements-by-if-statements" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">11.2.7.3 </span>Defining When-Statements by If-Statements</h4>
+
+<div id="S2.SS7.SSS3.p1" class="ltx_para">
+<p class="ltx_p">A when-statement:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,YWxnb3JpdGhtCiAgd2hlbiB7eCA+IDEsICRcbGRvdHMkLCB5ID4gcH0gdGhlbgogICAgJFxsZG90cyQKICBlbHNld2hlbiB4ID4geS5zdGFydCB0aGVuCiAgICAkXGxkb3RzJAogIGVuZCB3aGVuOw==">⬇</a></div>
+<div id="lstnumberx2502" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx2503" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>1,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx2503.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">y</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">p</span>}<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2504" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><math id="lstnumberx2504.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>
+</div>
+<div id="lstnumberx2505" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">elsewhen</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">y</span>.<span class="ltx_text ltx_lst_identifier">start</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2506" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><math id="lstnumberx2506.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>
+</div>
+<div id="lstnumberx2507" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span>;
+</div>
+</div>
+<p class="ltx_p">is similar to the following special if-statement, where <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Boolean</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b1</span>[<span class="ltx_text ltx_lst_identifier">N</span>];</span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Boolean</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b2</span>;</span> are necessary because <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">edge</span> can
+only be applied to variables</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICBCb29sZWFuIGIxW05dKHN0YXJ0ID0ge3guc3RhcnQgPiAxLCAkXGxkb3RzJCwgeS5zdGFydCA+IHB9KTsKICBCb29sZWFuIGIyKHN0YXJ0ID0geC5zdGFydCA+IHkuc3RhcnQpOwphbGdvcml0aG0KICBiMTogPSB7eCA+IDEsICRcbGRvdHMkLCB5ID4gcH07CiAgYjI6ID0geCA+IHkuc3RhcnQ7CiAgaWYgZWRnZShiMVsxXSkgb3IgZWRnZShiMVsyXSkgb3IgJFxsZG90cyQgb3IgZWRnZShiMVtOXSkgdGhlbgogICAgJFxsZG90cyQKICBlbHNlaWYgZWRnZShiMikgdGhlbgogICAgJFxsZG90cyQKICBlbmQgaWY7">⬇</a></div>
+<div id="lstnumberx2508" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Boolean</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b1</span>[<span class="ltx_text ltx_lst_identifier">N</span>](<span class="ltx_text ltx_lst_identifier">start</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_identifier">x</span>.<span class="ltx_text ltx_lst_identifier">start</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>1,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx2508.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">y</span>.<span class="ltx_text ltx_lst_identifier">start</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">p</span>});
+</div>
+<div id="lstnumberx2509" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Boolean</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b2</span>(<span class="ltx_text ltx_lst_identifier">start</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>.<span class="ltx_text ltx_lst_identifier">start</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">y</span>.<span class="ltx_text ltx_lst_identifier">start</span>);
+</div>
+<div id="lstnumberx2510" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx2511" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">b1</span>:<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>1,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx2511.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">y</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">p</span>};
+</div>
+<div id="lstnumberx2512" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">b2</span>:<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">y</span>.<span class="ltx_text ltx_lst_identifier">start</span>;
+</div>
+<div id="lstnumberx2513" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">edge</span>(<span class="ltx_text ltx_lst_identifier">b1</span>[1])<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">or</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">edge</span>(<span class="ltx_text ltx_lst_identifier">b1</span>[2])<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">or</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx2513.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">or</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">edge</span>(<span class="ltx_text ltx_lst_identifier">b1</span>[<span class="ltx_text ltx_lst_identifier">N</span>])<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2514" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><math id="lstnumberx2514.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>
+</div>
+<div id="lstnumberx2515" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">elseif</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">edge</span>(<span class="ltx_text ltx_lst_identifier">b2</span>)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx2516" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><math id="lstnumberx2516.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>
+</div>
+<div id="lstnumberx2517" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span>;
+</div>
+</div>
+<p class="ltx_p">with <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">edge</span>(<span class="ltx_text ltx_lst_identifier">A</span>)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">and</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">not</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">pre</span>(<span class="ltx_text ltx_lst_identifier">A</span>)</span> and the additional guarantee, that the statements within this special if-statement are only evaluated at event instants.
+The difference compared to the when-statements is that e.g. <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">pre</span> may only be used on continuous-time real variables inside the body of a when-clause and not inside these if-statements.</p>
+</div>
+</section>
+</section>
+<section id="special-statements" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">11.2.8 </span>Special Statements</h3>
+
+<div id="S2.SS8.p1" class="ltx_para">
+<p class="ltx_p">These special statements have the same form and semantics as the
+corresponding equations, apart from the general difference in semantics
+between equations and statements.</p>
+</div>
+<section id="assert-statement" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">11.2.8.1 </span>Assert Statement</h4>
+
+<div id="S2.SS8.SSS1.p1" class="ltx_para">
+<p class="ltx_p">See <a href="equations.html#assert" title="8.3.7 assert ‣ 8.3 Equations in Equation Sections ‣ Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">8.3.7</span></a>. A failed <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting" style="color:#003378;background-color:#FFFFFF;">assert</span> stops the execution of the current algorithm.</p>
+</div>
+</section>
+<section id="terminate-statement" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">11.2.8.2 </span>Terminate Statement</h4>
+
+<div id="S2.SS8.SSS2.p1" class="ltx_para">
+<p class="ltx_p">See <a href="equations.html#terminate" title="8.3.8 terminate ‣ 8.3 Equations in Equation Sections ‣ Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">8.3.8</span></a>. The <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting" style="color:#003378;background-color:#FFFFFF;">terminate</span> statement shall not be in functions. In an algorithm outside a function it does not stop the execution of the current algorithm.</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div>
+<a href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">References</span></a><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="index"><span class="ltx_text ltx_ref_title">Index</span></a><a href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Fri Apr 30 16:20:48 2021 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

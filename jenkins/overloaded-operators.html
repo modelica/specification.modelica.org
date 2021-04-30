@@ -1,0 +1,1146 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>14 Overloaded Operators‣ Modelica® Language Specification version 3.6-dev</title>
+<!--Generated on Fri Apr 30 16:20:48 2021 by LaTeXML (version 0.8.5) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on April 30, 2021.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="css/MLS.css" type="text/css">
+<link rel="stylesheet" href="css/MLS-navbar-left.css" type="text/css">
+<script src="LaTeXML-maybeMathjax.js" type="text/javascript"></script>
+<link rel="up" href="MLS.html" title="Modelica® Language Specification version 3.6-dev">
+<link rel="start" href="MLS.html" title="Modelica® Language Specification version 3.6-dev">
+<link rel="prev" href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="next" href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="bibliography" href="bib.html" title="References ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="index" href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6-dev">
+<meta name="keywords" lang="en" content="operator record">
+</head>
+<body>
+<nav class="ltx_page_navbar"><a href="MLS.html" title="Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6-dev</span></a>
+<div class="ltx_TOC">
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></span>
+<ul class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#overview-of-overloaded-operators" title="14.1 Overview of overloaded operators ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.1 </span>Overview of overloaded operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#matching-function" title="14.2 Matching Function ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.2 </span>Matching Function</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#overloaded-constructors" title="14.3 Overloaded Constructors ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.3 </span>Overloaded Constructors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#overloaded-string-conversions" title="14.4 Overloaded String Conversions ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.4 </span>Overloaded String Conversions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#overloaded-binary-operations" title="14.5 Overloaded Binary Operations ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.5 </span>Overloaded Binary Operations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#overloaded-unary-operations" title="14.6 Overloaded Unary Operations ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.6 </span>Overloaded Unary Operations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#example-of-overloading-for-complex-numbers" title="14.7 Example of Overloading for Complex Numbers ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.7 </span>Example of Overloading for Complex Numbers</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_index"><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div>
+<a href="MLS.html" title="Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6-dev</span></a><a href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a><a href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter" lang="en">
+<h1 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter">Chapter 14 </span>Overloaded Operators</h1>
+<div class="ltx_dates">(April 30, 2021)</div>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">A Modelica <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">record</span></span> can overload the behavior for operations such as constructing, adding, multiplying etc.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">The overloading is defined in such a way that ambiguities are not allowed and give an error.
+Furthermore, it is sufficient to define overloading for scalars.
+Overloaded array operations are automatically deduced from the overloaded scalar operations.</p>
+</div>
+<section id="overview-of-overloaded-operators" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">14.1 </span>Overview of overloaded operators</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">In an <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">record</span></span> the definition of operations are done using the specialized class <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">operator</span> (a specialized class similar to <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">package</span>, see <a href="class-predefined-types-and-declarations.html#specialized-classes" title="4.6 Specialized Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">4.6</span></a>) followed by the name of the operation.
+Each <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">operator</span> class is comprised of functions implementing different variants of the operation for the <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">record</span></span> class in which the definition resides.
+</p>
+<ul id="S1.I1" class="ltx_itemize">
+<li id="S1.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Overloaded constructors, see <a href="#overloaded-constructors" title="14.3 Overloaded Constructors ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">14.3</span></a>:
+<br class="ltx_break"><span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’constructor’</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’0’</span></p>
+</div>
+</li>
+<li id="S1.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Overloaded string conversions, see <a href="#overloaded-string-conversions" title="14.4 Overloaded String Conversions ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">14.4</span></a>:
+<br class="ltx_break"><span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’String’</span></p>
+</div>
+</li>
+<li id="S1.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Overloaded binary operations, see <a href="#overloaded-binary-operations" title="14.5 Overloaded Binary Operations ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">14.5</span></a>:
+<br class="ltx_break"><span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’+’</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’-’</span> (subtraction), <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’*’</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’/’</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’^’</span>,
+<br class="ltx_break"><span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’==’</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’&lt;=’</span>’, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’&gt;’</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’&lt;’</span>,
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’&gt;=’</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’&lt;=’</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’and’</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’or’</span></p>
+</div>
+</li>
+<li id="S1.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">Overloaded unary operations, see <a href="#overloaded-unary-operations" title="14.6 Overloaded Unary Operations ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">14.6</span></a>:
+<br class="ltx_break"><span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’-’</span> (negation), <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’not’</span></p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p class="ltx_p">The functions defined in the operator-class must take at least one
+component of the record class as input, except for the
+constructor-functions which instead must return one component of the
+record class. All of the functions shall return exactly one output.</p>
+</div>
+<div id="S1.p3" class="ltx_para">
+<p class="ltx_p">The functions can be either called as defined in this section, or they
+can be called directly using the hierarchical name. The operator or
+operator function must be encapsulated; this allows direct calls of the
+functions and prohibits the functions from using the elements of
+operator record class.</p>
+</div>
+<div id="S1.p4" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">record</span></span> may also contain additional functions, and
+declarations of components of the record. It is not legal to extend from
+an <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">record</span></span>, except as a short class definition modifying the
+default attributes for the component elements directly inside the
+operator record.</p>
+</div>
+<div id="S1.p5" class="ltx_para">
+<p class="ltx_p">If an operator record was derived by a short class definition, the
+overloaded operators of this operator record are the operators that are
+defined in its base class, for subtyping see <a href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">chapter</span> <span class="ltx_text ltx_ref_tag">6</span></a>.
+</p>
+</div>
+<div id="S1.p6" class="ltx_para">
+<p class="ltx_p">The precedence and associativity of the overloaded operators is
+identical to the one defined in <a href="operators-and-expressions.html#tab:operator-precedence" title="Table 3.1 ‣ 3.2 Operator Precedence and Associativity ‣ Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">table</span> <span class="ltx_text ltx_ref_tag">3.1</span></a> in <a href="operators-and-expressions.html#operator-precedence-and-associativity" title="3.2 Operator Precedence and Associativity ‣ Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">3.2</span></a>.</p>
+</div>
+<div id="S1.p7" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Note, the operator overloading as defined in this section is
+only a short hand notation for function calls.</span>]</p>
+</div>
+</section>
+<section id="matching-function" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">14.2 </span>Matching Function</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">All functions defined inside the <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">operator</span> class must return one output (based on the restriction above), and may include functions with optional arguments, i.e. functions of the form</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnVuY3Rpb24gZgogIGlucHV0ICRBXzEkICR1XzEkOwogICRcbGRvdHMkCiAgaW5wdXQgJEFfe219JCAkdV97bX0kIDo9ICRhX3ttfSQ7CiAgJFxsZG90cyQKICBpbnB1dCAkQV97bn0kICR1X3tufSQ7CiAgb3V0cHV0IEIgeTsKYWxnb3JpdGhtCiAgJFxsZG90cyQKZW5kIGY7">⬇</a></div>
+<div id="lstnumberx3473" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">f</span>
+</div>
+<div id="lstnumberx3474" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3474.m1" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">A</mi><mn mathbackground="#FFFFFF">1</mn></msub></math><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3474.m2" class="ltx_Math" alttext="u_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">u</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>;
+</div>
+<div id="lstnumberx3475" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><math id="lstnumberx3475.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>
+</div>
+<div id="lstnumberx3476" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3476.m1" class="ltx_Math" alttext="A_{m}" display="inline"><msub><mi mathbackground="#FFFFFF">A</mi><mi mathbackground="#FFFFFF">m</mi></msub></math><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3476.m2" class="ltx_Math" alttext="u_{m}" display="inline"><msub><mi mathbackground="#FFFFFF">u</mi><mi mathbackground="#FFFFFF">m</mi></msub></math><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3476.m3" class="ltx_Math" alttext="a_{m}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mi mathbackground="#FFFFFF">m</mi></msub></math>;
+</div>
+<div id="lstnumberx3477" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><math id="lstnumberx3477.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>
+</div>
+<div id="lstnumberx3478" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3478.m1" class="ltx_Math" alttext="A_{n}" display="inline"><msub><mi mathbackground="#FFFFFF">A</mi><mi mathbackground="#FFFFFF">n</mi></msub></math><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3478.m2" class="ltx_Math" alttext="u_{n}" display="inline"><msub><mi mathbackground="#FFFFFF">u</mi><mi mathbackground="#FFFFFF">n</mi></msub></math>;
+</div>
+<div id="lstnumberx3479" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">B</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">y</span>;
+</div>
+<div id="lstnumberx3480" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx3481" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><math id="lstnumberx3481.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>
+</div>
+<div id="lstnumberx3482" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">f</span>;
+</div>
+</div>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p">The vector <math id="S2.p2.m1" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> indicates whether argument <math id="S2.p2.m2" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math> of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">f</span> has a default value (<span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting" style="color:#003378;background-color:#FFFFFF;">true</span> for default value, <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting" style="color:#003378;background-color:#FFFFFF;">false</span> otherwise).
+A call <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">f</span>(<math id="S2.p2.m3" class="ltx_Math" alttext="a_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.p2.m4" class="ltx_Math" alttext="a_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.p2.m5" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.p2.m6" class="ltx_Math" alttext="a_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.p2.m7" class="ltx_Math" alttext="b_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mn mathbackground="#FFFFFF">1</mn></msub></math><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><math id="S2.p2.m8" class="ltx_Math" alttext="w_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.p2.m9" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.p2.m10" class="ltx_Math" alttext="b_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mi mathbackground="#FFFFFF">p</mi></msub></math><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><math id="S2.p2.m11" class="ltx_Math" alttext="w_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>)</span> with distinct names <math id="S2.p2.m12" class="ltx_Math" alttext="b_{j}" display="inline"><msub><mi>b</mi><mi>j</mi></msub></math> is a valid match for the function <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">f</span>, provided (treating <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">Integer</span> and <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">Real</span> as the same type)</p>
+<ul id="S2.I1" class="ltx_itemize">
+<li id="S2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="S2.I1.i1.p1.m1" class="ltx_Math" alttext="A_{i}" display="inline"><msub><mi>A</mi><mi>i</mi></msub></math> = typeOf(<math id="S2.I1.i1.p1.m2" class="ltx_Math" alttext="a_{i}" display="inline"><msub><mi>a</mi><mi>i</mi></msub></math>) for <math id="S2.I1.i1.p1.m3" class="ltx_Math" alttext="1\leq i\leq k" display="inline"><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>k</mi></mrow></math>,</p>
+</div>
+</li>
+<li id="S2.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">the names <math id="S2.I1.i2.p1.m1" class="ltx_Math" alttext="b_{j}" display="inline"><msub><mi>b</mi><mi>j</mi></msub></math> = <math id="S2.I1.i2.p1.m2" class="ltx_Math" alttext="u_{Q_{j}}" display="inline"><msub><mi>u</mi><msub><mi>Q</mi><mi>j</mi></msub></msub></math>, <math id="S2.I1.i2.p1.m3" class="ltx_Math" alttext="Q_{j}&gt;k" display="inline"><mrow><msub><mi>Q</mi><mi>j</mi></msub><mo>&gt;</mo><mi>k</mi></mrow></math>, <math id="S2.I1.i2.p1.m4" class="ltx_Math" alttext="A_{Q_{j}}" display="inline"><msub><mi>A</mi><msub><mi>Q</mi><mi>j</mi></msub></msub></math> = typeOf(<math id="S2.I1.i2.p1.m5" class="ltx_Math" alttext="w_{j}" display="inline"><msub><mi>w</mi><mi>j</mi></msub></math>) for <math id="S2.I1.i2.p1.m6" class="ltx_Math" alttext="1\leq j\leq p" display="inline"><mrow><mn>1</mn><mo>≤</mo><mi>j</mi><mo>≤</mo><mi>p</mi></mrow></math>, and</p>
+</div>
+</li>
+<li id="S2.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">if the union of <math id="S2.I1.i3.p1.m1" class="ltx_Math" alttext="\{i:1\leq i\leq k\}" display="inline"><mrow><mo stretchy="false">{</mo><mi>i</mi><mo>:</mo><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>k</mi></mrow><mo stretchy="false">}</mo></mrow></math>, <math id="S2.I1.i3.p1.m2" class="ltx_Math" alttext="\{Q_{j}:1\leq j\leq p\}" display="inline"><mrow><mo stretchy="false">{</mo><msub><mi>Q</mi><mi>j</mi></msub><mo>:</mo><mrow><mn>1</mn><mo>≤</mo><mi>j</mi><mo>≤</mo><mi>p</mi></mrow><mo stretchy="false">}</mo></mrow></math>, and <math id="S2.I1.i3.p1.m3" class="ltx_Math" alttext="{\{m:P_{m}\text{ is \lstinline{{\lst@@@set@language\lst@@@set@numbers%
+\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language%
+\lst@@@set@frame\normalsize{\@listingGroup{ltx_lst_keyword}{\color[rgb]{%
+0.00,0.20,0.47}true}}}}} and }1\leq m\leq n\}" display="inline"><mrow><mo stretchy="false">{</mo><mi>m</mi><mo>:</mo><mrow><mrow><msub><mi>P</mi><mi>m</mi></msub><mo>⁢</mo><mrow><mtext> is </mtext><mtext mathbackground="#FFFFFF" mathcolor="#003378">true</mtext><mtext> and </mtext></mrow><mo>⁢</mo><mn>1</mn></mrow><mo>≤</mo><mi>m</mi><mo>≤</mo><mi>n</mi></mrow><mo stretchy="false">}</mo></mrow></math> is the set <math id="S2.I1.i3.p1.m4" class="ltx_Math" alttext="\{i:1\leq i\leq n\}" display="inline"><mrow><mo stretchy="false">{</mo><mi>i</mi><mo>:</mo><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi></mrow><mo stretchy="false">}</mo></mrow></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">This corresponds to the normal treatment of function calls with
+named arguments, requiring that all inputs have some value given by a
+positional argument, named argument, or a default value (and that
+positional and named arguments do not overlap). Note, that this only
+defines a valid call, but does not explicitly define the set of
+domains.</span>]</p>
+</div>
+</section>
+<section id="overloaded-constructors" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">14.3 </span>Overloaded Constructors</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p">Let <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">C</span> denote an operator record class and consider an expression
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">C</span>(<math id="S3.p1.m1" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">A</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.p1.m2" class="ltx_Math" alttext="a_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.p1.m3" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.p1.m4" class="ltx_Math" alttext="a_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.p1.m5" class="ltx_Math" alttext="b_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>=<math id="S3.p1.m6" class="ltx_Math" alttext="w_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.p1.m7" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.p1.m8" class="ltx_Math" alttext="b_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>=<math id="S3.p1.m9" class="ltx_Math" alttext="w_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>)</span>.</p>
+</div>
+<div id="S3.p2" class="ltx_para">
+<ol id="S3.I1" class="ltx_enumerate">
+<li id="overloaded-constructor-unique" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="S3.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">If there exists a unique function <math id="S3.I1.i1.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> in <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">C</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’constructor’</span></span> such that
+(<math id="S3.I1.i1.p1.m2" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi>A</mi><mn>1</mn></msub></math>, <math id="S3.I1.i1.p1.m3" class="ltx_Math" alttext="a_{2}" display="inline"><msub><mi>a</mi><mn>2</mn></msub></math>, …, <math id="S3.I1.i1.p1.m4" class="ltx_Math" alttext="a_{k}" display="inline"><msub><mi>a</mi><mi>k</mi></msub></math>, <math id="S3.I1.i1.p1.m5" class="ltx_Math" alttext="b_{1}" display="inline"><msub><mi>b</mi><mn>1</mn></msub></math>=<math id="S3.I1.i1.p1.m6" class="ltx_Math" alttext="w_{1}" display="inline"><msub><mi>w</mi><mn>1</mn></msub></math>, …, <math id="S3.I1.i1.p1.m7" class="ltx_Math" alttext="b_{p}" display="inline"><msub><mi>b</mi><mi>p</mi></msub></math>=<math id="S3.I1.i1.p1.m8" class="ltx_Math" alttext="w_{p}" display="inline"><msub><mi>w</mi><mi>p</mi></msub></math>)
+is a valid match for the function <math id="S3.I1.i1.p1.m9" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>, then
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">C</span>(<math id="S3.I1.i1.p1.m10" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">A</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.I1.i1.p1.m11" class="ltx_Math" alttext="a_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.I1.i1.p1.m12" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.I1.i1.p1.m13" class="ltx_Math" alttext="a_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.I1.i1.p1.m14" class="ltx_Math" alttext="b_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>=<math id="S3.I1.i1.p1.m15" class="ltx_Math" alttext="w_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.I1.i1.p1.m16" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.I1.i1.p1.m17" class="ltx_Math" alttext="b_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>=<math id="S3.I1.i1.p1.m18" class="ltx_Math" alttext="w_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>)</span>
+is resolved to
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">C</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’constructor’</span>.<math id="S3.I1.i1.p1.m19" class="ltx_Math" alttext="f" display="inline"><mi mathbackground="#FFFFFF">f</mi></math>(<math id="S3.I1.i1.p1.m20" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">A</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.I1.i1.p1.m21" class="ltx_Math" alttext="a_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.I1.i1.p1.m22" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.I1.i1.p1.m23" class="ltx_Math" alttext="a_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.I1.i1.p1.m24" class="ltx_Math" alttext="b_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>=<math id="S3.I1.i1.p1.m25" class="ltx_Math" alttext="w_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.I1.i1.p1.m26" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S3.I1.i1.p1.m27" class="ltx_Math" alttext="b_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>=<math id="S3.I1.i1.p1.m28" class="ltx_Math" alttext="w_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>)</span>.</p>
+</div>
+</li>
+<li id="S3.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="S3.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">If there is no operator <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">C</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’constructor’</span></span> the automatically generated record constructor is called.</p>
+</div>
+</li>
+<li id="S3.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="S3.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Otherwise the expression is erroneous.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="S3.p3" class="ltx_para">
+<p class="ltx_p">Restrictions:</p>
+<ul id="S3.I2" class="ltx_itemize">
+<li id="S3.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">The operator <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">C</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’constructor’</span></span> shall only contain functions that declare one output component, which shall be of the operator record class <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">C</span>.</p>
+</div>
+</li>
+<li id="S3.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">For an operator recordclass there shall not exist any potential call that lead to multiple matches in <a href="#overloaded-constructor-unique" title="item 1 ‣ 14.3 Overloaded Constructors ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">item</span> <span class="ltx_text ltx_ref_tag">1</span></a> above.</p>
+</div>
+<div id="S3.I2.i2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">How to verify this is not specified.</span>]</p>
+</div>
+</li>
+<li id="S3.I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I2.i3.p1" class="ltx_para">
+<p class="ltx_p">For a pair of operator record classes <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">C</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">D</span> and components <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">c</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">d</span> of these classes both of <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">C</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’constructor’</span>(<span class="ltx_text ltx_lst_identifier">d</span>)</span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">D</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’constructor’</span>(<span class="ltx_text ltx_lst_identifier">c</span>)</span> shall not both be legal.
+</p>
+</div>
+<div id="S3.I2.i3.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Hence, one of the two definitions must be removed.</span>]</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S3.p4" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">By the last restriction the following problem for binary operators is avoided:</span></p>
+</div>
+<div id="S3.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Assume there are two operator record classes <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">C</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">D</span> that both have a constructor from <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">Real</span>. If we want to extend <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">c</span><span class="ltx_text ltx_lst_space ltx_font_upright"> </span><span class="ltx_text ltx_font_upright">+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c</span></span></span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">d</span><span class="ltx_text ltx_lst_space ltx_font_upright"> </span><span class="ltx_text ltx_font_upright">+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">d</span></span></span> to support mixed operations, one variant would be to define <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">c</span><span class="ltx_text ltx_lst_space ltx_font_upright"> </span><span class="ltx_text ltx_font_upright">+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">d</span></span></span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">d</span><span class="ltx_text ltx_lst_space ltx_font_upright"> </span><span class="ltx_text ltx_font_upright">+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c</span></span></span>; but then <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">c</span><span class="ltx_text ltx_lst_space ltx_font_upright"> </span><span class="ltx_text ltx_font_upright">+<span class="ltx_text ltx_lst_space"> </span>2</span></span> becomes ambiguous (since it is not clear which instance should be converted to). Without mixed operations expressions such as <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">c</span><span class="ltx_text ltx_lst_space ltx_font_upright"> </span><span class="ltx_text ltx_font_upright">+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">d</span></span></span> are only ambiguous if both conversion from <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">C</span> to <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">D</span> and back from <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">D</span> to <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">C</span> are both available, and this possibility is not allowed by the restriction above.</span>]</p>
+</div>
+<div id="S3.p6" class="ltx_para">
+<p class="ltx_p">Additionally there is an operator <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’0’</span> defining the zero-value which can also be used to construct an element. The operator <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’0’</span> for an operator record <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">C</span> can
+contain only one function, having zero inputs and one output of type <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">C</span> (the called function is therefore unambiguous). It should return the identity element of addition, and is used for
+generating flow-equations for connect-equations and zero elements for matrix multiplication.</p>
+</div>
+</section>
+<section id="overloaded-string-conversions" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">14.4 </span>Overloaded String Conversions</h2>
+
+<div id="S4.p1" class="ltx_para">
+<p class="ltx_p">Consider an expression <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">String</span>(<math id="S4.p1.m1" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">A</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.p1.m2" class="ltx_Math" alttext="a_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.p1.m3" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.p1.m4" class="ltx_Math" alttext="a_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.p1.m5" class="ltx_Math" alttext="b_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>=<math id="S4.p1.m6" class="ltx_Math" alttext="w_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.p1.m7" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.p1.m8" class="ltx_Math" alttext="b_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>=<math id="S4.p1.m9" class="ltx_Math" alttext="w_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>)</span>, <math id="S4.p1.m10" class="ltx_Math" alttext="k\geq 1" display="inline"><mrow><mi>k</mi><mo>≥</mo><mn>1</mn></mrow></math> where <math id="S4.p1.m11" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi>A</mi><mn>1</mn></msub></math> is an element of class <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">A</span>.</p>
+</div>
+<div id="S4.p2" class="ltx_para">
+<ol id="S4.I1" class="ltx_enumerate">
+<li id="S4.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="S4.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">A</span> is a predefined type, i.e., <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">Boolean</span>, <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">Integer</span>, <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">Real</span>, <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">String</span> or
+an enumeration, or a type derived from them, then the corresponding
+built-in operation is performed.</p>
+</div>
+</li>
+<li id="S4.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="S4.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">A</span> is an operator record class and there exists a unique function
+<math id="S4.I1.i2.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> in <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">A</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’String’</span></span> such that
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">A</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’String’</span>.<math id="S4.I1.i2.p1.m2" class="ltx_Math" alttext="f" display="inline"><mi mathbackground="#FFFFFF">f</mi></math>(<math id="S4.I1.i2.p1.m3" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">A</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m4" class="ltx_Math" alttext="a_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m5" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m6" class="ltx_Math" alttext="a_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m7" class="ltx_Math" alttext="b_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>=<math id="S4.I1.i2.p1.m8" class="ltx_Math" alttext="w_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m9" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m10" class="ltx_Math" alttext="b_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>=<math id="S4.I1.i2.p1.m11" class="ltx_Math" alttext="w_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>)</span>
+is a valid match for <math id="S4.I1.i2.p1.m12" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>, then
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">String</span>(<math id="S4.I1.i2.p1.m13" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">A</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m14" class="ltx_Math" alttext="a_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m15" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m16" class="ltx_Math" alttext="a_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m17" class="ltx_Math" alttext="b_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>=<math id="S4.I1.i2.p1.m18" class="ltx_Math" alttext="w_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m19" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m20" class="ltx_Math" alttext="b_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>=<math id="S4.I1.i2.p1.m21" class="ltx_Math" alttext="w_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>)</span>
+is evaluated to
+<br class="ltx_break"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">A</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’String’</span>.<math id="S4.I1.i2.p1.m22" class="ltx_Math" alttext="f" display="inline"><mi mathbackground="#FFFFFF">f</mi></math>(<math id="S4.I1.i2.p1.m23" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">A</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m24" class="ltx_Math" alttext="a_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m25" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m26" class="ltx_Math" alttext="a_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">a</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m27" class="ltx_Math" alttext="b_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>=<math id="S4.I1.i2.p1.m28" class="ltx_Math" alttext="w_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m29" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.I1.i2.p1.m30" class="ltx_Math" alttext="b_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">b</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>=<math id="S4.I1.i2.p1.m31" class="ltx_Math" alttext="w_{p}" display="inline"><msub><mi mathbackground="#FFFFFF">w</mi><mi mathbackground="#FFFFFF">p</mi></msub></math>)</span>.</p>
+</div>
+</li>
+<li id="S4.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="S4.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Otherwise the expression is erroneous.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="S4.p3" class="ltx_para">
+<p class="ltx_p">Restrictions:</p>
+<ul id="S4.I2" class="ltx_itemize">
+<li id="S4.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">The operator <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">A</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’String’</span></span> shall only contain functions that declare one
+output component, which shall be of the <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">String</span> type, and the first
+input argument shall be of the operator record class <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">A</span>.</p>
+</div>
+</li>
+<li id="S4.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">For an operator record class there shall not exist any call that lead
+to multiple matches in (2) above.</p>
+</div>
+<div id="S4.I2.i2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">How to verify this is not specified.</span>]</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="overloaded-binary-operations" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">14.5 </span>Overloaded Binary Operations</h2>
+
+<div id="S5.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="S5.p1.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> denote a binary operator and consider an expression
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">a</span><span class="ltx_text ltx_lst_space"> </span><math id="S5.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span></span> where <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">a</span> is an instance or array of instances of
+class <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">A</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">b</span> is an instance or array of instances of
+class <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">B</span>.</p>
+</div>
+<div id="S5.p2" class="ltx_para">
+<ol id="S5.I1" class="ltx_enumerate">
+<li id="overloaded-binary-predefined" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="S5.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">A</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">B</span> are predefined types of such, then the corresponding built-in operation is performed.</p>
+</div>
+</li>
+<li id="S5.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="S5.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Otherwise, if there exists <em class="ltx_emph ltx_font_italic">exactly one</em> function <math id="S5.I1.i2.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> in the
+union of <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">A</span>.<math id="S5.I1.i2.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math></span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">B</span>.<math id="S5.I1.i2.p1.m3" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math></span> such that
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><math id="S5.I1.i2.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi mathbackground="#FFFFFF">f</mi></math>(<span class="ltx_text ltx_lst_identifier">a</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span>)</span> is a valid match for the function <math id="S5.I1.i2.p1.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>, then
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">a</span><span class="ltx_text ltx_lst_space"> </span><math id="S5.I1.i2.p1.m6" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span></span> is evaluated using this function. It is an error, if
+multiple functions match. If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">A</span> is not an operator record class, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">A</span>.<math id="S5.I1.i2.p1.m7" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math></span>
+is seen as the empty set, and similarly for <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">B</span>.</p>
+</div>
+<div id="S5.I1.i2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Having a union of the operators ensures that if <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">A</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">B</span> are the same, each function only appears once.</span>]</p>
+</div>
+</li>
+<li id="S5.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="S5.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Otherwise, consider the set given by <math id="S5.I1.i3.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> in <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">A</span>.<math id="S5.I1.i3.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math></span>
+and an operator record class <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">C</span> (different from <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">B</span>) with a
+constructor, <math id="S5.I1.i3.p1.m3" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math>, such that <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">C</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’constructor’</span>.<math id="S5.I1.i3.p1.m4" class="ltx_Math" alttext="g" display="inline"><mi mathbackground="#FFFFFF">g</mi></math>(<span class="ltx_text ltx_lst_identifier">b</span>)</span> is a valid match, and
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">f</span>(<span class="ltx_text ltx_lst_identifier">a</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">C</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’constructor’</span>.<math id="S5.I1.i3.p1.m5" class="ltx_Math" alttext="g" display="inline"><mi mathbackground="#FFFFFF">g</mi></math>(<span class="ltx_text ltx_lst_identifier">b</span>))</span> is a valid match; and another set given by
+<math id="S5.I1.i3.p1.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> in <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">B</span>.<math id="S5.I1.i3.p1.m7" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math></span> and an operator record class <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">D</span>
+(different from <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">A</span>) with a constructor, <math id="S5.I1.i3.p1.m8" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>, such that
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">D</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’constructor’</span>.<math id="S5.I1.i3.p1.m9" class="ltx_Math" alttext="h" display="inline"><mi mathbackground="#FFFFFF">h</mi></math>(<span class="ltx_text ltx_lst_identifier">a</span>)</span> is a valid match and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><math id="S5.I1.i3.p1.m10" class="ltx_Math" alttext="f" display="inline"><mi mathbackground="#FFFFFF">f</mi></math>(<span class="ltx_text ltx_lst_identifier">D</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’constructor’</span>.<math id="S5.I1.i3.p1.m11" class="ltx_Math" alttext="h" display="inline"><mi mathbackground="#FFFFFF">h</mi></math>(<span class="ltx_text ltx_lst_identifier">a</span>),<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span>)</span>
+is a valid match. If the sum of the sizes of these sets is one this
+gives the unique match. If the sum of the sizes is larger than one it
+is an error.</p>
+</div>
+<div id="S5.I1.i3.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Informally, this means: If there is no direct match of <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">a</span><span class="ltx_text ltx_lst_space ltx_font_upright"> </span><span class="ltx_text ltx_font_upright"><math id="S5.I1.i3.p2.m1" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math></span><span class="ltx_text ltx_lst_space ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_upright">b</span></span>, then it is tried to find a direct match by automatic type casts of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">a</span> or <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">b</span>, by converting either <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">a</span> or <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">b</span> to the needed type using an appropriate constructor function from one of the operator record classes used as arguments of the overloaded <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">op</span> functions. Example using the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">Complex</span>-definition below:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,UmVhbCBhOwpDb21wbGV4IGI7CkNvbXBsZXggYyA9IGEgKiBiOyAvLyBpbnRlcnByZXRlZCBhczoKLy8gQ29tcGxleC4nKicubXVsdGlwbHkoQ29tcGxleC4nY29uc3RydWN0b3InLmZyb21SZWFsKGEpLGIpOw==">⬇</a></div>
+<div id="lstnumberx3483" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">a</span>;
+</div>
+<div id="lstnumberx3484" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span>;
+</div>
+<div id="lstnumberx3485" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">a</span><span class="ltx_text ltx_lst_space"> </span>*<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span>;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>interpreted<span class="ltx_text ltx_lst_space"> </span>as:</span>
+</div>
+<div id="lstnumberx3486" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Complex.’*’.multiply(Complex.’constructor’.fromReal(a),b);</span>
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</li>
+<li id="overloaded-binary-arrays" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">4.</span> 
+<div id="S5.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">Otherwise, if <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">a</span> or <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">b</span> is an array expression, then the expression is
+conceptually evaluated according to the rules of <a href="arrays.html#scalar-vector-matrix-and-array-operator-functions" title="10.6 Scalar, Vector, Matrix, and Array Operator Functions ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">10.6</span></a> with the
+following exceptions concerning <a href="arrays.html#matrix-and-vector-multiplication-of-numeric-arrays" title="10.6.4 Matrix and Vector Multiplication of Numeric Arrays ‣ 10.6 Scalar, Vector, Matrix, and Array Operator Functions ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">10.6.4</span></a>:</p>
+<ol id="S5.I1.i4.I1" class="ltx_enumerate">
+<li id="S5.I1.i4.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(a)</span> 
+<div id="S5.I1.i4.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><math id="S5.I1.i4.I1.i1.p1.m1" class="ltx_Math" alttext="\mathit{vector}" display="inline"><mi mathbackground="#FFFFFF">𝑣𝑒𝑐𝑡𝑜𝑟</mi></math><span class="ltx_text ltx_lst_space"> </span>*<span class="ltx_text ltx_lst_space"> </span><math id="S5.I1.i4.I1.i1.p1.m2" class="ltx_Math" alttext="\mathit{vector}" display="inline"><mi mathbackground="#FFFFFF">𝑣𝑒𝑐𝑡𝑜𝑟</mi></math></span> should be left undefined.</p>
+</div>
+<div id="S5.I1.i4.I1.i1.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The scalar product of <a href="arrays.html#tab:product" title="Table 10.9 ‣ 10.6.3 Array Element-wise Multiplication ‣ 10.6 Scalar, Vector, Matrix, and Array Operator Functions ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">table</span> <span class="ltx_text ltx_ref_tag">10.9</span></a> does not generalize to the expected linear and conjugate linear scalar product of complex numbers.</span>]</p>
+</div>
+</li>
+<li id="S5.I1.i4.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(b)</span> 
+<div id="S5.I1.i4.I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><math id="S5.I1.i4.I1.i2.p1.m1" class="ltx_Math" alttext="\mathit{vector}" display="inline"><mi mathbackground="#FFFFFF">𝑣𝑒𝑐𝑡𝑜𝑟</mi></math><span class="ltx_text ltx_lst_space"> </span>*<span class="ltx_text ltx_lst_space"> </span><math id="S5.I1.i4.I1.i2.p1.m2" class="ltx_Math" alttext="\mathit{matrix}" display="inline"><mi mathbackground="#FFFFFF">𝑚𝑎𝑡𝑟𝑖𝑥</mi></math></span> should be left undefined.</p>
+</div>
+<div id="S5.I1.i4.I1.i2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The corresponding definition of <a href="arrays.html#tab:product" title="Table 10.9 ‣ 10.6.3 Array Element-wise Multiplication ‣ 10.6 Scalar, Vector, Matrix, and Array Operator Functions ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">table</span> <span class="ltx_text ltx_ref_tag">10.9</span></a> does not generalize to complex numbers in the expected way.</span>]</p>
+</div>
+</li>
+<li id="S5.I1.i4.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(c)</span> 
+<div id="S5.I1.i4.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">If the inner dimension for <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><math id="S5.I1.i4.I1.i3.p1.m1" class="ltx_Math" alttext="\mathit{matrix}" display="inline"><mi mathbackground="#FFFFFF">𝑚𝑎𝑡𝑟𝑖𝑥</mi></math><span class="ltx_text ltx_lst_space"> </span>*<span class="ltx_text ltx_lst_space"> </span><math id="S5.I1.i4.I1.i3.p1.m2" class="ltx_Math" alttext="\mathit{vector}" display="inline"><mi mathbackground="#FFFFFF">𝑣𝑒𝑐𝑡𝑜𝑟</mi></math></span> or <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><math id="S5.I1.i4.I1.i3.p1.m3" class="ltx_Math" alttext="\mathit{matrix}" display="inline"><mi mathbackground="#FFFFFF">𝑚𝑎𝑡𝑟𝑖𝑥</mi></math><span class="ltx_text ltx_lst_space"> </span>*<span class="ltx_text ltx_lst_space"> </span><math id="S5.I1.i4.I1.i3.p1.m4" class="ltx_Math" alttext="\mathit{matrix}" display="inline"><mi mathbackground="#FFFFFF">𝑚𝑎𝑡𝑟𝑖𝑥</mi></math></span> is zero, this uses the overloaded <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’0’</span> operator of the result array element type. If the operator <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’0’</span> is not defined for that class it is an error if the inner dimension is zero.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="S5.I1.i4.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">For array multiplication it is assumed that the scalar elements
+form a non-commutative ring that does not necessarily have a
+multiplicative identity.</span>]</p>
+</div>
+</li>
+<li id="overloaded-binary-error" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">5.</span> 
+<div id="S5.I1.i5.p1" class="ltx_para">
+<p class="ltx_p">Otherwise the expression is erroneous.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="S5.p3" class="ltx_para">
+<p class="ltx_p">For an element-wise operator, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">a</span><span class="ltx_text ltx_lst_space"> </span>.<span class="ltx_text ltx_lst_identifier">op</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span></span>, items <a href="#overloaded-binary-predefined" title="item 1 ‣ 14.5 Overloaded Binary Operations ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a>, <a href="#overloaded-binary-arrays" title="item 4 ‣ 14.5 Overloaded Binary Operations ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a>, and <a href="#overloaded-binary-error" title="item 5 ‣ 14.5 Overloaded Binary Operations ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5</span></a> are used; e.g. the operator <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">.+</span> will always be defined in terms of <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’+’</span>.</p>
+</div>
+<div id="S5.p4" class="ltx_para">
+<p class="ltx_p">Restrictions:</p>
+<ul id="S5.I2" class="ltx_itemize">
+<li id="S5.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S5.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">A function is allowed for a binary operator if and only if it has at
+least two inputs; at least one of which is of the operator record
+class, and the first two inputs shall not have default values, and all
+inputs after the first two must have default values.</p>
+</div>
+</li>
+<li id="S5.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S5.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">For an operator record class there shall not exist any
+(potential) call that lead to multiple matches in (2) above.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="overloaded-unary-operations" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">14.6 </span>Overloaded Unary Operations</h2>
+
+<div id="S6.p1" class="ltx_para">
+<p class="ltx_p">Let <math id="S6.p1.m1" class="ltx_Math" alttext="X" display="inline"><mi>X</mi></math> denote a unary operator and consider an expression
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><math id="S6.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">a</span></span> where <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">a</span> is an instance or array of instances of class
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">A</span>. Then <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><math id="S6.p1.m3" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">a</span></span> is evaluated in the following way.</p>
+</div>
+<div id="S6.p2" class="ltx_para">
+<ol id="S6.I1" class="ltx_enumerate">
+<li id="S6.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="S6.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">A</span> is a predefined type, then the corresponding built-in
+operation is performed.</p>
+</div>
+</li>
+<li id="S6.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="S6.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">A</span> is an operator record class and there exists a unique
+function <math id="S6.I1.i2.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> in <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">A</span>.<math id="S6.I1.i2.p1.m2" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math></span> such that <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">A</span>.<math id="S6.I1.i2.p1.m3" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math>.<math id="S6.I1.i2.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi mathbackground="#FFFFFF">f</mi></math>(<span class="ltx_text ltx_lst_identifier">a</span>)</span> is a valid
+match, then <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><math id="S6.I1.i2.p1.m5" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">a</span></span> is evaluated to <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier">A</span>.<math id="S6.I1.i2.p1.m6" class="ltx_Math" alttext="X" display="inline"><mi mathbackground="#FFFFFF">X</mi></math>.<math id="S6.I1.i2.p1.m7" class="ltx_Math" alttext="f" display="inline"><mi mathbackground="#FFFFFF">f</mi></math>(<span class="ltx_text ltx_lst_identifier">a</span>)</span>. It is an
+error, if there are multiple valid matches.</p>
+</div>
+</li>
+<li id="S6.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="S6.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Otherwise, if <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">a</span> is an array expression, then the expression
+is conceptually evaluated according to the rules of <a href="arrays.html#scalar-vector-matrix-and-array-operator-functions" title="10.6 Scalar, Vector, Matrix, and Array Operator Functions ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">10.6</span></a>.</p>
+</div>
+</li>
+<li id="S6.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">4.</span> 
+<div id="S6.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">Otherwise the expression is erroneous.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="S6.p3" class="ltx_para">
+<p class="ltx_p">Restrictions:</p>
+<ul id="S6.I2" class="ltx_itemize">
+<li id="S6.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S6.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">A function is allowed for a unary operator if and only if it has least
+one input; and the first input is of the record type (or suitable
+arrays of such) and does not have a default value, and all inputs
+after the first one must have default values.</p>
+</div>
+</li>
+<li id="S6.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S6.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">For an operator record class there shall not exist any
+(potential) call that lead to multiple matches in (2) above.</p>
+</div>
+</li>
+<li id="S6.I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S6.I2.i3.p1" class="ltx_para">
+<p class="ltx_p">A binary and/or unary operator-class may only contain functions that
+are allowed for this binary and/or unary operator-class; and in case
+of <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’-’</span> it is the union of these sets, since it may define both a unary
+(negation) and binary (subtraction) operator.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="example-of-overloading-for-complex-numbers" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">14.7 </span>Example of Overloading for Complex Numbers</h2>
+
+<div id="S7.p1" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example:
+The rules in the previous subsections are demonstrated at hand
+of a record class to work conveniently with complex numbers:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,b3BlcmF0b3IgcmVjb3JkIENvbXBsZXggIlJlY29yZCBkZWZpbmluZyBhIENvbXBsZXggbnVtYmVyIgogIFJlYWwgcmUgIlJlYWwgcGFydCBvZiBjb21wbGV4IG51bWJlciI7CiAgUmVhbCBpbSAiSW1hZ2luYXJ5IHBhcnQgb2YgY29tcGxleCBudW1iZXIiOwogIGVuY2Fwc3VsYXRlZCBvcGVyYXRvciAnY29uc3RydWN0b3InCiAgICBpbXBvcnQgQ29tcGxleDsKICAgIGZ1bmN0aW9uIGZyb21SZWFsCiAgICAgIGlucHV0IFJlYWwgcmU7CiAgICAgIGlucHV0IFJlYWwgaW0gOj0gMDsKICAgICAgb3V0cHV0IENvbXBsZXggcmVzdWx0KHJlPXJlLCBpbT1pbSk7CiAgICBhbGdvcml0aG0KICAgICAgYW5ub3RhdGlvbihJbmxpbmU9dHJ1ZSk7CiAgICBlbmQgZnJvbVJlYWw7CiAgZW5kICdjb25zdHJ1Y3Rvcic7CgogIGVuY2Fwc3VsYXRlZCBvcGVyYXRvciBmdW5jdGlvbiAnKycgLy8gc2hvcnQgaGFuZCBub3RhdGlvbiwgc2VlICFcY3JlZntzcGVjaWFsaXplZC1jbGFzc2VzfSEKICAgIGltcG9ydCBDb21wbGV4OwogICAgaW5wdXQgQ29tcGxleCBjMTsKICAgIGlucHV0IENvbXBsZXggYzI7CiAgICBvdXRwdXQgQ29tcGxleCByZXN1bHQgIj0gYzEgKyBjMiI7CiAgYWxnb3JpdGhtCiAgICByZXN1bHQgOj0gQ29tcGxleChjMS5yZSArIGMyLnJlLCBjMS5pbSArIGMyLmltKTsKICAgYW5ub3RhdGlvbihJbmxpbmU9dHJ1ZSk7CiAgZW5kICcrJzsKCiAgZW5jYXBzdWxhdGVkIG9wZXJhdG9yICctJwogICAgaW1wb3J0IENvbXBsZXg7CiAgICBmdW5jdGlvbiBuZWdhdGUKICAgICAgaW5wdXQgQ29tcGxleCBjOwogICAgICBvdXRwdXQgQ29tcGxleCByZXN1bHQgIj0gLSBjIjsKICAgIGFsZ29yaXRobQogICAgICByZXN1bHQgOj0gQ29tcGxleCgtYy5yZSwgLWMuaW0pOwogICAgICBhbm5vdGF0aW9uKElubGluZT10cnVlKTsKICAgIGVuZCBuZWdhdGU7CgogICAgZnVuY3Rpb24gc3VidHJhY3QKICAgICAgaW5wdXQgQ29tcGxleCBjMTsKICAgICAgaW5wdXQgQ29tcGxleCBjMjsKICAgICAgb3V0cHV0IENvbXBsZXggcmVzdWx0ICI9IGMxIC0gYzIiOwogICAgYWxnb3JpdGhtCiAgICAgIHJlc3VsdCA6PSBDb21wbGV4KGMxLnJlIC0gYzIucmUsIGMxLmltIC0gYzIuaW0pOwogICAgICBhbm5vdGF0aW9uKElubGluZT10cnVlKTsKICAgIGVuZCBzdWJ0cmFjdDsKICBlbmQgJy0nOwoKICBlbmNhcHN1bGF0ZWQgb3BlcmF0b3IgZnVuY3Rpb24gJyonCiAgICBpbXBvcnQgQ29tcGxleDsKICAgIGlucHV0IENvbXBsZXggYzE7CiAgICBpbnB1dCBDb21wbGV4IGMyOwogICAgb3V0cHV0IENvbXBsZXggcmVzdWx0ICI9IGMxICogYzIiOwogIGFsZ29yaXRobQogICAgcmVzdWx0IDo9IENvbXBsZXgoYzEucmUqYzIucmUgLSBjMS5pbSpjMi5pbSwgYzEucmUqYzIuaW0gKyBjMS5pbSpjMi5yZSk7CiAgICBhbm5vdGF0aW9uKElubGluZT10cnVlKTsKICBlbmQgJyonOwoKICBlbmNhcHN1bGF0ZWQgb3BlcmF0b3IgZnVuY3Rpb24gJy8nCiAgICBpbXBvcnQgQ29tcGxleDsgaW5wdXQgQ29tcGxleCBjMTsKICAgIGlucHV0IENvbXBsZXggYzI7CiAgICBvdXRwdXQgQ29tcGxleCByZXN1bHQgIj0gYzEgLyBjMiI7CiAgYWxnb3JpdGhtCiAgICByZXN1bHQgOj0gQ29tcGxleCgoIGMxLnJlKmMyLnJlICsgYzEuaW0qYzIuaW0pLyhjMi5yZV4yICsKICAgIGMyLmltXjIpLAogICAgKC1jMS5yZSpjMi5pbSArIGMxLmltKmMyLnJlKS8oYzIucmVeMiArIGMyLmltXjIpKTsKICAgYW5ub3RhdGlvbihJbmxpbmU9dHJ1ZSk7CiAgZW5kICcvJzsKCiAgZW5jYXBzdWxhdGVkIG9wZXJhdG9yIGZ1bmN0aW9uICc9PScKICAgIGltcG9ydCBDb21wbGV4OwogICAgaW5wdXQgQ29tcGxleCBjMTsKICAgIGlucHV0IENvbXBsZXggYzI7CiAgICBvdXRwdXQgQm9vbGVhbiByZXN1bHQgIj0gYzEgPT0gYzIiOwogIGFsZ29yaXRobQogICAgcmVzdWx0IDo9IGMxLnJlID09IGMyLnJlIGFuZCBjMS5pbSA9PSBjMi5pbTsKICAgYW5ub3RhdGlvbihJbmxpbmU9dHJ1ZSk7CiBlbmQgJz09JzsKCiAgZW5jYXBzdWxhdGVkIG9wZXJhdG9yIGZ1bmN0aW9uICdTdHJpbmcnCiAgICBpbXBvcnQgQ29tcGxleDsKICAgIGlucHV0IENvbXBsZXggYzsKICAgIGlucHV0IFN0cmluZyBuYW1lIDo9ICJqIiAiTmFtZSBvZiB2YXJpYWJsZSByZXByZXNlbnRpbmcgc3FydCgtMSkgaW4gdGhlIHN0cmluZyI7CiAgICBpbnB1dCBJbnRlZ2VyIHNpZ25pZmljYW50RGlnaXRzPTYgIk51bWJlciBvZiBzaWduaWZpY2FudCBkaWdpdHMgdG8gYmUgc2hvd24iOwogICAgb3V0cHV0IFN0cmluZyBzOwogIGFsZ29yaXRobQogICAgcyA6PSBTdHJpbmcoYy5yZSwgc2lnbmlmaWNhbnREaWdpdHM9c2lnbmlmaWNhbnREaWdpdHMpOwogICAgaWYgYy5pbSA8PiAwIHRoZW4KICAgICAgcyA6PSBpZiAgYy5pbSA+IDAgdGhlbiBzICsgIiArICIKICAgZWxzZSBzICsgIiAtICI7CiAgICAgIHMgOj0gcyArIFN0cmluZyhhYnMoYy5pbSksIHNpZ25pZmljYW50RGlnaXRzPXNpZ25pZmljYW50RGlnaXRzKSArIG5hbWU7CiAgIGVuZCBpZjsKICBlbmQgJ1N0cmluZyc7CgogIGVuY2Fwc3VsYXRlZCBmdW5jdGlvbiBqCiAgICBpbXBvcnQgQ29tcGxleDsKICAgIG91dHB1dCBDb21wbGV4IGM7CiAgYWxnb3JpdGhtCiAgICBjIDo9IENvbXBsZXgoMCwxKTsKICAgIGFubm90YXRpb24oSW5saW5lPXRydWUpOwogIGVuZCBqOwoKICBlbmNhcHN1bGF0ZWQgb3BlcmF0b3IgZnVuY3Rpb24gJzAnCiAgICBpbXBvcnQgQ29tcGxleDsKICAgIG91dHB1dCBDb21wbGV4IGM7CiAgYWxnb3JpdGhtCiAgICBjIDo9IENvbXBsZXgoMCwwKTsKICAgIGFubm90YXRpb24oSW5saW5lPXRydWUpOwogIGVuZCAnMCc7CmVuZCBDb21wbGV4OwoKZnVuY3Rpb24gZWlnZW5WYWx1ZXMKICBpbnB1dCBSZWFsIEEgWzosOl07CiAgb3V0cHV0IENvbXBsZXggZXZbc2l6ZShBLCAxKV07CiAgcHJvdGVjdGVkCiAgSW50ZWdlciBueD1zaXplKEEsIDEpOwogIFJlYWwgZXZhbFtueCwyXTsKICBJbnRlZ2VyIGk7CmFsZ29yaXRobQogIGV2YWwgOj0gTW9kZWxpY2EuTWF0aC5NYXRyaWNlcy5laWdlblZhbHVlcyhBKTsKICBmb3IgaSBpbiAxOm54IGxvb3AKICAgIGV2W2ldIDo9IENvbXBsZXgoZXZhbFtpLCAxXSwgZXZhbFtpLCAyXSk7CiAgZW5kIGZvcjsKZW5kIGVpZ2VuVmFsdWVzOwoKLy8gVXNhZ2Ugb2YgQ29tcGxleCBudW1iZXIgYWJvdmU6CiAgQ29tcGxleCBqID0gQ29tcGxleC5qKCk7CiAgQ29tcGxleCBjMSA9IDIgKyAzKmo7CiAgQ29tcGxleCBjMiA9IDMgKyA0Kmo7CiAgQ29tcGxleCBjMyA9IGMxICsgYzI7CiAgQ29tcGxleCBjNFs6XSA9IGVpZ2VuVmFsdWVzKFsxLDI7IC0zLDRdKTsKYWxnb3JpdGhtCiAgTW9kZWxpY2EuVXRpbGl0aWVzLlN0cmVhbXMucHJpbnQoImM0ID0gIiArIFN0cmluZyhjNCkpOwogIC8vIHJlc3VsdHMgaW4gb3V0cHV0OgogIC8vIGM0ID0gezIuNSArIDEuOTM2NDlqLCAyLjUgLSAxLjkzNjQ5an0=">⬇</a></div>
+<div id="lstnumberx3487" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">record</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"Record<span class="ltx_text ltx_lst_space"> </span>defining<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>Complex<span class="ltx_text ltx_lst_space"> </span>number"</span>
+</div>
+<div id="lstnumberx3488" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">re</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"Real<span class="ltx_text ltx_lst_space"> </span>part<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>complex<span class="ltx_text ltx_lst_space"> </span>number"</span>;
+</div>
+<div id="lstnumberx3489" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">im</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"Imaginary<span class="ltx_text ltx_lst_space"> </span>part<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>complex<span class="ltx_text ltx_lst_space"> </span>number"</span>;
+</div>
+<div id="lstnumberx3490" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">encapsulated</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’constructor’</span>
+</div>
+<div id="lstnumberx3491" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>;
+</div>
+<div id="lstnumberx3492" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">fromReal</span>
+</div>
+<div id="lstnumberx3493" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">re</span>;
+</div>
+<div id="lstnumberx3494" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">im</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span>0;
+</div>
+<div id="lstnumberx3495" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">result</span>(<span class="ltx_text ltx_lst_identifier">re</span>=<span class="ltx_text ltx_lst_identifier">re</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">im</span>=<span class="ltx_text ltx_lst_identifier">im</span>);
+</div>
+<div id="lstnumberx3496" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx3497" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">annotation</span>(<span class="ltx_text ltx_lst_identifier">Inline</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span>);
+</div>
+<div id="lstnumberx3498" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">fromReal</span>;
+</div>
+<div id="lstnumberx3499" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’constructor’</span>;
+</div>
+<div id="lstnumberx3500" class="ltx_listingline">
+</div>
+<div id="lstnumberx3501" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">encapsulated</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’+’</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>short<span class="ltx_text ltx_lst_space"> </span>hand<span class="ltx_text ltx_lst_space"> </span>notation,<span class="ltx_text ltx_lst_space"> </span>see<span class="ltx_text ltx_lst_space"> </span><a href="class-predefined-types-and-declarations.html#specialized-classes" title="4.6 Specialized Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">4.6</span></a></span>
+</div>
+<div id="lstnumberx3502" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>;
+</div>
+<div id="lstnumberx3503" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>;
+</div>
+<div id="lstnumberx3504" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span>;
+</div>
+<div id="lstnumberx3505" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">result</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"=<span class="ltx_text ltx_lst_space"> </span>c1<span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span>c2"</span>;
+</div>
+<div id="lstnumberx3506" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx3507" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">result</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>(<span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">re</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">re</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">im</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">im</span>);
+</div>
+<div id="lstnumberx3508" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">annotation</span>(<span class="ltx_text ltx_lst_identifier">Inline</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span>);
+</div>
+<div id="lstnumberx3509" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’+’</span>;
+</div>
+<div id="lstnumberx3510" class="ltx_listingline">
+</div>
+<div id="lstnumberx3511" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">encapsulated</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’-’</span>
+</div>
+<div id="lstnumberx3512" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>;
+</div>
+<div id="lstnumberx3513" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">negate</span>
+</div>
+<div id="lstnumberx3514" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c</span>;
+</div>
+<div id="lstnumberx3515" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">result</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"=<span class="ltx_text ltx_lst_space"> </span>-<span class="ltx_text ltx_lst_space"> </span>c"</span>;
+</div>
+<div id="lstnumberx3516" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx3517" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_identifier">result</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>(-<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">re</span>,<span class="ltx_text ltx_lst_space"> </span>-<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">im</span>);
+</div>
+<div id="lstnumberx3518" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">annotation</span>(<span class="ltx_text ltx_lst_identifier">Inline</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span>);
+</div>
+<div id="lstnumberx3519" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">negate</span>;
+</div>
+<div id="lstnumberx3520" class="ltx_listingline">
+</div>
+<div id="lstnumberx3521" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">subtract</span>
+</div>
+<div id="lstnumberx3522" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>;
+</div>
+<div id="lstnumberx3523" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span>;
+</div>
+<div id="lstnumberx3524" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">result</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"=<span class="ltx_text ltx_lst_space"> </span>c1<span class="ltx_text ltx_lst_space"> </span>-<span class="ltx_text ltx_lst_space"> </span>c2"</span>;
+</div>
+<div id="lstnumberx3525" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx3526" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_identifier">result</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>(<span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">re</span><span class="ltx_text ltx_lst_space"> </span>-<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">re</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">im</span><span class="ltx_text ltx_lst_space"> </span>-<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">im</span>);
+</div>
+<div id="lstnumberx3527" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">annotation</span>(<span class="ltx_text ltx_lst_identifier">Inline</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span>);
+</div>
+<div id="lstnumberx3528" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">subtract</span>;
+</div>
+<div id="lstnumberx3529" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’-’</span>;
+</div>
+<div id="lstnumberx3530" class="ltx_listingline">
+</div>
+<div id="lstnumberx3531" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">encapsulated</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’*’</span>
+</div>
+<div id="lstnumberx3532" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>;
+</div>
+<div id="lstnumberx3533" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>;
+</div>
+<div id="lstnumberx3534" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span>;
+</div>
+<div id="lstnumberx3535" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">result</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"=<span class="ltx_text ltx_lst_space"> </span>c1<span class="ltx_text ltx_lst_space"> </span>*<span class="ltx_text ltx_lst_space"> </span>c2"</span>;
+</div>
+<div id="lstnumberx3536" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx3537" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">result</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>(<span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">re</span>*<span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">re</span><span class="ltx_text ltx_lst_space"> </span>-<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">im</span>*<span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">im</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">re</span>*<span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">im</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">im</span>*<span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">re</span>);
+</div>
+<div id="lstnumberx3538" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">annotation</span>(<span class="ltx_text ltx_lst_identifier">Inline</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span>);
+</div>
+<div id="lstnumberx3539" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’*’</span>;
+</div>
+<div id="lstnumberx3540" class="ltx_listingline">
+</div>
+<div id="lstnumberx3541" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">encapsulated</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’/’</span>
+</div>
+<div id="lstnumberx3542" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>;
+</div>
+<div id="lstnumberx3543" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span>;
+</div>
+<div id="lstnumberx3544" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">result</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"=<span class="ltx_text ltx_lst_space"> </span>c1<span class="ltx_text ltx_lst_space"> </span>/<span class="ltx_text ltx_lst_space"> </span>c2"</span>;
+</div>
+<div id="lstnumberx3545" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx3546" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">result</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>((<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">re</span>*<span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">re</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">im</span>*<span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">im</span>)/(<span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">re</span>^2<span class="ltx_text ltx_lst_space"> </span>+
+</div>
+<div id="lstnumberx3547" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">im</span>^2),
+</div>
+<div id="lstnumberx3548" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>(-<span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">re</span>*<span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">im</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">im</span>*<span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">re</span>)/(<span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">re</span>^2<span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">im</span>^2));
+</div>
+<div id="lstnumberx3549" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">annotation</span>(<span class="ltx_text ltx_lst_identifier">Inline</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span>);
+</div>
+<div id="lstnumberx3550" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’/’</span>;
+</div>
+<div id="lstnumberx3551" class="ltx_listingline">
+</div>
+<div id="lstnumberx3552" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">encapsulated</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’==’</span>
+</div>
+<div id="lstnumberx3553" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>;
+</div>
+<div id="lstnumberx3554" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>;
+</div>
+<div id="lstnumberx3555" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span>;
+</div>
+<div id="lstnumberx3556" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Boolean</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">result</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"=<span class="ltx_text ltx_lst_space"> </span>c1<span class="ltx_text ltx_lst_space"> </span>==<span class="ltx_text ltx_lst_space"> </span>c2"</span>;
+</div>
+<div id="lstnumberx3557" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx3558" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">result</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">re</span><span class="ltx_text ltx_lst_space"> </span>==<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">re</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">and</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span>.<span class="ltx_text ltx_lst_identifier">im</span><span class="ltx_text ltx_lst_space"> </span>==<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span>.<span class="ltx_text ltx_lst_identifier">im</span>;
+</div>
+<div id="lstnumberx3559" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">annotation</span>(<span class="ltx_text ltx_lst_identifier">Inline</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span>);
+</div>
+<div id="lstnumberx3560" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’==’</span>;
+</div>
+<div id="lstnumberx3561" class="ltx_listingline">
+</div>
+<div id="lstnumberx3562" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">encapsulated</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’String’</span>
+</div>
+<div id="lstnumberx3563" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>;
+</div>
+<div id="lstnumberx3564" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c</span>;
+</div>
+<div id="lstnumberx3565" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">String</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">name</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"j"</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"Name<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>variable<span class="ltx_text ltx_lst_space"> </span>representing<span class="ltx_text ltx_lst_space"> </span>sqrt(-1)<span class="ltx_text ltx_lst_space"> </span>in<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>string"</span>;
+</div>
+<div id="lstnumberx3566" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Integer</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">significantDigits</span>=6<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"Number<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>significant<span class="ltx_text ltx_lst_space"> </span>digits<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>be<span class="ltx_text ltx_lst_space"> </span>shown"</span>;
+</div>
+<div id="lstnumberx3567" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">String</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">s</span>;
+</div>
+<div id="lstnumberx3568" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx3569" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">s</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">String</span>(<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">re</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">significantDigits</span>=<span class="ltx_text ltx_lst_identifier">significantDigits</span>);
+</div>
+<div id="lstnumberx3570" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">im</span><span class="ltx_text ltx_lst_space"> </span>&lt;&gt;<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx3571" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_identifier">s</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">im</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">s</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"<span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span>"</span>
+</div>
+<div id="lstnumberx3572" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">s</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"<span class="ltx_text ltx_lst_space"> </span>-<span class="ltx_text ltx_lst_space"> </span>"</span>;
+</div>
+<div id="lstnumberx3573" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_identifier">s</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">s</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">String</span>(<span class="ltx_text ltx_lst_identifier">abs</span>(<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">im</span>),<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">significantDigits</span>=<span class="ltx_text ltx_lst_identifier">significantDigits</span>)<span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">name</span>;
+</div>
+<div id="lstnumberx3574" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span>;
+</div>
+<div id="lstnumberx3575" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’String’</span>;
+</div>
+<div id="lstnumberx3576" class="ltx_listingline">
+</div>
+<div id="lstnumberx3577" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">encapsulated</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span>
+</div>
+<div id="lstnumberx3578" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>;
+</div>
+<div id="lstnumberx3579" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c</span>;
+</div>
+<div id="lstnumberx3580" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx3581" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">c</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>(0,1);
+</div>
+<div id="lstnumberx3582" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">annotation</span>(<span class="ltx_text ltx_lst_identifier">Inline</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span>);
+</div>
+<div id="lstnumberx3583" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span>;
+</div>
+<div id="lstnumberx3584" class="ltx_listingline">
+</div>
+<div id="lstnumberx3585" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">encapsulated</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’0’</span>
+</div>
+<div id="lstnumberx3586" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>;
+</div>
+<div id="lstnumberx3587" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c</span>;
+</div>
+<div id="lstnumberx3588" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx3589" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">c</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>(0,0);
+</div>
+<div id="lstnumberx3590" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">annotation</span>(<span class="ltx_text ltx_lst_identifier">Inline</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span>);
+</div>
+<div id="lstnumberx3591" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">’0’</span>;
+</div>
+<div id="lstnumberx3592" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>;
+</div>
+<div id="lstnumberx3593" class="ltx_listingline">
+</div>
+<div id="lstnumberx3594" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">eigenValues</span>
+</div>
+<div id="lstnumberx3595" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A</span><span class="ltx_text ltx_lst_space"> </span>[:,:];
+</div>
+<div id="lstnumberx3596" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">ev</span>[<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">size</span>(<span class="ltx_text ltx_lst_identifier">A</span>,<span class="ltx_text ltx_lst_space"> </span>1)];
+</div>
+<div id="lstnumberx3597" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">protected</span>
+</div>
+<div id="lstnumberx3598" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Integer</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">nx</span>=<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">size</span>(<span class="ltx_text ltx_lst_identifier">A</span>,<span class="ltx_text ltx_lst_space"> </span>1);
+</div>
+<div id="lstnumberx3599" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">eval</span>[<span class="ltx_text ltx_lst_identifier">nx</span>,2];
+</div>
+<div id="lstnumberx3600" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Integer</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span>;
+</div>
+<div id="lstnumberx3601" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx3602" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">eval</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Modelica</span>.<span class="ltx_text ltx_lst_identifier">Math</span>.<span class="ltx_text ltx_lst_identifier">Matrices</span>.<span class="ltx_text ltx_lst_identifier">eigenValues</span>(<span class="ltx_text ltx_lst_identifier">A</span>);
+</div>
+<div id="lstnumberx3603" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">nx</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span>
+</div>
+<div id="lstnumberx3604" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">ev</span>[<span class="ltx_text ltx_lst_identifier">i</span>]<span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>(<span class="ltx_text ltx_lst_identifier">eval</span>[<span class="ltx_text ltx_lst_identifier">i</span>,<span class="ltx_text ltx_lst_space"> </span>1],<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">eval</span>[<span class="ltx_text ltx_lst_identifier">i</span>,<span class="ltx_text ltx_lst_space"> </span>2]);
+</div>
+<div id="lstnumberx3605" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span>;
+</div>
+<div id="lstnumberx3606" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">eigenValues</span>;
+</div>
+<div id="lstnumberx3607" class="ltx_listingline">
+</div>
+<div id="lstnumberx3608" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Usage<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>Complex<span class="ltx_text ltx_lst_space"> </span>number<span class="ltx_text ltx_lst_space"> </span>above:</span>
+</div>
+<div id="lstnumberx3609" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>.<span class="ltx_text ltx_lst_identifier">j</span>();
+</div>
+<div id="lstnumberx3610" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>2<span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span>3*<span class="ltx_text ltx_lst_identifier">j</span>;
+</div>
+<div id="lstnumberx3611" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>3<span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span>4*<span class="ltx_text ltx_lst_identifier">j</span>;
+</div>
+<div id="lstnumberx3612" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c3</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c1</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c2</span>;
+</div>
+<div id="lstnumberx3613" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c4</span>[:]<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">eigenValues</span>([1,2;<span class="ltx_text ltx_lst_space"> </span>-3,4]);
+</div>
+<div id="lstnumberx3614" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx3615" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">Modelica</span>.<span class="ltx_text ltx_lst_identifier">Utilities</span>.<span class="ltx_text ltx_lst_identifier">Streams</span>.<span class="ltx_text ltx_lst_identifier">print</span>(<span class="ltx_text ltx_lst_string" style="color:#000000;">"c4<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>"</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">String</span>(<span class="ltx_text ltx_lst_identifier">c4</span>));
+</div>
+<div id="lstnumberx3616" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>results<span class="ltx_text ltx_lst_space"> </span>in<span class="ltx_text ltx_lst_space"> </span>output:</span>
+</div>
+<div id="lstnumberx3617" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>c4<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{2.5<span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span>1.93649j,<span class="ltx_text ltx_lst_space"> </span>2.5<span class="ltx_text ltx_lst_space"> </span>-<span class="ltx_text ltx_lst_space"> </span>1.93649j}</span>
+</div>
+</div>
+</div>
+<div id="S7.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">How overloaded operators can be symbolically processed. Example:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,UmVhbCBhOwpDb21wbGV4IGI7CkNvbXBsZXggYyA9IGEgKyBiOw==">⬇</a></div>
+<div id="lstnumberx3618" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">a</span>;
+</div>
+<div id="lstnumberx3619" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span>;
+</div>
+<div id="lstnumberx3620" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">Complex</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">a</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span>;
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Due to inlining of functions, the equation for <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">c</span> is
+transformed to:
+</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,YyA9IENvbXBsZXguJysnLmFkZChDb21wbGV4Lidjb25zdHJ1Y3RvcicuZnJvbVJlYWwoYSksIGIpOwogID0gQ29tcGxleC4nKycuYWRkKENvbXBsZXgocmU9YSxpbT0wKSwgYikKICA9IENvbXBsZXgocmU9YStiLnJlLCBpbT1iLmltKTs=">⬇</a></div>
+<div id="lstnumberx3621" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">c</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’+’</span>.<span class="ltx_text ltx_lst_identifier">add</span>(<span class="ltx_text ltx_lst_identifier">Complex</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’constructor’</span>.<span class="ltx_text ltx_lst_identifier">fromReal</span>(<span class="ltx_text ltx_lst_identifier">a</span>),<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span>);
+</div>
+<div id="lstnumberx3622" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’+’</span>.<span class="ltx_text ltx_lst_identifier">add</span>(<span class="ltx_text ltx_lst_identifier">Complex</span>(<span class="ltx_text ltx_lst_identifier">re</span>=<span class="ltx_text ltx_lst_identifier">a</span>,<span class="ltx_text ltx_lst_identifier">im</span>=0),<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span>)
+</div>
+<div id="lstnumberx3623" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>(<span class="ltx_text ltx_lst_identifier">re</span>=<span class="ltx_text ltx_lst_identifier">a</span>+<span class="ltx_text ltx_lst_identifier">b</span>.<span class="ltx_text ltx_lst_identifier">re</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">im</span>=<span class="ltx_text ltx_lst_identifier">b</span>.<span class="ltx_text ltx_lst_identifier">im</span>);
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">or</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Yy5yZSA9IGEgKyBiLnJlOwpjLmltID0gYi5pbTs=">⬇</a></div>
+<div id="lstnumberx3624" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">re</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">a</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span>.<span class="ltx_text ltx_lst_identifier">re</span>;
+</div>
+<div id="lstnumberx3625" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">im</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span>.<span class="ltx_text ltx_lst_identifier">im</span>;
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">These equations can be symbolically processed as other equations.</span></p>
+</div>
+<div id="S7.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Complex can be used in a connector:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICBvcGVyYXRvciByZWNvcmQgQ29tcGxleFZvbHRhZ2UgPSBDb21wbGV4KHJlKHVuaXQ9IlYiKSxpbSh1bml0PSJWIikpOwogIG9wZXJhdG9yIHJlY29yZCBDb21wbGV4Q3VycmVudCA9IENvbXBsZXgocmUodW5pdD0iQSIpLGltKHVuaXQ9IkEiKSk7CgogIGNvbm5lY3RvciBDb21wbGV4UGluCiAgICBDb21wbGV4Vm9sdGFnZSB2OwogICAgZmxvdyBDb21wbGV4Q3VycmVudCBpOwogIGVuZCBDb21wbGV4UGluOwoKICBDb21wbGV4UGluIHAxLHAyLHAzOwplcXVhdGlvbgogIGNvbm5lY3QocDEscDIpOwogIGNvbm5lY3QocDEscDMpOw==">⬇</a></div>
+<div id="lstnumberx3626" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">record</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">ComplexVoltage</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>(<span class="ltx_text ltx_lst_identifier">re</span>(<span class="ltx_text ltx_lst_identifier">unit</span>=<span class="ltx_text ltx_lst_string" style="color:#000000;">"V"</span>),<span class="ltx_text ltx_lst_identifier">im</span>(<span class="ltx_text ltx_lst_identifier">unit</span>=<span class="ltx_text ltx_lst_string" style="color:#000000;">"V"</span>));
+</div>
+<div id="lstnumberx3627" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">record</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">ComplexCurrent</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>(<span class="ltx_text ltx_lst_identifier">re</span>(<span class="ltx_text ltx_lst_identifier">unit</span>=<span class="ltx_text ltx_lst_string" style="color:#000000;">"A"</span>),<span class="ltx_text ltx_lst_identifier">im</span>(<span class="ltx_text ltx_lst_identifier">unit</span>=<span class="ltx_text ltx_lst_string" style="color:#000000;">"A"</span>));
+</div>
+<div id="lstnumberx3628" class="ltx_listingline">
+</div>
+<div id="lstnumberx3629" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">connector</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">ComplexPin</span>
+</div>
+<div id="lstnumberx3630" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">ComplexVoltage</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">v</span>;
+</div>
+<div id="lstnumberx3631" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">flow</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">ComplexCurrent</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span>;
+</div>
+<div id="lstnumberx3632" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">ComplexPin</span>;
+</div>
+<div id="lstnumberx3633" class="ltx_listingline">
+</div>
+<div id="lstnumberx3634" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">ComplexPin</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">p1</span>,<span class="ltx_text ltx_lst_identifier">p2</span>,<span class="ltx_text ltx_lst_identifier">p3</span>;
+</div>
+<div id="lstnumberx3635" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span>
+</div>
+<div id="lstnumberx3636" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">connect</span>(<span class="ltx_text ltx_lst_identifier">p1</span>,<span class="ltx_text ltx_lst_identifier">p2</span>);
+</div>
+<div id="lstnumberx3637" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">connect</span>(<span class="ltx_text ltx_lst_identifier">p1</span>,<span class="ltx_text ltx_lst_identifier">p3</span>);
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The two connect-equations result in the following connection equations:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cDEudiA9IHAyLnY7CnAxLnYgPSBwMy52OwpwMS5pICsgcDIuaSArIHAzLmkgPSBDb21wbGV4LicwJygpOwovLyBDb21wbGV4LicrJyhwMS5pLCBDb21wbGV4LicrJyhwMi5pLCBwMy5pKSkgPSBDb21wbGV4LicwJygpOw==">⬇</a></div>
+<div id="lstnumberx3638" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">p1</span>.<span class="ltx_text ltx_lst_identifier">v</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">p2</span>.<span class="ltx_text ltx_lst_identifier">v</span>;
+</div>
+<div id="lstnumberx3639" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">p1</span>.<span class="ltx_text ltx_lst_identifier">v</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">p3</span>.<span class="ltx_text ltx_lst_identifier">v</span>;
+</div>
+<div id="lstnumberx3640" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">p1</span>.<span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">p2</span>.<span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">p3</span>.<span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Complex</span>.<span class="ltx_text ltx_lst_string" style="color:#000000;">’0’</span>();
+</div>
+<div id="lstnumberx3641" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Complex.’+’(p1.i,<span class="ltx_text ltx_lst_space"> </span>Complex.’+’(p2.i,<span class="ltx_text ltx_lst_space"> </span>p3.i))<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>Complex.’0’();</span>
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The restrictions on extends are intended to avoid combining two variants inheriting from the same operator record, but with possibly different operations; thus <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">ComplexVoltage</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">ComplexCurrent</span> still use the operations from <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">Complex</span>. The restriction that it is not legal to extend from any of its enclosing scopes implies that:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cGFja2FnZSBBCiAgZXh0ZW5kcyBJY29uOyAvLyBPawogIG9wZXJhdG9yIHJlY29yZCBCICRcbGRvdHMkIGVuZCBCOwplbmQgQTsKCnBhY2thZ2UgQTIKICBleHRlbmRzIEEoJFxsZG90cyQpOyAvLyBOb3QgbGVnYWwKZW5kIEEyOwoKcGFja2FnZSBBMyA9IEEoJFxsZG90cyQpOyAvLyBOb3QgbGVnYWw=">⬇</a></div>
+<div id="lstnumberx3642" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">package</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A</span>
+</div>
+<div id="lstnumberx3643" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">extends</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Icon</span>;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Ok</span>
+</div>
+<div id="lstnumberx3644" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">record</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">B</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3644.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">B</span>;
+</div>
+<div id="lstnumberx3645" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A</span>;
+</div>
+<div id="lstnumberx3646" class="ltx_listingline">
+</div>
+<div id="lstnumberx3647" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">package</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A2</span>
+</div>
+<div id="lstnumberx3648" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">extends</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A</span>(<math id="lstnumberx3648.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>);<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Not<span class="ltx_text ltx_lst_space"> </span>legal</span>
+</div>
+<div id="lstnumberx3649" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A2</span>;
+</div>
+<div id="lstnumberx3650" class="ltx_listingline">
+</div>
+<div id="lstnumberx3651" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">package</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A3</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A</span>(<math id="lstnumberx3651.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>);<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Not<span class="ltx_text ltx_lst_space"> </span>legal</span>
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div>
+<a href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">References</span></a><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="index"><span class="ltx_text ltx_ref_title">Index</span></a><a href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Fri Apr 30 16:20:48 2021 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,1310 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>A Modelica Concrete Syntax‣ Modelica® Language Specification version 3.6-dev</title>
+<!--Generated on Fri Apr 30 16:20:48 2021 by LaTeXML (version 0.8.5) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on April 30, 2021.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="css/MLS.css" type="text/css">
+<link rel="stylesheet" href="css/MLS-navbar-left.css" type="text/css">
+<script src="LaTeXML-maybeMathjax.js" type="text/javascript"></script>
+<link rel="up" href="MLS.html" title="Modelica® Language Specification version 3.6-dev">
+<link rel="start" href="MLS.html" title="Modelica® Language Specification version 3.6-dev">
+<link rel="prev" href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="next" href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="bibliography" href="bib.html" title="References ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="index" href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6-dev">
+</head>
+<body>
+<nav class="ltx_page_navbar"><a href="MLS.html" title="Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6-dev</span></a>
+<div class="ltx_TOC">
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modelica Concrete Syntax</span></span>
+<ul class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#lexical-conventions" title="A.1 Lexical conventions ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.1 </span>Lexical conventions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#grammar" title="A.2 Grammar ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.2 </span>Grammar</span></a>
+<ul class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#stored-definition-within" title="A.2.1 Stored Definition – Within ‣ A.2 Grammar ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.2.1 </span>Stored Definition – Within</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#class-definition" title="A.2.2 Class Definition ‣ A.2 Grammar ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.2.2 </span>Class Definition</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#extends" title="A.2.3 Extends ‣ A.2 Grammar ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.2.3 </span>Extends</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#component-clause" title="A.2.4 Component Clause ‣ A.2 Grammar ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.2.4 </span>Component Clause</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#modification" title="A.2.5 Modification ‣ A.2 Grammar ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.2.5 </span>Modification</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#equations1" title="A.2.6 Equations ‣ A.2 Grammar ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.2.6 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#expressions1" title="A.2.7 Expressions ‣ A.2 Grammar ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.2.7 </span>Expressions</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_index"><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div>
+<a href="MLS.html" title="Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6-dev</span></a><a href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a><a href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_appendix" lang="en">
+<h1 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix A </span>Modelica Concrete Syntax</h1>
+<div class="ltx_dates">(April 30, 2021)</div>
+
+<section id="lexical-conventions" class="ltx_section">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">A.1 </span>Lexical conventions</h1>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">The following syntactic meta symbols are used (extended BNF):</p>
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_t"><span class="ltx_text ltx_font_italic">Syntax</span></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_t"><span class="ltx_text ltx_font_italic">Description</span></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_tt"><span class="ltx_text ltx_lst_language_grammar ltx_lstlisting" style="background-color:#FFFFFF;">[<span class="ltx_text ltx_lst_space"> </span><math id="S1.p1.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math><span class="ltx_text ltx_lst_space"> </span>]</span></th>
+<td class="ltx_td ltx_align_left ltx_border_tt">Optional</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row"><span class="ltx_text ltx_lst_language_grammar ltx_lstlisting" style="background-color:#FFFFFF;">{<span class="ltx_text ltx_lst_space"> </span><math id="S1.p1.m2" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math><span class="ltx_text ltx_lst_space"> </span>}</span></th>
+<td class="ltx_td ltx_align_left">Repeat zero or more times</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row"><span class="ltx_text ltx_lst_language_grammar ltx_lstlisting" style="background-color:#FFFFFF;"><math id="S1.p1.m3" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><math id="S1.p1.m4" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math></span></th>
+<td class="ltx_td ltx_align_left">Alternatives</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_b"><span class="ltx_text ltx_lst_language_grammar ltx_lst_string ltx_lstlisting" style="color:#003378;background-color:#FFFFFF;">"<math id="S1.p1.m5" class="ltx_Math" alttext="\mathit{text}" display="inline"><mi mathbackground="#FFFFFF" mathcolor="#003378">𝑡𝑒𝑥𝑡</mi></math>"</span></th>
+<td class="ltx_td ltx_align_left ltx_border_b">The <math id="S1.p1.m6" class="ltx_Math" alttext="\mathit{text}" display="inline"><mi>𝑡𝑒𝑥𝑡</mi></math> is treated as a single token (no white-space between any characters)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p class="ltx_p">The following lexical units are defined:
+</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,SURFTlQgPSBOT04tRElHSVQgeyBESUdJVCB8IE5PTi1ESUdJVCB9IHwgUS1JREVOVApRLUlERU5UID0gIiciIHsgUS1DSEFSIHwgUy1FU0NBUEUgfSAiJyIKTk9OLURJR0lUID0gIl8iIHwgbGV0dGVycyAiYSIgJFxsZG90cyQgInoiIHwgbGV0dGVycyAiQSIgJFxsZG90cyQgIloiCkRJR0lUID0gIjAiIHwgIjEiIHwgIjIiIHwgIjMiIHwgIjQiIHwgIjUiIHwgIjYiIHwgIjciIHwgIjgiIHwgIjkiClEtQ0hBUiA9IE5PTi1ESUdJVCB8IERJR0lUIHwgIiEiIHwgIiMiIHwgIiRcbWJveHtcdGV4dGRvbGxhcn0kIiB8ICIlIiB8ICImIiB8ICIoIiB8ICIpIgogICB8ICIqIiB8ICIrIiB8ICIsIiB8ICItIiB8ICIuIiB8ICIvIiB8ICI6IiB8ICI7IiB8ICI8IiB8ICI+IiB8ICI9IgogICB8ICI/IiB8ICJAIiB8ICJbIiB8ICJdIiB8ICJeIiB8ICJ7IiB8ICJ9IiB8ICJ8IiB8ICJ+IiB8ICIgIiB8ICIiIgpTLUVTQ0FQRSA9ICJcJyIgfCAiXCIiIHwgIlw/IiB8ICJcXCIKICAgfCAiXGEiIHwgIlxiIiB8ICJcZiIgfCAiXG4iIHwgIlxyIiB8ICJcdCIgfCAiXHYiClNUUklORyA9ICIiIiB7IFMtQ0hBUiB8IFMtRVNDQVBFIH0gIiIiClMtQ0hBUiA9IHNlZSBiZWxvdwpVTlNJR05FRC1JTlRFR0VSID0gRElHSVQgeyBESUdJVCB9ClVOU0lHTkVELVJFQUwgPQogICBVTlNJR05FRC1JTlRFR0VSICAiLiIgWyBVTlNJR05FRC1JTlRFR0VSIF0KICAgfCBVTlNJR05FRF9JTlRFR0VSIFsgIi4iIFsgVU5TSUdORURfSU5URUdFUiBdIF0KICAgICAoICJlIiB8ICJFIiApIFsgIisiIHwgIi0iIF0gVU5TSUdORUQtSU5URUdFUgogICB8ICIuIiAgVU5TSUdORUQtSU5URUdFUiBbICggImUiIHwgIkUiICkgWyAiKyIgfCAiLSIgXSBVTlNJR05FRC1JTlRFR0VSIF0=">⬇</a></div>
+<div id="lstnumberx4986" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">NON-DIGIT</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">DIGIT</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">NON-DIGIT</span><span class="ltx_text ltx_lst_space"> </span>}<span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">Q-IDENT</span>
+</div>
+<div id="lstnumberx4987" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">Q-IDENT</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"’"</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">Q-CHAR</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">S-ESCAPE</span><span class="ltx_text ltx_lst_space"> </span>}<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"’"</span>
+</div>
+<div id="lstnumberx4988" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">NON-DIGIT</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"_"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">letters</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"a"</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx4988.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"z"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">letters</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"A"</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx4988.m2" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"Z"</span>
+</div>
+<div id="lstnumberx4989" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">DIGIT</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"0"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"1"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"2"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"3"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"4"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"5"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"6"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"7"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"8"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"9"</span>
+</div>
+<div id="lstnumberx4990" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">Q-CHAR</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">NON-DIGIT</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">DIGIT</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"!"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"#"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"<span class="ltx_text ltx_markedasmath">$</span>"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"%"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"&amp;"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">")"</span>
+</div>
+<div id="lstnumberx4991" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"*"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"+"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"-"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"."</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"/"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">":"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"&lt;"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"&gt;"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"="</span>
+</div>
+<div id="lstnumberx4992" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"?"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"@"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"["</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"]"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"^"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"{"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"}"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"|"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"~"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"<span class="ltx_text ltx_lst_space"> </span>"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">""</span><span class="ltx_text ltx_lst_string" style="color:#003378;">"</span>
+</div>
+<div id="lstnumberx4993" class="ltx_listingline">
+<span class="ltx_text" style="color:#003378;">S-ESCAPE</span><span class="ltx_text ltx_lst_space" style="color:#003378;"> </span><span class="ltx_text" style="color:#003378;">=</span><span class="ltx_text ltx_lst_space" style="color:#003378;"> </span><span class="ltx_text" style="color:#003378;">"</span>\’<span class="ltx_text ltx_lst_string"></span><span class="ltx_text" style="color:#003378;">"</span><span class="ltx_text ltx_lst_space" style="color:#003378;"> </span><span class="ltx_text" style="color:#003378;">|</span><span class="ltx_text ltx_lst_space" style="color:#003378;"> </span><span class="ltx_text" style="color:#003378;">"</span>\<span class="ltx_text ltx_lst_string"></span><span class="ltx_text" style="color:#003378;">""</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string"></span><span class="ltx_text" style="color:#003378;">"\?"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string"></span><span class="ltx_text" style="color:#003378;">"\\"</span>
+</div>
+<div id="lstnumberx4994" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"\a"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"\b"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"\f"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"\n"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"\r"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"\t"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"\v"</span>
+</div>
+<div id="lstnumberx4995" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">STRING</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">""</span><span class="ltx_text ltx_lst_string" style="color:#003378;">"<span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span>S-CHAR<span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span>S-ESCAPE<span class="ltx_text ltx_lst_space"> </span>}<span class="ltx_text ltx_lst_space"> </span>"</span><span class="ltx_text ltx_lst_string" style="color:#003378;">""</span>
+</div>
+<div id="lstnumberx4996" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">S-CHAR</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">see</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">below</span>
+</div>
+<div id="lstnumberx4997" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">UNSIGNED-INTEGER</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">DIGIT</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">DIGIT</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx4998" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">UNSIGNED-REAL</span><span class="ltx_text ltx_lst_space"> </span>=
+</div>
+<div id="lstnumberx4999" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">UNSIGNED-INTEGER</span><span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"."</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">UNSIGNED-INTEGER</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5000" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">UNSIGNED_INTEGER</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"."</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">UNSIGNED_INTEGER</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5001" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"e"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"E"</span><span class="ltx_text ltx_lst_space"> </span>)<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"+"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"-"</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">UNSIGNED-INTEGER</span>
+</div>
+<div id="lstnumberx5002" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"."</span><span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">UNSIGNED-INTEGER</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"e"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"E"</span><span class="ltx_text ltx_lst_space"> </span>)<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"+"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"-"</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">UNSIGNED-INTEGER</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;">S-CHAR</span> is any member of the Unicode character set (<a href="http://www.unicode.org" title="" class="ltx_ref ltx_url">http://www.unicode.org</a>; see <a href="packages.html#mapping-package-class-structures-to-a-hierarchical-file-system" title="13.4 Mapping Package/Class Structures to a Hierarchical File System ‣ Chapter 13 Packages ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">13.4</span></a> for storing as UTF-8 on files) except double-quote ‘"’, and backslash ‘\’.</p>
+</div>
+<div id="S1.p3" class="ltx_para">
+<p class="ltx_p">For identifiers the redundant escapes (‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">\?</span>’ and ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">\<span class="ltx_text ltx_lst_string" style="color:#000000;">""</span></span>’) are the same as the corresponding non-escaped variants (‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">?</span>’ and ’<span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">""</span>’).
+The single quotes are part of an identifier.
+For example, the identifiers <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">’x’</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">x</span> are different.</p>
+</div>
+<div id="S1.p4" class="ltx_para">
+<p class="ltx_p">Note:</p>
+<ul id="S1.I1" class="ltx_itemize">
+<li id="S1.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">White-space and comments can be used between separate lexical units and/or symbols, and also separates them. Each lexical unit will consume the maximum number of characters from the input stream.
+White-space and comments cannot be used inside other lexical units, except for <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;">STRING</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;">Q-IDENT</span> where they are treated as part of the <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;">STRING</span> or <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;">Q-IDENT</span> lexical unit.</p>
+</div>
+</li>
+<li id="S1.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Concatenation of string literals requires a binary expression.
+For example, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_string" style="color:#000000;">"a"</span><span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"b"</span></span> evaluates to <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">"ab"</span>.
+There is no support for the C/C++ style of concatenating adjacent string literal tokens (for example, <span class="ltx_text ltx_lst_language_C ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_string" style="color:#000000;">"a"</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"b"</span></span> becoming <span class="ltx_text ltx_lst_language_C ltx_lst_string ltx_lstlisting" style="color:#000000;background-color:#FFFFFF;">"ab"</span>).</p>
+</div>
+</li>
+<li id="S1.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Modelica uses the same comment syntax as C++ and Java (i.e., <span class="ltx_text ltx_lst_comment ltx_lst_language_modelica_short ltx_lstlisting ltx_font_sansserif" style="color:#127500;background-color:#FFFFFF;">//</span> signals the start of a line comment and <span class="ltx_text ltx_lst_comment ltx_lst_language_modelica_short ltx_lstlisting ltx_font_sansserif" style="color:#127500;background-color:#FFFFFF;">/*<span class="ltx_text ltx_lst_space"> </span><math id="S1.I1.i3.p1.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathcolor="#127500" mathvariant="normal">…</mi></math><span class="ltx_text ltx_lst_space"> </span>*/</span> is a multi-line comment); comments may contain any Unicode character.
+Modelica also has structured comments in the form of annotations and string comments.</p>
+</div>
+</li>
+<li id="S1.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">Each description-string or string in annotations (= <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;">STRING</span> with production annotation-clause in the grammar) may contain any member of the Unicode character set.
+All other strings have to contain only the sub-set of Unicode characters identical with the 7-bit US-ASCII character set.</p>
+</div>
+<div id="S1.I1.i4.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">As a consequence, operators like ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">&gt;</span>’ or ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">&lt;</span>’, and external functions only operate on ASCII strings and not on Unicode-strings.
+Within a description-string the tags <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">&lt;<span class="ltx_text ltx_lst_identifier">HTML</span>&gt;</span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">&lt;/<span class="ltx_text ltx_lst_identifier">HTML</span>&gt;</span> or <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">&lt;<span class="ltx_text ltx_lst_identifier">html</span>&gt;</span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">&lt;/<span class="ltx_text ltx_lst_identifier">html</span>&gt;</span> define optionally begin and end of content that is HTML encoded.</span>]</p>
+</div>
+</li>
+<li id="S1.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i5.p1" class="ltx_para">
+<p class="ltx_p">Boldface denotes keywords of the Modelica language. Keywords are
+reserved words and shall not be used as identifiers.</p>
+</div>
+</li>
+<li id="S1.I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i6.p1" class="ltx_para">
+<p class="ltx_p">Productions use hyphen as separator both in the grammar and in the
+text. Previously the grammar used underscore.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="grammar" class="ltx_section">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">A.2 </span>Grammar</h1>
+
+<section id="stored-definition-within" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">A.2.1 </span>Stored Definition – Within</h2>
+
+<div id="S2.SS1.p1" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,c3RvcmVkLWRlZmluaXRpb24gOgogICBbIHdpdGhpbiBbIG5hbWUgXSAiOyIgXQogICB7IFsgZmluYWwgXSBjbGFzcy1kZWZpbml0aW9uICI7IiB9">⬇</a></div>
+<div id="lstnumberx5003" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">stored-definition</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5004" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">within</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">name</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5005" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>{<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">final</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">class-definition</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+</div>
+</div>
+</section>
+<section id="class-definition" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">A.2.2 </span>Class Definition</h2>
+
+<div id="S2.SS2.p1" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Y2xhc3MtZGVmaW5pdGlvbiA6CiAgIFsgZW5jYXBzdWxhdGVkIF0gY2xhc3MtcHJlZml4ZXMgY2xhc3Mtc3BlY2lmaWVyCgpjbGFzcy1wcmVmaXhlcyA6CiAgIFsgcGFydGlhbCBdCiAgICggY2xhc3MKICAgICB8IG1vZGVsCiAgICAgfCBbIG9wZXJhdG9yIF0gcmVjb3JkCiAgICAgfCBibG9jawogICAgIHwgWyBleHBhbmRhYmxlIF0gY29ubmVjdG9yCiAgICAgfCB0eXBlCiAgICAgfCBwYWNrYWdlCiAgICAgfCBbIHB1cmUgfCBpbXB1cmUgXSBbIG9wZXJhdG9yIF0gZnVuY3Rpb24KICAgICB8IG9wZXJhdG9yCiAgICkKCmNsYXNzLXNwZWNpZmllciA6CiAgIGxvbmctY2xhc3Mtc3BlY2lmaWVyIHwgc2hvcnQtY2xhc3Mtc3BlY2lmaWVyIHwgZGVyLWNsYXNzLXNwZWNpZmllcgoKbG9uZy1jbGFzcy1zcGVjaWZpZXIgOgogICBJREVOVCBkZXNjcmlwdGlvbi1zdHJpbmcgY29tcG9zaXRpb24gZW5kIElERU5UCiAgIHwgZXh0ZW5kcyBJREVOVCBbIGNsYXNzLW1vZGlmaWNhdGlvbiBdIGRlc2NyaXB0aW9uLXN0cmluZyBjb21wb3NpdGlvbgogICAgIGVuZCBJREVOVAoKc2hvcnQtY2xhc3Mtc3BlY2lmaWVyIDoKICAgSURFTlQgIj0iIGJhc2UtcHJlZml4IHR5cGUtc3BlY2lmaWVyIFsgYXJyYXktc3Vic2NyaXB0cyBdCiAgIFsgY2xhc3MtbW9kaWZpY2F0aW9uIF0gZGVzY3JpcHRpb24KICAgfCBJREVOVCAiPSIgZW51bWVyYXRpb24gIigiICggWyBlbnVtLWxpc3QgXSB8ICI6IiApICIpIiBkZXNjcmlwdGlvbgoKZGVyLWNsYXNzLXNwZWNpZmllciA6CiAgIElERU5UICI9IiBkZXIgIigiIHR5cGUtc3BlY2lmaWVyICIsIiBJREVOVCB7ICIsIiBJREVOVCB9ICIpIiBkZXNjcmlwdGlvbgoKYmFzZS1wcmVmaXggOgogICBbIGlucHV0IHwgb3V0cHV0IF0KCmVudW0tbGlzdCA6CiAgIGVudW1lcmF0aW9uLWxpdGVyYWwgeyAiLCIgZW51bWVyYXRpb24tbGl0ZXJhbCB9CgplbnVtZXJhdGlvbi1saXRlcmFsIDoKICAgSURFTlQgZGVzY3JpcHRpb24KCmNvbXBvc2l0aW9uIDoKICAgZWxlbWVudC1saXN0CiAgIHsgcHVibGljIGVsZW1lbnQtbGlzdAogICAgIHwgcHJvdGVjdGVkIGVsZW1lbnQtbGlzdAogICAgIHwgZXF1YXRpb24tc2VjdGlvbgogICAgIHwgYWxnb3JpdGhtLXNlY3Rpb24KICAgfQogICBbIGV4dGVybmFsIFsgbGFuZ3VhZ2Utc3BlY2lmaWNhdGlvbiBdCiAgIFsgZXh0ZXJuYWwtZnVuY3Rpb24tY2FsbCBdIFsgYW5ub3RhdGlvbi1jbGF1c2UgXSAiOyIgXQogICBbIGFubm90YXRpb24tY2xhdXNlICI7IiBdCgpsYW5ndWFnZS1zcGVjaWZpY2F0aW9uIDoKICAgU1RSSU5HCgpleHRlcm5hbC1mdW5jdGlvbi1jYWxsIDoKICAgWyBjb21wb25lbnQtcmVmZXJlbmNlICI9IiBdCiAgIElERU5UICIoIiBbIGV4cHJlc3Npb24tbGlzdCBdICIpIgoKZWxlbWVudC1saXN0IDoKICAgeyBlbGVtZW50ICI7IiB9CgplbGVtZW50IDoKICAgaW1wb3J0LWNsYXVzZQogICB8IGV4dGVuZHMtY2xhdXNlCiAgIHwgWyByZWRlY2xhcmUgXQogICAgIFsgZmluYWwgXQogICAgIFsgaW5uZXIgXSBbIG91dGVyIF0KICAgICAoIGNsYXNzLWRlZmluaXRpb24KICAgICAgIHwgY29tcG9uZW50LWNsYXVzZQogICAgICAgfCByZXBsYWNlYWJsZSAoIGNsYXNzLWRlZmluaXRpb24gfCBjb21wb25lbnQtY2xhdXNlICkKICAgICAgICAgWyBjb25zdHJhaW5pbmctY2xhdXNlIGRlc2NyaXB0aW9uIF0KICAgICApCgppbXBvcnQtY2xhdXNlIDoKICAgaW1wb3J0CiAgICggSURFTlQgIj0iIG5hbWUKICAgICB8IG5hbWUgWyAiLioiIHwgIi4iICggIioiIHwgInsiIGltcG9ydC1saXN0ICJ9IiApIF0KICAgKQogICBkZXNjcmlwdGlvbgoKaW1wb3J0LWxpc3QgOgogICBJREVOVCB7ICIsIiBJREVOVCB9">⬇</a></div>
+<div id="lstnumberx5006" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">class-definition</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5007" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">encapsulated</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">class-prefixes</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">class-specifier</span>
+</div>
+<div id="lstnumberx5008" class="ltx_listingline">
+</div>
+<div id="lstnumberx5009" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">class-prefixes</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5010" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">partial</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5011" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">class</span>
+</div>
+<div id="lstnumberx5012" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">model</span>
+</div>
+<div id="lstnumberx5013" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">record</span>
+</div>
+<div id="lstnumberx5014" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">block</span>
+</div>
+<div id="lstnumberx5015" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">expandable</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">connector</span>
+</div>
+<div id="lstnumberx5016" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">type</span>
+</div>
+<div id="lstnumberx5017" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">package</span>
+</div>
+<div id="lstnumberx5018" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">pure</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">impure</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span>
+</div>
+<div id="lstnumberx5019" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">operator</span>
+</div>
+<div id="lstnumberx5020" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>)
+</div>
+<div id="lstnumberx5021" class="ltx_listingline">
+</div>
+<div id="lstnumberx5022" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">class-specifier</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5023" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">long-class-specifier</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">short-class-specifier</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">der-class-specifier</span>
+</div>
+<div id="lstnumberx5024" class="ltx_listingline">
+</div>
+<div id="lstnumberx5025" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">long-class-specifier</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5026" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description-string</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">composition</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span>
+</div>
+<div id="lstnumberx5027" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">extends</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">class-modification</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description-string</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">composition</span>
+</div>
+<div id="lstnumberx5028" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span>
+</div>
+<div id="lstnumberx5029" class="ltx_listingline">
+</div>
+<div id="lstnumberx5030" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">short-class-specifier</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5031" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">base-prefix</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">type-specifier</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">array-subscripts</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5032" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">class-modification</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description</span>
+</div>
+<div id="lstnumberx5033" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">enumeration</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">enum-list</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">":"</span><span class="ltx_text ltx_lst_space"> </span>)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">")"</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description</span>
+</div>
+<div id="lstnumberx5034" class="ltx_listingline">
+</div>
+<div id="lstnumberx5035" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">der-class-specifier</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5036" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">der</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">type-specifier</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span>}<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">")"</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description</span>
+</div>
+<div id="lstnumberx5037" class="ltx_listingline">
+</div>
+<div id="lstnumberx5038" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">base-prefix</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5039" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5040" class="ltx_listingline">
+</div>
+<div id="lstnumberx5041" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">enum-list</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5042" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">enumeration-literal</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">enumeration-literal</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5043" class="ltx_listingline">
+</div>
+<div id="lstnumberx5044" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">enumeration-literal</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5045" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description</span>
+</div>
+<div id="lstnumberx5046" class="ltx_listingline">
+</div>
+<div id="lstnumberx5047" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">composition</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5048" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">element-list</span>
+</div>
+<div id="lstnumberx5049" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">public</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">element-list</span>
+</div>
+<div id="lstnumberx5050" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">protected</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">element-list</span>
+</div>
+<div id="lstnumberx5051" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">equation-section</span>
+</div>
+<div id="lstnumberx5052" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">algorithm-section</span>
+</div>
+<div id="lstnumberx5053" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>}
+</div>
+<div id="lstnumberx5054" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">external</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">language-specification</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5055" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">external-function-call</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">annotation-clause</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5056" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">annotation-clause</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5057" class="ltx_listingline">
+</div>
+<div id="lstnumberx5058" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">language-specification</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5059" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">STRING</span>
+</div>
+<div id="lstnumberx5060" class="ltx_listingline">
+</div>
+<div id="lstnumberx5061" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">external-function-call</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5062" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-reference</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"="</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5063" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression-list</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">")"</span>
+</div>
+<div id="lstnumberx5064" class="ltx_listingline">
+</div>
+<div id="lstnumberx5065" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">element-list</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5066" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">element</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5067" class="ltx_listingline">
+</div>
+<div id="lstnumberx5068" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">element</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5069" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">import-clause</span>
+</div>
+<div id="lstnumberx5070" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">extends-clause</span>
+</div>
+<div id="lstnumberx5071" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">redeclare</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5072" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">final</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5073" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">inner</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">outer</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5074" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">class-definition</span>
+</div>
+<div id="lstnumberx5075" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">       </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-clause</span>
+</div>
+<div id="lstnumberx5076" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">       </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">replaceable</span><span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">class-definition</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-clause</span><span class="ltx_text ltx_lst_space"> </span>)
+</div>
+<div id="lstnumberx5077" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">         </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">constraining-clause</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5078" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>)
+</div>
+<div id="lstnumberx5079" class="ltx_listingline">
+</div>
+<div id="lstnumberx5080" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">import-clause</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5081" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">import</span>
+</div>
+<div id="lstnumberx5082" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">name</span>
+</div>
+<div id="lstnumberx5083" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">name</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">".*"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"."</span><span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"*"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"{"</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">import-list</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"}"</span><span class="ltx_text ltx_lst_space"> </span>)<span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5084" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>)
+</div>
+<div id="lstnumberx5085" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description</span>
+</div>
+<div id="lstnumberx5086" class="ltx_listingline">
+</div>
+<div id="lstnumberx5087" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">import-list</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5088" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+</div>
+</div>
+</section>
+<section id="extends" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">A.2.3 </span>Extends</h2>
+
+<div id="S2.SS3.p1" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZXh0ZW5kcy1jbGF1c2UgOgogICBleHRlbmRzIHR5cGUtc3BlY2lmaWVyIFsgY2xhc3MtbW9kaWZpY2F0aW9uIF0gWyBhbm5vdGF0aW9uLWNsYXVzZSBdCgpjb25zdHJhaW5pbmctY2xhdXNlIDoKICAgY29uc3RyYWluZWRieSB0eXBlLXNwZWNpZmllciBbIGNsYXNzLW1vZGlmaWNhdGlvbiBd">⬇</a></div>
+<div id="lstnumberx5089" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">extends-clause</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5090" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">extends</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">type-specifier</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">class-modification</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">annotation-clause</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5091" class="ltx_listingline">
+</div>
+<div id="lstnumberx5092" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">constraining-clause</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5093" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">constrainedby</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">type-specifier</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">class-modification</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+</div>
+</div>
+</section>
+<section id="component-clause" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">A.2.4 </span>Component Clause</h2>
+
+<div id="S2.SS4.p1" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Y29tcG9uZW50LWNsYXVzZSA6CiAgIHR5cGUtcHJlZml4IHR5cGUtc3BlY2lmaWVyIFsgYXJyYXktc3Vic2NyaXB0cyBdIGNvbXBvbmVudC1saXN0Cgp0eXBlLXByZWZpeCA6CiAgIFsgZmxvdyB8IHN0cmVhbSBdCiAgIFsgZGlzY3JldGUgfCBwYXJhbWV0ZXIgfCBjb25zdGFudCBdCiAgIFsgaW5wdXQgfCBvdXRwdXQgXQoKY29tcG9uZW50LWxpc3QgOgogICBjb21wb25lbnQtZGVjbGFyYXRpb24geyAiLCIgY29tcG9uZW50LWRlY2xhcmF0aW9uIH0KCmNvbXBvbmVudC1kZWNsYXJhdGlvbiA6CiAgIGRlY2xhcmF0aW9uIFsgY29uZGl0aW9uLWF0dHJpYnV0ZSBdIGRlc2NyaXB0aW9uCgpjb25kaXRpb24tYXR0cmlidXRlIDoKICAgaWYgZXhwcmVzc2lvbgoKZGVjbGFyYXRpb24gOgogICBJREVOVCBbIGFycmF5LXN1YnNjcmlwdHMgXSBbIG1vZGlmaWNhdGlvbiBd">⬇</a></div>
+<div id="lstnumberx5094" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">component-clause</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5095" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">type-prefix</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">type-specifier</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">array-subscripts</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-list</span>
+</div>
+<div id="lstnumberx5096" class="ltx_listingline">
+</div>
+<div id="lstnumberx5097" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">type-prefix</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5098" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">flow</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">stream</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5099" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">discrete</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">parameter</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">constant</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5100" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5101" class="ltx_listingline">
+</div>
+<div id="lstnumberx5102" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">component-list</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5103" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-declaration</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-declaration</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5104" class="ltx_listingline">
+</div>
+<div id="lstnumberx5105" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">component-declaration</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5106" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">declaration</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">condition-attribute</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description</span>
+</div>
+<div id="lstnumberx5107" class="ltx_listingline">
+</div>
+<div id="lstnumberx5108" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">condition-attribute</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5109" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span>
+</div>
+<div id="lstnumberx5110" class="ltx_listingline">
+</div>
+<div id="lstnumberx5111" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">declaration</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5112" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">array-subscripts</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">modification</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+</div>
+</div>
+</section>
+<section id="modification" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">A.2.5 </span>Modification</h2>
+
+<div id="S2.SS5.p1" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bW9kaWZpY2F0aW9uIDoKICAgY2xhc3MtbW9kaWZpY2F0aW9uIFsgIj0iIGV4cHJlc3Npb24gXQogICB8ICI9IiBleHByZXNzaW9uCiAgIHwgIjo9IiBleHByZXNzaW9uCgpjbGFzcy1tb2RpZmljYXRpb24gOgogICAiKCIgWyBhcmd1bWVudC1saXN0IF0gIikiCgphcmd1bWVudC1saXN0IDoKICAgYXJndW1lbnQgeyAiLCIgYXJndW1lbnQgfQoKYXJndW1lbnQgOgogICBlbGVtZW50LW1vZGlmaWNhdGlvbi1vci1yZXBsYWNlYWJsZQogICB8IGVsZW1lbnQtcmVkZWNsYXJhdGlvbgoKZWxlbWVudC1tb2RpZmljYXRpb24tb3ItcmVwbGFjZWFibGUgOgogICBbIGVhY2ggXSBbIGZpbmFsIF0gKCBlbGVtZW50LW1vZGlmaWNhdGlvbiB8IGVsZW1lbnQtcmVwbGFjZWFibGUgKQoKZWxlbWVudC1tb2RpZmljYXRpb24gOgogICBuYW1lIFsgbW9kaWZpY2F0aW9uIF0gZGVzY3JpcHRpb24tc3RyaW5nCgplbGVtZW50LXJlZGVjbGFyYXRpb24gOgogICByZWRlY2xhcmUgWyBlYWNoIF0gWyBmaW5hbCBdCiAgICggc2hvcnQtY2xhc3MtZGVmaW5pdGlvbiB8IGNvbXBvbmVudC1jbGF1c2UxIHwgZWxlbWVudC1yZXBsYWNlYWJsZSApCgplbGVtZW50LXJlcGxhY2VhYmxlIDoKICAgcmVwbGFjZWFibGUgKCBzaG9ydC1jbGFzcy1kZWZpbml0aW9uIHwgY29tcG9uZW50LWNsYXVzZTEgKQogICBbIGNvbnN0cmFpbmluZy1jbGF1c2UgXQoKY29tcG9uZW50LWNsYXVzZTEgOgogICB0eXBlLXByZWZpeCB0eXBlLXNwZWNpZmllciBjb21wb25lbnQtZGVjbGFyYXRpb24xCgpjb21wb25lbnQtZGVjbGFyYXRpb24xIDoKICAgZGVjbGFyYXRpb24gZGVzY3JpcHRpb24KCnNob3J0LWNsYXNzLWRlZmluaXRpb24gOgogICBjbGFzcy1wcmVmaXhlcyBzaG9ydC1jbGFzcy1zcGVjaWZpZXI=">⬇</a></div>
+<div id="lstnumberx5113" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">modification</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5114" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">class-modification</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5115" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span>
+</div>
+<div id="lstnumberx5116" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">":="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span>
+</div>
+<div id="lstnumberx5117" class="ltx_listingline">
+</div>
+<div id="lstnumberx5118" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">class-modification</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5119" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">argument-list</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">")"</span>
+</div>
+<div id="lstnumberx5120" class="ltx_listingline">
+</div>
+<div id="lstnumberx5121" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">argument-list</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5122" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">argument</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">argument</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5123" class="ltx_listingline">
+</div>
+<div id="lstnumberx5124" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">argument</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5125" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">element-modification-or-replaceable</span>
+</div>
+<div id="lstnumberx5126" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">element-redeclaration</span>
+</div>
+<div id="lstnumberx5127" class="ltx_listingline">
+</div>
+<div id="lstnumberx5128" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">element-modification-or-replaceable</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5129" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">each</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">final</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">element-modification</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">element-replaceable</span><span class="ltx_text ltx_lst_space"> </span>)
+</div>
+<div id="lstnumberx5130" class="ltx_listingline">
+</div>
+<div id="lstnumberx5131" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">element-modification</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5132" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">name</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">modification</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description-string</span>
+</div>
+<div id="lstnumberx5133" class="ltx_listingline">
+</div>
+<div id="lstnumberx5134" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">element-redeclaration</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5135" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">redeclare</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">each</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">final</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5136" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">short-class-definition</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-clause1</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">element-replaceable</span><span class="ltx_text ltx_lst_space"> </span>)
+</div>
+<div id="lstnumberx5137" class="ltx_listingline">
+</div>
+<div id="lstnumberx5138" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">element-replaceable</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5139" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">replaceable</span><span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">short-class-definition</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-clause1</span><span class="ltx_text ltx_lst_space"> </span>)
+</div>
+<div id="lstnumberx5140" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">constraining-clause</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5141" class="ltx_listingline">
+</div>
+<div id="lstnumberx5142" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">component-clause1</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5143" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">type-prefix</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">type-specifier</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-declaration1</span>
+</div>
+<div id="lstnumberx5144" class="ltx_listingline">
+</div>
+<div id="lstnumberx5145" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">component-declaration1</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5146" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">declaration</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description</span>
+</div>
+<div id="lstnumberx5147" class="ltx_listingline">
+</div>
+<div id="lstnumberx5148" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">short-class-definition</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5149" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">class-prefixes</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">short-class-specifier</span>
+</div>
+</div>
+</div>
+</section>
+<section id="equations1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">A.2.6 </span>Equations</h2>
+
+<div id="S2.SS6.p1" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZXF1YXRpb24tc2VjdGlvbiA6CiAgIFsgaW5pdGlhbCBdIGVxdWF0aW9uIHsgZXF1YXRpb24gIjsiIH0KCmFsZ29yaXRobS1zZWN0aW9uIDoKICAgWyBpbml0aWFsIF0gYWxnb3JpdGhtIHsgc3RhdGVtZW50ICI7IiB9CgplcXVhdGlvbiA6CiAgICggc2ltcGxlLWV4cHJlc3Npb24gIj0iIGV4cHJlc3Npb24KICAgICB8IGlmLWVxdWF0aW9uCiAgICAgfCBmb3ItZXF1YXRpb24KICAgICB8IGNvbm5lY3QtY2xhdXNlCiAgICAgfCB3aGVuLWVxdWF0aW9uCiAgICAgfCBjb21wb25lbnQtcmVmZXJlbmNlIGZ1bmN0aW9uLWNhbGwtYXJncwogICApCiAgIGRlc2NyaXB0aW9uCgpzdGF0ZW1lbnQgOgogICAoIGNvbXBvbmVudC1yZWZlcmVuY2UgKCAiOj0iIGV4cHJlc3Npb24gfCBmdW5jdGlvbi1jYWxsLWFyZ3MgKQogICAgIHwgIigiIG91dHB1dC1leHByZXNzaW9uLWxpc3QgIikiICI6PSIKICAgICAgIGNvbXBvbmVudC1yZWZlcmVuY2UgZnVuY3Rpb24tY2FsbC1hcmdzCiAgICAgfCBicmVhawogICAgIHwgcmV0dXJuCiAgICAgfCBpZi1zdGF0ZW1lbnQKICAgICB8IGZvci1zdGF0ZW1lbnQKICAgICB8IHdoaWxlLXN0YXRlbWVudAogICAgIHwgd2hlbi1zdGF0ZW1lbnQKICAgKQogICBkZXNjcmlwdGlvbgoKaWYtZXF1YXRpb24gOgogICBpZiBleHByZXNzaW9uIHRoZW4KICAgICB7IGVxdWF0aW9uICI7IiB9CiAgIHsgZWxzZWlmIGV4cHJlc3Npb24gdGhlbgogICAgIHsgZXF1YXRpb24gIjsiIH0KICAgfQogICBbIGVsc2UKICAgICB7IGVxdWF0aW9uICI7IiB9CiAgIF0KICAgZW5kIGlmCgppZi1zdGF0ZW1lbnQgOgogICBpZiBleHByZXNzaW9uIHRoZW4KICAgICB7IHN0YXRlbWVudCAiOyIgfQogICB7IGVsc2VpZiBleHByZXNzaW9uIHRoZW4KICAgICB7IHN0YXRlbWVudCAiOyIgfQogICB9CiAgIFsgZWxzZQogICAgIHsgc3RhdGVtZW50ICI7IiB9CiAgIF0KICAgZW5kIGlmCgpmb3ItZXF1YXRpb24gOgogICBmb3IgZm9yLWluZGljZXMgbG9vcAogICAgIHsgZXF1YXRpb24gIjsiIH0KICAgZW5kIGZvcgoKZm9yLXN0YXRlbWVudCA6CiAgIGZvciBmb3ItaW5kaWNlcyBsb29wCiAgICAgeyBzdGF0ZW1lbnQgIjsiIH0KICAgZW5kIGZvcgoKZm9yLWluZGljZXMgOgogICBmb3ItaW5kZXggeyAiLCIgZm9yLWluZGV4IH0KCmZvci1pbmRleCA6CiAgIElERU5UIFsgaW4gZXhwcmVzc2lvbiBdCgp3aGlsZS1zdGF0ZW1lbnQgOgogICB3aGlsZSBleHByZXNzaW9uIGxvb3AKICAgeyBzdGF0ZW1lbnQgIjsiIH0KICAgZW5kIHdoaWxlCgp3aGVuLWVxdWF0aW9uIDoKICAgd2hlbiBleHByZXNzaW9uIHRoZW4KICAgICB7IGVxdWF0aW9uICI7IiB9CiAgIHsgZWxzZXdoZW4gZXhwcmVzc2lvbiB0aGVuCiAgICAgeyBlcXVhdGlvbiAiOyIgfQogICB9CiAgIGVuZCB3aGVuCgp3aGVuLXN0YXRlbWVudCA6CiAgIHdoZW4gZXhwcmVzc2lvbiB0aGVuCiAgICAgeyBzdGF0ZW1lbnQgIjsiIH0KICAgeyBlbHNld2hlbiBleHByZXNzaW9uIHRoZW4KICAgICB7IHN0YXRlbWVudCAiOyIgfQogICB9CiAgIGVuZCB3aGVuCgpjb25uZWN0LWNsYXVzZSA6CiAgIGNvbm5lY3QgIigiIGNvbXBvbmVudC1yZWZlcmVuY2UgIiwiIGNvbXBvbmVudC1yZWZlcmVuY2UgIiki">⬇</a></div>
+<div id="lstnumberx5150" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">equation-section</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5151" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">initial</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5152" class="ltx_listingline">
+</div>
+<div id="lstnumberx5153" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">algorithm-section</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5154" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">initial</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">algorithm</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5155" class="ltx_listingline">
+</div>
+<div id="lstnumberx5156" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5157" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">simple-expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span>
+</div>
+<div id="lstnumberx5158" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">if-equation</span>
+</div>
+<div id="lstnumberx5159" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">for-equation</span>
+</div>
+<div id="lstnumberx5160" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">connect-clause</span>
+</div>
+<div id="lstnumberx5161" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">when-equation</span>
+</div>
+<div id="lstnumberx5162" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-reference</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-call-args</span>
+</div>
+<div id="lstnumberx5163" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>)
+</div>
+<div id="lstnumberx5164" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description</span>
+</div>
+<div id="lstnumberx5165" class="ltx_listingline">
+</div>
+<div id="lstnumberx5166" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5167" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-reference</span><span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">":="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-call-args</span><span class="ltx_text ltx_lst_space"> </span>)
+</div>
+<div id="lstnumberx5168" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">output-expression-list</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">")"</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">":="</span>
+</div>
+<div id="lstnumberx5169" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">       </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-reference</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-call-args</span>
+</div>
+<div id="lstnumberx5170" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">break</span>
+</div>
+<div id="lstnumberx5171" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">return</span>
+</div>
+<div id="lstnumberx5172" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">if-statement</span>
+</div>
+<div id="lstnumberx5173" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">for-statement</span>
+</div>
+<div id="lstnumberx5174" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">while-statement</span>
+</div>
+<div id="lstnumberx5175" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">when-statement</span>
+</div>
+<div id="lstnumberx5176" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>)
+</div>
+<div id="lstnumberx5177" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description</span>
+</div>
+<div id="lstnumberx5178" class="ltx_listingline">
+</div>
+<div id="lstnumberx5179" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">if-equation</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5180" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx5181" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5182" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">elseif</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx5183" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5184" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>}
+</div>
+<div id="lstnumberx5185" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span>
+</div>
+<div id="lstnumberx5186" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5187" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>]
+</div>
+<div id="lstnumberx5188" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span>
+</div>
+<div id="lstnumberx5189" class="ltx_listingline">
+</div>
+<div id="lstnumberx5190" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">if-statement</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5191" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx5192" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5193" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">elseif</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx5194" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5195" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>}
+</div>
+<div id="lstnumberx5196" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span>
+</div>
+<div id="lstnumberx5197" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5198" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>]
+</div>
+<div id="lstnumberx5199" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span>
+</div>
+<div id="lstnumberx5200" class="ltx_listingline">
+</div>
+<div id="lstnumberx5201" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">for-equation</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5202" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">for-indices</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span>
+</div>
+<div id="lstnumberx5203" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5204" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span>
+</div>
+<div id="lstnumberx5205" class="ltx_listingline">
+</div>
+<div id="lstnumberx5206" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">for-statement</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5207" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">for-indices</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span>
+</div>
+<div id="lstnumberx5208" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5209" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span>
+</div>
+<div id="lstnumberx5210" class="ltx_listingline">
+</div>
+<div id="lstnumberx5211" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">for-indices</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5212" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">for-index</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">for-index</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5213" class="ltx_listingline">
+</div>
+<div id="lstnumberx5214" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">for-index</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5215" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5216" class="ltx_listingline">
+</div>
+<div id="lstnumberx5217" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">while-statement</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5218" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">while</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span>
+</div>
+<div id="lstnumberx5219" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5220" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">while</span>
+</div>
+<div id="lstnumberx5221" class="ltx_listingline">
+</div>
+<div id="lstnumberx5222" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">when-equation</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5223" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx5224" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5225" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">elsewhen</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx5226" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5227" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>}
+</div>
+<div id="lstnumberx5228" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span>
+</div>
+<div id="lstnumberx5229" class="ltx_listingline">
+</div>
+<div id="lstnumberx5230" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">when-statement</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5231" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx5232" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5233" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">elsewhen</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx5234" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">statement</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5235" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>}
+</div>
+<div id="lstnumberx5236" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">when</span>
+</div>
+<div id="lstnumberx5237" class="ltx_listingline">
+</div>
+<div id="lstnumberx5238" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">connect-clause</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5239" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">connect</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-reference</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-reference</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">")"</span>
+</div>
+</div>
+</div>
+</section>
+<section id="expressions1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">A.2.7 </span>Expressions</h2>
+
+<div id="S2.SS7.p1" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZXhwcmVzc2lvbiA6CiAgIHNpbXBsZS1leHByZXNzaW9uCiAgIHwgaWYgZXhwcmVzc2lvbiB0aGVuIGV4cHJlc3Npb24KICAgICB7IGVsc2VpZiBleHByZXNzaW9uIHRoZW4gZXhwcmVzc2lvbiB9CiAgICAgZWxzZSBleHByZXNzaW9uCgpzaW1wbGUtZXhwcmVzc2lvbiA6CiAgIGxvZ2ljYWwtZXhwcmVzc2lvbiBbICI6IiBsb2dpY2FsLWV4cHJlc3Npb24gWyAiOiIgbG9naWNhbC1leHByZXNzaW9uIF0gXQoKbG9naWNhbC1leHByZXNzaW9uIDoKICAgbG9naWNhbC10ZXJtIHsgb3IgbG9naWNhbC10ZXJtIH0KCmxvZ2ljYWwtdGVybSA6CiAgIGxvZ2ljYWwtZmFjdG9yIHsgYW5kIGxvZ2ljYWwtZmFjdG9yIH0KCmxvZ2ljYWwtZmFjdG9yIDoKICAgWyBub3QgXSByZWxhdGlvbgoKcmVsYXRpb24gOgogICBhcml0aG1ldGljLWV4cHJlc3Npb24gWyByZWxhdGlvbmFsLW9wZXJhdG9yIGFyaXRobWV0aWMtZXhwcmVzc2lvbiBdCgpyZWxhdGlvbmFsLW9wZXJhdG9yIDoKICAgIjwiIHwgIjw9IiB8ICI+IiB8ICI+PSIgfCAiPT0iIHwgIjw+IgoKYXJpdGhtZXRpYy1leHByZXNzaW9uIDoKICAgWyBhZGQtb3BlcmF0b3IgXSB0ZXJtIHsgYWRkLW9wZXJhdG9yIHRlcm0gfQoKYWRkLW9wZXJhdG9yIDoKICAgIisiIHwgIi0iIHwgIi4rIiB8ICIuLSIKCnRlcm0gOgogICBmYWN0b3IgeyBtdWwtb3BlcmF0b3IgZmFjdG9yIH0KCm11bC1vcGVyYXRvciA6CiAgICIqIiB8ICIvIiB8ICIuKiIgfCAiLi8iCgpmYWN0b3IgOgogICBwcmltYXJ5IFsgKCJeIiB8ICIuXiIpIHByaW1hcnkgXQoKcHJpbWFyeSA6CiAgIFVOU0lHTkVELU5VTUJFUgogICB8IFNUUklORwogICB8IGZhbHNlCiAgIHwgdHJ1ZQogICB8ICggY29tcG9uZW50LXJlZmVyZW5jZSB8IGRlciB8IGluaXRpYWwgfCBwdXJlICkgZnVuY3Rpb24tY2FsbC1hcmdzCiAgIHwgY29tcG9uZW50LXJlZmVyZW5jZQogICB8ICIoIiBvdXRwdXQtZXhwcmVzc2lvbi1saXN0ICIpIgogICB8ICJbIiBleHByZXNzaW9uLWxpc3QgeyAiOyIgZXhwcmVzc2lvbi1saXN0IH0gIl0iCiAgIHwgInsiIGFycmF5LWFyZ3VtZW50cyAifSIKICAgfCBlbmQKClVOU0lHTkVELU5VTUJFUiA6CiAgIFVOU0lHTkVELUlOVEVHRVIgfCBVTlNJR05FRC1SRUFMCgp0eXBlLXNwZWNpZmllciA6CiAgIFsiLiJdIG5hbWUKCm5hbWUgOgogICBJREVOVCB7ICIuIiBJREVOVCB9Cgpjb21wb25lbnQtcmVmZXJlbmNlIDoKICAgWyAiLiIgXSBJREVOVCBbIGFycmF5LXN1YnNjcmlwdHMgXSB7ICIuIiBJREVOVCBbIGFycmF5LXN1YnNjcmlwdHMgXSB9CgpmdW5jdGlvbi1jYWxsLWFyZ3MgOgogICAiKCIgWyBmdW5jdGlvbi1hcmd1bWVudHMgXSAiKSIKCmZ1bmN0aW9uLWFyZ3VtZW50cyA6CiAgIGV4cHJlc3Npb24gWyAiLCIgZnVuY3Rpb24tYXJndW1lbnRzLW5vbi1maXJzdCB8IGZvciBmb3ItaW5kaWNlcyBdCiAgIHwgZnVuY3Rpb24tcGFydGlhbC1hcHBsaWNhdGlvbiBbICIsIiBmdW5jdGlvbi1hcmd1bWVudHMtbm9uLWZpcnN0IF0KICAgfCBuYW1lZC1hcmd1bWVudHMKCmZ1bmN0aW9uLWFyZ3VtZW50cy1ub24tZmlyc3QgOgogICBmdW5jdGlvbi1hcmd1bWVudCBbICIsIiBmdW5jdGlvbi1hcmd1bWVudHMtbm9uLWZpcnN0IF0KICAgfCBuYW1lZC1hcmd1bWVudHMKCmFycmF5LWFyZ3VtZW50cyA6CiAgIGV4cHJlc3Npb24gWyAiLCIgYXJyYXktYXJndW1lbnRzLW5vbi1maXJzdCB8IGZvciBmb3ItaW5kaWNlcyBdCgphcnJheS1hcmd1bWVudHMtbm9uLWZpcnN0IDoKICAgZXhwcmVzc2lvbiBbICIsIiBhcnJheS1hcmd1bWVudHMtbm9uLWZpcnN0IF0KCm5hbWVkLWFyZ3VtZW50czogbmFtZWQtYXJndW1lbnQgWyAiLCIgbmFtZWQtYXJndW1lbnRzIF0KCm5hbWVkLWFyZ3VtZW50OiBJREVOVCAiPSIgZnVuY3Rpb24tYXJndW1lbnQKCmZ1bmN0aW9uLWFyZ3VtZW50IDoKICAgZnVuY3Rpb24tcGFydGlhbC1hcHBsaWNhdGlvbiB8IGV4cHJlc3Npb24KCmZ1bmN0aW9uLXBhcnRpYWwtYXBwbGljYXRpb24gOgogICBmdW5jdGlvbiB0eXBlLXNwZWNpZmllciAiKCIgWyBuYW1lZC1hcmd1bWVudHMgXSAiKSIKCm91dHB1dC1leHByZXNzaW9uLWxpc3QgOgogICBbIGV4cHJlc3Npb24gXSB7ICIsIiBbIGV4cHJlc3Npb24gXSB9CgpleHByZXNzaW9uLWxpc3QgOgogICBleHByZXNzaW9uIHsgIiwiIGV4cHJlc3Npb24gfQoKYXJyYXktc3Vic2NyaXB0cyA6CiAgICJbIiBzdWJzY3JpcHQgeyAiLCIgc3Vic2NyaXB0IH0gIl0iCgpzdWJzY3JpcHQgOgogICAiOiIgfCBleHByZXNzaW9uCgpkZXNjcmlwdGlvbiA6CiAgIGRlc2NyaXB0aW9uLXN0cmluZyBbIGFubm90YXRpb24tY2xhdXNlIF0KCmRlc2NyaXB0aW9uLXN0cmluZyA6CiAgIFsgU1RSSU5HIHsgIisiIFNUUklORyB9IF0KCmFubm90YXRpb24tY2xhdXNlIDoKICAgYW5ub3RhdGlvbiBjbGFzcy1tb2RpZmljYXRpb24=">⬇</a></div>
+<div id="lstnumberx5240" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5241" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">simple-expression</span>
+</div>
+<div id="lstnumberx5242" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span>
+</div>
+<div id="lstnumberx5243" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">elseif</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5244" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span>
+</div>
+<div id="lstnumberx5245" class="ltx_listingline">
+</div>
+<div id="lstnumberx5246" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">simple-expression</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5247" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">logical-expression</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">":"</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">logical-expression</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">":"</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">logical-expression</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5248" class="ltx_listingline">
+</div>
+<div id="lstnumberx5249" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">logical-expression</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5250" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">logical-term</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">or</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">logical-term</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5251" class="ltx_listingline">
+</div>
+<div id="lstnumberx5252" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">logical-term</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5253" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">logical-factor</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">and</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">logical-factor</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5254" class="ltx_listingline">
+</div>
+<div id="lstnumberx5255" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">logical-factor</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5256" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">not</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">relation</span>
+</div>
+<div id="lstnumberx5257" class="ltx_listingline">
+</div>
+<div id="lstnumberx5258" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">relation</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5259" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">arithmetic-expression</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">relational-operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">arithmetic-expression</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5260" class="ltx_listingline">
+</div>
+<div id="lstnumberx5261" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">relational-operator</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5262" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"&lt;"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"&lt;="</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"&gt;"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"&gt;="</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"=="</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"&lt;&gt;"</span>
+</div>
+<div id="lstnumberx5263" class="ltx_listingline">
+</div>
+<div id="lstnumberx5264" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">arithmetic-expression</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5265" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">add-operator</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">term</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">add-operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">term</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5266" class="ltx_listingline">
+</div>
+<div id="lstnumberx5267" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">add-operator</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5268" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"+"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"-"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">".+"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">".-"</span>
+</div>
+<div id="lstnumberx5269" class="ltx_listingline">
+</div>
+<div id="lstnumberx5270" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">term</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5271" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">factor</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">mul-operator</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">factor</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5272" class="ltx_listingline">
+</div>
+<div id="lstnumberx5273" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">mul-operator</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5274" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"*"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"/"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">".*"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"./"</span>
+</div>
+<div id="lstnumberx5275" class="ltx_listingline">
+</div>
+<div id="lstnumberx5276" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">factor</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5277" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">primary</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_string" style="color:#003378;">"^"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">".^"</span>)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">primary</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5278" class="ltx_listingline">
+</div>
+<div id="lstnumberx5279" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">primary</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5280" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">UNSIGNED-NUMBER</span>
+</div>
+<div id="lstnumberx5281" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">STRING</span>
+</div>
+<div id="lstnumberx5282" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">false</span>
+</div>
+<div id="lstnumberx5283" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span>
+</div>
+<div id="lstnumberx5284" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-reference</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">der</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">initial</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">pure</span><span class="ltx_text ltx_lst_space"> </span>)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-call-args</span>
+</div>
+<div id="lstnumberx5285" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">component-reference</span>
+</div>
+<div id="lstnumberx5286" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">output-expression-list</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">")"</span>
+</div>
+<div id="lstnumberx5287" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"["</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression-list</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression-list</span><span class="ltx_text ltx_lst_space"> </span>}<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"]"</span>
+</div>
+<div id="lstnumberx5288" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"{"</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">array-arguments</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"}"</span>
+</div>
+<div id="lstnumberx5289" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span>
+</div>
+<div id="lstnumberx5290" class="ltx_listingline">
+</div>
+<div id="lstnumberx5291" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">UNSIGNED-NUMBER</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5292" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">UNSIGNED-INTEGER</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">UNSIGNED-REAL</span>
+</div>
+<div id="lstnumberx5293" class="ltx_listingline">
+</div>
+<div id="lstnumberx5294" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">type-specifier</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5295" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_string" style="color:#003378;">"."</span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">name</span>
+</div>
+<div id="lstnumberx5296" class="ltx_listingline">
+</div>
+<div id="lstnumberx5297" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">name</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5298" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"."</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5299" class="ltx_listingline">
+</div>
+<div id="lstnumberx5300" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">component-reference</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5301" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"."</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">array-subscripts</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"."</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">array-subscripts</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5302" class="ltx_listingline">
+</div>
+<div id="lstnumberx5303" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">function-call-args</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5304" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-arguments</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">")"</span>
+</div>
+<div id="lstnumberx5305" class="ltx_listingline">
+</div>
+<div id="lstnumberx5306" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">function-arguments</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5307" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-arguments-non-first</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">for-indices</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5308" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-partial-application</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-arguments-non-first</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5309" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">named-arguments</span>
+</div>
+<div id="lstnumberx5310" class="ltx_listingline">
+</div>
+<div id="lstnumberx5311" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">function-arguments-non-first</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5312" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-argument</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-arguments-non-first</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5313" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">named-arguments</span>
+</div>
+<div id="lstnumberx5314" class="ltx_listingline">
+</div>
+<div id="lstnumberx5315" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">array-arguments</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5316" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">array-arguments-non-first</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">for-indices</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5317" class="ltx_listingline">
+</div>
+<div id="lstnumberx5318" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">array-arguments-non-first</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5319" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">array-arguments-non-first</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5320" class="ltx_listingline">
+</div>
+<div id="lstnumberx5321" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">named-arguments</span>:<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">named-argument</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">named-arguments</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5322" class="ltx_listingline">
+</div>
+<div id="lstnumberx5323" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">named-argument</span>:<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"="</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-argument</span>
+</div>
+<div id="lstnumberx5324" class="ltx_listingline">
+</div>
+<div id="lstnumberx5325" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">function-argument</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5326" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">function-partial-application</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span>
+</div>
+<div id="lstnumberx5327" class="ltx_listingline">
+</div>
+<div id="lstnumberx5328" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">function-partial-application</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5329" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">type-specifier</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">named-arguments</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">")"</span>
+</div>
+<div id="lstnumberx5330" class="ltx_listingline">
+</div>
+<div id="lstnumberx5331" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">output-expression-list</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5332" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>]<span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5333" class="ltx_listingline">
+</div>
+<div id="lstnumberx5334" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">expression-list</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5335" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span><span class="ltx_text ltx_lst_space"> </span>}
+</div>
+<div id="lstnumberx5336" class="ltx_listingline">
+</div>
+<div id="lstnumberx5337" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">array-subscripts</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5338" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"["</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">subscript</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">subscript</span><span class="ltx_text ltx_lst_space"> </span>}<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"]"</span>
+</div>
+<div id="lstnumberx5339" class="ltx_listingline">
+</div>
+<div id="lstnumberx5340" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">subscript</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5341" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_string" style="color:#003378;">":"</span><span class="ltx_text ltx_lst_space"> </span>|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">expression</span>
+</div>
+<div id="lstnumberx5342" class="ltx_listingline">
+</div>
+<div id="lstnumberx5343" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">description</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5344" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">description-string</span><span class="ltx_text ltx_lst_space"> </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">annotation-clause</span><span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5345" class="ltx_listingline">
+</div>
+<div id="lstnumberx5346" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">description-string</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5347" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>[<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">STRING</span><span class="ltx_text ltx_lst_space"> </span>{<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#003378;">"+"</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">STRING</span><span class="ltx_text ltx_lst_space"> </span>}<span class="ltx_text ltx_lst_space"> </span>]
+</div>
+<div id="lstnumberx5348" class="ltx_listingline">
+</div>
+<div id="lstnumberx5349" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_italic">annotation-clause</span><span class="ltx_text ltx_lst_space"> </span>:
+</div>
+<div id="lstnumberx5350" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">annotation</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier ltx_font_italic">class-modification</span>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div>
+<a href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">References</span></a><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="index"><span class="ltx_text ltx_ref_title">Index</span></a><a href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Fri Apr 30 16:20:48 2021 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

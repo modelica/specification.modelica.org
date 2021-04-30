@@ -1,0 +1,894 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>15 Stream Connectors‣ Modelica® Language Specification version 3.6-dev</title>
+<!--Generated on Fri Apr 30 16:20:48 2021 by LaTeXML (version 0.8.5) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on April 30, 2021.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="css/MLS.css" type="text/css">
+<link rel="stylesheet" href="css/MLS-navbar-left.css" type="text/css">
+<script src="LaTeXML-maybeMathjax.js" type="text/javascript"></script>
+<link rel="up" href="MLS.html" title="Modelica® Language Specification version 3.6-dev">
+<link rel="start" href="MLS.html" title="Modelica® Language Specification version 3.6-dev">
+<link rel="prev" href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="next" href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="chapter" href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="appendix" href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="bibliography" href="bib.html" title="References ‣ Modelica® Language Specification version 3.6-dev">
+<link rel="index" href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6-dev">
+<meta name="keywords" lang="en" content="connector, stream, variable">
+</head>
+<body>
+<nav class="ltx_page_navbar"><a href="MLS.html" title="Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6-dev</span></a>
+<div class="ltx_TOC">
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></span>
+<ul class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#definition-of-stream-connectors" title="15.1 Definition of Stream Connectors ‣ Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15.1 </span>Definition of Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#stream-operator-instream-and-connection-equations" title="15.2 Stream Operator inStream and Connection Equations ‣ Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15.2 </span>Stream Operator inStream and Connection Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#stream-operator-actualstream" title="15.3 Stream Operator actualStream ‣ Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15.3 </span>Stream Operator actualStream</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_index"><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div>
+<a href="MLS.html" title="Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6-dev</span></a><a href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a><a href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter" lang="en">
+<h1 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter">Chapter 15 </span>Stream Connectors</h1>
+<div class="ltx_dates">(April 30, 2021)</div>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">The two basic variable types in a connector – <em class="ltx_emph ltx_font_italic">potential</em> (or <em class="ltx_emph ltx_font_italic">across</em>) variable and <em class="ltx_emph ltx_font_italic">flow</em> (or <em class="ltx_emph ltx_font_italic">through</em>) variable – are not sufficient to describe in a numerically sound way the bi-directional flow of matter with convective transport of specific quantities, such as specific enthalpy and chemical composition. The values of these specific quantities are determined from the upstream side of the flow, i.e., they depend on the flow direction. When using across and through variables, the corresponding models would include nonlinear systems of equations with <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">Boolean</span> unknowns for the flow directions and singularities around zero flow. Such equation systems cannot be solved reliably in general. The model formulations can be simplified when formulating two different balance equations for the two possible flow directions. This is not possible with across and through variables though.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">This fundamental problem is addressed in Modelica by introducing a third type of connector variable, called <em class="ltx_emph ltx_font_italic">stream variable</em>, declared with the prefix <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting" style="color:#003378;background-color:#FFFFFF;">stream</span>.
+A stream variable describes a quantity that is carried by a flow variable, i.e., a purely convective transport phenomenon.
+The value of the stream variable is the specific property inside the component close to the boundary, assuming that matter flows out of the component into the connection point.
+In other words, it is the value the carried quantity would have if the fluid was flowing out of the connector, irrespective of the actual flow direction.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">The rationale of the definition and typical use cases are described in
+<a href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">appendix</span> <span class="ltx_text ltx_ref_tag">C</span></a>.</p>
+</div>
+<section id="definition-of-stream-connectors" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">15.1 </span>Definition of Stream Connectors</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">If at least one variable in a connector has the <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting" style="color:#003378;background-color:#FFFFFF;">stream</span> prefix, the connector is called <em class="ltx_emph ltx_font_italic">stream connector</em> and the corresponding variable is called <em class="ltx_emph ltx_font_italic">stream variable</em>.
+The following definitions hold:</p>
+<ul id="S1.I1" class="ltx_itemize">
+<li id="S1.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting" style="color:#003378;background-color:#FFFFFF;">stream</span> prefix can only be used in a connector
+declaration.</p>
+</div>
+</li>
+<li id="S1.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">A stream connector must have exactly one scalar variable with the <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting" style="color:#003378;background-color:#FFFFFF;">flow</span> prefix.</p>
+</div>
+<div id="S1.I1.i2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The idea is that all stream variables of a connector are associated with this flow variable.</span>]</p>
+</div>
+</li>
+<li id="S1.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">For every outside connector (see <a href="connectors-and-connections.html#inside-and-outside-connectors" title="9.1.2 Inside and Outside Connectors ‣ 9.1 Connect-Equations and Connectors ‣ Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">9.1.2</span></a>), one
+equation is generated for every variable with the <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting" style="color:#003378;background-color:#FFFFFF;">stream</span>
+prefix (to describe the propagation of the stream variable
+along a model hierarchy). For the exact definition, see the end of
+<a href="#stream-operator-instream-and-connection-equations" title="15.2 Stream Operator inStream and Connection Equations ‣ Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">15.2</span></a>.</p>
+</div>
+</li>
+<li id="S1.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">For inside connectors (see <a href="connectors-and-connections.html#inside-and-outside-connectors" title="9.1.2 Inside and Outside Connectors ‣ 9.1 Connect-Equations and Connectors ‣ Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">9.1.2</span></a>), variables
+with the <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting" style="color:#003378;background-color:#FFFFFF;">stream</span> prefix do not lead to connection equations.</p>
+</div>
+</li>
+<li id="S1.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i5.p1" class="ltx_para">
+<p class="ltx_p">Connection equations with stream variables are generated in a model when using <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">inStream</span> or <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">actualStream</span>,
+see <a href="#stream-operator-instream-and-connection-equations" title="15.2 Stream Operator inStream and Connection Equations ‣ Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">15.2</span></a> and <a href="#stream-operator-actualstream" title="15.3 Stream Operator actualStream ‣ Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">15.3</span></a>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Y29ubmVjdG9yIEZsdWlkUG9ydAogIHJlcGxhY2VhYmxlIHBhY2thZ2UgTWVkaXVtID0KICAgIE1vZGVsaWNhLk1lZGlhLkludGVyZmFjZXMuUGFydGlhbE1lZGl1bTsKICBNZWRpdW0uQWJzb2x1dGVQcmVzc3VyZSBwICJQcmVzc3VyZSBpbiBjb25uZWN0aW9uIHBvaW50IjsKICBmbG93IE1lZGl1bS5NYXNzRmxvd1JhdGUgbV9mbG93ICI+IDAsIGlmIGZsb3cgaW50byBjb21wb25lbnQiOwogIHN0cmVhbSBNZWRpdW0uU3BlY2lmaWNFbnRoYWxweSBoX291dGZsb3cgImggY2xvc2UgdG8gcG9ydCBpZiBtX2Zsb3cgPCAwIjsKICBzdHJlYW0gTWVkaXVtLk1hc3NGcmFjdGlvbiBYX291dGZsb3dbTWVkaXVtLm5YXSAiWCBjbG9zZSB0byBwb3J0IGlmIG1fZmxvdyA8IDAiOwplbmQgRmx1aWRQb3J0Ow==">⬇</a></div>
+<div id="lstnumberx3652" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">connector</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">FluidPort</span>
+</div>
+<div id="lstnumberx3653" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">replaceable</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">package</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Medium</span><span class="ltx_text ltx_lst_space"> </span>=
+</div>
+<div id="lstnumberx3654" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">Modelica</span>.<span class="ltx_text ltx_lst_identifier">Media</span>.<span class="ltx_text ltx_lst_identifier">Interfaces</span>.<span class="ltx_text ltx_lst_identifier">PartialMedium</span>;
+</div>
+<div id="lstnumberx3655" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">Medium</span>.<span class="ltx_text ltx_lst_identifier">AbsolutePressure</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">p</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"Pressure<span class="ltx_text ltx_lst_space"> </span>in<span class="ltx_text ltx_lst_space"> </span>connection<span class="ltx_text ltx_lst_space"> </span>point"</span>;
+</div>
+<div id="lstnumberx3656" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">flow</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Medium</span>.<span class="ltx_text ltx_lst_identifier">MassFlowRate</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"&gt;<span class="ltx_text ltx_lst_space"> </span>0,<span class="ltx_text ltx_lst_space"> </span>if<span class="ltx_text ltx_lst_space"> </span>flow<span class="ltx_text ltx_lst_space"> </span>into<span class="ltx_text ltx_lst_space"> </span>component"</span>;
+</div>
+<div id="lstnumberx3657" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">stream</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Medium</span>.<span class="ltx_text ltx_lst_identifier">SpecificEnthalpy</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">h_outflow</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"h<span class="ltx_text ltx_lst_space"> </span>close<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>port<span class="ltx_text ltx_lst_space"> </span>if<span class="ltx_text ltx_lst_space"> </span>m_flow<span class="ltx_text ltx_lst_space"> </span>&lt;<span class="ltx_text ltx_lst_space"> </span>0"</span>;
+</div>
+<div id="lstnumberx3658" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">stream</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">Medium</span>.<span class="ltx_text ltx_lst_identifier">MassFraction</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">X_outflow</span>[<span class="ltx_text ltx_lst_identifier">Medium</span>.<span class="ltx_text ltx_lst_identifier">nX</span>]<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"X<span class="ltx_text ltx_lst_space"> </span>close<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>port<span class="ltx_text ltx_lst_space"> </span>if<span class="ltx_text ltx_lst_space"> </span>m_flow<span class="ltx_text ltx_lst_space"> </span>&lt;<span class="ltx_text ltx_lst_space"> </span>0"</span>;
+</div>
+<div id="lstnumberx3659" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">FluidPort</span>;
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">FluidPort</span><span class="ltx_text ltx_font_italic"> is a stream connector, because some connector variables
+have the <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">stream</span> prefix. The Medium definition and the stream
+variables are associated with the only flow variable (<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">m_flow</span>) that
+defines a fluid stream. The Medium and the stream variables are
+transported with this flow variable. The stream variables <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">h_outflow</span> and
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">X_outflow</span> are the stream properties inside the component close to the
+boundary, when fluid flows out of the component into the connection
+point. The stream properties for the other flow direction can be
+inquired with the built-in <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">inStream</span>. The value of
+the stream variable corresponding to the actual flow direction can be
+inquired through the built-in <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">actualStream</span>, see
+<a href="#stream-operator-actualstream" title="15.3 Stream Operator actualStream ‣ Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">15.3</span></a>.</span>]</p>
+</div>
+</section>
+<section id="stream-operator-instream-and-connection-equations" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">15.2 </span>Stream Operator inStream and Connection Equations</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">In combination with the stream variables of a connector, <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">inStream</span> is designed to describe in a numerically
+reliable way the bi-directional transport of specific quantities carried
+by a flow of matter.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<span class="ltx_text ltx_lst_identifier">v</span>)</span> is only allowed on stream variables <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">v</span> and is
+informally the value the stream variable has, assuming that the flow is
+from the connection point into the component. This value is computed
+from the stream connection equations of the flow variables and of the
+stream variables.</p>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p class="ltx_p">For the following definition it is assumed that <math id="S2.p3.m1" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> inside connectors
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><math id="S2.p3.m2" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span></span> (<math id="S2.p3.m3" class="ltx_Math" alttext="j=1,2,\ldots,N" display="inline"><mrow><mi>j</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>N</mi></mrow></mrow></math>) and <math id="S2.p3.m4" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> outside connectors
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><math id="S2.p3.m5" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math></span> (<math id="S2.p3.m6" class="ltx_Math" alttext="k=1,2,\ldots,M" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>M</mi></mrow></mrow></math>) belonging to the same connection set
+(see definition in <a href="connectors-and-connections.html#inside-and-outside-connectors" title="9.1.2 Inside and Outside Connectors ‣ 9.1 Connect-Equations and Connectors ‣ Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">9.1.2</span></a>) are connected
+together and a stream variable <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">h_outflow</span> is associated with a flow
+variable <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">m_flow</span> in connector <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">c</span>.</p>
+</div>
+<div id="S2.p4" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Y29ubmVjdG9yIEZsdWlkUG9ydAogICRcbGRvdHMkCiAgZmxvdyBSZWFsIG1fZmxvdyAiRmxvdyBvZiBtYXR0ZXI7IG1fZmxvdyA+IDAgaWYgZmxvdyBpbnRvIGNvbXBvbmVudCI7CiAgc3RyZWFtIFJlYWwgaF9vdXRmbG93ICJTcGVjaWZpYyB2YXJpYWJsZSBpbiBjb21wb25lbnQgaWYgbV9mbG93IDwgMCIKZW5kIEZsdWlkUG9ydAoKbW9kZWwgRmx1aWRTeXN0ZW0KICAkXGxkb3RzJAogIEZsdWlkQ29tcG9uZW50ICRtXzEkLCAkbV8yJCwgJFxsZG90cyQsICRtX04kOwogIEZsdWlkUG9ydCAkY18xJCwgJGNfMiQsICRcbGRvdHMkLCAkY19NJDsKZXF1YXRpb24KICBjb25uZWN0KCRtXzEkLmMsICRtXzIkLmMpOwogIGNvbm5lY3QoJG1fMSQuYywgJG1fMyQuYyk7CiAgJFxsZG90cyQKICBjb25uZWN0KCRtXzEkLmMsICRtX04kLmMpOwogIGNvbm5lY3QoJG1fMSQuYywgJGNfMSQpOwogIGNvbm5lY3QoJG1fMSQuYywgJGNfMiQpOwogICRcbGRvdHMkCiAgY29ubmVjdCgkbV8xJC5jLCAkY19NJCk7CiAgJFxsZG90cyQKZW5kIEZsdWlkU3lzdGVtOw==">⬇</a></div>
+<div id="lstnumberx3660" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">connector</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">FluidPort</span>
+</div>
+<div id="lstnumberx3661" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><math id="lstnumberx3661.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>
+</div>
+<div id="lstnumberx3662" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">flow</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"Flow<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>matter;<span class="ltx_text ltx_lst_space"> </span>m_flow<span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space"> </span>if<span class="ltx_text ltx_lst_space"> </span>flow<span class="ltx_text ltx_lst_space"> </span>into<span class="ltx_text ltx_lst_space"> </span>component"</span>;
+</div>
+<div id="lstnumberx3663" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">stream</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">h_outflow</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string" style="color:#000000;">"Specific<span class="ltx_text ltx_lst_space"> </span>variable<span class="ltx_text ltx_lst_space"> </span>in<span class="ltx_text ltx_lst_space"> </span>component<span class="ltx_text ltx_lst_space"> </span>if<span class="ltx_text ltx_lst_space"> </span>m_flow<span class="ltx_text ltx_lst_space"> </span>&lt;<span class="ltx_text ltx_lst_space"> </span>0"</span>
+</div>
+<div id="lstnumberx3664" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">FluidPort</span>
+</div>
+<div id="lstnumberx3665" class="ltx_listingline">
+</div>
+<div id="lstnumberx3666" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">FluidSystem</span>
+</div>
+<div id="lstnumberx3667" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><math id="lstnumberx3667.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>
+</div>
+<div id="lstnumberx3668" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">FluidComponent</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3668.m1" class="ltx_Math" alttext="m_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3668.m2" class="ltx_Math" alttext="m_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3668.m3" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3668.m4" class="ltx_Math" alttext="m_{N}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">N</mi></msub></math>;
+</div>
+<div id="lstnumberx3669" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">FluidPort</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3669.m1" class="ltx_Math" alttext="c_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3669.m2" class="ltx_Math" alttext="c_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3669.m3" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3669.m4" class="ltx_Math" alttext="c_{M}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">M</mi></msub></math>;
+</div>
+<div id="lstnumberx3670" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">equation</span>
+</div>
+<div id="lstnumberx3671" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">connect</span>(<math id="lstnumberx3671.m1" class="ltx_Math" alttext="m_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3671.m2" class="ltx_Math" alttext="m_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>);
+</div>
+<div id="lstnumberx3672" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">connect</span>(<math id="lstnumberx3672.m1" class="ltx_Math" alttext="m_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3672.m2" class="ltx_Math" alttext="m_{3}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">3</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>);
+</div>
+<div id="lstnumberx3673" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><math id="lstnumberx3673.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>
+</div>
+<div id="lstnumberx3674" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">connect</span>(<math id="lstnumberx3674.m1" class="ltx_Math" alttext="m_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3674.m2" class="ltx_Math" alttext="m_{N}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">N</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>);
+</div>
+<div id="lstnumberx3675" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">connect</span>(<math id="lstnumberx3675.m1" class="ltx_Math" alttext="m_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3675.m2" class="ltx_Math" alttext="c_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>);
+</div>
+<div id="lstnumberx3676" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">connect</span>(<math id="lstnumberx3676.m1" class="ltx_Math" alttext="m_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3676.m2" class="ltx_Math" alttext="c_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>);
+</div>
+<div id="lstnumberx3677" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><math id="lstnumberx3677.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>
+</div>
+<div id="lstnumberx3678" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">connect</span>(<math id="lstnumberx3678.m1" class="ltx_Math" alttext="m_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3678.m2" class="ltx_Math" alttext="c_{M}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">M</mi></msub></math>);
+</div>
+<div id="lstnumberx3679" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><math id="lstnumberx3679.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>
+</div>
+<div id="lstnumberx3680" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">FluidSystem</span>;
+</div>
+</div>
+</div>
+<figure id="F1" class="ltx_figure"><object type="image/svg+xml" data="media/fluidsystem.svg" id="F1.g1" class="ltx_graphics ltx_centering" alt="Examplary "></object>
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 15.1: </span>Examplary <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">FluidSystem</span> with <math id="F1.m3" class="ltx_Math" alttext="N=3" display="inline"><mrow><mi>N</mi><mo>=</mo><mn>3</mn></mrow></math> and <math id="F1.m4" class="ltx_Math" alttext="M=2" display="inline"><mrow><mi>M</mi><mo>=</mo><mn>2</mn></mrow></math>.</figcaption>
+</figure>
+<div id="S2.p5" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The connection set represents an infinitesimally small control
+volume, for which the stream connection equations are equivalent to the
+conservation equations for mass and energy.</span>]</p>
+</div>
+<div id="S2.p6" class="ltx_para">
+<p class="ltx_p">With these prerequisites, the semantics of the expression
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="S2.p6.m1" class="ltx_Math" alttext="m_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)</span> is given implicitly by
+defining an additional variable <math id="S2.p6.m2" class="ltx_Math" alttext="\mathit{h\_mix\_in}_{i}" display="inline"><mrow><mi>h</mi><mo>⁢</mo><mi mathvariant="normal">_</mi><mo>⁢</mo><mi>𝑚𝑖𝑥</mi><mo>⁢</mo><mi mathvariant="normal">_</mi><mo>⁢</mo><msub><mi>𝑖𝑛</mi><mi>i</mi></msub></mrow></math>, and by
+adding to the model the conservation equations for mass and energy
+corresponding to the infinitesimally small volume spanning the
+connection set. The connection equation for the flow variables has
+already been added to the system according to the connection semantics
+of flow variables defined in <a href="connectors-and-connections.html#generation-of-connection-equations" title="9.2 Generation of Connection Equations ‣ Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">9.2</span></a>.</p>
+</div>
+<div id="S2.p7" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Ly8gU3RhbmRhcmQgY29ubmVjdGlvbiBlcXVhdGlvbiBmb3IgZmxvdyB2YXJpYWJsZXMKMCA9IHN1bSgkbV97an0kLmMubV9mbG93IGZvciBqIGluIDE6TikgKyBzdW0oLSRjX3trfSQubV9mbG93IGZvciBrIGluIDE6TSk7">⬇</a></div>
+<div id="lstnumberx3681" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Standard<span class="ltx_text ltx_lst_space"> </span>connection<span class="ltx_text ltx_lst_space"> </span>equation<span class="ltx_text ltx_lst_space"> </span>for<span class="ltx_text ltx_lst_space"> </span>flow<span class="ltx_text ltx_lst_space"> </span>variables</span>
+</div>
+<div id="lstnumberx3682" class="ltx_listingline">0<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">sum</span>(<math id="lstnumberx3682.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">N</span>)<span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">sum</span>(-<math id="lstnumberx3682.m2" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">M</span>);
+</div>
+</div>
+</div>
+<div id="S2.p8" class="ltx_para">
+<p class="ltx_p">Whenever <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">inStream</span> is applied to a stream variable of an inside connector, the balance equation of the transported
+property must be added under the assumption of flow going into the connector</p>
+</div>
+<div id="S2.p9" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Ly8gSW1wbGljaXQgZGVmaW5pdGlvbiBvZiBpblN0cmVhbSBhcHBsaWVkIHRvIGluc2lkZSBjb25uZWN0b3IgJGkkCjAgPQogIHN1bSgkbV97an0kLmMubV9mbG93ICoKICAgICAgKGlmICRtX3tqfSQuYy5tX2Zsb3cgPiAwIG9yICRqJD09JGkkIHRoZW4gJFxtYXRoaXR7aFxfbWl4XF9pbn1fe2l9JCBlbHNlICRtX3tqfSQuYy5oX291dGZsb3cpCiAgICBmb3IgJGokIGluIDE6TikgKwogIHN1bSgtJGNfe2t9JC5tX2Zsb3cgKgogICAgICAoaWYgLSRjX3trfSQubV9mbG93ID4gMCB0aGVuICRcbWF0aGl0e2hcX21peFxfaW59X3tpfSQgZWxzZSBpblN0cmVhbSgkY197a30kLmhfb3V0ZmxvdykKICAgIGZvciAkayQgaW4gMTpNKTsKaW5TdHJlYW0oJG1fe2l9JC5jLmhfb3V0ZmxvdykgPSAkXG1hdGhpdHtoXF9taXhcX2lufV97aX0kOw==">⬇</a></div>
+<div id="lstnumberx3683" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Implicit<span class="ltx_text ltx_lst_space"> </span>definition<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>inStream<span class="ltx_text ltx_lst_space"> </span>applied<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>inside<span class="ltx_text ltx_lst_space"> </span>connector<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3683.m1" class="ltx_Math" alttext="i" display="inline"><mi mathbackground="#FFFFFF" mathcolor="#127500">i</mi></math></span>
+</div>
+<div id="lstnumberx3684" class="ltx_listingline">0<span class="ltx_text ltx_lst_space"> </span>=
+</div>
+<div id="lstnumberx3685" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">sum</span>(<math id="lstnumberx3685.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>*
+</div>
+<div id="lstnumberx3686" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span>(<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3686.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">or</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3686.m2" class="ltx_Math" alttext="j" display="inline"><mi mathbackground="#FFFFFF">j</mi></math>==<math id="lstnumberx3686.m3" class="ltx_Math" alttext="i" display="inline"><mi mathbackground="#FFFFFF">i</mi></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3686.m4" class="ltx_Math" alttext="\mathit{h\_mix\_in}_{i}" display="inline"><mrow><mi mathbackground="#FFFFFF">h</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF" mathvariant="normal">_</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF">𝑚𝑖𝑥</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF" mathvariant="normal">_</mi><mo mathbackground="#FFFFFF">⁢</mo><msub><mi mathbackground="#FFFFFF">𝑖𝑛</mi><mi mathbackground="#FFFFFF">i</mi></msub></mrow></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3686.m5" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)
+</div>
+<div id="lstnumberx3687" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3687.m1" class="ltx_Math" alttext="j" display="inline"><mi mathbackground="#FFFFFF">j</mi></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">N</span>)<span class="ltx_text ltx_lst_space"> </span>+
+</div>
+<div id="lstnumberx3688" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">sum</span>(-<math id="lstnumberx3688.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>*
+</div>
+<div id="lstnumberx3689" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span>(<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span>-<math id="lstnumberx3689.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3689.m2" class="ltx_Math" alttext="\mathit{h\_mix\_in}_{i}" display="inline"><mrow><mi mathbackground="#FFFFFF">h</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF" mathvariant="normal">_</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF">𝑚𝑖𝑥</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF" mathvariant="normal">_</mi><mo mathbackground="#FFFFFF">⁢</mo><msub><mi mathbackground="#FFFFFF">𝑖𝑛</mi><mi mathbackground="#FFFFFF">i</mi></msub></mrow></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3689.m3" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)
+</div>
+<div id="lstnumberx3690" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3690.m1" class="ltx_Math" alttext="k" display="inline"><mi mathbackground="#FFFFFF">k</mi></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">M</span>);
+</div>
+<div id="lstnumberx3691" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3691.m1" class="ltx_Math" alttext="m_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3691.m2" class="ltx_Math" alttext="\mathit{h\_mix\_in}_{i}" display="inline"><mrow><mi mathbackground="#FFFFFF">h</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF" mathvariant="normal">_</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF">𝑚𝑖𝑥</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF" mathvariant="normal">_</mi><mo mathbackground="#FFFFFF">⁢</mo><msub><mi mathbackground="#FFFFFF">𝑖𝑛</mi><mi mathbackground="#FFFFFF">i</mi></msub></mrow></math>;
+</div>
+</div>
+</div>
+<div id="S2.p10" class="ltx_para">
+<p class="ltx_p">Note that the result of
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="S2.p10.m1" class="ltx_Math" alttext="m_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)</span> is different
+for each port <math id="S2.p10.m2" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>, because the assumption of flow entering the port is
+different for each of them.</p>
+</div>
+<div id="S2.p11" class="ltx_para">
+<p class="ltx_p">Additional equations need to be generated for the stream variables of
+outside connectors.</p>
+</div>
+<div id="S2.p12" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Ly8gQWRkaXRpb25hbCBjb25uZWN0aW9uIGVxdWF0aW9ucyBmb3Igb3V0c2lkZSBjb25uZWN0b3JzCmZvciBxIGluIDE6TSBsb29wCiAgMCA9CiAgICBzdW0oJG1faiQuYy5tX2Zsb3cgKgogICAgICAgIChpZiAkbV9qJC5jLm1fZmxvdyA+IDAgdGhlbiAkXG1hdGhpdHtoXF9taXhcX291dH1fe3F9JCBlbHNlICRtX2okLmMuaF9vdXRmbG93KQogICAgICBmb3IgaiBpbiAxOk4pICsKICAgIHN1bSgtJGNfayQubV9mbG93ICoKICAgICAgICAoaWYgLSRjX2skLm1fZmxvdyA+IDAgb3Igaz09cSB0aGVuICRcbWF0aGl0e2hcX21peFxfb3V0fV97cX0kIGVsc2UgaW5TdHJlYW0oJGNfayQuaF9vdXRmbG93KSkKICAgICAgZm9yIGsgaW4gMTpNKTsKICAkY19xJC5oX291dGZsb3cgPSAkXG1hdGhpdHtoXF9taXhcX291dH1fe3F9JDsKZW5kIGZvcjs=">⬇</a></div>
+<div id="lstnumberx3692" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Additional<span class="ltx_text ltx_lst_space"> </span>connection<span class="ltx_text ltx_lst_space"> </span>equations<span class="ltx_text ltx_lst_space"> </span>for<span class="ltx_text ltx_lst_space"> </span>outside<span class="ltx_text ltx_lst_space"> </span>connectors</span>
+</div>
+<div id="lstnumberx3693" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">q</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">M</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span>
+</div>
+<div id="lstnumberx3694" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>0<span class="ltx_text ltx_lst_space"> </span>=
+</div>
+<div id="lstnumberx3695" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">sum</span>(<math id="lstnumberx3695.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>*
+</div>
+<div id="lstnumberx3696" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">        </span>(<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3696.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3696.m2" class="ltx_Math" alttext="\mathit{h\_mix\_out}_{q}" display="inline"><mrow><mi mathbackground="#FFFFFF">h</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF" mathvariant="normal">_</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF">𝑚𝑖𝑥</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF" mathvariant="normal">_</mi><mo mathbackground="#FFFFFF">⁢</mo><msub><mi mathbackground="#FFFFFF">𝑜𝑢𝑡</mi><mi mathbackground="#FFFFFF">q</mi></msub></mrow></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3696.m3" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)
+</div>
+<div id="lstnumberx3697" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">N</span>)<span class="ltx_text ltx_lst_space"> </span>+
+</div>
+<div id="lstnumberx3698" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_identifier">sum</span>(-<math id="lstnumberx3698.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>*
+</div>
+<div id="lstnumberx3699" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">        </span>(<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span>-<math id="lstnumberx3699.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">or</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span>==<span class="ltx_text ltx_lst_identifier">q</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3699.m2" class="ltx_Math" alttext="\mathit{h\_mix\_out}_{q}" display="inline"><mrow><mi mathbackground="#FFFFFF">h</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF" mathvariant="normal">_</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF">𝑚𝑖𝑥</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF" mathvariant="normal">_</mi><mo mathbackground="#FFFFFF">⁢</mo><msub><mi mathbackground="#FFFFFF">𝑜𝑢𝑡</mi><mi mathbackground="#FFFFFF">q</mi></msub></mrow></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3699.m3" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>))
+</div>
+<div id="lstnumberx3700" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">M</span>);
+</div>
+<div id="lstnumberx3701" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><math id="lstnumberx3701.m1" class="ltx_Math" alttext="c_{q}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">q</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3701.m2" class="ltx_Math" alttext="\mathit{h\_mix\_out}_{q}" display="inline"><mrow><mi mathbackground="#FFFFFF">h</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF" mathvariant="normal">_</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF">𝑚𝑖𝑥</mi><mo mathbackground="#FFFFFF">⁢</mo><mi mathbackground="#FFFFFF" mathvariant="normal">_</mi><mo mathbackground="#FFFFFF">⁢</mo><msub><mi mathbackground="#FFFFFF">𝑜𝑢𝑡</mi><mi mathbackground="#FFFFFF">q</mi></msub></mrow></math>;
+</div>
+<div id="lstnumberx3702" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span>;
+</div>
+</div>
+</div>
+<div id="S2.p13" class="ltx_para">
+<p class="ltx_p">Neglecting zero flow conditions, the solution of the above-defined
+stream connection equations for <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">inStream</span> values of inside connectors and
+outflow stream variables of outside connectors is (for a derivation, see
+<a href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">appendix</span> <span class="ltx_text ltx_ref_tag">C</span></a>):
+</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW5TdHJlYW0oJG1faSQuYy5oX291dGZsb3cpIDo9CiAgKHN1bShtYXgoLSRtX2okLmMubV9mbG93LDApKiRtX2okLmMuaF9vdXRmbG93IGZvciBqIGluIGNhdCgxLCAxOmktMSwgaSsxOk4pICsKICAgc3VtKG1heCggJGNfayQubV9mbG93LDApKmluU3RyZWFtKCRjX2skLmhfb3V0ZmxvdykgZm9yIGsgaW4gMTpNKSkKICAvCiAgKHN1bShtYXgoLSRtX2okLmMubV9mbG93LDApIGZvciBqIGluIGNhdCgxLCAxOmktMSwgaSsxOk4pICsKICAgc3VtKG1heCggJGNfayQubV9mbG93ICwwKSBmb3IgayBpbiAxOk0pKTsKCi8vIEFkZGl0aW9uYWwgZXF1YXRpb25zIHRvIGJlIGdlbmVyYXRlZCBmb3Igb3V0c2lkZSBjb25uZWN0b3JzIHEKZm9yIHEgaW4gMTpNIGxvb3AKICAkY19xJC5oX291dGZsb3cgOj0KICAgIChzdW0obWF4KC0kbV9qJC5jLm1fZmxvdywwKSokbV9qJC5jLmhfb3V0ZmxvdyBmb3IgaiBpbiAxOk4pICsKICAgICBzdW0obWF4KCAkY19rJC5tX2Zsb3csMCkqaW5TdHJlYW0oJGNfayQuaF9vdXRmbG93KSBmb3IgayBpbiBjYXQoMSwgMTpxLTEsIHErMTpNKSkKICAgIC8KICAgIChzdW0obWF4KC0kbV9qJC5jLm1fZmxvdywwKSBmb3IgaiBpbiAxOk4pICsKICAgICBzdW0obWF4KCAkY19rJC5tX2Zsb3cgLDApIGZvciBrIGluIGNhdCgxLCAxOnEtMSwgcSsxOk0pKSk7CmVuZCBmb3I7">⬇</a></div>
+<div id="lstnumberx3703" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3703.m1" class="ltx_Math" alttext="m_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)<span class="ltx_text ltx_lst_space"> </span>:=
+</div>
+<div id="lstnumberx3704" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>(<span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">max</span>(-<math id="lstnumberx3704.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,0)*<math id="lstnumberx3704.m2" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">cat</span>(1,<span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">i</span>-1,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span>+1:<span class="ltx_text ltx_lst_identifier">N</span>)<span class="ltx_text ltx_lst_space"> </span>+
+</div>
+<div id="lstnumberx3705" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">max</span>(<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3705.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,0)*<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3705.m2" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">M</span>))
+</div>
+<div id="lstnumberx3706" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>/
+</div>
+<div id="lstnumberx3707" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span>(<span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">max</span>(-<math id="lstnumberx3707.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,0)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">cat</span>(1,<span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">i</span>-1,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span>+1:<span class="ltx_text ltx_lst_identifier">N</span>)<span class="ltx_text ltx_lst_space"> </span>+
+</div>
+<div id="lstnumberx3708" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">max</span>(<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3708.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>,0)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">M</span>));
+</div>
+<div id="lstnumberx3709" class="ltx_listingline">
+</div>
+<div id="lstnumberx3710" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Additional<span class="ltx_text ltx_lst_space"> </span>equations<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>be<span class="ltx_text ltx_lst_space"> </span>generated<span class="ltx_text ltx_lst_space"> </span>for<span class="ltx_text ltx_lst_space"> </span>outside<span class="ltx_text ltx_lst_space"> </span>connectors<span class="ltx_text ltx_lst_space"> </span>q</span>
+</div>
+<div id="lstnumberx3711" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">q</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">M</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span>
+</div>
+<div id="lstnumberx3712" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><math id="lstnumberx3712.m1" class="ltx_Math" alttext="c_{q}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">q</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span><span class="ltx_text ltx_lst_space"> </span>:=
+</div>
+<div id="lstnumberx3713" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>(<span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">max</span>(-<math id="lstnumberx3713.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,0)*<math id="lstnumberx3713.m2" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">N</span>)<span class="ltx_text ltx_lst_space"> </span>+
+</div>
+<div id="lstnumberx3714" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span><span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">max</span>(<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3714.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,0)*<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3714.m2" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">cat</span>(1,<span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">q</span>-1,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">q</span>+1:<span class="ltx_text ltx_lst_identifier">M</span>))
+</div>
+<div id="lstnumberx3715" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>/
+</div>
+<div id="lstnumberx3716" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>(<span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">max</span>(-<math id="lstnumberx3716.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,0)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">N</span>)<span class="ltx_text ltx_lst_space"> </span>+
+</div>
+<div id="lstnumberx3717" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span><span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">max</span>(<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3717.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>,0)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">cat</span>(1,<span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">q</span>-1,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">q</span>+1:<span class="ltx_text ltx_lst_identifier">M</span>)));
+</div>
+<div id="lstnumberx3718" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span>;
+</div>
+</div>
+</div>
+<div id="S2.p14" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Note, that <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_upright" style="color:#543D08;">inStream</span><span class="ltx_text ltx_font_upright">(<math id="S2.p14.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)</span></span> is computed from the connection set that is present one hierarchical level above. At this higher level
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_font_upright"><math id="S2.p14.m2" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math></span><span class="ltx_text ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">h_outflow</span></span></span> is no longer an outside connector, but an inside connector and then the formula from above for inside connectors can be used
+to compute it.</span>]</p>
+</div>
+<div id="S2.p15" class="ltx_para">
+<p class="ltx_p">If the argument of <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">inStream</span> is an array, the implicit
+equation system holds elementwise, i.e., <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">inStream</span> is
+vectorizable.</p>
+</div>
+<div id="S2.p16" class="ltx_para">
+<p class="ltx_p">The stream connection equations have singularities and/or multiple
+solutions if one or more of the flow variables become zero. When all the
+flows are zero, a singularity is always present, so it is necessary to
+approximate the solution in an open neighbourhood of that point.</p>
+</div>
+<div id="S2.p17" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">For example, assume that <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_font_upright"><math id="S2.p17.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math></span><span class="ltx_text ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><math id="S2.p17.m2" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>0</span></span>, then all equations above are identically fulfilled and <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">inStream</span> can have any value.</span>]</p>
+</div>
+<div id="S2.p18" class="ltx_para">
+<p class="ltx_p">However, specific optimizations may be applied to avoid the regularization if the flow through one port is zero or non-negative, see <a href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">appendix</span> <span class="ltx_text ltx_ref_tag">C</span></a>.
+It is required that <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">inStream</span> is appropriately approximated when regularization is needed and the approximation must fulfill the following requirements:</p>
+<ol id="S2.I1" class="ltx_enumerate">
+<li id="S2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="S2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="S2.I1.i1.p1.m1" class="ltx_Math" alttext="m_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)</span> and
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="S2.I1.i1.p1.m2" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)</span> must be unique with
+respect to all values of the flow and stream variables in the
+connection set, and must have a continuous dependency on them.</p>
+</div>
+</li>
+<li id="S2.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="S2.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Every solution of the implicit equation system above must fulfill the
+equation system identically (upto the usual numerical
+accuracy), provided the absolute value of every flow variable in
+the connection set is greater than a small value
+(<math id="S2.I1.i2.p1.m1" class="ltx_Math" alttext="{{\left\lvert m_{i}\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers%
+\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language%
+\lst@@@set@frame\normalsize.{\@listingGroup{ltx_lst_identifier}{c}}.{%
+\@listingGroup{ltx_lst_identifier}{m\textunderscore flow}}}}}}{}\right\rvert&gt;%
+\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers\lst@@@set@frame%
+\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language\lst@@@set@frame%
+\normalsize{\@listingGroup{ltx_lst_identifier}{eps}}}}}}" display="inline"><mrow><mrow><mo fence="true">|</mo><mrow><msub><mi>m</mi><mi>i</mi></msub><mo>⁢</mo><mrow class="ltx_lst_language_modelica_short ltx_lstlisting"><mtext mathbackground="#FFFFFF">.</mtext><mtext mathbackground="#FFFFFF">c</mtext><mtext mathbackground="#FFFFFF">.</mtext><mtext mathbackground="#FFFFFF">m_flow</mtext></mrow></mrow><mo fence="true">|</mo></mrow><mo>&gt;</mo><mtext class="ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF">eps</mtext></mrow></math> for <math id="S2.I1.i2.p1.m2" class="ltx_Math" alttext="1\leq i\leq N" display="inline"><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>N</mi></mrow></math> and
+<math id="S2.I1.i2.p1.m3" class="ltx_Math" alttext="{{\left\lvert c_{i}\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers%
+\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language%
+\lst@@@set@frame\normalsize.{\@listingGroup{ltx_lst_identifier}{m%
+\textunderscore flow}}}}}}{}\right\rvert&gt;\text{\lstinline{{\lst@@@set@language%
+\lst@@@set@numbers\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language%
+\lst@@@set@language\lst@@@set@frame\normalsize{\@listingGroup{%
+ltx_lst_identifier}{eps}}}}}}" display="inline"><mrow><mrow><mo fence="true">|</mo><mrow><msub><mi>c</mi><mi>i</mi></msub><mo>⁢</mo><mrow class="ltx_lst_language_modelica_short ltx_lstlisting"><mtext mathbackground="#FFFFFF">.</mtext><mtext mathbackground="#FFFFFF">m_flow</mtext></mrow></mrow><mo fence="true">|</mo></mrow><mo>&gt;</mo><mtext class="ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF">eps</mtext></mrow></math> for <math id="S2.I1.i2.p1.m4" class="ltx_Math" alttext="1\leq i\leq M" display="inline"><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>M</mi></mrow></math>).</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="S2.p19" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Based on the above requirements, the following implementation is recommended:</span></p>
+<ul id="S2.I2" class="ltx_itemize">
+<li id="S2.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="S2.I2.i1.p1.m1" class="ltx_Math" alttext="N=1,\,M=0" display="inline"><mrow><mrow><mi>N</mi><mo>=</mo><mn>1</mn></mrow><mo rspace="4.2pt">,</mo><mrow><mi>M</mi><mo>=</mo><mn>0</mn></mrow></mrow></math><span class="ltx_text ltx_font_italic">:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW5TdHJlYW0oJG1fMSQuYy5oX291dGZsb3cpID0gJG1fMSQuYy5oX291dGZsb3c7">⬇</a></div>
+<div id="lstnumberx3719" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3719.m1" class="ltx_Math" alttext="m_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3719.m2" class="ltx_Math" alttext="m_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>;
+</div>
+</div>
+</div>
+</li>
+<li id="S2.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="S2.I2.i2.p1.m1" class="ltx_Math" alttext="N=2,\,M=0" display="inline"><mrow><mrow><mi>N</mi><mo>=</mo><mn>2</mn></mrow><mo rspace="4.2pt">,</mo><mrow><mi>M</mi><mo>=</mo><mn>0</mn></mrow></mrow></math><span class="ltx_text ltx_font_italic">:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW5TdHJlYW0oJG1fMSQuYy5oX291dGZsb3cpID0gJG1fMiQuYy5oX291dGZsb3c7CmluU3RyZWFtKCRtXzIkLmMuaF9vdXRmbG93KSA9ICRtXzEkLmMuaF9vdXRmbG93Ow==">⬇</a></div>
+<div id="lstnumberx3720" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3720.m1" class="ltx_Math" alttext="m_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3720.m2" class="ltx_Math" alttext="m_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>;
+</div>
+<div id="lstnumberx3721" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3721.m1" class="ltx_Math" alttext="m_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3721.m2" class="ltx_Math" alttext="m_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>;
+</div>
+</div>
+</div>
+</li>
+<li id="S2.I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="S2.I2.i3.p1.m1" class="ltx_Math" alttext="N=1,\,M=1" display="inline"><mrow><mrow><mi>N</mi><mo>=</mo><mn>1</mn></mrow><mo rspace="4.2pt">,</mo><mrow><mi>M</mi><mo>=</mo><mn>1</mn></mrow></mrow></math><span class="ltx_text ltx_font_italic">:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW5TdHJlYW0oJG1fMSQuYy5oX291dGZsb3cpID0gaW5TdHJlYW0oJGNfMSQuaF9vdXRmbG93KTsKLy8gQWRkaXRpb25hbCBlcXVhdGlvbiB0byBiZSBnZW5lcmF0ZWQKJGNfMSQuaF9vdXRmbG93ID0gJG1fMSQuYy5oX291dGZsb3c7">⬇</a></div>
+<div id="lstnumberx3722" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3722.m1" class="ltx_Math" alttext="m_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3722.m2" class="ltx_Math" alttext="c_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>);
+</div>
+<div id="lstnumberx3723" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Additional<span class="ltx_text ltx_lst_space"> </span>equation<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>be<span class="ltx_text ltx_lst_space"> </span>generated</span>
+</div>
+<div id="lstnumberx3724" class="ltx_listingline">
+<math id="lstnumberx3724.m1" class="ltx_Math" alttext="c_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3724.m2" class="ltx_Math" alttext="m_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>;
+</div>
+</div>
+</div>
+</li>
+<li id="S2.I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i4.p1" class="ltx_para">
+<p class="ltx_p"><math id="S2.I2.i4.p1.m1" class="ltx_Math" alttext="N=0,\,M=2" display="inline"><mrow><mrow><mi>N</mi><mo>=</mo><mn>0</mn></mrow><mo rspace="4.2pt">,</mo><mrow><mi>M</mi><mo>=</mo><mn>2</mn></mrow></mrow></math><span class="ltx_text ltx_font_italic">:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Ly8gQWRkaXRpb25hbCBlcXVhdGlvbiB0byBiZSBnZW5lcmF0ZWQKJGNfezF9JC5oX291dGZsb3cgPSBpblN0cmVhbSgkY197Mn0kLmhfb3V0Zmxvdyk7CiRjX3syfSQuaF9vdXRmbG93ID0gaW5TdHJlYW0oJGNfezF9JC5oX291dGZsb3cpOw==">⬇</a></div>
+<div id="lstnumberx3725" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Additional<span class="ltx_text ltx_lst_space"> </span>equation<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>be<span class="ltx_text ltx_lst_space"> </span>generated</span>
+</div>
+<div id="lstnumberx3726" class="ltx_listingline">
+<math id="lstnumberx3726.m1" class="ltx_Math" alttext="c_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3726.m2" class="ltx_Math" alttext="c_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>);
+</div>
+<div id="lstnumberx3727" class="ltx_listingline">
+<math id="lstnumberx3727.m1" class="ltx_Math" alttext="c_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3727.m2" class="ltx_Math" alttext="c_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>);
+</div>
+</div>
+</div>
+</li>
+<li id="S2.I2.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">All other cases:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aWYgJG1faiQuYy5tX2Zsb3cubWluID49IDAgIGZvciBhbGwgaiA9IDE6TiB3aXRoIGogPD4gaSAgYW5kCiAgICRjX2skLm1fZmxvdy5tYXggPD0gMCBmb3IgYWxsIGsgPSAxOk0KdGhlbgogIGluU3RyZWFtKCRtX2kkLmMuaF9vdXRmbG93KSA9ICRtX2kkLmMuaF9vdXRmbG93OwplbHNlCiAgc2kgPSBzdW0gKG1heCgtJG1faiQuYy5tX2Zsb3csMCkgZm9yIGogaW4gY2F0KDEsMTppLTEsIGkrMTpOKSArCiAgICAgICBzdW0obWF4KCAkY19rJC5tX2Zsb3cgLDApIGZvciBrICBpbiAxOk0pOwogIGluU3RyZWFtKCRtX2kkLmMuaF9vdXRmbG93KSA9CiAgICAgKHN1bShwb3NpdGl2ZU1heCgtJG1faiQuYy5tX2Zsb3csJHNfaSQpKiRtX2okLmMuaF9vdXRmbG93KQogICAgKyAgc3VtKHBvc2l0aXZlTWF4KCRjX2skLm1fZmxvdyxzX2kpKmluU3RyZWFtKCRjX2skLmhfb3V0ZmxvdykpKS8KICAgKHN1bShwb3NpdGl2ZU1heCgtJG1faiQuYy5tX2Zsb3csc19pKSkKICAgICAgKyAgc3VtKHBvc2l0aXZlTWF4KCRjX2skLm1fZmxvdyxzX2kpKSkKICAgICAgICAgICAgICAgIGZvciBqIGluIDE6TiBhbmQgaSA8PiBqIGFuZCAkbV9qJC5jLm1fZmxvdy5taW4gPCAwLAogICAgICAgICAgICAgICAgZm9yIGsgaW4gMTpNIGFuZCAkY19rJC5tX2Zsb3cubWF4ID4gMAovLyBBZGRpdGlvbmFsIGVxdWF0aW9ucyB0byBiZSBnZW5lcmF0ZWQKZm9yIHEgaW4gMTpNIGxvb3AKICBpZiAkbV9qJC5jLm1fZmxvdy5taW4gPj0gMCBmb3IgYWxsIGogPSAxOk4gYW5kCiAgICAkY19rJC5tX2Zsb3cubWF4IDw9IDAgZm9yIGFsbCBrID0gMTpNIGFuZCBrIDw+IHEKICB0aGVuCiAgICAkY19xJC5oX291dGZsb3cgPSAwOwogIGVsc2UKICAgICRzX3EkID0gKHN1bShtYXgoLSRtX2okLmMubV9mbG93LDApIGZvciBqIGluICAxOk4pICsKICAgICAgICAgICAgICAgICAgc3VtKG1heCggJGNfayQubV9mbG93ICwwKSBmb3IgayBpbiBjYXQoMSwxOnEtMSwgcSsxOk0pKSk7CiAgICAkY19xJC5oX291dGZsb3cgPSAoc3VtKHBvc2l0aXZlTWF4KC0kbV9qJC5jLm1fZmxvdyxzX3EpKiRtX2okLmMuaF9vdXRmbG93KSArCiAgICAgICAgICAgICAgIHN1bShwb3NpdGl2ZU1heCgkY19rJC5tX2Zsb3csJHNfcSQpKiBpblN0cmVhbSgkY19rJC5oX291dGZsb3cpKSkvCiAgICAgICAgICAgICAgKHN1bShwb3NpdGl2ZU1heCgtJG1faiQuYy5tX2Zsb3csc19xKSkgKwogICAgICAgICAgICAgICBzdW0ocG9zaXRpdmVNYXgoJGNfayQubV9mbG93LHNfcSkpKQogICAgZm9yIGogaW4gMTpOIGFuZCAkbV9qJC5jLm1fZmxvdy5taW4gPCAwLAogICAgICAgICAgICAgICAgZm9yIGsgaW4gMTpNIGFuZCBrIDw+IHEgYW5kICRjX2skLm1fZmxvdy5tYXggPiAwCmVuZCBmb3I7">⬇</a></div>
+<div id="lstnumberx3728" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3728.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>.<span class="ltx_text ltx_lst_identifier">min</span><span class="ltx_text ltx_lst_space"> </span>&gt;=<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">all</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">N</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">with</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span>&lt;&gt;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">and</span>
+</div>
+<div id="lstnumberx3729" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span><math id="lstnumberx3729.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span>.<span class="ltx_text ltx_lst_identifier">max</span><span class="ltx_text ltx_lst_space"> </span>&lt;=<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">all</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">M</span>
+</div>
+<div id="lstnumberx3730" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx3731" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3731.m1" class="ltx_Math" alttext="m_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3731.m2" class="ltx_Math" alttext="m_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>;
+</div>
+<div id="lstnumberx3732" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span>
+</div>
+<div id="lstnumberx3733" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">si</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">sum</span><span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_identifier">max</span>(-<math id="lstnumberx3733.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,0)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">cat</span>(1,1:<span class="ltx_text ltx_lst_identifier">i</span>-1,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span>+1:<span class="ltx_text ltx_lst_identifier">N</span>)<span class="ltx_text ltx_lst_space"> </span>+
+</div>
+<div id="lstnumberx3734" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">       </span><span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">max</span>(<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3734.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>,0)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">M</span>);
+</div>
+<div id="lstnumberx3735" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3735.m1" class="ltx_Math" alttext="m_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)<span class="ltx_text ltx_lst_space"> </span>=
+</div>
+<div id="lstnumberx3736" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">     </span>(<span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">positiveMax</span>(-<math id="lstnumberx3736.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<math id="lstnumberx3736.m2" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">s</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>)*<math id="lstnumberx3736.m3" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)
+</div>
+<div id="lstnumberx3737" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span>+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">positiveMax</span>(<math id="lstnumberx3737.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<span class="ltx_text ltx_lst_identifier">s_i</span>)*<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3737.m2" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)))/
+</div>
+<div id="lstnumberx3738" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">   </span>(<span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">positiveMax</span>(-<math id="lstnumberx3738.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<span class="ltx_text ltx_lst_identifier">s_i</span>))
+</div>
+<div id="lstnumberx3739" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">      </span>+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">positiveMax</span>(<math id="lstnumberx3739.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<span class="ltx_text ltx_lst_identifier">s_i</span>)))
+</div>
+<div id="lstnumberx3740" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">                </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">N</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">and</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">i</span><span class="ltx_text ltx_lst_space"> </span>&lt;&gt;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">and</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3740.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>.<span class="ltx_text ltx_lst_identifier">min</span><span class="ltx_text ltx_lst_space"> </span>&lt;<span class="ltx_text ltx_lst_space"> </span>0,
+</div>
+<div id="lstnumberx3741" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">                </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">M</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">and</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3741.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span>.<span class="ltx_text ltx_lst_identifier">max</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>0
+</div>
+<div id="lstnumberx3742" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Additional<span class="ltx_text ltx_lst_space"> </span>equations<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>be<span class="ltx_text ltx_lst_space"> </span>generated</span>
+</div>
+<div id="lstnumberx3743" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">q</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">M</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">loop</span>
+</div>
+<div id="lstnumberx3744" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3744.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>.<span class="ltx_text ltx_lst_identifier">min</span><span class="ltx_text ltx_lst_space"> </span>&gt;=<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">all</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">N</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">and</span>
+</div>
+<div id="lstnumberx3745" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><math id="lstnumberx3745.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span>.<span class="ltx_text ltx_lst_identifier">max</span><span class="ltx_text ltx_lst_space"> </span>&lt;=<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">all</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">M</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">and</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space"> </span>&lt;&gt;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">q</span>
+</div>
+<div id="lstnumberx3746" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span>
+</div>
+<div id="lstnumberx3747" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><math id="lstnumberx3747.m1" class="ltx_Math" alttext="c_{q}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">q</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>0;
+</div>
+<div id="lstnumberx3748" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span>
+</div>
+<div id="lstnumberx3749" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><math id="lstnumberx3749.m1" class="ltx_Math" alttext="s_{q}" display="inline"><msub><mi mathbackground="#FFFFFF">s</mi><mi mathbackground="#FFFFFF">q</mi></msub></math><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">max</span>(-<math id="lstnumberx3749.m2" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,0)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space">  </span>1:<span class="ltx_text ltx_lst_identifier">N</span>)<span class="ltx_text ltx_lst_space"> </span>+
+</div>
+<div id="lstnumberx3750" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">                  </span><span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">max</span>(<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3750.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>,0)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">cat</span>(1,1:<span class="ltx_text ltx_lst_identifier">q</span>-1,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">q</span>+1:<span class="ltx_text ltx_lst_identifier">M</span>)));
+</div>
+<div id="lstnumberx3751" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><math id="lstnumberx3751.m1" class="ltx_Math" alttext="c_{q}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">q</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">positiveMax</span>(-<math id="lstnumberx3751.m2" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<span class="ltx_text ltx_lst_identifier">s_q</span>)*<math id="lstnumberx3751.m3" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)<span class="ltx_text ltx_lst_space"> </span>+
+</div>
+<div id="lstnumberx3752" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">               </span><span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">positiveMax</span>(<math id="lstnumberx3752.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<math id="lstnumberx3752.m2" class="ltx_Math" alttext="s_{q}" display="inline"><msub><mi mathbackground="#FFFFFF">s</mi><mi mathbackground="#FFFFFF">q</mi></msub></math>)*<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<math id="lstnumberx3752.m3" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)))/
+</div>
+<div id="lstnumberx3753" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">              </span>(<span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">positiveMax</span>(-<math id="lstnumberx3753.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<span class="ltx_text ltx_lst_identifier">s_q</span>))<span class="ltx_text ltx_lst_space"> </span>+
+</div>
+<div id="lstnumberx3754" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">               </span><span class="ltx_text ltx_lst_identifier">sum</span>(<span class="ltx_text ltx_lst_identifier">positiveMax</span>(<math id="lstnumberx3754.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<span class="ltx_text ltx_lst_identifier">s_q</span>)))
+</div>
+<div id="lstnumberx3755" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">j</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">N</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">and</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3755.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>.<span class="ltx_text ltx_lst_identifier">min</span><span class="ltx_text ltx_lst_space"> </span>&lt;<span class="ltx_text ltx_lst_space"> </span>0,
+</div>
+<div id="lstnumberx3756" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">                </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">in</span><span class="ltx_text ltx_lst_space"> </span>1:<span class="ltx_text ltx_lst_identifier">M</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">and</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">k</span><span class="ltx_text ltx_lst_space"> </span>&lt;&gt;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">q</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">and</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3756.m1" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">m_flow</span>.<span class="ltx_text ltx_lst_identifier">max</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>0
+</div>
+<div id="lstnumberx3757" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span>;
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div id="S2.p20" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The operator
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">positiveMax</span><span class="ltx_text ltx_font_upright">(-<math id="S2.p20.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.p20.m2" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">s</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>)</span></span>
+should be such that:</span></p>
+<ul id="S2.I3" class="ltx_itemize">
+<li id="S2.I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">positiveMax</span><span class="ltx_text ltx_font_upright">(-<math id="S2.I3.i1.p1.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.I3.i1.p1.m2" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">s</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>)</span></span><span class="ltx_text ltx_font_italic"> =
+</span><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">-<math id="S2.I3.i1.p1.m3" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span></span><span class="ltx_text ltx_font_italic"> if
+</span><math id="S2.I3.i1.p1.m4" class="ltx_Math" alttext="{-m_{j}\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers\lst@@@set@frame%
+\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language\lst@@@set@frame%
+\normalsize.{\@listingGroup{ltx_lst_identifier}{c}}.{\@listingGroup{%
+ltx_lst_identifier}{m\textunderscore flow}}}}}}&gt;\mathit{eps1}_{j}\geq 0" display="inline"><mrow><mrow><mo>-</mo><mrow><msub><mi>m</mi><mi>j</mi></msub><mo>⁢</mo><mrow class="ltx_lst_language_modelica_short ltx_lstlisting"><mtext mathbackground="#FFFFFF">.</mtext><mtext mathbackground="#FFFFFF">c</mtext><mtext mathbackground="#FFFFFF">.</mtext><mtext mathbackground="#FFFFFF">m_flow</mtext></mrow></mrow></mrow><mo>&gt;</mo><msub><mi mathvariant="italic">eps1</mi><mi>j</mi></msub><mo>≥</mo><mn>0</mn></mrow></math><span class="ltx_text ltx_font_italic">,
+where </span><math id="S2.I3.i1.p1.m5" class="ltx_Math" alttext="\mathit{eps1}_{j}" display="inline"><msub><mi mathvariant="italic">eps1</mi><mi>j</mi></msub></math><span class="ltx_text ltx_font_italic"> are small flows, compared to typical
+problem-specific values,</span></p>
+</div>
+</li>
+<li id="S2.I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I3.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">all denominators should be greater than </span><math id="S2.I3.i2.p1.m1" class="ltx_Math" alttext="\mathit{eps2}&gt;0" display="inline"><mrow><mi mathvariant="italic">eps2</mi><mo>&gt;</mo><mn>0</mn></mrow></math><span class="ltx_text ltx_font_italic">,
+where </span><math id="S2.I3.i2.p1.m2" class="ltx_Math" alttext="\mathit{eps2}" display="inline"><mi mathvariant="italic">eps2</mi></math><span class="ltx_text ltx_font_italic"> is also a small flow, compared to typical problem-specific
+values.</span></p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S2.p21" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Trivial implementation of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">positiveMax</span> guarantees continuity of <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">inStream</span>:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cG9zdGl2ZU1heCgtJG1faiQuYy5tX2Zsb3csICRzX2kkKSA9IG1heCgtJG1faiQuYy5tX2Zsb3csICRcbWF0aGl0e2VwczF9JCk7IC8vIHNvICRzX2kkIGlzIG5vdCBuZWVkZWQ=">⬇</a></div>
+<div id="lstnumberx3758" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">postiveMax</span>(-<math id="lstnumberx3758.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3758.m2" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">s</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">max</span>(-<math id="lstnumberx3758.m3" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3758.m4" class="ltx_Math" alttext="\mathit{eps1}" display="inline"><mi mathbackground="#FFFFFF" mathvariant="italic">eps1</mi></math>);<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>so<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3758.m5" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi mathbackground="#FFFFFF" mathcolor="#127500">s</mi><mi mathbackground="#FFFFFF" mathcolor="#127500">i</mi></msub></math><span class="ltx_text ltx_lst_space"> </span>is<span class="ltx_text ltx_lst_space"> </span>not<span class="ltx_text ltx_lst_space"> </span>needed</span>
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">More sophisticated implementation, with smooth approximation, applied only when all flows are small:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Ly8gRGVmaW5lIGEgInNtYWxsIG51bWJlciIgZXBzIChub21pbmFsKHYpIGlzIHRoZSBub21pbmFsIHZhbHVlIG9mIHYsIHNlZSAhXGNyZWZ7YXR0cmlidXRlcy1zdGFydC1maXhlZC1ub21pbmFsLWFuZC11bmJvdW5kZWR9ISkKZXBzIDo9IHJlbGF0aXZlVG9sZXJhbmNlKm1pbihub21pbmFsKCRtX2okLmMubV9mbG93KSk7CgovLyBEZWZpbmUgYSBzbW9vdGggY3VydmUsIHN1Y2ggdGhhdCAgYWxwaGEoJHNfaT49ZXBzJCk9MSBhbmQgYWxwaGEoJHNfaTwwJCk9MAphbHBoYSA6PSBzbW9vdGgoMSwgaWYgJHNfaSQgPiBlcHMgdGhlbiAxCiAgICAgICAgICAgICAgICAgICBlbHNlIGlmICRzX2kkID4gMCB0aGVuICgkc19pJC9lcHMpXjIqKDMtMiogJHNfaSQvZXBzKQogICAgICAgICAgICAgICAgICAgZWxzZSAwKTsKCi8vIERlZmluZSBmdW5jdGlvbiBwb3NpdGl2ZU1heCh2LHNfaSkgYXMgYSBsaW5lYXIgY29tYmluYXRpb24gb2YgbWF4ICh2LDApCi8vIGFuZCBvZiBlcHMgYWxvbmcgYWxwaGEKcG9zaXRpdmVNYXgoKC0kbV9qJC5jLm1fZmxvdyxzX2kpIDo9IGFscGhhKm1heCgtJG1faiQuYy5tX2Zsb3csMCkgKyAoMS1hbHBoYSkqZXBzOw==">⬇</a></div>
+<div id="lstnumberx3759" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Define<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>"small<span class="ltx_text ltx_lst_space"> </span>number"<span class="ltx_text ltx_lst_space"> </span>eps<span class="ltx_text ltx_lst_space"> </span>(nominal(v)<span class="ltx_text ltx_lst_space"> </span>is<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>nominal<span class="ltx_text ltx_lst_space"> </span>value<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>v,<span class="ltx_text ltx_lst_space"> </span>see<span class="ltx_text ltx_lst_space"> </span><a href="class-predefined-types-and-declarations.html#attributes-start-fixed-nominal-and-unbounded" title="4.8.6 Attributes start, fixed, nominal, and unbounded ‣ 4.8 Predefined Types and Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">4.8.6</span></a>)</span>
+</div>
+<div id="lstnumberx3760" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">eps</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">relativeTolerance</span>*<span class="ltx_text ltx_lst_identifier">min</span>(<span class="ltx_text ltx_lst_identifier">nominal</span>(<math id="lstnumberx3760.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>));
+</div>
+<div id="lstnumberx3761" class="ltx_listingline">
+</div>
+<div id="lstnumberx3762" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Define<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>smooth<span class="ltx_text ltx_lst_space"> </span>curve,<span class="ltx_text ltx_lst_space"> </span>such<span class="ltx_text ltx_lst_space"> </span>that<span class="ltx_text ltx_lst_space">  </span>alpha(<math id="lstnumberx3762.m1" class="ltx_Math" alttext="s_{i}&gt;=eps" display="inline"><mrow><msub><mi mathbackground="#FFFFFF" mathcolor="#127500">s</mi><mi mathbackground="#FFFFFF" mathcolor="#127500">i</mi></msub><mo mathbackground="#FFFFFF" mathcolor="#127500" mathvariant="italic">&gt;=</mo><mrow><mi mathbackground="#FFFFFF" mathcolor="#127500">e</mi><mo mathbackground="#FFFFFF" mathcolor="#127500" mathvariant="sans-serif">⁢</mo><mi mathbackground="#FFFFFF" mathcolor="#127500">p</mi><mo mathbackground="#FFFFFF" mathcolor="#127500" mathvariant="sans-serif">⁢</mo><mi mathbackground="#FFFFFF" mathcolor="#127500">s</mi></mrow></mrow></math>)=1<span class="ltx_text ltx_lst_space"> </span>and<span class="ltx_text ltx_lst_space"> </span>alpha(<math id="lstnumberx3762.m2" class="ltx_Math" alttext="s_{i}&lt;0" display="inline"><mrow><msub><mi mathbackground="#FFFFFF" mathcolor="#127500">s</mi><mi mathbackground="#FFFFFF" mathcolor="#127500">i</mi></msub><mo mathbackground="#FFFFFF" mathcolor="#127500" mathvariant="normal">&lt;</mo><mn mathbackground="#FFFFFF" mathcolor="#127500" mathvariant="normal">0</mn></mrow></math>)=0</span>
+</div>
+<div id="lstnumberx3763" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">alpha</span><span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">smooth</span>(1,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3763.m1" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">s</mi><mi mathbackground="#FFFFFF">i</mi></msub></math><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">eps</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space"> </span>1
+</div>
+<div id="lstnumberx3764" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">                   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3764.m1" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">s</mi><mi mathbackground="#FFFFFF">i</mi></msub></math><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space"> </span>(<math id="lstnumberx3764.m2" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">s</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>/<span class="ltx_text ltx_lst_identifier">eps</span>)^2*(3-2*<span class="ltx_text ltx_lst_space"> </span><math id="lstnumberx3764.m3" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">s</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>/<span class="ltx_text ltx_lst_identifier">eps</span>)
+</div>
+<div id="lstnumberx3765" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space">                   </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span><span class="ltx_text ltx_lst_space"> </span>0);
+</div>
+<div id="lstnumberx3766" class="ltx_listingline">
+</div>
+<div id="lstnumberx3767" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Define<span class="ltx_text ltx_lst_space"> </span>function<span class="ltx_text ltx_lst_space"> </span>positiveMax(v,s_i)<span class="ltx_text ltx_lst_space"> </span>as<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>linear<span class="ltx_text ltx_lst_space"> </span>combination<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>max<span class="ltx_text ltx_lst_space"> </span>(v,0)</span>
+</div>
+<div id="lstnumberx3768" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>and<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>eps<span class="ltx_text ltx_lst_space"> </span>along<span class="ltx_text ltx_lst_space"> </span>alpha</span>
+</div>
+<div id="lstnumberx3769" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">positiveMax</span>((-<math id="lstnumberx3769.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<span class="ltx_text ltx_lst_identifier">s_i</span>)<span class="ltx_text ltx_lst_space"> </span>:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">alpha</span>*<span class="ltx_text ltx_lst_identifier">max</span>(-<math id="lstnumberx3769.m2" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,0)<span class="ltx_text ltx_lst_space"> </span>+<span class="ltx_text ltx_lst_space"> </span>(1-<span class="ltx_text ltx_lst_identifier">alpha</span>)*<span class="ltx_text ltx_lst_identifier">eps</span>;
+</div>
+</div>
+</div>
+<div id="S2.p22" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The derivation of this implementation is discussed in
+<a href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">appendix</span> <span class="ltx_text ltx_ref_tag">C</span></a>. Note that in the cases <math id="S2.p22.m1" class="ltx_Math" alttext="N=1,\,M=0" display="inline"><mrow><mrow><mi>N</mi><mo mathvariant="normal">=</mo><mn mathvariant="normal">1</mn></mrow><mo mathvariant="normal" rspace="4.2pt">,</mo><mrow><mi>M</mi><mo mathvariant="normal">=</mo><mn mathvariant="normal">0</mn></mrow></mrow></math> (unconnected port,
+physically corresponding to a plugged-up flange), and <math id="S2.p22.m2" class="ltx_Math" alttext="N=2,\,M=0" display="inline"><mrow><mrow><mi>N</mi><mo mathvariant="normal">=</mo><mn mathvariant="normal">2</mn></mrow><mo mathvariant="normal" rspace="4.2pt">,</mo><mrow><mi>M</mi><mo mathvariant="normal">=</mo><mn mathvariant="normal">0</mn></mrow></mrow></math>
+(one-to-one connection), the result of <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">inStream</span> is trivial
+and no non-linear equations are left in the model, despite the fact that
+the original definition equations are nonlinear.</span></p>
+</div>
+<div id="S2.p23" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The following properties hold for this implementation:</span></p>
+<ul id="S2.I4" class="ltx_itemize">
+<li id="S2.I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I4.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">inStream</span><span class="ltx_text ltx_font_italic"> is continuous (and differentiable),
+provided that </span><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;"><span class="ltx_text ltx_font_upright"><math id="S2.I4.i1.p1.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math></span><span class="ltx_text ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span></span></span><span class="ltx_text ltx_font_italic">,
+</span><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;"><span class="ltx_text ltx_font_upright"><math id="S2.I4.i1.p1.m2" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math></span><span class="ltx_text ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span></span></span><span class="ltx_text ltx_font_italic">, </span><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;"><span class="ltx_text ltx_font_upright"><math id="S2.I4.i1.p1.m3" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math></span><span class="ltx_text ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">h_outflow</span></span></span><span class="ltx_text ltx_font_italic">, and
+</span><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;"><span class="ltx_text ltx_font_upright"><math id="S2.I4.i1.p1.m4" class="ltx_Math" alttext="c_{k}" display="inline"><msub><mi mathbackground="#FFFFFF">c</mi><mi mathbackground="#FFFFFF">k</mi></msub></math></span><span class="ltx_text ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">m_flow</span></span></span><span class="ltx_text ltx_font_italic"> are continuous and differentiable.</span></p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S2.p24" class="ltx_para">
+<ul id="S2.I5" class="ltx_itemize">
+<li id="S2.I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I5.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">A division by zero can no longer occur (since </span><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">sum</span><span class="ltx_text ltx_font_upright">(<span class="ltx_text ltx_lst_identifier">positiveMax</span>(-<math id="S2.I5.i1.p1.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.I5.i1.p1.m2" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">s</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>))</span></span><span class="ltx_text ltx_font_italic"> </span><math id="S2.I5.i1.p1.m3" class="ltx_Math" alttext="\geq\mathit{eps2}&gt;0" display="inline"><mrow><mi></mi><mo>≥</mo><mi mathvariant="italic">eps2</mi><mo>&gt;</mo><mn>0</mn></mrow></math><span class="ltx_text ltx_font_italic">),
+so the result is always well-defined.</span></p>
+</div>
+</li>
+<li id="S2.I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I5.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The balance equations are exactly fulfilled if the denominator is not close to zero (since the exact formula is used, if
+</span><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">sum</span><span class="ltx_text ltx_font_upright">(<span class="ltx_text ltx_lst_identifier">positiveMax</span>(-<math id="S2.I5.i2.p1.m1" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.I5.i2.p1.m2" class="ltx_Math" alttext="s_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">s</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>))</span></span><span class="ltx_text ltx_font_italic"> </span><math id="S2.I5.i2.p1.m3" class="ltx_Math" alttext="&gt;\mathit{eps}" display="inline"><mrow><mi></mi><mo>&gt;</mo><mi>𝑒𝑝𝑠</mi></mrow></math><span class="ltx_text ltx_font_italic">).</span></p>
+</div>
+</li>
+<li id="S2.I5.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I5.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">If all flows are zero,
+</span><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_upright" style="color:#543D08;">inStream</span><span class="ltx_text ltx_font_upright">(<math id="S2.I5.i3.p1.m1" class="ltx_Math" alttext="m_{i}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">i</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)</span></span><span class="ltx_text ltx_font_italic"> =
+</span><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_upright">sum</span><span class="ltx_text ltx_font_upright">(<math id="S2.I5.i3.p1.m2" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">for</span><span class="ltx_text ltx_lst_space"> </span><math id="S2.I5.i3.p1.m3" class="ltx_Math" alttext="j\neq{}i" display="inline"><mrow><mi mathbackground="#FFFFFF">j</mi><mo mathbackground="#FFFFFF" mathvariant="normal">≠</mo><mi mathbackground="#FFFFFF">i</mi></mrow></math><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">and</span><span class="ltx_text ltx_lst_space"> </span><math id="S2.I5.i3.p1.m4" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math>.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span>.<span class="ltx_text ltx_lst_identifier">min</span><span class="ltx_text ltx_lst_space"> </span>&lt;<span class="ltx_text ltx_lst_space"> </span>0)<span class="ltx_text ltx_lst_space"> </span>/<span class="ltx_text ltx_lst_space"> </span><math id="S2.I5.i3.p1.m5" class="ltx_Math" alttext="N_{\mathrm{p}}" display="inline"><msub><mi mathbackground="#FFFFFF">N</mi><mi mathbackground="#FFFFFF" mathvariant="normal">p</mi></msub></math></span></span><span class="ltx_text ltx_font_italic">,
+i.e., it is the mean value of all the </span><math id="S2.I5.i3.p1.m6" class="ltx_Math" alttext="N_{\mathrm{p}}" display="inline"><msub><mi>N</mi><mi mathvariant="normal">p</mi></msub></math><span class="ltx_text ltx_font_italic"> variables
+</span><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;"><span class="ltx_text ltx_font_upright"><math id="S2.I5.i3.p1.m7" class="ltx_Math" alttext="m_{j}" display="inline"><msub><mi mathbackground="#FFFFFF">m</mi><mi mathbackground="#FFFFFF">j</mi></msub></math></span><span class="ltx_text ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span></span></span><span class="ltx_text ltx_font_italic">, such that </span><math id="S2.I5.i3.p1.m8" class="ltx_Math" alttext="j\neq i" display="inline"><mrow><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></math><span class="ltx_text ltx_font_italic"> and
+</span><math id="S2.I5.i3.p1.m9" class="ltx_Math" alttext="{m_{j}\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers\lst@@@set@frame%
+\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language\lst@@@set@frame%
+\normalsize.{\@listingGroup{ltx_lst_identifier}{c}}.{\@listingGroup{%
+ltx_lst_identifier}{m\textunderscore flow}}.{\@listingGroup{ltx_lst_identifier%
+}{min}}}}}}&lt;0" display="inline"><mrow><mrow><msub><mi>m</mi><mi>j</mi></msub><mo>⁢</mo><mrow class="ltx_lst_language_modelica_short ltx_lstlisting"><mtext mathbackground="#FFFFFF">.</mtext><mtext mathbackground="#FFFFFF">c</mtext><mtext mathbackground="#FFFFFF">.</mtext><mtext mathbackground="#FFFFFF">m_flow</mtext><mtext mathbackground="#FFFFFF">.</mtext><mtext mathbackground="#FFFFFF">min</mtext></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow></math><span class="ltx_text ltx_font_italic">. This is a
+meaningful approximation, considering the physical diffusion effects
+that are relevant at small flow rates in a small connection volume
+(thermal conduction for enthalpy, mass diffusion for mass fractions).</span></p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S2.p25" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The value of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;">relativeTolerance</span> should be larger than the relative
+tolerance of the nonlinear solver used to solve the implicit algebraic
+equations.</span></p>
+</div>
+<div id="S2.p26" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">As a final remark, further symbolic simplifications could be
+carried out by taking into account equations that affect the flows in
+the connection set (i.e., equivalent to <math id="S2.p26.m1" class="ltx_Math" alttext="{m_{j}\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers\lst@@@set@frame%
+\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language\lst@@@set@frame%
+\normalsize.{\@listingGroup{ltx_lst_identifier}{c}}.{\@listingGroup{%
+ltx_lst_identifier}{m\textunderscore flow}}}}}}=0" display="inline"><mrow><mrow><msub><mi>m</mi><mi>j</mi></msub><mo mathvariant="italic">⁢</mo><mrow class="ltx_lst_language_modelica_short ltx_lstlisting"><mtext mathbackground="#FFFFFF" mathvariant="normal">.</mtext><mtext mathbackground="#FFFFFF" mathvariant="normal">c</mtext><mtext mathbackground="#FFFFFF" mathvariant="normal">.</mtext><mtext mathbackground="#FFFFFF" mathvariant="normal">m_flow</mtext></mrow></mrow><mo mathvariant="normal">=</mo><mn mathvariant="normal">0</mn></mrow></math>, which then implies <math id="S2.p26.m2" class="ltx_Math" alttext="{m_{j}\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers\lst@@@set@frame%
+\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language\lst@@@set@frame%
+\normalsize.{\@listingGroup{ltx_lst_identifier}{c}}.{\@listingGroup{%
+ltx_lst_identifier}{m\textunderscore flow}}.{\@listingGroup{ltx_lst_identifier%
+}{min}}}}}}\geq 0" display="inline"><mrow><mrow><msub><mi>m</mi><mi>j</mi></msub><mo mathvariant="italic">⁢</mo><mrow class="ltx_lst_language_modelica_short ltx_lstlisting"><mtext mathbackground="#FFFFFF" mathvariant="normal">.</mtext><mtext mathbackground="#FFFFFF" mathvariant="normal">c</mtext><mtext mathbackground="#FFFFFF" mathvariant="normal">.</mtext><mtext mathbackground="#FFFFFF" mathvariant="normal">m_flow</mtext><mtext mathbackground="#FFFFFF" mathvariant="normal">.</mtext><mtext mathbackground="#FFFFFF" mathvariant="normal">min</mtext></mrow></mrow><mo mathvariant="normal">≥</mo><mn mathvariant="normal">0</mn></mrow></math>). This is interesting, e.g., in the case of a valve when the stem
+position is set identically to closed by its controller.</span>]</p>
+</div>
+</section>
+<section id="stream-operator-actualstream" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">15.3 </span>Stream Operator actualStream</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">actualStream</span> is provided for convenience, in
+order to return the actual value of the stream variable, depending on
+the actual flow direction. The only argument of this built-in operator
+needs to be a reference to a stream variable. The operator is
+vectorizable, in the case of vector arguments. For the following
+definition it is assumed that an (inside or outside) connector <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">c</span>
+contains a stream variable <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">h_outflow</span> which is associated with a flow
+variable <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">m_flow</span> in the same connector <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;">c</span>:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,YWN0dWFsU3RyZWFtKGMuaF9vdXRmbG93KSA9IGlmIGMubV9mbG93ID4gMCB0aGVuIGluU3RyZWFtKGMuaF9vdXRmbG93KSBlbHNlIGMuaF9vdXRmbG93Ow==">⬇</a></div>
+<div id="lstnumberx3770" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">actualStream</span>(<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>&gt;<span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">inStream</span>(<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>;
+</div>
+</div>
+</div>
+<div id="S3.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" style="color:#543D08;background-color:#FFFFFF;">actualStream</span><span class="ltx_text ltx_font_italic"> is typically used in two contexts:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZGVyKFUpID0gYy5tX2Zsb3cgKiBhY3R1YWxTdHJlYW0oYy5oX291dGZsb3cpOyAgLy8gKDEpIGVuZXJneSBiYWxhbmNlIGVxdWF0aW9uCmhfYyA9IGFjdHVhbFN0cmVhbShjLmgpOyAgICAgICAgICAgICAgICAgICAgICAgIC8vICgyKSBtb25pdG9yaW5nIHRoZSBlbnRoYWxweSBhdCBwb3J0IGM=">⬇</a></div>
+<div id="lstnumberx3771" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keyword" style="color:#003378;">der</span>(<span class="ltx_text ltx_lst_identifier">U</span>)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">m_flow</span><span class="ltx_text ltx_lst_space"> </span>*<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">actualStream</span>(<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h_outflow</span>);<span class="ltx_text ltx_lst_space">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>(1)<span class="ltx_text ltx_lst_space"> </span>energy<span class="ltx_text ltx_lst_space"> </span>balance<span class="ltx_text ltx_lst_space"> </span>equation</span>
+</div>
+<div id="lstnumberx3772" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier">h_c</span><span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">actualStream</span>(<span class="ltx_text ltx_lst_identifier">c</span>.<span class="ltx_text ltx_lst_identifier">h</span>);<span class="ltx_text ltx_lst_space">                        </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>(2)<span class="ltx_text ltx_lst_space"> </span>monitoring<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>enthalpy<span class="ltx_text ltx_lst_space"> </span>at<span class="ltx_text ltx_lst_space"> </span>port<span class="ltx_text ltx_lst_space"> </span>c</span>
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">In the case of equation (1), although <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">actualStream</span>
+is discontinuous, the product with the flow variable is not, because
+<span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">actualStream</span> is discontinuous when the flow is zero by construction.
+Therefore, a tool might infer that the expression is <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_upright" style="color:#543D08;">smooth</span><span class="ltx_text ltx_font_upright">(0,<span class="ltx_text ltx_lst_space"> </span><math id="S3.p2.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>)</span></span>
+automatically, and decide whether or not to generate an event. If a user
+wants to avoid events entirely, he/she may enclose the right-hand side
+of (1) with <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">noEvent</span>.</span></p>
+</div>
+<div id="S3.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Equations like (2) might be used for monitoring purposes (e.g. plots), in order to inspect what the actual enthalpy of the fluid flowing through a port is.
+In this case, the user will probably want to see the change due to flow reversal at the exact instant, so an event should be generated. If the user doesn’t
+bother, then he/she should enclose the right-hand side of (2) with <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">noEvent</span>. Since the output of <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">actualStream</span> will be discontinuous,
+it should not be used by itself to model physical behaviour (e.g., to compute densities used in momentum balances) – <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">inStream</span> should be used
+for this purpose. <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">actualStream</span> should be used to model physical behaviour only when multiplied by the corresponding flow variable (like in the
+above energy balance equation), because this removes the discontinuity.</span>]</p>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div>
+<a href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">References</span></a><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="index"><span class="ltx_text ltx_ref_title">Index</span></a><a href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Fri Apr 30 16:20:48 2021 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>
