@@ -1,0 +1,388 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>1 Introduction‣ Modelica® Language Specification version 3.6</title>
+<!--Generated on Thu Mar  9 16:41:18 2023 by LaTeXML (version 0.8.6) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on March 9, 2023.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/MLS.css" type="text/css">
+<link rel="stylesheet" href="css/MLS-navbar-left.css" type="text/css">
+<script src="LaTeXML-maybeMathjax.js" type="text/javascript"></script>
+<link rel="up" href="./" title="Modelica® Language Specification version 3.6">
+<link rel="start" href="./" title="Modelica® Language Specification version 3.6">
+<link rel="prev" href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6">
+<link rel="next" href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6">
+<link rel="appendix" href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6">
+<link rel="appendix" href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6">
+<link rel="appendix" href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6">
+<link rel="appendix" href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6">
+<link rel="bibliography" href="bib.html" title="References ‣ Modelica® Language Specification version 3.6">
+<link rel="index" href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6">
+<meta name="keywords" lang="en" content="component, element, flattening, initial value problem, initialization, of simulation model, seetransient analysis, simulation, simulation model, transient analysis, translation">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body tabindex=0>
+<nav class="ltx_page_navbar"><a href="./" title="Modelica® Language Specification version 3.6" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6</span></a>
+<div class="ltx_TOC">
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></span>
+<ul class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#overview-of-modelica" title="1.1 Overview of Modelica ‣ Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1 </span>Overview of Modelica</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#scope-of-the-specification" title="1.2 Scope of the Specification ‣ Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>Scope of the Specification</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#some-definitions" title="1.3 Some Definitions ‣ Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Some Definitions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#notation" title="1.4 Notation ‣ Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4 </span>Notation</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_index"><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div>
+<a href="./" title="Modelica® Language Specification version 3.6" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6</span></a><a href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title">Preface</span></a><a href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter">
+<h1 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter">Chapter 1 </span>Introduction</h1>
+
+<section id="overview-of-modelica" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.1 </span>Overview of Modelica</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">Modelica is a language for modeling of cyber-physical systems, supporting acausal connection of components governed by mathematical equations to facilitate modeling from first principles.
+It provides object-oriented constructs that facilitate reuse of models, and can be used conveniently for modeling complex systems containing, e.g., mechanical, electrical, electronic, magnetic, hydraulic, thermal, control, electric power or process-oriented subcomponents.</p>
+</div>
+</section>
+<section id="scope-of-the-specification" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.2 </span>Scope of the Specification</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">The semantics of the Modelica language is specified by means of a set of rules for translating any class described in the Modelica language to a flat Modelica structure.
+The semantic specification should be read together with the Modelica grammar.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p">A class (of specialized class <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">model</span> or <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">block</span>) intended to be simulated on its own is called a <em class="ltx_emph ltx_font_italic">simulation model</em>.</p>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p class="ltx_p">The flat Modelica structure is also defined for other cases than simulation models; including functions (can be used to provide algorithmic contents), packages (used as a structuring mechanism), and partial models (used as base-models).
+This allows correctness to be verified for those classes, before using them to build the simulation model.</p>
+</div>
+<div id="S2.p4" class="ltx_para">
+<p class="ltx_p">There are specific semantic restrictions for a simulation model to ensure that the model is complete; they allow its flat Modelica structure to be further transformed into a set of differential, algebraic and discrete equations (= flat hybrid DAE).
+Note that satisfying the semantic restrictions does not guarantee that the model can be initialized from the initial conditions and simulated.</p>
+</div>
+<div id="S2.p5" class="ltx_para">
+<p class="ltx_p">Modelica was designed to facilitate symbolic transformations of models, especially by mapping basically every Modelica language construct to equations in the flat Modelica structure.
+Many Modelica models, especially in the associated Modelica Standard Library, are higher index systems, and can only be reasonably simulated if symbolic index reduction is performed, i.e., equations are differentiated and appropriate variables are selected as states, so that the resulting system of equations can be transformed to state space form (at least locally numerically), i.e., a hybrid DAE of index zero.
+In order to allow this structural analysis, a tool may reject simulating a model if parameters cannot be evaluated during translation – due to calls of external functions or initial equations/initial algorithms for <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">fixed</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#003378;">false</span></span></span> parameters.
+Accepting such models is a quality of implementation issue.
+The Modelica specification does not define how to simulate a model.
+However, it defines a set of equations that the simulation result should satisfy as well as possible.</p>
+</div>
+<div id="S2.p6" class="ltx_para">
+<p class="ltx_p">The key issues of the translation (or flattening) are:</p>
+<ul id="S2.I1" class="ltx_itemize">
+<li id="S2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Expansion of inherited base classes.</p>
+</div>
+</li>
+<li id="S2.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Parameterization of base classes, local classes and components.</p>
+</div>
+</li>
+<li id="S2.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Generation of connection equations from <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">connect</span>-equations.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S2.p7" class="ltx_para">
+<p class="ltx_p">The flat hybrid DAE form consists of:</p>
+<ul id="S2.I2" class="ltx_itemize">
+<li id="S2.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">Declarations of variables with the appropriate basic types, prefixes and attributes, such as <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">parameter</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">v</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=<span class="ltx_text ltx_lst_space"> </span>5</span></span>.</p>
+</div>
+</li>
+<li id="S2.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">Equations from equation sections.</p>
+</div>
+</li>
+<li id="S2.I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i3.p1" class="ltx_para">
+<p class="ltx_p">Function invocations where an invocation is treated as a set of equations which involves all input and all result variables (number of equations = number of basic result variables).</p>
+</div>
+</li>
+<li id="S2.I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i4.p1" class="ltx_para">
+<p class="ltx_p">Algorithm sections where every section is treated as a set of equations which involves the variables occurring in the algorithm section (number of equations = number of different assigned variables).</p>
+</div>
+</li>
+<li id="S2.I2.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i5.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">when</span>-clauses where every <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">when</span>-clause is treated as a set of conditionally evaluated equations, which are functions of the variables occurring in the clause (number of equations = number of different assigned variables).
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S2.p8" class="ltx_para">
+<p class="ltx_p">Therefore, a flat hybrid DAE is seen as a set of equations where some of the equations are only conditionally evaluated.
+Initial setup of the model is specified using <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">start</span>-attributes and equations that hold only during initialization.</p>
+</div>
+<div id="S2.p9" class="ltx_para">
+<p class="ltx_p">A Modelica class may also contain annotations, i.e., formal comments, which specify graphical representations of the class (icon and diagram), documentation text for the class, and version information.</p>
+</div>
+</section>
+<section id="some-definitions" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.3 </span>Some Definitions</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p">Explanations of many terms can be found using the document index in <a href="./" title="Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6</span></a>.
+Some important terms are defined below.</p>
+</div>
+<div id="Thmdefinitioninner1" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 1.1. <em class="ltx_emph ltx_font_italic">Component</em>.</h6>
+<div id="Thmdefinitioninner1.p1" class="ltx_para">
+<p class="ltx_p">An element defined by the production <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">component-clause</span> in the Modelica grammar (basically a variable or an instance of a class)
+∎</p>
+</div>
+</div>
+<div id="Thmdefinitioninner2" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 1.2. <em class="ltx_emph ltx_font_italic">Element</em>.</h6>
+<div id="Thmdefinitioninner2.p1" class="ltx_para">
+<p class="ltx_p">Class definition, <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">extends</span>-clause, or <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">component-clause</span> declared in a class (basically a class reference or a component in a declaration).
+∎</p>
+</div>
+</div>
+<div id="Thmdefinitioninner3" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 1.3. <em class="ltx_emph ltx_font_italic">Flattening</em>.</h6>
+<div id="Thmdefinitioninner3.p1" class="ltx_para">
+<p class="ltx_p">The translation of a model described in Modelica to the corresponding model described as a hybrid DAE (see <a href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">appendix</span> <span class="ltx_text ltx_ref_tag">B</span></a>), involving expansion of inherited base classes, parameterization of base classes, local classes and components, and generation of connection equations from <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">connect</span>-equations.
+In other words, mapping the hierarchical structure of a model into a set of differential, algebraic and discrete equations together with the corresponding variable declarations and function definitions from the model.
+∎</p>
+</div>
+</div>
+<div id="Thmdefinitioninner4" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 1.4. <em class="ltx_emph ltx_font_italic">Initialization</em>.</h6>
+<div id="Thmdefinitioninner4.p1" class="ltx_para">
+<p class="ltx_p">Simulation starts with solving the initialization problem at the starting time, resulting in values for all variables that are consistent with the result of the flattening.
+∎</p>
+</div>
+</div>
+<div id="Thmdefinitioninner5" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 1.5. <em class="ltx_emph ltx_font_italic">Transient analysis</em>.</h6>
+<div id="Thmdefinitioninner5.p1" class="ltx_para">
+<p class="ltx_p">Starting from the result of the initialization problem, the model is simulated forward in time.
+This uses numerical methods for handling the hybrid DAE, resulting in solution trajectories for the model’s variables, i.e., the value of the variables as a function of time.
+∎</p>
+</div>
+</div>
+<div id="S3.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">In the numerical literature transient analysis is often called solving the <em class="ltx_emph ltx_font_upright">initial value problem</em>, but that term is not used here to avoid confusion with the initialization problem.</span>]</p>
+</div>
+<div id="Thmdefinitioninner6" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 1.6. <em class="ltx_emph ltx_font_italic">Simulation</em>.</h6>
+<div id="Thmdefinitioninner6.p1" class="ltx_para">
+<p class="ltx_p">Simulation is the combination of initialization followed by transient analysis.
+∎</p>
+</div>
+</div>
+<div id="S3.p3" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The model can be analyzed in ways other than simulation, e.g., linearization, and parameter estimation, but they are not described in the specification.</span>]</p>
+</div>
+<div id="Thmdefinitioninner7" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 1.7. <em class="ltx_emph ltx_font_italic">Translation</em>.</h6>
+<div id="Thmdefinitioninner7.p1" class="ltx_para">
+<p class="ltx_p">Translation is the process of preparing a Modelica simulation model for simulation, starting with flattening but not including the simulation itself.
+∎</p>
+</div>
+</div>
+<div id="S3.p4" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Typically, in addition to flattening, translation involves symbolic manipulation of the hybrid DAE and transforming the result into computer code that can simulate the model.</span>]</p>
+</div>
+</section>
+<section id="notation" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.4 </span>Notation</h2>
+
+<div id="S4.p1" class="ltx_para">
+<p class="ltx_p">The remainder of this section shows examples of the presentation used in this document.</p>
+</div>
+<div id="S4.p2" class="ltx_para">
+<p class="ltx_p">Syntax highlighting of Modelica code is illustrated by the code listing below.
+Things to note include keywords that define code structure such as <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">equation</span>, keywords that do not define code structure such as <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">connect</span>, and recognized identifiers with meaning defined by the specification such as <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">semiLinear</span>:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bW9kZWwgRXhhbXBsZSAiRXhhbXBsZSB1c2VkIHRvIGlsbHVzdHJhdGUgc3ludGF4IGhpZ2hsaWdodGluZyIKICAvKiBUaGUgc3RyaW5nIGFib3ZlIGlzIGEgY2xhc3MgZGVzY3JpcHRpb24gc3RyaW5nLCB0aGlzIGlzIGEgY29tbWVudC4gKi8KICAvKiBJbnZhbGlkIGNvZGUgaXMgdHlwaWNhbGx5IHByZXNlbnRlZCBsaWtlIHRoaXM6ICovCiAgU3RyaW5nIHMgPSAxLjA7IC8vIEVycm9yOiBObyBjb252ZXJzaW9uIGZvcm0gUmVhbCB0byBTdHJpbmcuCiAgUmVhbCB4OwplcXVhdGlvbgogIDIgKiB4ID0gc2VtaUxpbmVhcih0aW1lIC0gMC41LCAyLCAzKTsKICAvKiBUaGUgYW5ub3RhdGlvbiBiZWxvdyBoYXMgb21pdHRlZCBkZXRhaWxzIHJlcHJlc2VudGVkIGJ5IGFuIGVsbGlwc2lzOiAqLwogIGNvbm5lY3QocmVzaXN0b3IubiwgY29uZHVjdG9yLnApIGFubm90YXRpb24oJFxsZG90cyQpOwplbmQgRXhhbXBsZTs=" download="">⬇</a></div>
+<div id="lstnumberx1" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Example</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"Example<span class="ltx_text ltx_lst_space"> </span>used<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>illustrate<span class="ltx_text ltx_lst_space"> </span>syntax<span class="ltx_text ltx_lst_space"> </span>highlighting"</span>
+</div>
+<div id="lstnumberx2" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">/*<span class="ltx_text ltx_lst_space"> </span>The<span class="ltx_text ltx_lst_space"> </span>string<span class="ltx_text ltx_lst_space"> </span>above<span class="ltx_text ltx_lst_space"> </span>is<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>class<span class="ltx_text ltx_lst_space"> </span>description<span class="ltx_text ltx_lst_space"> </span>string,<span class="ltx_text ltx_lst_space"> </span>this<span class="ltx_text ltx_lst_space"> </span>is<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>comment.<span class="ltx_text ltx_lst_space"> </span>*/</span>
+</div>
+<div id="lstnumberx3" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">/*<span class="ltx_text ltx_lst_space"> </span>Invalid<span class="ltx_text ltx_lst_space"> </span>code<span class="ltx_text ltx_lst_space"> </span>is<span class="ltx_text ltx_lst_space"> </span>typically<span class="ltx_text ltx_lst_space"> </span>presented<span class="ltx_text ltx_lst_space"> </span>like<span class="ltx_text ltx_lst_space"> </span>this:<span class="ltx_text ltx_lst_space"> </span>*/</span>
+</div>
+<div id="lstnumberx4" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">String</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">1.0;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Error:<span class="ltx_text ltx_lst_space"> </span>No<span class="ltx_text ltx_lst_space"> </span>conversion<span class="ltx_text ltx_lst_space"> </span>form<span class="ltx_text ltx_lst_space"> </span>Real<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>String.</span>
+</div>
+<div id="lstnumberx5" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">x</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx6" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">equation</span>
+</div>
+<div id="lstnumberx7" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_font_typewriter">2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">semiLinear</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">time</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">0.5,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">2,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">3);</span>
+</div>
+<div id="lstnumberx8" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">/*<span class="ltx_text ltx_lst_space"> </span>The<span class="ltx_text ltx_lst_space"> </span>annotation<span class="ltx_text ltx_lst_space"> </span>below<span class="ltx_text ltx_lst_space"> </span>has<span class="ltx_text ltx_lst_space"> </span>omitted<span class="ltx_text ltx_lst_space"> </span>details<span class="ltx_text ltx_lst_space"> </span>represented<span class="ltx_text ltx_lst_space"> </span>by<span class="ltx_text ltx_lst_space"> </span>an<span class="ltx_text ltx_lst_space"> </span>ellipsis:<span class="ltx_text ltx_lst_space"> </span>*/</span>
+</div>
+<div id="lstnumberx9" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">connect</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">resistor</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">n</span><span class="ltx_text ltx_font_typewriter">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">conductor</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">p</span><span class="ltx_text ltx_font_typewriter">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">annotation</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx9.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math></span><span class="ltx_text ltx_font_typewriter">);</span>
+</div>
+<div id="lstnumberx10" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Example</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+</div>
+</div>
+<div id="S4.p3" class="ltx_para">
+<p class="ltx_p">Relying on implicit conversion of <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Integer</span> literals to <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span> is common, as seen in the equation above (note use of Modelica code appearing inline in the text).</p>
+</div>
+<div id="S4.p4" class="ltx_para">
+<p class="ltx_p">It is common to mix Modelica code with mathematical notation.
+For example, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">average</span><span class="ltx_text ltx_font_typewriter">(<math id="S4.p4.m1" class="ltx_Math" alttext="x" display="inline"><mi mathbackground="#FFFFFF">x</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S4.p4.m2" class="ltx_Math" alttext="y" display="inline"><mi mathbackground="#FFFFFF">y</mi></math>)</span></span> could be defined as <math id="S4.p4.m3" class="ltx_Math" alttext="\frac{x+y}{2}" display="inline"><mfrac><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mn>2</mn></mfrac></math>.</p>
+</div>
+<div id="S4.p5" class="ltx_para">
+<p class="ltx_p">Inline code fragments are sometimes surrounded by quotes to clearly mark their beginning and end, or to emphasize separation from the surrounding text.
+For example, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">,</span>’ is used to separate the arguments of a function call.</p>
+</div>
+<div id="Thmdefinitioninner8" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 1.8. <em class="ltx_emph ltx_font_italic">Something</em>.</h6>
+<div id="Thmdefinitioninner8.p1" class="ltx_para">
+<p class="ltx_p">Text defining the meaning of <em class="ltx_emph ltx_font_italic">something</em>.
+∎</p>
+</div>
+</div>
+<div id="S4.p6" class="ltx_para">
+<p class="ltx_p">In addition to the style of definition above, new terminology can be introduced in the running text.
+For example, a <em class="ltx_emph ltx_font_italic">dummy</em> is something that…</p>
+</div>
+<div id="S4.p7" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">This is non-normative content that provides some explanation, motivation, and/or additional things to keep in mind.
+It has no defining power and may be skipped by readers strictly interested in just the definition of the Modelica language.</span>]</p>
+</div>
+<div id="S4.p8" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example:
+This is an example, which is a special kind of non-normative content.
+Examples often contain a mix of code listings and explanatory text, and this is no exception:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,U3RyaW5nIHMgPSAxLjA7IC8vIEVycm9yOiBObyBjb252ZXJzaW9uIGZvcm0gUmVhbCB0byBTdHJpbmcu" download="">⬇</a></div>
+<div id="lstnumberx11" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">String</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">1.0;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Error:<span class="ltx_text ltx_lst_space"> </span>No<span class="ltx_text ltx_lst_space"> </span>conversion<span class="ltx_text ltx_lst_space"> </span>form<span class="ltx_text ltx_lst_space"> </span>Real<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>String.</span>
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">To fix the type mismatch above, the number has to be replaced by a <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#543D08;background-color:#FFFFFF;">String</span> expression, such as <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"1.0"</span>.</span>]</p>
+</div>
+<div id="S4.p9" class="ltx_para">
+<p class="ltx_p">Other code listings in the document include specification of lexical units and grammatical structure, both using metasymbols of the extended BNF-grammar defined in <a href="modelica-concrete-syntax.html#lexical-conventions" title="A.1 Lexical conventions ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">A.1</span></a>.
+Lexical units are named with all upper-case letters and introduced with the ‘<span class="ltx_text ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">=</span>’ sign:</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,U09NRS1UT0tFTiA9IE5PTi1ESUdJVCB7IERJR0lUIHwgTk9OLURJR0lUIH0=" download="">⬇</a></div>
+<div id="lstnumberx12" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">SOME-TOKEN</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">NON-DIGIT</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">{</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">DIGIT</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">NON-DIGIT</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">}</span>
+</div>
+</div>
+<p class="ltx_p">Grammatical structure is recognized by production rules being named with lower-case letters and introduced with the ‘<span class="ltx_text ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">:</span>’ sign (also note appearance of the Modelica keyword <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">der</span>):</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZGlmZmVyZW50aWF0ZWQtZXhwcmVzc2lvbiA6CiAgICBkZXIgIigiIFNPTUUtVE9LRU4gIikiCiAgICB8ICIoIiBkaWZmZXJlbnRpYXRlZC1leHByZXNzaW9uICIrIiBkaWZmZXJlbnRpYXRlZC1leHByZXNzaW9uICIpIg==" download="">⬇</a></div>
+<div id="lstnumberx13" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">differentiated-expression</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">:</span>
+</div>
+<div id="lstnumberx14" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">der</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">SOME-TOKEN</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">")"</span>
+</div>
+<div id="lstnumberx15" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">    </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">differentiated-expression</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"+"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">differentiated-expression</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">")"</span>
+</div>
+</div>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div>
+<a href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title">Preface</span></a><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">References</span></a><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="index"><span class="ltx_text ltx_ref_title">Index</span></a><a href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Thu Mar  9 16:41:18 2023 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>
