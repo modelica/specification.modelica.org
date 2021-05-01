@@ -1,0 +1,1567 @@
+<!DOCTYPE html><html>
+<head>
+<title>5 Scoping, Name Lookup, and Flattening‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4</title>
+<!--Generated on Tue May 14 15:30:12 2019 by LaTeXML (version 0.8.3) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on April 10, 2017.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="css/LaTeXML-navbar-left.css" type="text/css">
+<script src="css/LatexML-maybeMathJax.js" type="text/javascript"></script>
+<link rel="up" href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="start" href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="prev" href="Ch4.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="next" href="Ch6.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Chx1.html" title="Preface ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch1.html" title="Chapter 1 Introduction ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch2.html" title="Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch3.html" title="Chapter 3 Operators and Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch4.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch6.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch7.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch8.html" title="Chapter 8 Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch9.html" title="Chapter 9 Connectors and Connections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch10.html" title="Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch11.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch12.html" title="Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch13.html" title="Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch14.html" title="Chapter 14 Overloaded Operators ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch15.html" title="Chapter 15 Stream Connectors ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch16.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch17.html" title="Chapter 17 State Machines ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch18.html" title="Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch19.html" title="Chapter 19 Unit Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch20.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A1.html" title="Appendix A Glossary ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A2.html" title="Appendix B Modelica Concrete Syntax ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A3.html" title="Appendix C Modelica DAE Representation ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A4.html" title="Appendix D Derivation of Stream Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A5.html" title="Appendix E Modelica Revision History ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A6.html" title="Appendix F Literature ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+</head>
+<body>
+<nav class="ltx_page_navbar"><a href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica® - A Unified Object-Oriented Language for Systems
+Modeling<span class="ltx_text"> </span>Language
+Specification<span class="ltx_text"> </span>Version 3.4</span></a>
+<div class="ltx_TOC">
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Chx1.html" title="Preface ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch1.html" title="Chapter 1 Introduction ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch2.html" title="Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch3.html" title="Chapter 3 Operators and Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch4.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></span>
+<ul class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#flattening-context" title="5.1 Flattening Context ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.1 </span>Flattening Context</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#enclosing-classes" title="5.2 Enclosing Classes ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.2 </span>Enclosing Classes</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#static-name-lookup" title="5.3 Static Name Lookup ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.3 </span>Static Name Lookup</span></a>
+<ul class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#simple-name-lookup" title="5.3.1 Simple Name Lookup ‣ 5.3 Static Name Lookup ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.3.1 </span>Simple Name Lookup</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#composite-name-lookup" title="5.3.2 Composite Name Lookup ‣ 5.3 Static Name Lookup ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.3.2 </span>Composite Name Lookup</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#global-name-lookup" title="5.3.3 Global Name Lookup ‣ 5.3 Static Name Lookup ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.3.3 </span>Global Name Lookup</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#lookup-of-imported-names1" title="5.3.4 Lookup of Imported Names ‣ 5.3 Static Name Lookup ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.3.4 </span>Lookup of Imported Names</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#instance-hierarchy-name-lookup-of-inner-declarations" title="5.4 Instance Hierarchy Name Lookup of Inner Declarations ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.4 </span>Instance Hierarchy Name Lookup of Inner Declarations</span></a>
+<ul class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#example-of-field-functions-using-inner-outer" title="5.4.1 Example of Field Functions using Inner/Outer ‣ 5.4 Instance Hierarchy Name Lookup of Inner Declarations ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.4.1 </span>Example of Field Functions using Inner/Outer</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#simultaneous-inner-outer-declarations" title="5.5 Simultaneous Inner/Outer Declarations ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.5 </span>Simultaneous Inner/Outer Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#flattening-process" title="5.6 Flattening Process ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.6 </span>Flattening Process</span></a>
+<ul class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a href="#instantiation" title="5.6.1 Instantiation ‣ 5.6 Flattening Process ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.6.1 </span>Instantiation</span></a>
+<ul class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#the-class-tree" title="5.6.1.1 The Class Tree ‣ 5.6.1 Instantiation ‣ 5.6 Flattening Process ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.6.1.1 </span>The Class Tree</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#the-instance-tree" title="5.6.1.2 The Instance Tree ‣ 5.6.1 Instantiation ‣ 5.6 Flattening Process ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.6.1.2 </span>The Instance Tree</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#the-instantiation-procedure" title="5.6.1.3 The Instantiation Procedure. ‣ 5.6.1 Instantiation ‣ 5.6 Flattening Process ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.6.1.3 </span>The Instantiation Procedure.</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#steps-of-instantiation" title="5.6.1.4 Steps of Instantiation ‣ 5.6.1 Instantiation ‣ 5.6 Flattening Process ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.6.1.4 </span>Steps of Instantiation</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#generation-of-the-flat-equation-system" title="5.6.2 Generation of the flat equation system ‣ 5.6 Flattening Process ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.6.2 </span>Generation of the flat equation system</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch6.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch7.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch8.html" title="Chapter 8 Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch9.html" title="Chapter 9 Connectors and Connections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch10.html" title="Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch11.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch12.html" title="Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch13.html" title="Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch14.html" title="Chapter 14 Overloaded Operators ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch15.html" title="Chapter 15 Stream Connectors ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch16.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch17.html" title="Chapter 17 State Machines ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch18.html" title="Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch19.html" title="Chapter 19 Unit Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch20.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A1.html" title="Appendix A Glossary ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A2.html" title="Appendix B Modelica Concrete Syntax ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A3.html" title="Appendix C Modelica DAE Representation ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A4.html" title="Appendix D Derivation of Stream Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A5.html" title="Appendix E Modelica Revision History ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">E </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A6.html" title="Appendix F Literature ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">F </span>Literature</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div>
+<a href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica® - A Unified Object-Oriented Language for Systems
+Modeling<span class="ltx_text"> </span>Language
+Specification<span class="ltx_text"> </span>Version 3.4</span></a><a href="Ch4.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a><a href="Ch6.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter ltx_authors_1line">
+<h1 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter">Chapter 5 </span>Scoping, Name Lookup, and Flattening</h1>
+<div class="ltx_date ltx_role_creation"></div>
+
+<div id="Ch5.p1" class="ltx_para">
+<p class="ltx_p">This chapter describes the scope rules, and most of the name lookup and
+flattening of Modelica.</p>
+</div>
+<section id="flattening-context" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5.1 </span>Flattening Context</h2>
+
+<div id="Ch5.S1.p1" class="ltx_para">
+<p class="ltx_p">Flattening is made in a context which consists of a modification
+environment (<a href="Ch7.html#modification-environment" title="7.2.2 Modification Environment ‣ 7.2 Modifications ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 7.2.2</span></a>) and an ordered set of enclosing classes.</p>
+</div>
+</section>
+<section id="enclosing-classes" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5.2 </span>Enclosing Classes</h2>
+
+<div id="Ch5.S2.p1" class="ltx_para">
+<p class="ltx_p">The classes lexically enclosing an element form an ordered set of
+enclosing classes. A class defined inside another class definition (the
+enclosing class) precedes its enclosing class definition in this set.</p>
+</div>
+<div id="Ch5.S2.p2" class="ltx_para">
+<p class="ltx_p">Enclosing all class definitions is an unnamed enclosing class that
+contains all top-level class definitions, and not-yet read classes
+defined externally as described in <a href="Ch13.html#mapping-package-class-structures-to-a-hierarchical-file-system" title="13.2.2 Mapping Package/Class Structures to a Hierarchical File System ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 13.2.2</span></a>. The order of
+top-level class definitions in the unnamed enclosing class is undefined.</p>
+</div>
+<div id="Ch5.S2.p3" class="ltx_para">
+<p class="ltx_p">During flattening, the enclosing class of an element being flattened is
+a partially flattened class. [<span class="ltx_text ltx_emph ltx_font_italic">For example, this means that a
+declaration can refer to a name inherited through an extends-clause.</span>]
+</p>
+</div>
+<div id="Ch5.S2.p4" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_emph ltx_font_italic">Example</span>:</p>
+<div class="ltx_listing ltx_lst_language_Modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Y2xhc3MgQzEgLi4uIGVuZCBDMTsKY2xhc3MgQzIgLi4uIGVuZCBDMjsKY2xhc3MgQzMKICBSZWFsIHg9MzsKICBDMSB5OwogIGNsYXNzIEM0CiAgICBSZWFsIHo7CiAgZW5kIEM0OwplbmQgQzM7">⬇</a></div>
+<div id="lstnumberx811" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">...</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C1</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx812" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">...</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx813" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C3</span>
+</div>
+<div id="lstnumberx814" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=3;</span>
+</div>
+<div id="lstnumberx815" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx816" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C4</span>
+</div>
+<div id="lstnumberx817" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx818" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C4</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx819" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C3</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+</div>
+</div>
+<div id="Ch5.S2.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">The unnamed enclosing class of class definition C3 contains C1,
+C2, and C3 in arbitrary order. When flattening class definition C3, the
+set of enclosing classes of the declaration of x is the partially
+flattened class C3 followed by the unnamed enclosing class with C1, C2,
+and C3. The set of enclosing classes of z is C4, C3 and the unnamed
+enclosing class in that order.</span>]</p>
+</div>
+</section>
+<section id="static-name-lookup" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5.3 </span>Static Name Lookup</h2>
+
+<div id="Ch5.S3.p1" class="ltx_para">
+<p class="ltx_p">Names are looked up at class flattening to find names of base classes,
+component types, etc. Implicitly defined names of record constructor
+functions and enumeration type conversion functions are ignored during
+type name lookup [<span class="ltx_text ltx_emph ltx_font_italic">since a record and the implicitly created
+record constructor function, see <a href="Ch12.html#record-constructor-functions" title="12.6 Record Constructor Functions ‣ Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 12.6</span></a>, , and an
+enumeration type and the implicitly created conversion function
+(<a href="Ch4.html#type-conversion-of-integer-to-enumeration-values" title="4.8.5.3 Type Conversion of Integer to Enumeration Values ‣ 4.8.5 Enumeration Types ‣ 4.8 Predefined Types and Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.8.5.3</span></a>), have the same name</span>]. Names of record
+classes and enumeration types are ignored during function name lookup.</p>
+</div>
+<section id="simple-name-lookup" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.3.1 </span>Simple Name Lookup</h3>
+
+<div id="Ch5.S3.SS1.p1" class="ltx_para">
+<p class="ltx_p">When an element, equation, or section is flattened, any simple name
+[not composed using dot notation] is looked up sequentially in each
+member of the ordered set <span class="ltx_text ltx_font_bold">of instance scopes (see
+<a href="#the-class-tree" title="5.6.1.1 The Class Tree ‣ 5.6.1 Instantiation ‣ 5.6 Flattening Process ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 5.6.1.1</span></a>) corresponding to lexically enclosing classes</span> until a
+match is found or an enclosing class is encapsulated. In the latter case
+the lookup stops except for the predefined types, functions and
+operators defined in this specification.</p>
+</div>
+<div id="Ch5.S3.SS1.p2" class="ltx_para">
+<p class="ltx_p">Reference to variables successfully looked up in an enclosing class is
+only allowed for variables declared as constant. The values of modifiers
+are thus resolved in the <span class="ltx_text ltx_font_bold">instance</span> scope of which the modifier
+appears; if the use is in a modifier on a short class definition,</p>
+</div>
+<div id="Ch5.S3.SS1.p3" class="ltx_para">
+<p class="ltx_p">This lookup in each <span class="ltx_text ltx_font_bold">instance</span> scope is performed as follows</p>
+</div>
+<div id="Ch5.S3.SS1.p4" class="ltx_para">
+<ul id="Ch5.S3.I1" class="ltx_itemize">
+<li id="Ch5.S3.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S3.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Among declared named elements (<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-<span class="ltx_text ltx_lst_identifier">definition</span></span></span> and
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">component</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-<span class="ltx_text ltx_lst_identifier">declaration</span></span></span>) of the class (including elements inherited from
+base-classes).</p>
+</div>
+</li>
+<li id="Ch5.S3.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S3.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Among the import names of qualified import statements in the
+<span class="ltx_text ltx_font_bold">instance</span> scope. The import name of <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A.B.C</span></span>; is <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">C</span> and the
+import name of <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">D</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=<span class="ltx_text ltx_lst_identifier">A.B.C</span>;</span></span> is <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">D</span>.</p>
+</div>
+</li>
+<li id="Ch5.S3.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S3.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Among the public members of packages imported via unqualified
+import-statements in the <span class="ltx_text ltx_font_bold">instance</span> scope. It is an error if
+this step produces matches from several unqualified imports.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch5.S3.SS1.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Import statements defined in inherited classes are ignored for
+the lookup, i.e. import statements are not inherited.</span></p>
+</div>
+</section>
+<section id="composite-name-lookup" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.3.2 </span>Composite Name Lookup</h3>
+
+<div id="Ch5.S3.SS2.p1" class="ltx_para">
+<p class="ltx_p">For a composite name of the form <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A.B</span> or <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A.B.C</span>, etc. lookup is performed
+as follows:</p>
+</div>
+<div id="Ch5.S3.SS2.p2" class="ltx_para">
+<ul id="Ch5.S3.I2" class="ltx_itemize">
+<li id="Ch5.S3.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S3.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">The first identifier (<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A</span>) is looked up as defined above.
+</p>
+</div>
+</li>
+<li id="Ch5.S3.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S3.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">If the first identifier denotes a component, the rest of the name
+(e.g., <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">B</span> or <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">B.C</span>) is looked up among the declared named component
+elements of the component.</p>
+</div>
+</li>
+<li id="Ch5.S3.I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S3.I2.i3.p1" class="ltx_para">
+<p class="ltx_p">If not found, and if the first identifier denotes a scalar component,
+or component[j] where component is an array of components and the
+indices j can be evaluated at translation time and component[j] is
+a scalar; and if the composite name is used as a function call, the
+lookup is also performed among the declared named class elements of
+the scalar component, and must find a non-operator function. All
+identifiers of the rest of the name (e.g., B and B.C] must be
+classes.</p>
+</div>
+</li>
+<li id="Ch5.S3.I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S3.I2.i4.p1" class="ltx_para">
+<p class="ltx_p">If the identifier denotes a class, that class is temporarily flattened
+(as if instantiating a component without modifiers of this class, see
+<a href="Ch7.html#modification-environment" title="7.2.2 Modification Environment ‣ 7.2 Modifications ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 7.2.2</span></a>) and using the enclosing classes of the denoted class.
+The rest of the name (e.g., <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">B</span> or <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">B.C</span>] is looked up among the
+declared named elements of the temporary flattened class. If the class
+does not satisfy the requirements for a package, the lookup is
+restricted to encapsulated elements only. The class we look inside may
+not be partial in a simulation model.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch5.S3.SS2.p3" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_emph ltx_font_italic">The temporary class flattening performed for composite names
+follow the same rules as class flattening of the base class in an
+extends-clause, local classes and the type in a component clause, except
+that the environment is empty. See also</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MoistAir2</span> <span class="ltx_text ltx_emph ltx_font_italic">example in
+<a href="Ch7.html#redeclaration" title="7.3 Redeclaration ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 7.3</span></a> for further explanations regarding looking inside
+partial packages.</span>]</p>
+</div>
+</section>
+<section id="global-name-lookup" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.3.3 </span>Global Name Lookup</h3>
+
+<div id="Ch5.S3.SS3.p1" class="ltx_para">
+<p class="ltx_p">For a name starting with dot, e.g.: <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">.A</span> [<span class="ltx_text ltx_emph ltx_font_italic">or</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">.A.B</span><span class="ltx_text ltx_emph ltx_font_italic">,</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">.A.B.C</span>
+<span class="ltx_text ltx_emph ltx_font_italic">etc</span>.] lookup is performed as follows:</p>
+</div>
+<div id="Ch5.S3.SS3.p2" class="ltx_para">
+<ul id="Ch5.S3.I3" class="ltx_itemize">
+<li id="Ch5.S3.I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S3.I3.i1.p1" class="ltx_para">
+<p class="ltx_p">The first identifier [A] is looked up in the global scope. This is
+possible even if the class is encapsulated and import statements are
+not used for this. If there does not exist a class A in global scope
+this is an error.</p>
+</div>
+</li>
+<li id="Ch5.S3.I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S3.I3.i2.p1" class="ltx_para">
+<p class="ltx_p">If the name is simple then the class A is the result of lookup.</p>
+</div>
+</li>
+<li id="Ch5.S3.I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S3.I3.i3.p1" class="ltx_para">
+<p class="ltx_p">If the name is a composite name then the class A is temporarily
+flattened with an empty environment (i.e. no modifiers, see
+<a href="Ch7.html#modification-environment" title="7.2.2 Modification Environment ‣ 7.2 Modifications ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 7.2.2</span></a>) and using the enclosing classes of the denoted class. The rest
+of the name [e.g., <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">B</span> or <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">B.C</span>] is looked up among the declared named
+elements of the temporary flattened class. If the class does not
+satisfy the requirements for a package, the lookup is restricted to
+encapsulated elements only. The class we look inside may not be
+partial.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch5.S3.SS3.p3" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_emph ltx_font_italic">The package-restriction ensures that global name lookup of
+component references can only find global constants.</span>]</p>
+</div>
+</section>
+<section id="lookup-of-imported-names1" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.3.4 </span>Lookup of Imported Names</h3>
+
+<div id="Ch5.S3.SS4.p1" class="ltx_para">
+<p class="ltx_p">See <a href="Ch13.html#lookup-of-imported-names" title="13.2.1.1 Lookup of Imported Names ‣ 13.2.1 Importing Definitions from a Package ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 13.2.1.1</span></a>.</p>
+</div>
+</section>
+</section>
+<section id="instance-hierarchy-name-lookup-of-inner-declarations" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5.4 </span>Instance Hierarchy Name Lookup of Inner Declarations</h2>
+
+<div id="Ch5.S4.p1" class="ltx_para">
+<p class="ltx_p">An element declared with the prefix <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span> references an element instance
+with the same name but using the prefix <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span> which is nearest in the
+enclosing instance hierarchy of the <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span> element declaration.</p>
+</div>
+<div id="Ch5.S4.p2" class="ltx_para">
+<p class="ltx_p">An <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span> element reference in a simulation model requires that one
+corresponding <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span> element declaration exist or can be created in a
+unique way:</p>
+</div>
+<div id="Ch5.S4.p3" class="ltx_para">
+<ul id="Ch5.S4.I1" class="ltx_itemize">
+<li id="Ch5.S4.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S4.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">If there are two (or more) <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span> declarations with the same name, both
+lacking matching <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span> declarations, and the <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span> declarations are
+not of the same class it is in error.</p>
+</div>
+</li>
+<li id="Ch5.S4.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S4.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">If there is one (or more) <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span> declarations of a partial class it is
+an error.</p>
+</div>
+</li>
+<li id="Ch5.S4.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S4.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">In other cases, i.e. if a unique non-partial class is used for all
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span> declarations of the same name lacking a matching inner
+declaration, then an <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span> declaration of that class is automatically
+added at the top of the model and diagnostics is given.</p>
+</div>
+</li>
+<li id="Ch5.S4.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S4.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">The annotations defined in <a href="Ch18.html#annotations-for-the-graphical-user-interface" title="18.7 Annotations for the Graphical User Interface ‣ Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 18.7</span></a> does not affect this process,
+other than that:</p>
+</div>
+<div id="Ch5.S4.I1.i4.p2" class="ltx_para">
+<ul id="Ch5.S4.I1.I1" class="ltx_itemize">
+<li id="Ch5.S4.I1.i4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch5.S4.I1.i4.i1.p1" class="ltx_para">
+<p class="ltx_p">missingInnerMessage can be used for the diagnostic (and possibly
+error messages)</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch5.S4.p4" class="ltx_para">
+<p class="ltx_p">An <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span> element component may be of a partial class [<span class="ltx_text ltx_emph ltx_font_italic">but the
+referenced</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span> <span class="ltx_text ltx_emph ltx_font_italic">component must be of a non-partial class</span>].
+[<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span><span class="ltx_text ltx_emph ltx_font_italic">/<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold ltx_font_upright" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span></span> <span class="ltx_text ltx_emph ltx_font_italic">components may be used to model simple
+fields, where some physical quantities, such as gravity vector,
+environment temperature or environment pressure, are accessible from all
+components in a specific model hierarchy. Inner components are
+accessible throughout the model, if they are not “shadowed” by a
+corresponding</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span> <span class="ltx_text ltx_emph ltx_font_italic">declaration in a more deeply nested level of
+the model hierarchy.</span>]</p>
+</div>
+<div id="Ch5.S4.p5" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_emph ltx_font_italic">Simple Example</span>:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Y2xhc3MgQQogIG91dGVyIFJlYWwgVDA7CiAgLi4uCmVuZCBBOwpjbGFzcyBCCiAgaW5uZXIgUmVhbCBUMDsKICBBIGExLCBhMjsgLy8gQi5UMCwgQi5hMS5UMCBhbmQgQi5hMi5UMCBpcyB0aGUgc2FtZSB2YXJpYWJsZQogIC4uLgplbmQgQjs=">⬇</a></div>
+<div id="lstnumberx820" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span>
+</div>
+<div id="lstnumberx821" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">outer</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">T0</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx822" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">...</span>
+</div>
+<div id="lstnumberx823" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx824" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">B</span>
+</div>
+<div id="lstnumberx825" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">inner</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">T0</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx826" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a1</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>B.T0,<span class="ltx_text ltx_lst_space"> </span>B.a1.T0<span class="ltx_text ltx_lst_space"> </span>and<span class="ltx_text ltx_lst_space"> </span>B.a2.T0<span class="ltx_text ltx_lst_space"> </span>is<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>same<span class="ltx_text ltx_lst_space"> </span>variable</span>
+</div>
+<div id="lstnumberx827" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">...</span>
+</div>
+<div id="lstnumberx828" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">B</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+</div>
+<p class="ltx_p">More complicated example:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Y2xhc3MgQQogIG91dGVyIFJlYWwgVEk7CiAgY2xhc3MgQgogICAgUmVhbCBUSTsKICAgIGNsYXNzIEMKICAgICAgUmVhbCBUSTsKICAgICAgY2xhc3MgRAogICAgICAgIG91dGVyIFJlYWwgVEk7IC8vCiAgICAgIGVuZCBEOwogICAgICBEIGQ7CiAgICBlbmQgQzsKICAgIEMgYzsKICBlbmQgQjsKICBCIGI7CmVuZCBBOwoKY2xhc3MgRQogIGlubmVyIFJlYWwgVEk7CiAgY2xhc3MgRgogICAgaW5uZXIgUmVhbCBUSTsKICAgIGNsYXNzIEcKICAgICAgUmVhbCBUSTsKICAgICAgY2xhc3MgSAogICAgICAgIEEgYTsKICAgICAgZW5kIEg7CiAgICAgIEggaDsKICAgIGVuZCBHOwogICAgRyBnOwogIGVuZCBGOwogIEYgZjsKZW5kIEU7CgpjbGFzcyBJCiAgaW5uZXIgUmVhbCBUSTsKICBFIGU7CiAgLy8gZS5mLmcuaC5hLlRJLCBlLmYuZy5oLmEuYi5jLmQuVEksIGFuZCBlLmYuVEkgaXMgdGhlIHNhbWUgdmFyaWFibGUKICAvLyBCdXQgZS5mLlRJLCBlLlRJIGFuZCBUSSBhcmUgZGlmZmVyZW50IHZhcmlhYmxlcwogIEEgYTsgLy8gYS5USSwgYS5iLmMuZC5USSwgYW5kIFRJIGlzIHRoZSBzYW1lIHZhcmlhYmxlCmVuZCBJOw==">⬇</a></div>
+<div id="lstnumberx829" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span>
+</div>
+<div id="lstnumberx830" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">outer</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TI</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx831" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">B</span>
+</div>
+<div id="lstnumberx832" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TI</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx833" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C</span>
+</div>
+<div id="lstnumberx834" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">      </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TI</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx835" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">      </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">D</span>
+</div>
+<div id="lstnumberx836" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">outer</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TI</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//</span>
+</div>
+<div id="lstnumberx837" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">      </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">D</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx838" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">      </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">D</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">d</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx839" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx840" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">c</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx841" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">B</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx842" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">B</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx843" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx844" class="ltx_listingline">
+</div>
+<div id="lstnumberx845" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">E</span>
+</div>
+<div id="lstnumberx846" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">inner</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TI</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx847" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">F</span>
+</div>
+<div id="lstnumberx848" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">inner</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TI</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx849" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">G</span>
+</div>
+<div id="lstnumberx850" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">      </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TI</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx851" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">      </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">H</span>
+</div>
+<div id="lstnumberx852" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx853" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">      </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">H</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx854" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">      </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">H</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">h</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx855" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">G</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx856" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">G</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx857" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">F</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx858" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">F</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx859" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">E</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx860" class="ltx_listingline">
+</div>
+<div id="lstnumberx861" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">I</span>
+</div>
+<div id="lstnumberx862" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">inner</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TI</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx863" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">E</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">e</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx864" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>e.f.g.h.a.TI,<span class="ltx_text ltx_lst_space"> </span>e.f.g.h.a.b.c.d.TI,<span class="ltx_text ltx_lst_space"> </span>and<span class="ltx_text ltx_lst_space"> </span>e.f.TI<span class="ltx_text ltx_lst_space"> </span>is<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>same<span class="ltx_text ltx_lst_space"> </span>variable</span>
+</div>
+<div id="lstnumberx865" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>But<span class="ltx_text ltx_lst_space"> </span>e.f.TI,<span class="ltx_text ltx_lst_space"> </span>e.TI<span class="ltx_text ltx_lst_space"> </span>and<span class="ltx_text ltx_lst_space"> </span>TI<span class="ltx_text ltx_lst_space"> </span>are<span class="ltx_text ltx_lst_space"> </span>different<span class="ltx_text ltx_lst_space"> </span>variables</span>
+</div>
+<div id="lstnumberx866" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>a.TI,<span class="ltx_text ltx_lst_space"> </span>a.b.c.d.TI,<span class="ltx_text ltx_lst_space"> </span>and<span class="ltx_text ltx_lst_space"> </span>TI<span class="ltx_text ltx_lst_space"> </span>is<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>same<span class="ltx_text ltx_lst_space"> </span>variable</span>
+</div>
+<div id="lstnumberx867" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">I</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+<div id="Ch5.S4.p6" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span> component shall be a subtype of the corresponding <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span>
+component. [<span class="ltx_text ltx_emph ltx_font_italic">If the two types are not identical, the type of the</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span> <span class="ltx_text ltx_emph ltx_font_italic">component defines the instance and the</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span>
+<span class="ltx_text ltx_emph ltx_font_italic">component references just part of the</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span> <span class="ltx_text ltx_emph ltx_font_italic">component</span>].</p>
+</div>
+<div id="Ch5.S4.p7" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_emph ltx_font_italic">Example</span>:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Y2xhc3MgQQogIGlubmVyIFJlYWwgVEk7CiAgY2xhc3MgQgogICAgb3V0ZXIgSW50ZWdlciBUSTsgLy8gZXJyb3IsIHNpbmNlIEEuVEkgaXMgbm8gc3VidHlwZSBvZiBBLkIuVEkKICBlbmQgQjsKZW5kIEE7">⬇</a></div>
+<div id="lstnumberx868" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span>
+</div>
+<div id="lstnumberx869" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">inner</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TI</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx870" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">B</span>
+</div>
+<div id="lstnumberx871" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">outer</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Integer</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TI</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>error,<span class="ltx_text ltx_lst_space"> </span>since<span class="ltx_text ltx_lst_space"> </span>A.TI<span class="ltx_text ltx_lst_space"> </span>is<span class="ltx_text ltx_lst_space"> </span>no<span class="ltx_text ltx_lst_space"> </span>subtype<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>A.B.TI</span>
+</div>
+<div id="lstnumberx872" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">B</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx873" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+</div>
+</div>
+<div id="Ch5.S4.p8" class="ltx_para">
+<p class="ltx_p">]</p>
+</div>
+<section id="example-of-field-functions-using-inner-outer" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.4.1 </span>Example of Field Functions using Inner/Outer</h3>
+
+<div id="Ch5.S4.SS1.p1" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_emph ltx_font_italic">Inner declarations can be used to define field functions, such
+as position dependent gravity fields, e.g.:</span></p>
+</div>
+<div id="Ch5.S4.SS1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cGFydGlhbCBmdW5jdGlvbiBBCiAgaW5wdXQgUmVhbCB1OwogIG91dHB1dCBSZWFsIHk7CmVuZCBBOwoKZnVuY3Rpb24gQiAvLyBCIGlzIGEgc3VidHlwZSBvZiBBCiAgZXh0ZW5kcyBBOwphbGdvcml0aG0KICAuLi4KZW5kIEI7CgpjbGFzcyBECiAgb3V0ZXIgZnVuY3Rpb24gZmMgPSBBOwogIC4uLgplcXVhdGlvbgogIHkgPSBmYyh1KTsKZW5kIEQ7CgpjbGFzcyBDCiAgaW5uZXIgZnVuY3Rpb24gZmMgPSBCOyAvLyBkZWZpbmUgZnVuY3Rpb24gdG8gYmUgYWN0dWFsbHkgdXNlZAogIEQgZDsgLy8gVGhlIGVxdWF0aW9uIGlzIG5vdyB0cmVhdGVkIGFzIHkgPSBCKHUpCmVuZCBDOw==">⬇</a></div>
+<div id="lstnumberx874" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">partial</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span>
+</div>
+<div id="lstnumberx875" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">input</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">u</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx876" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">output</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx877" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx878" class="ltx_listingline">
+</div>
+<div id="lstnumberx879" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">B</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>B<span class="ltx_text ltx_lst_space"> </span>is<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>subtype<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>A</span>
+</div>
+<div id="lstnumberx880" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">extends</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx881" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">algorithm</span>
+</div>
+<div id="lstnumberx882" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">...</span>
+</div>
+<div id="lstnumberx883" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">B</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx884" class="ltx_listingline">
+</div>
+<div id="lstnumberx885" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">D</span>
+</div>
+<div id="lstnumberx886" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">outer</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx887" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">...</span>
+</div>
+<div id="lstnumberx888" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">equation</span>
+</div>
+<div id="lstnumberx889" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fc</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">u</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">);</span>
+</div>
+<div id="lstnumberx890" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">D</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx891" class="ltx_listingline">
+</div>
+<div id="lstnumberx892" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C</span>
+</div>
+<div id="lstnumberx893" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">inner</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">B</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>define<span class="ltx_text ltx_lst_space"> </span>function<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>be<span class="ltx_text ltx_lst_space"> </span>actually<span class="ltx_text ltx_lst_space"> </span>used</span>
+</div>
+<div id="lstnumberx894" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">D</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">d</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>The<span class="ltx_text ltx_lst_space"> </span>equation<span class="ltx_text ltx_lst_space"> </span>is<span class="ltx_text ltx_lst_space"> </span>now<span class="ltx_text ltx_lst_space"> </span>treated<span class="ltx_text ltx_lst_space"> </span>as<span class="ltx_text ltx_lst_space"> </span>y<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>B(u)</span>
+</div>
+<div id="lstnumberx895" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</section>
+</section>
+<section id="simultaneous-inner-outer-declarations" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5.5 </span>Simultaneous Inner/Outer Declarations</h2>
+
+<div id="Ch5.S5.p1" class="ltx_para">
+<p class="ltx_p">An element declared with both the prefixes <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span> conceptually
+introduces two declarations with the same name: one that follows the
+above rules for <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span> and another that follows the rules for <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span>.
+[<span class="ltx_text ltx_emph ltx_font_italic">Local references for elements with both the prefix</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span>
+<span class="ltx_text ltx_emph ltx_font_italic">and</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span> <span class="ltx_text ltx_emph ltx_font_italic">references the</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">outer</span> <span class="ltx_text ltx_emph ltx_font_italic">element. That in turn
+references the corresponding element in an enclosing scope with the
+prefix</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span><span class="ltx_text ltx_emph ltx_font_italic">.</span>]</p>
+</div>
+<div id="Ch5.S5.p2" class="ltx_para">
+<p class="ltx_p">Outer component declarations may only have modifications
+[<span class="ltx_text ltx_emph ltx_font_italic">including declaration equations</span>] if they also have the <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span>
+prefix. Outer class declarations should be defined using short-class
+definitions which only may have modifications if they also have the
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span> prefix. For both cases those modifications are only applied to the
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">inner</span> declaration.</p>
+</div>
+<div id="Ch5.S5.p3" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_emph ltx_font_italic">Example</span>:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Y2xhc3MgQQogIG91dGVyIHBhcmFtZXRlciBSZWFsIHA9MjsgLy8gZXJyb3IsIHNpbmNlIG1vZGlmaWNhdGlvbgplbmQgQTs=">⬇</a></div>
+<div id="lstnumberx896" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span>
+</div>
+<div id="lstnumberx897" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">outer</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">parameter</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">p</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=2;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>error,<span class="ltx_text ltx_lst_space"> </span>since<span class="ltx_text ltx_lst_space"> </span>modification</span>
+</div>
+<div id="lstnumberx898" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+</div>
+</div>
+<div id="Ch5.S5.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Intent of the following example: Propagate</span> enabled <span class="ltx_text ltx_emph ltx_font_italic">through
+the hierarchy, and also be able to disable subsystems locally.</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bW9kZWwgQ29uZGl0aW9uYWxJbnRlZ3JhdG9yICJTaW1wbGUgZGlmZmVyZW50aWFsIGVxdWF0aW9uIGlmIGlzRW5hYmxlZCIKICBvdXRlciBCb29sZWFuIGlzRW5hYmxlZDsKICBSZWFsIHgoc3RhcnQ9MSk7CmVxdWF0aW9uCiAgZGVyKHgpPWlmIGlzRW5hYmxlZCB0aGVuIC14IGVsc2UgMDsKZW5kIENvbmRpdGlvbmFsSW50ZWdyYXRvcjsKCm1vZGVsIFN1YlN5c3RlbSAic3Vic3lzdGVtIHRoYXQgJ2VuYWJsZScgaXRzIGNvbmRpdGlvbmFsIGludGVncmF0b3JzIgogIEJvb2xlYW4gZW5hYmxlTWUgPSB0aW1lPD0xOwogIC8vIFNldCBpbm5lciBpc0VuYWJsZWQgdG8gb3V0ZXIgaXNFbmFibGVkIGFuZCBlbmFibGVNZQogIGlubmVyIG91dGVyIEJvb2xlYW4gaXNFbmFibGVkID0gaXNFbmFibGVkIGFuZCBlbmFibGVNZTsKICBDb25kaXRpb25hbEludGVncmF0b3IgY29uZGl0aW9uYWxJbnRlZ3JhdG9yOwogIENvbmRpdGlvbmFsSW50ZWdyYXRvciBjb25kaXRpb25hbEludGVncmF0b3IyOwplbmQgU3ViU3lzdGVtOwoKbW9kZWwgU3lzdGVtCiAgU3ViU3lzdGVtIHN1YlN5c3RlbTsKICBpbm5lciBCb29sZWFuIGlzRW5hYmxlZCA9IHRpbWU+PTAuNTsKICAvLyBzdWJTeXN0ZW0uY29uZGl0aW9uYWxJbnRlZ3JhdG9yLmlzRW5hYmxlZCB3aWxsIGJlCiAgLy8gJ2lzRW5hYmxlZCBhbmQgc3ViU3lzdGVtLmVuYWJsZU1lJwplbmQgU3lzdGVtOw==">⬇</a></div>
+<div id="lstnumberx899" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ConditionalIntegrator</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;color:#000000;">"Simple<span class="ltx_text ltx_lst_space"> </span>differential<span class="ltx_text ltx_lst_space"> </span>equation<span class="ltx_text ltx_lst_space"> </span>if<span class="ltx_text ltx_lst_space"> </span>isEnabled"</span>
+</div>
+<div id="lstnumberx900" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">outer</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Boolean</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">isEnabled</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx901" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">start</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=1);</span>
+</div>
+<div id="lstnumberx902" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">equation</span>
+</div>
+<div id="lstnumberx903" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">der</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)=</span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">isEnabled</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">then</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">else</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0;</span>
+</div>
+<div id="lstnumberx904" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ConditionalIntegrator</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx905" class="ltx_listingline">
+</div>
+<div id="lstnumberx906" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">SubSystem</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;color:#000000;">"subsystem<span class="ltx_text ltx_lst_space"> </span>that<span class="ltx_text ltx_lst_space"> </span>’enable’<span class="ltx_text ltx_lst_space"> </span>its<span class="ltx_text ltx_lst_space"> </span>conditional<span class="ltx_text ltx_lst_space"> </span>integrators"</span>
+</div>
+<div id="lstnumberx907" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Boolean</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">enableMe</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">time</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;=1;</span>
+</div>
+<div id="lstnumberx908" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>Set<span class="ltx_text ltx_lst_space"> </span>inner<span class="ltx_text ltx_lst_space"> </span>isEnabled<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>outer<span class="ltx_text ltx_lst_space"> </span>isEnabled<span class="ltx_text ltx_lst_space"> </span>and<span class="ltx_text ltx_lst_space"> </span>enableMe</span>
+</div>
+<div id="lstnumberx909" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">inner</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">outer</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Boolean</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">isEnabled</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">isEnabled</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">and</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">enableMe</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx910" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ConditionalIntegrator</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">conditionalIntegrator</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx911" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ConditionalIntegrator</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">conditionalIntegrator2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx912" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">SubSystem</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx913" class="ltx_listingline">
+</div>
+<div id="lstnumberx914" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">System</span>
+</div>
+<div id="lstnumberx915" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">SubSystem</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">subSystem</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx916" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">inner</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Boolean</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">isEnabled</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">time</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;=0</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">.5</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx917" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>subSystem.conditionalIntegrator.isEnabled<span class="ltx_text ltx_lst_space"> </span>will<span class="ltx_text ltx_lst_space"> </span>be</span>
+</div>
+<div id="lstnumberx918" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>’isEnabled<span class="ltx_text ltx_lst_space"> </span>and<span class="ltx_text ltx_lst_space"> </span>subSystem.enableMe’</span>
+</div>
+<div id="lstnumberx919" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">System</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</section>
+<section id="flattening-process" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5.6 </span>Flattening Process</h2>
+
+<div id="Ch5.S6.p1" class="ltx_para">
+<p class="ltx_p">In order to guarantee that elements can be used before they are declared
+and that elements do not depend on the order of their declaration
+(<a href="Ch4.html#declaration-order-and-usage-before-declaration" title="4.3 Declaration Order and Usage before Declaration ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.3</span></a>) in the enclosing class, the flattening proceeds in the
+following two major steps:</p>
+</div>
+<div id="Ch5.S6.p2" class="ltx_para">
+<ol id="Ch5.S6.I1" class="ltx_enumerate">
+<li id="Ch5.S6.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="Ch5.S6.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Instantiation process</p>
+</div>
+</li>
+<li id="Ch5.S6.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="Ch5.S6.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Generation of the flat equation system</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="Ch5.S6.p3" class="ltx_para">
+<p class="ltx_p">The result is an equation system of all equations/algorithms, initial
+equations/algorithms and instances of referenced functions.
+Modifications of constants, parameters and variables are included in the
+form of equations.</p>
+</div>
+<div id="Ch5.S6.p4" class="ltx_para">
+<p class="ltx_p">The constants, parameters and variables are defined by globally unique
+identifiers and all references are resolved to the identifier of the
+referenced variable. No other transformations are performed.</p>
+</div>
+<section id="instantiation" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.6.1 </span>Instantiation</h3>
+
+<div id="Ch5.S6.SS1.p1" class="ltx_para">
+<p class="ltx_p">The instantiation is performed in two steps. First a class tree is
+created and then from that an instance tree for a particular model is
+built up. This forms the basis for derivation of the flat equation
+system.</p>
+</div>
+<div id="Ch5.S6.SS1.p2" class="ltx_para">
+<p class="ltx_p">An implementation may delay and/or omit building parts of these trees,
+which means that the different steps can be interleaved. If an error
+occurs in a part of the tree that is not used for the model to be
+instantiated the corresponding diagnostics can be omitted (or be given).
+However, errors that should only be reported in a simulation model must
+be omitted there, since they are not part of the simulation model.</p>
+</div>
+<section id="the-class-tree" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">5.6.1.1 </span>The Class Tree</h4>
+
+<div id="Ch5.S6.SS1.SSS1.p1" class="ltx_para">
+<p class="ltx_p">All necessary libraries including the model which is to be instantiated
+are loaded from e.g. file system and form a so called <span class="ltx_text ltx_font_bold">class
+tree</span><span class="ltx_text ltx_emph ltx_font_italic">.</span> This tree represents the syntactic information from the
+class definitions. It contains also all modifications at their original
+locations in syntactic form. <span class="ltx_text ltx_emph ltx_font_italic">[The class tree is built up
+directly during parsing of the Modelica texts. For each class a local
+tree is created which is then merged into the one big tree, according to
+the location of the class in the class hierarchy. This tree can be seen
+as the abstract syntax tree (AST) of the loaded libraries.].</span> The
+builtin classes are put into the unnamed root of the class tree.</p>
+</div>
+</section>
+<section id="the-instance-tree" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">5.6.1.2 </span>The Instance Tree</h4>
+
+<div id="Ch5.S6.SS1.SSS2.p1" class="ltx_para">
+<p class="ltx_p">The output of the instantiation process is an <span class="ltx_text ltx_font_bold">instance tree</span>.
+The instance tree consists of nodes representing the elements of a class
+definition from the class tree. For a component the subtree of a
+particular node is created using the information from the class of the
+component clause and a new modification environment as result of merging
+the current modification environment with the modifications from the
+current element declaration (see <a href="Ch7.html#merging-of-modifications" title="7.2.3 Merging of Modifications ‣ 7.2 Modifications ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 7.2.3</span></a>).</p>
+</div>
+<div id="Ch5.S6.SS1.SSS2.p2" class="ltx_para">
+<p class="ltx_p">The instance tree has the following properties:</p>
+</div>
+<div id="Ch5.S6.SS1.SSS2.p3" class="ltx_para">
+<ul id="Ch5.S6.I2" class="ltx_itemize">
+<li id="Ch5.S6.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S6.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">It contains the instantiated elements of the class definitions, with
+redeclarations taken into account and merged modifications applied.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch5.S6.SS1.SSS2.p4" class="ltx_para">
+<ul id="Ch5.S6.I3" class="ltx_itemize">
+<li id="Ch5.S6.I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S6.I3.i1.p1" class="ltx_para">
+<p class="ltx_p">Each instance knows its source class definition from the class tree
+and its modification environment.</p>
+</div>
+</li>
+<li id="Ch5.S6.I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S6.I3.i2.p1" class="ltx_para">
+<p class="ltx_p">Each modification knows its instance scope.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch5.S6.SS1.SSS2.p5" class="ltx_para">
+<p class="ltx_p">The instance tree is used for lookup during instantiation. To be
+prepared for that, it has to be based on the structure of the class tree
+with respect to the class definitions. The builtin classes are
+instantiated and put in the unnamed root prior to the instantiation of
+the user classes, to be able to find them.</p>
+</div>
+<div id="Ch5.S6.SS1.SSS2.p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">[The existence of the two separate trees (instance tree and
+class tree) is conceptual. Whether they really exist or are merged into
+only one tree or the needed information is held completely differently
+is an implementation detail. It is also a matter of implementation to
+have only these classes instantiated which are needed to instantiate the
+class of interest.] </span>
+</p>
+</div>
+<div id="Ch5.S6.SS1.SSS2.p7" class="ltx_para">
+<p class="ltx_p">A node in the instance tree is the instance scope for the modifiers and
+elements syntactically defined in the class it is instantiated from. The
+instance scope is the starting point for name lookup. <span class="ltx_text ltx_emph ltx_font_italic">[If the
+name is not found the lookup is continued in the instance scope
+corresponding to the lexically enclosing class. Extends clauses are
+treated as unnamed nodes in the instance tree – when searching for an
+element in an instance scope the search also recursively examines the
+elements of the extends clauses.</span> <span class="ltx_text ltx_emph ltx_font_italic">Except that inherited
+import-statements are ignored.]</span></p>
+</div>
+</section>
+<section id="the-instantiation-procedure" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">5.6.1.3 </span>The Instantiation Procedure.</h4>
+
+<div id="Ch5.S6.SS1.SSS3.p1" class="ltx_para">
+<p class="ltx_p">The instantiation is a recursive procedure with the following inputs:</p>
+</div>
+<div id="Ch5.S6.SS1.SSS3.p2" class="ltx_para">
+<ul id="Ch5.S6.I4" class="ltx_itemize">
+<li id="Ch5.S6.I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S6.I4.i1.p1" class="ltx_para">
+<p class="ltx_p">the class to be instantiated (current class)</p>
+</div>
+</li>
+<li id="Ch5.S6.I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S6.I4.i2.p1" class="ltx_para">
+<p class="ltx_p">the modification environment with all applicable redeclarations and
+merged modifications (initially empty)</p>
+</div>
+</li>
+<li id="Ch5.S6.I4.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S6.I4.i3.p1" class="ltx_para">
+<p class="ltx_p">a reference to the node of the instance tree, which the new instance
+should go into (parent instance)</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch5.S6.SS1.SSS3.p3" class="ltx_para">
+<p class="ltx_p">The instantiation starts with the class to be instantiated, an empty
+modification environment, and an unnamed root node as parent node.</p>
+</div>
+<div id="Ch5.S6.SS1.SSS3.p4" class="ltx_para">
+<p class="ltx_p">During instantiation all lookup is performed using the instance tree,
+starting from the instance scope of the current element. References in
+modifications and equations are resolved later (during generation of
+flat equation system) using the same lookup.</p>
+</div>
+</section>
+<section id="steps-of-instantiation" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">5.6.1.4 </span>Steps of Instantiation</h4>
+
+<section id="the-element-itself" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">The element itself</h5>
+
+<div id="Ch5.S6.SS1.SSS4.Px1.p1" class="ltx_para">
+<p class="ltx_p">A partially instantiated class or component is an element that is ready
+to be instantiated; a partially instantiated element (i.e. class or
+component) is comprised of a reference to the original element (from the
+class tree) and the modifiers for that element (including a possible
+redeclaration).</p>
+</div>
+<div id="Ch5.S6.SS1.SSS4.Px1.p2" class="ltx_para">
+<p class="ltx_p">The possible redeclaration of the element itself takes effect.</p>
+</div>
+<div id="Ch5.S6.SS1.SSS4.Px1.p3" class="ltx_para">
+<p class="ltx_p">The class of a partially instantiated component is found in the instance
+tree (using the redeclaration if any), modifiers merged to that class
+forming a new partially instantiated class that is instantiated as
+below.
+</p>
+</div>
+</section>
+<section id="the-local-contents-of-the-element" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">The local contents of the element</h5>
+
+<div id="Ch5.S6.SS1.SSS4.Px2.p1" class="ltx_para">
+<p class="ltx_p">For local classes and components in the current class, instance nodes
+are created and inserted into the current instance. Modifiers (including
+class redeclarations) are merged and associated with the instance and
+the element is partially instantiated. <span class="ltx_text ltx_emph ltx_font_italic">[The partially
+instantiated elements are used later for lookup during the generation of
+the flat equation system and are instantiated fully, if necessary, using
+the stored modification environment.]</span></p>
+</div>
+<div id="Ch5.S6.SS1.SSS4.Px2.p2" class="ltx_para">
+<p class="ltx_p">Equations, algorithms, and annotations of the class and the component
+declaration are copied to the instance without merging. <span class="ltx_text ltx_emph ltx_font_italic">[The
+annotations can be relevant for simulations, e.g. annotations for code
+generation (<a href="Ch18.html#annotations-for-code-generation" title="18.3 Annotations for Code Generation ‣ Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 18.3</span></a>.),
+simulation experiments (<a href="Ch18.html#annotations-for-simulation-experiments" title="18.4 Annotations for Simulation Experiments ‣ Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 18.4</span></a>)
+or functions(<a href="Ch12.html#declaring-derivatives-of-functions" title="12.7 Declaring Derivatives of Functions ‣ Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 12.7</span></a>,<a href="Ch12.html#declaring-inverses-of-functions" title="12.8 Declaring Inverses of Functions ‣ Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 12.8</span></a> and <a href="Ch12.html#external-function-interface" title="12.9 External Function Interface ‣ Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 12.9</span></a>).]</span></p>
+</div>
+<div id="Ch5.S6.SS1.SSS4.Px2.p3" class="ltx_para">
+<p class="ltx_p">Extends clauses are not looked up, but empty extends clause nodes are
+created and inserted into the current instance – to be able to preserve
+the declaration order of components.</p>
+</div>
+</section>
+<section id="the-inherited-contents-of-the-element" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">The inherited contents of the element</h5>
+
+<div id="Ch5.S6.SS1.SSS4.Px3.p1" class="ltx_para">
+<p class="ltx_p">Classes of extends clauses of the current class are looked up in the
+instance tree, modifiers (including redeclarations) are merged, the
+contents of these classes are partially instantiated using the new
+modification environment, and are inserted into an extends clause node,
+which is an unnamed node in the current instance that only contains the
+inherited contents from that base-class.</p>
+</div>
+<div id="Ch5.S6.SS1.SSS4.Px3.p2" class="ltx_para">
+<p class="ltx_p">The classes of extends-clauses are looked up before and after handling
+extends-clauses; and it is an error if those lookups generate different
+results.</p>
+</div>
+<div id="Ch5.S6.SS1.SSS4.Px3.p3" class="ltx_para">
+<p class="ltx_p">At the end, the current instance is checked whether their children
+(including children of extends-clauses) with the same name are identical
+and only the first one of them is kept. <span class="ltx_text ltx_emph ltx_font_italic">[This is important for
+function arguments where the order matters.]</span> It is an error if they
+are not identical.</p>
+</div>
+</section>
+<section id="recursive-instantiation-of-components" class="ltx_paragraph">
+<h5 class="ltx_title ltx_title_paragraph">Recursive instantiation of components</h5>
+
+<div id="Ch5.S6.SS1.SSS4.Px4.p1" class="ltx_para">
+<p class="ltx_p">Components (local and inherited) are recursively instantiated.</p>
+</div>
+<div id="Ch5.S6.SS1.SSS4.Px4.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">[</span></p>
+</div>
+<div id="Ch5.S6.SS1.SSS4.Px4.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">As an example consider: </span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bW9kZWwgTQogIG1vZGVsIEIKICAgIEEgYTsKICAgIHJlcGxhY2VhYmxlIG1vZGVsIEEgPSBDOwogICAgdHlwZSBFID0gQm9vbGVhbjsKICBlbmQgQjsKICBCIGIocmVkZWNsYXJlIG1vZGVsIEEgPSBEIChwPTEpKTsKICBwYXJ0aWFsIG1vZGVsIEMKICAgIEUgZTsKICBlbmQgQzsKCiAgbW9kZWwgRAogICAgZXh0ZW5kcyBDOwogICAgcGFyYW1ldGVyIEUgcDsKICAgIHR5cGUgRSA9IEludGVnZXI7CiAgZW5kIEQ7CgogIHR5cGUgRSA9IFJlYWw7CmVuZCBNOw==">⬇</a></div>
+<div id="lstnumberx920" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">M</span>
+</div>
+<div id="lstnumberx921" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">B</span>
+</div>
+<div id="lstnumberx922" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx923" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">replaceable</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx924" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">type</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">E</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Boolean</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx925" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">B</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx926" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">B</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">redeclare</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">D</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">p</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=1));</span>
+</div>
+<div id="lstnumberx927" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">partial</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C</span>
+</div>
+<div id="lstnumberx928" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">E</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">e</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx929" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx930" class="ltx_listingline">
+</div>
+<div id="lstnumberx931" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">D</span>
+</div>
+<div id="lstnumberx932" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">extends</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx933" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">parameter</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">E</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">p</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx934" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">type</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">E</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Integer</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx935" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">D</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx936" class="ltx_listingline">
+</div>
+<div id="lstnumberx937" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">type</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">E</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx938" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">M</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+</div>
+</div>
+<div id="Ch5.S6.SS1.SSS4.Px4.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">To recursively instantiate M allowing the generation of flat
+equation system we have the following steps (not including checks):</span></p>
+</div>
+<div id="Ch5.S6.SS1.SSS4.Px4.p5" class="ltx_para">
+<ol id="Ch5.S6.I5" class="ltx_enumerate">
+<li id="Ch5.S6.I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="Ch5.S6.I5.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Instantiate M: which partially instantiates B, b, C, D, E.</span></p>
+</div>
+</li>
+<li id="Ch5.S6.I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="Ch5.S6.I5.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Instantiate M.b: </span></p>
+</div>
+<div id="Ch5.S6.I5.i2.p2" class="ltx_para">
+<ol id="Ch5.S6.I5.I1" class="ltx_enumerate">
+<li id="Ch5.S6.I5.i2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.1.</span> 
+<div id="Ch5.S6.I5.i2.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">First find the class B in M (the partially instantiated
+elements have correct name allowing lookup)</span></p>
+</div>
+</li>
+<li id="Ch5.S6.I5.i2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.2.</span> 
+<div id="Ch5.S6.I5.i2.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">instantiate the partially instantiated M.B with the modifier
+”redeclare model A=D(p=1)”</span></p>
+</div>
+</li>
+<li id="Ch5.S6.I5.i2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.3.</span> 
+<div id="Ch5.S6.I5.i2.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">partially instantiate M.b.a (no modifier), and M.b.A (with
+modifier ”=D(p=1)”)</span></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li id="Ch5.S6.I5.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="Ch5.S6.I5.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Instantiate M.b.a</span></p>
+</div>
+<div id="Ch5.S6.I5.i3.p2" class="ltx_para">
+<ol id="Ch5.S6.I5.I2" class="ltx_enumerate">
+<li id="Ch5.S6.I5.i3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.1.</span> 
+<div id="Ch5.S6.I5.i3.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">First find the class A in M.b (the partially instantiated
+elements have correct name allowing lookup)</span></p>
+</div>
+</li>
+<li id="Ch5.S6.I5.i3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.2.</span> 
+<div id="Ch5.S6.I5.i3.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Instantiate the partially instantiated M.b.A with the modifier
+”=D(p=1)”.</span>
+</p>
+</div>
+<div id="Ch5.S6.I5.i3.i2.p2" class="ltx_para">
+<ol id="Ch5.S6.I5.I2.I1" class="ltx_enumerate">
+<li id="Ch5.S6.I5.i3.i2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.2.1.</span> 
+<div id="Ch5.S6.I5.i3.i2.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Find the base-class ”=D” from the modifier. This performs
+lookup for D in M, and finds the partially instantiated class D</span></p>
+</div>
+</li>
+<li id="Ch5.S6.I5.i3.i2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.2.2.</span> 
+<div id="Ch5.S6.I5.i3.i2.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Instantiate the base-class M.D with modifier p=1, and insert
+as unnamed node in M.b.A.</span></p>
+</div>
+<div id="Ch5.S6.I5.i3.i2.i2.p2" class="ltx_para">
+<ol id="Ch5.S6.I5.I2.I1.I1" class="ltx_enumerate">
+<li id="Ch5.S6.I5.i3.i2.i2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.2.2.1.</span> 
+<div id="Ch5.S6.I5.i3.i2.i2.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Partially instantiate the component p with modifier ”=1”</span></p>
+</div>
+</li>
+<li id="Ch5.S6.I5.i3.i2.i2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.2.2.2.</span> 
+<div id="Ch5.S6.I5.i3.i2.i2.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Find the base-class ”C” in M.D. Since there is no local
+element called ”C” the search is then continued in M and finds
+the partially instantiated class M.C</span></p>
+</div>
+</li>
+<li id="Ch5.S6.I5.i3.i2.i2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.2.2.3.</span> 
+<div id="Ch5.S6.I5.i3.i2.i2.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Instantiate the base-class M.C as below</span></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li id="Ch5.S6.I5.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">4.</span> 
+<div id="Ch5.S6.I5.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Instantiate the base-class M.C inserting the result into unnamed
+node in M.b.a</span></p>
+</div>
+<div id="Ch5.S6.I5.i4.p2" class="ltx_para">
+<ol id="Ch5.S6.I5.I3" class="ltx_enumerate">
+<li id="Ch5.S6.I5.i4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">4.1.</span> 
+<div id="Ch5.S6.I5.i4.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Partially instantiate ”e”</span></p>
+</div>
+</li>
+<li id="Ch5.S6.I5.i4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">4.2.</span> 
+<div id="Ch5.S6.I5.i4.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Instantiate ”e” which requires finding ”E”. First looking for
+”E” in the un-named node for extends ”M.C”, and, since there is no
+local element ”E” the search is then continued in ”M” (which
+lexically encloses M.C) and finds ”E” class inheriting from Real.
+The ”e” is then instantiated using class ”E” inheriting from
+”Real”.</span></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li id="Ch5.S6.I5.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">5.</span> 
+<div id="Ch5.S6.I5.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Instantiate M.b.a.p</span></p>
+</div>
+<div id="Ch5.S6.I5.i5.p2" class="ltx_para">
+<ol id="Ch5.S6.I5.I4" class="ltx_enumerate">
+<li id="Ch5.S6.I5.i5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">5.1.</span> 
+<div id="Ch5.S6.I5.i5.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">First the class ”E” in M.b.a finding ”E” class inheriting from
+Integer.</span></p>
+</div>
+</li>
+<li id="Ch5.S6.I5.i5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">5.2.</span> 
+<div id="Ch5.S6.I5.i5.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Instantiate the ”M.b.a.p” using the class ”E” inheriting from
+Integer with modifier ”=1”</span></p>
+</div>
+</li>
+<li id="Ch5.S6.I5.i5.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">5.3.</span> 
+<div id="Ch5.S6.I5.i5.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Instantiate the base-class Integer with modifier ”=1”, and
+insert as unnamed node in ”M.b.a.p”.</span></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div id="Ch5.S6.SS1.SSS4.Px4.p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">An implementation can use different heuristics to be more
+efficient by re-using instantiated elements as long as the resulting
+flat equation system is identical. </span></p>
+</div>
+<div id="Ch5.S6.SS1.SSS4.Px4.p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Note that if ”D” was consistently replaced by ”A” in the example
+above the result would be identical (but harder to read due to two
+different classes called ”A”). </span></p>
+</div>
+<div id="Ch5.S6.SS1.SSS4.Px4.p8" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">]</span></p>
+</div>
+</section>
+</section>
+</section>
+<section id="generation-of-the-flat-equation-system" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.6.2 </span>Generation of the flat equation system</h3>
+
+<div id="Ch5.S6.SS2.p1" class="ltx_para">
+<p class="ltx_p">During this process, all references by name in conditional declarations,
+modifications, dimension definitions, annotations, equations and
+algorithms are resolved to the real instance to which they are referring
+to, and the names are replaced by the global unique identifier of the
+instance. <span class="ltx_text ltx_emph ltx_font_italic">[This identifier is normally constructed from the
+names of the instances along a path in the instance tree (and omitting
+the unnamed nodes of extends clauses), separated by dots. Either the
+referenced instance belongs to the model to be simulated the path starts
+at the model itself, or if not, it starts at the unnamed root of the
+instance tree, e.g. in case of a constant in a package.]</span></p>
+</div>
+<div id="Ch5.S6.SS2.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">[To resolve the names, a name lookup using the instance tree is
+performed, starting at the instance scope (unless the name is fully
+qualified) of the modification, algorithm or equation. If it is not
+found locally the search is continued at the instance of the lexically
+enclosing class of the scope [this is normally not equal to the parent
+of the current instance], and then continued with their parents as
+described in <a href="#static-name-lookup" title="5.3 Static Name Lookup ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 5.3</span></a>. If the found component is an outer
+declaration, the search is continued using the direct parents in the
+instance tree (see <a href="#instance-hierarchy-name-lookup-of-inner-declarations" title="5.4 Instance Hierarchy Name Lookup of Inner Declarations ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 5.4</span></a>). If the lookup has to look into a
+class which is not instantiated yet [or only partially
+instantiated], it is instantiated in place.]</span></p>
+</div>
+<div id="Ch5.S6.SS2.p3" class="ltx_para">
+<p class="ltx_p">The flat equation system consists of a list of variables with
+dimensions, flattened equations and algorithms, and a list of called
+functions which are flattened separately. A flattened function consists
+of algorithm or external clause and top-level variables (variables
+directly declared in the function or one of its base-classes) – which
+recursively can contain other variables; the list of non-top level
+variables is not needed.</p>
+</div>
+<div id="Ch5.S6.SS2.p4" class="ltx_para">
+<p class="ltx_p">The instance tree is recursively walked through as follows for elements
+of the class (if necessary a partially instantiated component is first
+instantiated):</p>
+</div>
+<div id="Ch5.S6.SS2.p5" class="ltx_para">
+<ul id="Ch5.S6.I6" class="ltx_itemize">
+<li id="Ch5.S6.I6.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S6.I6.i1.p1" class="ltx_para">
+<p class="ltx_p">At each visited component instance, the name is inserted into the
+variables list. Then the conditional declaration expression is
+evaluated if applicable.</p>
+</div>
+<div id="Ch5.S6.I6.i1.p2" class="ltx_para">
+<ul id="Ch5.S6.I6.I1" class="ltx_itemize">
+<li id="Ch5.S6.I6.i1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch5.S6.I6.i1.i1.p1" class="ltx_para">
+<p class="ltx_p">The variable list is updated with the actual instance</p>
+</div>
+</li>
+<li id="Ch5.S6.I6.i1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch5.S6.I6.i1.i2.p1" class="ltx_para">
+<p class="ltx_p">The variability information and all other properties from the
+declaration are attached to this variable.</p>
+</div>
+</li>
+<li id="Ch5.S6.I6.i1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch5.S6.I6.i1.i3.p1" class="ltx_para">
+<p class="ltx_p">Dimension information from the declaration and all enclosing
+instances are resolved and attached to the variable to define their
+complete dimension.</p>
+</div>
+</li>
+<li id="Ch5.S6.I6.i1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch5.S6.I6.i1.i4.p1" class="ltx_para">
+<p class="ltx_p">If it is of record or simple type (Boolean, Integer, enumeration,
+Real, String, Clock, ExternalObject):</p>
+</div>
+<div id="Ch5.S6.I6.i1.i4.p2" class="ltx_para">
+<ul id="Ch5.S6.I6.I1.I1" class="ltx_itemize">
+<li id="Ch5.S6.I6.i1.i4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">*</span> 
+<div id="Ch5.S6.I6.i1.i4.i1.p1" class="ltx_para">
+<p class="ltx_p">In the modifications of <span class="ltx_text ltx_font_bold">value</span> attribute references are
+resolved using the instance scope of the modification. An equation
+is formed from a reference to the name of the instance and the
+resolved modification value of the instance, and included into the
+equation system. Except if the value for an element of a record is
+overridden by the value for an entire record; <a href="Ch7.html#merging-of-modifications" title="7.2.3 Merging of Modifications ‣ 7.2 Modifications ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 7.2.3</span></a>.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li id="Ch5.S6.I6.i1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch5.S6.I6.i1.i5.p1" class="ltx_para">
+<p class="ltx_p">If it is of simple type (Boolean, Integer, enumeration, Real,
+String, Clock, ExternalObject):</p>
+</div>
+<div id="Ch5.S6.I6.i1.i5.p2" class="ltx_para">
+<ul id="Ch5.S6.I6.I1.I2" class="ltx_itemize">
+<li id="Ch5.S6.I6.i1.i5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">*</span> 
+<div id="Ch5.S6.I6.i1.i5.i1.p1" class="ltx_para">
+<p class="ltx_p">In the modifications of <span class="ltx_text ltx_font_bold">non-value</span> attributes, e.g. start,
+fixed etc. references are resolved using the instance scope of the
+modification. An equation is formed from a reference to the name
+of the instance appended by a dot and the attribute name and the
+resolved modification value of the instance, and included into the
+equation system.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li id="Ch5.S6.I6.i1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="Ch5.S6.I6.i1.i6.p1" class="ltx_para">
+<p class="ltx_p">If it is of a non-simple type the instance is recursively handled.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li id="Ch5.S6.I6.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S6.I6.i2.p1" class="ltx_para">
+<p class="ltx_p">If there are equation or algorithm sections in the class definition of
+the instance, references are resolved using the instance scope of the
+instance and are included in the equation system. Some references –
+in particular to non simple, non record objects like connectors in
+connect statements and states in transition statements are not
+resolved yet and handled afterwards.</p>
+</div>
+</li>
+<li id="Ch5.S6.I6.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S6.I6.i3.p1" class="ltx_para">
+<p class="ltx_p">Instances of local classes are ignored.</p>
+</div>
+</li>
+<li id="Ch5.S6.I6.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S6.I6.i4.p1" class="ltx_para">
+<p class="ltx_p">The unnamed nodes corresponding to extends-clauses are recursively
+handled.</p>
+</div>
+</li>
+<li id="Ch5.S6.I6.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S6.I6.i5.p1" class="ltx_para">
+<p class="ltx_p">If there are function calls encountered during this process, the call
+is filled up with default arguments as defined in <a href="Ch12.html#positional-or-named-input-arguments-of-functions" title="12.4.1 Positional or Named Input Arguments of Functions ‣ 12.4 Function Call ‣ Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 12.4.1</span></a>. These are
+built from the modifications of input arguments which are resolved
+using their instance scope. The called function itself is looked up in
+the instance tree. All used functions are flattened and put into the
+list of functions.</p>
+</div>
+</li>
+<li id="Ch5.S6.I6.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S6.I6.i6.p1" class="ltx_para">
+<p class="ltx_p">Conditional components with false condition are removed afterwards and
+they are not part of the simulation model. <span class="ltx_text ltx_emph ltx_font_italic">[Thus e.g.
+parameters don’t need values in them. However, type-error can be
+detected.]</span></p>
+</div>
+</li>
+<li id="Ch5.S6.I6.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch5.S6.I6.i7.p1" class="ltx_para">
+<p class="ltx_p">Each reference is checked, whether it is a valid reference, e.g. the
+referenced object belongs to or is an instance, where all existing
+conditional declaration expressions evaluate to true or it is a
+constant in a package. <span class="ltx_text ltx_emph ltx_font_italic">[Conditional components can be used in
+connect-statements, and if the component is conditionally disabled the
+connect-statement is removed.]</span>
+</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch5.S6.SS2.p6" class="ltx_para">
+<p class="ltx_p">This leads to a flattened equation system, except for connect and
+transition statements. These have to be transformed as described in
+<a href="Ch9.html" title="Chapter 9 Connectors and Connections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">chapter 9</span></a> and <a href="Ch17.html" title="Chapter 17 State Machines ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">chapter 17</span></a>. This may lead to further changes in the
+instance tree <span class="ltx_text ltx_emph ltx_font_italic">[e.g. from expandable connectors <a href="Ch9.html#expandable-connectors" title="9.1.3 Expandable Connectors ‣ 9.1 Connect-Equations and Connectors ‣ Chapter 9 Connectors and Connections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 9.1.3</span></a>)]</span>
+and additional equations in the flattened equation
+system <span class="ltx_text ltx_emph ltx_font_italic">[e.g. connect equations (<a href="Ch9.html#generation-of-connection-equations" title="9.2 Generation of Connection Equations ‣ Chapter 9 Connectors and Connections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 9.2</span></a>), generated
+equations for state machine semantics (<a href="Ch17.html#semantics-summary" title="17.3.4 Semantics Summary ‣ 17.3 State Machine Semantics ‣ Chapter 17 State Machines ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 17.3.4</span></a>)]</span>.</p>
+</div>
+<div id="Ch5.S6.SS2.p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">[After flattening, the resulting equation system is self
+contained and covers all information needed to transform it to a
+simulatable model, but the class and instance trees are still needed: in
+the transformation process, there might be the need to instantiate
+further functions, e.g. from <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter ltx_font_upright" style="font-size:90%;background-color:#FFFFFF;">derivative</span> annotation or from <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter ltx_font_upright" style="font-size:90%;background-color:#FFFFFF;">inverse</span>
+annotation etc., on demand.]</span></p>
+</div>
+</section>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div>
+<a href="Ch4.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a><a href="Ch6.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue May 14 15:30:12 2019 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>
