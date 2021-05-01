@@ -1,0 +1,591 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>C Derivation of Stream Equations‣ Modelica® Language Specification version 3.6</title>
+<!--Generated on Thu Mar  9 16:41:18 2023 by LaTeXML (version 0.8.6) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on March 9, 2023.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/MLS.css" type="text/css">
+<link rel="stylesheet" href="css/MLS-navbar-left.css" type="text/css">
+<script src="LaTeXML-maybeMathjax.js" type="text/javascript"></script>
+<link rel="up" href="./" title="Modelica® Language Specification version 3.6">
+<link rel="start" href="./" title="Modelica® Language Specification version 3.6">
+<link rel="prev" href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6">
+<link rel="next" href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6">
+<link rel="appendix" href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6">
+<link rel="appendix" href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6">
+<link rel="appendix" href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6">
+<link rel="bibliography" href="bib.html" title="References ‣ Modelica® Language Specification version 3.6">
+<link rel="index" href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body tabindex=0>
+<nav class="ltx_page_navbar"><a href="./" title="Modelica® Language Specification version 3.6" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6</span></a>
+<div class="ltx_TOC">
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Derivation of Stream Equations</span></span>
+<ul class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#mixing-enthalpy" title="C.1 Mixing Enthalpy ‣ Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C.1 </span>Mixing Enthalpy</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#rationale-for-instream" title="C.2 Rationale for inStream ‣ Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C.2 </span>Rationale for inStream</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#special-cases-covered-by-the-instream-operator-definition" title="C.3 Special Cases Covered by inStream Definition ‣ Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C.3 </span>Special Cases Covered by inStream Definition</span></a>
+<ul class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#stream-connector-is-not-connected-n-1" title="C.3.1 Unconnected Stream Connector – 1 Stream Connector ‣ C.3 Special Cases Covered by inStream Definition ‣ Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C.3.1 </span>Unconnected Stream Connector – 1 Stream Connector</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#connection-of-2-stream-connectors-one-to-one-connections-n-2" title="C.3.2 One to One Connections – Connection of 2 Stream Connectors ‣ C.3 Special Cases Covered by inStream Definition ‣ Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C.3.2 </span>One to One Connections – Connection of 2 Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#connection-of-3-stream-connectors-where-one-mass-flow-rate-is-identical-to-zero-n-3-and" title="C.3.3 Zero Mass Flow Rate – Connection of 3 Stream Connectors ‣ C.3 Special Cases Covered by inStream Definition ‣ Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C.3.3 </span>Zero Mass Flow Rate – Connection of 3 Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#connection-of-3-stream-connectors-where-two-mass-flow-rates-are-positive-ideal-splitting-junction-for-uni-directional-flow" title="C.3.4 Ideal Splitting Junction for Uni-Directional Flow - Connection of 3 Stream Connectors where Two Mass Flow Rates are Positive ‣ C.3 Special Cases Covered by inStream Definition ‣ Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C.3.4 </span>Ideal Splitting Junction for Uni-Directional Flow - Connection of 3 Stream Connectors where Two Mass Flow Rates are Positive</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_index"><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div>
+<a href="./" title="Modelica® Language Specification version 3.6" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6</span></a><a href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a><a href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_appendix">
+<h1 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix C </span>Derivation of Stream Equations</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">This appendix contains a derivation of the equation for stream
+connectors from <a href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">chapter</span> <span class="ltx_text ltx_ref_tag">15</span></a>.</p>
+</div>
+<section id="mixing-enthalpy" class="ltx_section">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">C.1 </span>Mixing Enthalpy</h1>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">Consider a connection set with <math id="S1.p1.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> connectors, and denote the mass flow rates <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">m_flow</span> by <math id="S1.p1.m2" class="ltx_Math" alttext="\tilde{m}" display="inline"><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover></math>.
+The mixing enthalpy is defined by the mass balance (the general mass-balance for a component has
+<math id="S1.p1.m3" class="ltx_Math" alttext="\dot{m}=\sum\tilde{m}" display="inline"><mrow><mover accent="true"><mi>m</mi><mo>˙</mo></mover><mo>=</mo><mrow><mo largeop="true" symmetric="true">∑</mo><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover></mrow></mrow></math> which simplifies for the mixing enthalpy where <math id="S1.p1.m4" class="ltx_Math" alttext="m=0" display="inline"><mrow><mi>m</mi><mo>=</mo><mn>0</mn></mrow></math> and thus <math id="S1.p1.m5" class="ltx_Math" alttext="\dot{m}=0" display="inline"><mrow><mover accent="true"><mi>m</mi><mo>˙</mo></mover><mo>=</mo><mn>0</mn></mrow></math>)</p>
+<table id="Ex1" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex1.m1" class="ltx_Math" alttext="0=\sum_{j=1}^{n}\tilde{m}_{j}" display="block"><mrow><mn>0</mn><mo>=</mo><mrow><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mi>j</mi></msub></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">and similarly the energy balance</p>
+<table id="Ex2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex2.m1" class="ltx_Math" alttext="0=\sum_{j=1}^{n}\tilde{H}_{j}" display="block"><mrow><mn>0</mn><mo>=</mo><mrow><munderover><mo largeop="true" movablelimits="false" symmetric="true">∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mover accent="true"><mi>H</mi><mo stretchy="false">~</mo></mover><mi>j</mi></msub></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">with</p>
+<table id="Ex3" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex3.m1" class="ltx_Math" alttext="\tilde{H}_{j}=\tilde{m}_{j}\begin{cases}h_{\mathrm{mix}}&amp;\text{if $\tilde{m}_{%
+j}&gt;0$}\\
+h_{\mathrm{outflow},j}&amp;\text{if $\tilde{m}_{j}&lt;=0$}\end{cases}" display="block"><mrow><msub><mover accent="true"><mi>H</mi><mo stretchy="false">~</mo></mover><mi>j</mi></msub><mo>=</mo><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mi>j</mi></msub><mo>⁢</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><msub><mi>h</mi><mi>mix</mi></msub></mtd><mtd columnalign="left"><mrow><mtext>if </mtext><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mi>j</mi></msub><mo>&gt;</mo><mn>0</mn></mrow></mrow></mtd></mtr><mtr><mtd columnalign="left"><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mi>j</mi></mrow></msub></mtd><mtd columnalign="left"><mrow><mtext>if </mtext><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mi>j</mi></msub><mo mathvariant="italic">&lt;=</mo><mn>0</mn></mrow></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Herein, mass flow rates are positive when entering models (exiting the
+connection set). The specific enthalpy represents the specific enthalpy
+inside the component, close to the connector, for the case of outflow.
+Expressed with variables used in the balance equations we arrive at:</p>
+<table id="Ex4" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex4.m1" class="ltx_Math" alttext="h_{\mathrm{outflow},j}=\begin{cases}\frac{\tilde{H}_{j}}{\tilde{m}_{j}}&amp;\text{%
+if $\tilde{m}_{j}&lt;0$}\\
+\textrm{arbitrary}&amp;\text{if $\tilde{m}_{j}\geq 0$}\end{cases}" display="block"><mrow><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><mstyle displaystyle="false"><mfrac><msub><mover accent="true"><mi>H</mi><mo stretchy="false">~</mo></mover><mi>j</mi></msub><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mi>j</mi></msub></mfrac></mstyle></mtd><mtd columnalign="left"><mrow><mtext>if </mtext><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mi>j</mi></msub><mo>&lt;</mo><mn>0</mn></mrow></mrow></mtd></mtr><mtr><mtd columnalign="left"><mtext>arbitrary</mtext></mtd><mtd columnalign="left"><mrow><mtext>if </mtext><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mi>j</mi></msub><mo>≥</mo><mn>0</mn></mrow></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">While these equations are suitable for device-oriented modeling, the
+straightforward usage of this definition leads to models with
+discontinuous residual equations, which violates the prerequisites of
+several solvers for nonlinear equation systems. This is the reason why
+the actual mixing enthalpy is not modelled directly in the model
+equations. The stream connectors provide a suitable alternative.</p>
+</div>
+<figure id="F1" class="ltx_figure"><object type="image/svg+xml" data="media/fluidmix.svg" id="F1.g1" class="ltx_graphics ltx_centering" aria-label="Exemplary connection set with three connected components and a common mixing enthalpy."><p>Exemplary connection set with three connected components and a common mixing enthalpy.</p></object>
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure C.1: </span>Exemplary connection set with three connected components and a common mixing enthalpy.</figcaption>
+</figure>
+</section>
+<section id="rationale-for-instream" class="ltx_section">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">C.2 </span>Rationale for inStream</h1>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">For simplicity, the derivation of <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">inStream</span> is shown at hand of 3 model components that are connected together.
+The case for <math id="S2.p1.m1" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> connections follows correspondingly.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p">The energy and mass balance equations for the connection set for 3
+components are (see above):</p>
+<table id="E1" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="eq:D1a"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="E1.1.m1" class="ltx_Math" alttext="\begin{split}0=&amp;\tilde{m}_{1}\cdot\begin{cases}h_{\mathrm{mix}}&amp;\text{if $%
+\tilde{m}_{1}&gt;0$}\\
+h_{\mathrm{outflow},1}&amp;\text{if $\tilde{m}_{1}\leq 0$}\end{cases}\\
++&amp;\tilde{m}_{2}\cdot\begin{cases}h_{\mathrm{mix}}&amp;\text{if $\tilde{m}_{2}&gt;0$}%
+\\
+h_{\mathrm{outflow},2}&amp;\text{if $\tilde{m}_{2}\leq 0$}\end{cases}\\
++&amp;\tilde{m}_{3}\cdot\begin{cases}h_{\mathrm{mix}}&amp;\text{if $\tilde{m}_{3}&gt;0$}%
+\\
+h_{\mathrm{outflow},3}&amp;\text{if $\tilde{m}_{3}\leq$}\end{cases}\end{split}" display="block"><mtable columnspacing="0pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="right"><mrow><mn>0</mn><mo>=</mo><mi></mi></mrow></mtd><mtd columnalign="left"><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub><mo>⋅</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><msub><mi>h</mi><mi>mix</mi></msub></mtd><mtd columnalign="left"><mrow><mtext>if </mtext><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub><mo>&gt;</mo><mn>0</mn></mrow></mrow></mtd></mtr><mtr><mtd columnalign="left"><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mtd><mtd columnalign="left"><mrow><mtext>if </mtext><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub><mo>≤</mo><mn>0</mn></mrow></mrow></mtd></mtr></mtable></mrow></mrow></mtd></mtr><mtr><mtd columnalign="right"><mo>+</mo></mtd><mtd columnalign="left"><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub><mo>⋅</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><msub><mi>h</mi><mi>mix</mi></msub></mtd><mtd columnalign="left"><mrow><mtext>if </mtext><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub><mo>&gt;</mo><mn>0</mn></mrow></mrow></mtd></mtr><mtr><mtd columnalign="left"><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub></mtd><mtd columnalign="left"><mrow><mtext>if </mtext><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub><mo>≤</mo><mn>0</mn></mrow></mrow></mtd></mtr></mtable></mrow></mrow></mtd></mtr><mtr><mtd columnalign="right"><mo>+</mo></mtd><mtd columnalign="left"><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub><mo>⋅</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="left"><msub><mi>h</mi><mi>mix</mi></msub></mtd><mtd columnalign="left"><mrow><mtext>if </mtext><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub><mo>&gt;</mo><mn>0</mn></mrow></mrow></mtd></mtr><mtr><mtd columnalign="left"><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>3</mn></mrow></msub></mtd><mtd columnalign="left"><mrow><mtext>if </mtext><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub><mo>≤</mo><mi></mi></mrow></mrow></mtd></mtr></mtable></mrow></mrow></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(C.1a)</span></td>
+</tr></tbody>
+<tbody id="eq:D1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="E1.2.m1" class="ltx_Math" alttext="0=\tilde{m}_{1}+\tilde{m}_{2}+\tilde{m}_{3}" display="block"><mrow><mn>0</mn><mo>=</mo><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub><mo>+</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub><mo>+</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(C.1b)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p class="ltx_p">The balance equations are implemented using a <math id="S2.p3.m1" class="ltx_Math" alttext="\operatorname{max}" display="inline"><mi>max</mi></math> operator in place of
+the piecewise expressions, taking care of the different flow directions:</p>
+<table id="E2" class="ltx_equationgroup ltx_eqn_table">
+
+<tbody id="eq:D2a"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="E2.1.m1" class="ltx_Math" alttext="\begin{split}0=&amp;\operatorname{max}(\tilde{m}_{1},0)h_{\mathrm{mix}}-%
+\operatorname{max}(-\tilde{m}_{1},0)h_{\mathrm{outflow},1}\\
++&amp;\operatorname{max}(\tilde{m}_{2},0)h_{\mathrm{mix}}-\operatorname{max}(-%
+\tilde{m}_{2},0)h_{\mathrm{outflow},2}\\
++&amp;\operatorname{max}(\tilde{m}_{3},0)h_{\mathrm{mix}}-\operatorname{max}(-%
+\tilde{m}_{3},0)h_{\mathrm{outflow},3}\end{split}" display="block"><mtable columnspacing="0pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="right"><mrow><mn>0</mn><mo>=</mo><mi></mi></mrow></mtd><mtd columnalign="left"><mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mi>mix</mi></msub></mrow><mo>-</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow></mrow></mtd></mtr><mtr><mtd columnalign="right"><mo>+</mo></mtd><mtd columnalign="left"><mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mi>mix</mi></msub></mrow><mo>-</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub></mrow></mrow></mtd></mtr><mtr><mtd columnalign="right"><mo>+</mo></mtd><mtd columnalign="left"><mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mi>mix</mi></msub></mrow><mo>-</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>3</mn></mrow></msub></mrow></mrow></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(C.2a)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="S2.p4" class="ltx_para">
+<table id="eq:D2" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="E2.2.m1" class="ltx_Math" alttext="\begin{split}0=&amp;\operatorname{max}(\tilde{m}_{1},0)-\operatorname{max}(-\tilde%
+{m}_{1},0)\\
++&amp;\operatorname{max}(\tilde{m}_{2},0)-\operatorname{max}(-\tilde{m}_{2},0)\\
++&amp;\operatorname{max}(\tilde{m}_{3},0)-\operatorname{max}(-\tilde{m}_{3},0)\end%
+{split}" display="block"><mtable columnspacing="0pt" displaystyle="true" rowspacing="0pt"><mtr><mtd columnalign="right"><mrow><mn>0</mn><mo>=</mo><mi></mi></mrow></mtd><mtd columnalign="left"><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>-</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mtd></mtr><mtr><mtd columnalign="right"><mo>+</mo></mtd><mtd columnalign="left"><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>-</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mtd></mtr><mtr><mtd columnalign="right"><mo>+</mo></mtd><mtd columnalign="left"><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>-</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mtd></mtr></mtable></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(C.2b)</span></td>
+</tr>
+</table>
+</div>
+<div id="S2.p5" class="ltx_para">
+<p class="ltx_p">Equation (<a href="#eq:D2a" title="(C.2a) ‣ (C.2) ‣ C.2 Rationale for inStream ‣ Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">C.2a</span></a>) is solved for <math id="S2.p5.m1" class="ltx_Math" alttext="h_{\mathrm{mix}}" display="inline"><msub><mi>h</mi><mi>mix</mi></msub></math></p>
+<table id="Ex1a" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex1a.m1" class="ltx_Math" alttext="h_{\mathrm{mix}}=\frac{\operatorname{max}(-\tilde{m}_{1},0)h_{\mathrm{outflow}%
+,1}+\operatorname{max}(-\tilde{m}_{2},0)h_{\mathrm{outflow},2}+\operatorname{%
+max}(-\tilde{m}_{3},0)h_{\mathrm{outflow},3}}{\operatorname{max}(\tilde{m}_{1}%
+,0)+\operatorname{max}(\tilde{m}_{2},0)+\operatorname{max}(\tilde{m}_{3},0)}" display="block"><mrow><msub><mi>h</mi><mi>mix</mi></msub><mo>=</mo><mfrac><mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow><mo>+</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub></mrow><mo>+</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>3</mn></mrow></msub></mrow></mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Using (<a href="#eq:D2" title="(C.2b) ‣ C.2 Rationale for inStream ‣ Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">C.2b</span></a>), the denominator can be changed to:</p>
+<table id="Ex2a" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex2a.m1" class="ltx_Math" alttext="h_{\mathrm{mix}}=\frac{\operatorname{max}(-\tilde{m}_{1},0)h_{\mathrm{outflow}%
+,1}+\operatorname{max}(-\tilde{m}_{2},0)h_{\mathrm{outflow},2}+\operatorname{%
+max}(-\tilde{m}_{3},0)h_{\mathrm{outflow},3}}{\operatorname{max}(-\tilde{m}_{1%
+},0)+\operatorname{max}(-\tilde{m}_{2},0)+\operatorname{max}(-\tilde{m}_{3},0)}" display="block"><mrow><msub><mi>h</mi><mi>mix</mi></msub><mo>=</mo><mfrac><mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow><mo>+</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub></mrow><mo>+</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>3</mn></mrow></msub></mrow></mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">Above it was shown that an equation of this type does not yield properly
+formulated model equations. In the streams concept we therefore decide
+to split the energy balance, which consists of different branches
+depending on the mass flow direction. Consequently, separate energy
+balances are the result; each valid for specific flow directions.</p>
+</div>
+<div id="S2.p6" class="ltx_para">
+<p class="ltx_p">In a model governing equations have to establish the specific enthalpy
+of fluid leaving the model based on the specific enthalpy of fluid
+flowing into it. Whenever the mixing enthalpy is <em class="ltx_emph ltx_font_italic">used</em> in a model
+it is therefore the mixing enthalpy under the assumption of fluid
+flowing into said model.</p>
+</div>
+<div id="S2.p7" class="ltx_para">
+<p class="ltx_p">We establish this quantity using a dedicated operator <math id="S2.p7.m1" class="ltx_Math" alttext="{\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers\lst@@@set@frame%
+\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language\lst@@@set@frame%
+\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{0.33,0.24,0.03}inStr%
+eam}}}}}}(h_{\mathrm{outflow},i})=h_{\mathrm{mix}}" display="inline"><mrow><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mi>i</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>h</mi><mi>mix</mi></msub></mrow></math> assuming that <math id="S2.p7.m2" class="ltx_Math" alttext="\tilde{m}_{i}\geq 0" display="inline"><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mi>i</mi></msub><mo>≥</mo><mn>0</mn></mrow></math>. This leads to
+three different incarnations of (<math id="S2.p7.m3" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> in the general case). This is
+illustrated in the figure below. For the present example of three
+components in a connection set, this means the following.</p>
+<table id="A4.S15.EGx6" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex3a"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex3a.m1" class="ltx_Math" alttext="{\displaystyle\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers%
+\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language%
+\lst@@@set@frame\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{%
+0.33,0.24,0.03}inStream}}}}}}(h_{\mathrm{outflow},1})" display="inline"><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex3a.m2" class="ltx_Math" alttext="\displaystyle=\frac{\operatorname{max}(-\tilde{m}_{2},0)h_{\mathrm{outflow},2}%
++\operatorname{max}(-\tilde{m}_{3},0)h_{\mathrm{outflow},3}}{\operatorname{max%
+}(-\tilde{m}_{2},0)+\operatorname{max}(-\tilde{m}_{3},0)}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub></mrow><mo>+</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>3</mn></mrow></msub></mrow></mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex4a"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex4a.m1" class="ltx_Math" alttext="{\displaystyle\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers%
+\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language%
+\lst@@@set@frame\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{%
+0.33,0.24,0.03}inStream}}}}}}(h_{\mathrm{outflow},2})" display="inline"><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex4a.m2" class="ltx_Math" alttext="\displaystyle=\frac{\operatorname{max}(-\tilde{m}_{1},0)h_{\mathrm{outflow},1}%
++\operatorname{max}(-\tilde{m}_{3},0)h_{\mathrm{outflow},3}}{\operatorname{max%
+}(-\tilde{m}_{1},0)+\operatorname{max}(-\tilde{m}_{3},0)}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow><mo>+</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>3</mn></mrow></msub></mrow></mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex5.m1" class="ltx_Math" alttext="{\displaystyle\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers%
+\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language%
+\lst@@@set@frame\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{%
+0.33,0.24,0.03}inStream}}}}}}(h_{\mathrm{outflow},3})" display="inline"><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>3</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex5.m2" class="ltx_Math" alttext="\displaystyle=\frac{\operatorname{max}(-\tilde{m}_{1},0)h_{\mathrm{outflow},1}%
++\operatorname{max}(-\tilde{m}_{2},0)h_{\mathrm{outflow},2}}{\operatorname{max%
+}(-\tilde{m}_{1},0)+\operatorname{max}(-\tilde{m}_{2},0)}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow><mo>+</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub></mrow></mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="F2" class="ltx_figure"><object type="image/svg+xml" data="media/fluidmix3.svg" id="F2.g1" class="ltx_graphics ltx_centering" aria-label="Exemplary connection set with three connected components."><p>Exemplary connection set with three connected components.</p></object>
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure C.2: </span>Exemplary connection set with three connected components.</figcaption>
+</figure>
+<div id="S2.p8" class="ltx_para">
+<p class="ltx_p">In the general case of a connection set with <em class="ltx_emph ltx_font_italic">n</em> components,
+similar considerations lead to the following.</p>
+<table id="Ex6" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex6.m1" class="ltx_Math" alttext="{\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers\lst@@@set@frame%
+\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language\lst@@@set@frame%
+\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{0.33,0.24,0.03}inStr%
+eam}}}}}}(h_{\mathrm{outflow},i})=\frac{\sum_{j=1,\dotsc,n;j\neq i}%
+\operatorname{max}(-\tilde{m}_{j},0)h_{\mathrm{outflow},j}}{\sum_{j=1,\dotsc,n%
+;j\neq i}\operatorname{max}(-\tilde{m}_{j},0)}" display="block"><mrow><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mi>i</mi></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><msub><mo largeop="true" symmetric="true">∑</mo><mrow><mrow><mi>j</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow><mo>;</mo><mrow><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></mrow></msub><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mi>j</mi></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mi>j</mi></mrow></msub></mrow></mrow><mrow><msub><mo largeop="true" symmetric="true">∑</mo><mrow><mrow><mi>j</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow><mo>;</mo><mrow><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></mrow></msub><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mi>j</mi></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+</section>
+<section id="special-cases-covered-by-the-instream-operator-definition" class="ltx_section">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">C.3 </span>Special Cases Covered by inStream Definition</h1>
+
+<section id="stream-connector-is-not-connected-n-1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">C.3.1 </span>Unconnected Stream Connector – 1 Stream Connector</h2>
+
+<div id="S3.SS1.p1" class="ltx_para">
+<p class="ltx_p">For this case, the return value of <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">inStream</span> is arbitrary.
+Therefore, it is set to the outflow value.</p>
+</div>
+</section>
+<section id="connection-of-2-stream-connectors-one-to-one-connections-n-2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">C.3.2 </span>One to One Connections – Connection of 2 Stream Connectors</h2>
+
+<div id="S3.SS2.p1" class="ltx_para">
+<table id="A4.S15.EGx7" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex7"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex7.m1" class="ltx_Math" alttext="{\displaystyle\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers%
+\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language%
+\lst@@@set@frame\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{%
+0.33,0.24,0.03}inStream}}}}}}(h_{\mathrm{outflow},1})" display="inline"><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex7.m2" class="ltx_Math" alttext="\displaystyle=\frac{\operatorname{max}(-\tilde{m}_{2},0)h_{\mathrm{outflow},2}%
+}{\operatorname{max}(-\tilde{m}_{2},0)}=h_{\mathrm{outflow},2}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub></mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle><mo>=</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex8"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex8.m1" class="ltx_Math" alttext="{\displaystyle\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers%
+\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language%
+\lst@@@set@frame\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{%
+0.33,0.24,0.03}inStream}}}}}}(h_{\mathrm{outflow},2})" display="inline"><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex8.m2" class="ltx_Math" alttext="\displaystyle=\frac{\operatorname{max}(-\tilde{m}_{1},0)h_{\mathrm{outflow},1}%
+}{\operatorname{max}(-\tilde{m}_{1},0)}=h_{\mathrm{outflow},1}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle><mo>=</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<div id="S3.SS2.p2" class="ltx_para">
+<p class="ltx_p">In this case, <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">inStream</span> is continuous (contrary to <math id="S3.SS2.p2.m1" class="ltx_Math" alttext="h_{\mathrm{mix}}" display="inline"><msub><mi>h</mi><mi>mix</mi></msub></math>) and does not
+depend on flow rates. The latter result means that this transformation
+may remove nonlinear systems of equations, which requires that either
+simplifications of the form <math id="S3.SS2.p2.m2" class="ltx_Math" alttext="a*b/a=b" display="inline"><mrow><mrow><mrow><mi>a</mi><mo>*</mo><mi>b</mi></mrow><mo>/</mo><mi>a</mi></mrow><mo>=</mo><mi>b</mi></mrow></math> must be provided, or that this
+case is treated directly.</p>
+</div>
+</section>
+<section id="connection-of-3-stream-connectors-where-one-mass-flow-rate-is-identical-to-zero-n-3-and" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">C.3.3 </span>Zero Mass Flow Rate – Connection of 3 Stream Connectors</h2>
+
+<div id="S3.SS3.p1" class="ltx_para">
+<p class="ltx_p">The case where <math id="S3.SS3.p1.m1" class="ltx_Math" alttext="N=3" display="inline"><mrow><mi>N</mi><mo>=</mo><mn>3</mn></mrow></math> and <math id="S3.SS3.p1.m2" class="ltx_Math" alttext="\tilde{m}_{3}=0" display="inline"><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub><mo>=</mo><mn>0</mn></mrow></math> occurs when a one-port sensor (like a temperature sensor) is connected to two connected components.
+For the sensor, the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">min</span> attribute of the mass flow rate should be set to zero (no fluid exiting the component via this connector).
+This simplification (and similar ones) can also be used if a tool determines that a mass flow rate is zero or non-negative.
+It is also possible to generalize this to the case where more than one sensor is connected.
+The suggested implementation results in the following equations, and as indicated the last formula can be simplified further by using <math id="S3.SS3.p1.m3" class="ltx_Math" alttext="\tilde{m}_{3}=0" display="inline"><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub><mo>=</mo><mn>0</mn></mrow></math>:</p>
+<table id="A4.S15.EGx8" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex9"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex9.m1" class="ltx_Math" alttext="{\displaystyle\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers%
+\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language%
+\lst@@@set@frame\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{%
+0.33,0.24,0.03}inStream}}}}}}(h_{\mathrm{outflow},1})" display="inline"><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex9.m2" class="ltx_Math" alttext="\displaystyle=h_{\mathrm{outflow},2}" display="inline"><mrow><mi></mi><mo>=</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex10"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex10.m1" class="ltx_Math" alttext="{\displaystyle\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers%
+\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language%
+\lst@@@set@frame\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{%
+0.33,0.24,0.03}inStream}}}}}}(h_{\mathrm{outflow},2})" display="inline"><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex10.m2" class="ltx_Math" alttext="\displaystyle=h_{\mathrm{outflow},1}" display="inline"><mrow><mi></mi><mo>=</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex11"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex11.m1" class="ltx_Math" alttext="{\displaystyle\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers%
+\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language%
+\lst@@@set@frame\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{%
+0.33,0.24,0.03}inStream}}}}}}(h_{\mathrm{outflow},3})" display="inline"><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>3</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex11.m2" class="ltx_Math" alttext="\displaystyle=\frac{\operatorname{max}(-\tilde{m}_{1},0)h_{\mathrm{outflow},1}%
++\operatorname{max}(-\tilde{m}_{2},0)h_{\mathrm{outflow},2}}{\operatorname{max%
+}(-\tilde{m}_{1},0)+\operatorname{max}(-\tilde{m}_{2},0)}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow><mo>+</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub></mrow></mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex14"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex14.m1" class="ltx_Math" alttext="\displaystyle=\begin{cases}\hidden@noalign{}\textstyle h_{\mathrm{outflow},2}&amp;%
+\text{if $\tilde{m}_{1}\geq 0$}\\
+\hidden@noalign{}\textstyle h_{\mathrm{outflow},1}&amp;\text{if $\tilde{m}_{1}&lt;0$ %
+and $\tilde{m}_{3}=0$}\end{cases}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd columnalign="left"><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub></mtd><mtd columnalign="left"><mrow><mtext>if </mtext><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub><mo>≥</mo><mn>0</mn></mrow></mrow></mtd></mtr><mtr><mtd columnalign="left"><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mtd><mtd columnalign="left"><mrow><mtext>if </mtext><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub><mo>&lt;</mo><mn>0</mn></mrow><mtext> and </mtext><mrow><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub><mo>=</mo><mn>0</mn></mrow></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="F3" class="ltx_figure"><object type="image/svg+xml" data="media/fluidmix4.svg" id="F3.g1" class="ltx_graphics ltx_centering" aria-label="Example series connection of multiple models with stream connectors."><p>Example series connection of multiple models with stream connectors.</p></object>
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure C.3: </span>Example series connection of multiple models with stream connectors.</figcaption>
+</figure>
+<div id="S3.SS3.p2" class="ltx_para">
+<p class="ltx_p">For the two components with finite mass flow rates (not the sensor), the
+properties discussed for two connected components still hold. The
+connection set equations reflect that the sensor does not any influence
+by discarding the flow rate of the latter. In several cases a non-linear
+equation system is removed by this transformation. However, <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">inStream</span>
+results in a discontinuous equation for the sensor, which is consistent
+with modeling the convective phenomena only. The discontinuous equation
+is uncritical, if the sensor variable is not used in a feedback loop
+with direct feedthrough, since the discontinuous equation is then not
+part of an algebraic loop. Otherwise, it is advisable to regularize or
+filter the sensor signal.</p>
+</div>
+</section>
+<section id="connection-of-3-stream-connectors-where-two-mass-flow-rates-are-positive-ideal-splitting-junction-for-uni-directional-flow" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">C.3.4 </span>Ideal Splitting Junction for Uni-Directional Flow - Connection of 3 Stream Connectors where Two Mass Flow Rates are Positive</h2>
+
+<div id="S3.SS4.p1" class="ltx_para">
+<p class="ltx_p">If uni-directional flow is present and an ideal splitter is modelled,
+the required flow direction should be defined in the connector instance
+with the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">min</span> attribute (the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">max</span> attribute could be also defined,
+however it does not lead to simplifications):</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bW9kZWwgbTIKICBGbHVpZHBvcnQgYyhtX2Zsb3cobWluPTApKTsKICAkXGxkb3RzJAplbmQgbTI7" download="">⬇</a></div>
+<div id="lstnumberx5829" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m2</span>
+</div>
+<div id="lstnumberx5830" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Fluidport</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">c</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m_flow</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">min</span><span class="ltx_text ltx_font_typewriter">=0));</span>
+</div>
+<div id="lstnumberx5831" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx5831.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math></span>
+</div>
+<div id="lstnumberx5832" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m2</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+</div>
+</div>
+<div id="S3.SS4.p2" class="ltx_para">
+<p class="ltx_p">Consider the case of and all other mass flow rates positive (with the
+min attribute set accordingly). Connecting <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m1</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">c</span></span></span> with <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m2</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">c</span></span></span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m3</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">c</span></span></span>, such
+that
+</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bTIuYy5tX2Zsb3cubWluID0gMDsgLy8gbWF4KC1tMi5jLm1fZmxvdywwKSA9IDAKbTMuYy5tX2Zsb3cubWluID0gMDsgLy8gbWF4KC1tMy5jLm1fZmxvdywwKSA9IDA=" download="">⬇</a></div>
+<div id="lstnumberx5833" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m2</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">c</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m_flow</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">min</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">0;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>max(-m2.c.m_flow,0)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>0</span>
+</div>
+<div id="lstnumberx5834" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m3</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">c</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m_flow</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">min</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">0;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>max(-m3.c.m_flow,0)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>0</span>
+</div>
+</div>
+<p class="ltx_p">results in the following equation:</p>
+<table id="Ex15" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex15.m1" class="ltx_Math" alttext="{\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers\lst@@@set@frame%
+\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language\lst@@@set@frame%
+\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{0.33,0.24,0.03}inStr%
+eam}}}}}}(h_{\mathrm{outflow},1})=\frac{\operatorname{max}(-\tilde{m}_{2},0)h_%
+{\mathrm{outflow},2}+\operatorname{max}(-\tilde{m}_{3},0)h_{\mathrm{outflow},3%
+}}{\operatorname{max}(-\tilde{m}_{2},0)+\operatorname{max}(-\tilde{m}_{3},0)}=%
+\frac{0}{0}" display="block"><mrow><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub></mrow><mo>+</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>3</mn></mrow></msub></mrow></mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac><mo>=</mo><mfrac><mn>0</mn><mn>0</mn></mfrac></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+</div>
+<div id="S3.SS4.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">inStream</span> cannot be evaluated for a connector, on which
+the mass flow rate has to be negative by definition. The reason is that
+the value is arbitrary, which is why it is defined as follows.</p>
+<table id="Ex16" class="ltx_equation ltx_eqn_table">
+
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ex16.m1" class="ltx_Math" alttext="{\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers\lst@@@set@frame%
+\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language\lst@@@set@frame%
+\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{0.33,0.24,0.03}inStr%
+eam}}}}}}(h_{\mathrm{outflow},1}):=h_{\mathrm{outflow},1}" display="block"><mrow><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow><mo>:=</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr>
+</table>
+<p class="ltx_p">For the remaining connectors, <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">inStream</span> reduces to a simple result.</p>
+<table id="A4.S15.EGx9" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ex17"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex17.m1" class="ltx_Math" alttext="{\displaystyle\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers%
+\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language%
+\lst@@@set@frame\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{%
+0.33,0.24,0.03}inStream}}}}}}(h_{\mathrm{outflow},2})" display="inline"><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex17.m2" class="ltx_Math" alttext="\displaystyle=\frac{\operatorname{max}(-\tilde{m}_{1},0)h_{\mathrm{outflow},1}%
++\operatorname{max}(-\tilde{m}_{3},0)h_{\mathrm{outflow},3}}{\operatorname{max%
+}(-\tilde{m}_{1},0)+\operatorname{max}(-\tilde{m}_{3},0)}=h_{\mathrm{outflow},1}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow><mo>+</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>3</mn></mrow></msub></mrow></mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>3</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mstyle><mo>=</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ex18"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ex18.m1" class="ltx_Math" alttext="{\displaystyle\text{\lstinline{{\lst@@@set@language\lst@@@set@numbers%
+\lst@@@set@frame\lst@@@set@rulecolor\lst@@@set@language\lst@@@set@language%
+\lst@@@set@frame\normalsize{\@listingGroup{ltx_lst_keywords3}{\color[rgb]{%
+0.33,0.24,0.03}inStream}}}}}}(h_{\mathrm{outflow},3})" display="inline"><mrow><mtext class="ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting" mathbackground="#FFFFFF" mathcolor="#543D08">𝚒𝚗𝚂𝚝𝚛𝚎𝚊𝚖</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>3</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ex18.m2" class="ltx_Math" alttext="\displaystyle=\frac{\operatorname{max}(-\tilde{m}_{1},0)h_{\mathrm{outflow},1}%
++\operatorname{max}(-\tilde{m}_{2},0)h_{\mathrm{outflow},2}}{\operatorname{max%
+}(-\tilde{m}_{1},0)+\operatorname{max}(-\tilde{m}_{2},0)}=h_{\mathrm{outflow},1}" display="inline"><mrow><mi></mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow><mo>+</mo><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>2</mn></mrow></msub></mrow></mrow><mrow><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>1</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>-</mo><msub><mover accent="true"><mi>m</mi><mo stretchy="false">~</mo></mover><mn>2</mn></msub></mrow><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mstyle><mo>=</mo><msub><mi>h</mi><mrow><mi>outflow</mi><mo>,</mo><mn>1</mn></mrow></msub></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Again, the previous non-linear algebraic system of equations is removed.
+This means that utilizing the information about uni-directional flow is
+very important.
+</p>
+</div>
+<div id="S3.SS4.p4" class="ltx_para">
+<p class="ltx_p">To summarize, if all mass flow rates are zero, the balance equations for
+stream variables (<a href="#eq:D1" title="(C.1b) ‣ (C.1) ‣ C.2 Rationale for inStream ‣ Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">C.1b</span></a>) and for flows (<a href="#eq:D2" title="(C.2b) ‣ C.2 Rationale for inStream ‣ Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">C.2b</span></a>) are identically fulfilled. In
+such a case, any value of <math id="S3.SS4.p4.m1" class="ltx_Math" alttext="h_{\mathrm{mix}}" display="inline"><msub><mi>h</mi><mi>mix</mi></msub></math> fulfills (<a href="#eq:D1" title="(C.1b) ‣ (C.1) ‣ C.2 Rationale for inStream ‣ Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">C.1b</span></a>), i.e., a unique
+mathematical solution does not exist. This specification only requires
+that a solution fulfills the balance equations. Additionally, a
+recommendation is given to compute all unknowns in a unique way, by
+providing an explicit formula for <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">inStream</span>. Due to the
+definition, that only flows where the corresponding <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">min</span> attribute is
+neither zero nor positive enter this formula, a meaningful physcial
+result is always obtained, even in case of zero mass flow rate. As a
+side effect, non-linear equation systems are automatically removed in
+special cases, like sensors or uni-directional flow, without any
+symbolic transformations (no equation must be analyzed; only the
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">min</span> attributes of the corresponding flow variables).</p>
+</div>
+</section>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div>
+<a href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">References</span></a><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="index"><span class="ltx_text ltx_ref_title">Index</span></a><a href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Thu Mar  9 16:41:18 2023 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

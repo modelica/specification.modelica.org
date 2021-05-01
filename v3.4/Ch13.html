@@ -1,0 +1,685 @@
+<!DOCTYPE html><html>
+<head>
+<title>13 Packages‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4</title>
+<!--Generated on Tue May 14 15:30:12 2019 by LaTeXML (version 0.8.3) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on April 10, 2017.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="css/LaTeXML-navbar-left.css" type="text/css">
+<script src="css/LatexML-maybeMathJax.js" type="text/javascript"></script>
+<link rel="up" href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="start" href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="prev" href="Ch12.html" title="Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="next" href="Ch14.html" title="Chapter 14 Overloaded Operators ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Chx1.html" title="Preface ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch1.html" title="Chapter 1 Introduction ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch2.html" title="Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch3.html" title="Chapter 3 Operators and Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch4.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch5.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch6.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch7.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch8.html" title="Chapter 8 Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch9.html" title="Chapter 9 Connectors and Connections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch10.html" title="Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch11.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch12.html" title="Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch14.html" title="Chapter 14 Overloaded Operators ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch15.html" title="Chapter 15 Stream Connectors ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch16.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch17.html" title="Chapter 17 State Machines ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch18.html" title="Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch19.html" title="Chapter 19 Unit Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch20.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A1.html" title="Appendix A Glossary ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A2.html" title="Appendix B Modelica Concrete Syntax ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A3.html" title="Appendix C Modelica DAE Representation ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A4.html" title="Appendix D Derivation of Stream Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A5.html" title="Appendix E Modelica Revision History ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A6.html" title="Appendix F Literature ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+</head>
+<body>
+<nav class="ltx_page_navbar"><a href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica® - A Unified Object-Oriented Language for Systems
+Modeling<span class="ltx_text"> </span>Language
+Specification<span class="ltx_text"> </span>Version 3.4</span></a>
+<div class="ltx_TOC">
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Chx1.html" title="Preface ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch1.html" title="Chapter 1 Introduction ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch2.html" title="Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch3.html" title="Chapter 3 Operators and Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch4.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch5.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch6.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch7.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch8.html" title="Chapter 8 Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch9.html" title="Chapter 9 Connectors and Connections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch10.html" title="Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch11.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch12.html" title="Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></span>
+<ul class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#package-as-specialized-class" title="13.1 Package as Specialized Class ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.1 </span>Package as Specialized Class</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#motivation-and-usage-of-packages" title="13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2 </span>Motivation and Usage of Packages</span></a>
+<ul class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a href="#importing-definitions-from-a-package" title="13.2.1 Importing Definitions from a Package ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2.1 </span>Importing Definitions from a Package</span></a>
+<ul class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#lookup-of-imported-names" title="13.2.1.1 Lookup of Imported Names ‣ 13.2.1 Importing Definitions from a Package ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2.1.1 </span>Lookup of Imported Names</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#summary-of-rules-for-import-clauses" title="13.2.1.2 Summary of Rules for Import Clauses ‣ 13.2.1 Importing Definitions from a Package ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2.1.2 </span>Summary of Rules for Import Clauses</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a href="#mapping-package-class-structures-to-a-hierarchical-file-system" title="13.2.2 Mapping Package/Class Structures to a Hierarchical File System ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2.2 </span>Mapping Package/Class Structures to a Hierarchical File System</span></a>
+<ul class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#mapping-a-package-class-hierarchy-into-a-directory-hierarchy-structured-entity" title="13.2.2.1 Mapping a Package/Class Hierarchy into a Directory Hierarchy (Structured Entity) ‣ 13.2.2 Mapping Package/Class Structures to a Hierarchical File System ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2.2.1 </span>Mapping a Package/Class Hierarchy into a Directory Hierarchy (Structured Entity)</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#mapping-a-package-class-hierarchy-into-a-single-file-nonstructured-entity" title="13.2.2.2 Mapping a Package/Class Hierarchy into a Single File (Nonstructured Entity) ‣ 13.2.2 Mapping Package/Class Structures to a Hierarchical File System ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2.2.2 </span>Mapping a Package/Class Hierarchy into a Single File (Nonstructured Entity)</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#the-within-clause" title="13.2.2.3 The within Clause ‣ 13.2.2 Mapping Package/Class Structures to a Hierarchical File System ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2.2.3 </span>The within Clause</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#external-resources" title="13.2.3 External resources ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2.3 </span>External resources</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection">
+<a href="#the-modelica-library-path-modelicapath" title="13.2.4 The Modelica Library Path – MODELICAPATH ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2.4 </span>The Modelica Library Path – MODELICAPATH</span></a>
+<ul class="ltx_toclist ltx_toclist_subsection">
+<li class="ltx_tocentry ltx_tocentry_subsubsection"><a href="#example-of-searching-modelicapath" title="13.2.4.1 Example of Searching MODELICAPATH ‣ 13.2.4 The Modelica Library Path – MODELICAPATH ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2.4.1 </span>Example of Searching MODELICAPATH</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch14.html" title="Chapter 14 Overloaded Operators ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch15.html" title="Chapter 15 Stream Connectors ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch16.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch17.html" title="Chapter 17 State Machines ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch18.html" title="Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch19.html" title="Chapter 19 Unit Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch20.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A1.html" title="Appendix A Glossary ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A2.html" title="Appendix B Modelica Concrete Syntax ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A3.html" title="Appendix C Modelica DAE Representation ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A4.html" title="Appendix D Derivation of Stream Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A5.html" title="Appendix E Modelica Revision History ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">E </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A6.html" title="Appendix F Literature ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">F </span>Literature</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div>
+<a href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica® - A Unified Object-Oriented Language for Systems
+Modeling<span class="ltx_text"> </span>Language
+Specification<span class="ltx_text"> </span>Version 3.4</span></a><a href="Ch12.html" title="Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a><a href="Ch14.html" title="Chapter 14 Overloaded Operators ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter ltx_authors_1line">
+<h1 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter">Chapter 13 </span>Packages</h1>
+<div class="ltx_date ltx_role_creation"></div>
+
+<section id="package-as-specialized-class" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">13.1 </span>Package as Specialized Class</h2>
+
+<div id="Ch13.S1.p1" class="ltx_para">
+<p class="ltx_p">The package concept is a specialized class (<a href="Ch4.html#specialized-classes" title="4.6 Specialized Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.6</span></a>), using the
+keyword <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">package</span>.</p>
+</div>
+</section>
+<section id="motivation-and-usage-of-packages" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">13.2 </span>Motivation and Usage of Packages</h2>
+
+<div id="Ch13.S2.p1" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_emph ltx_font_italic">Packages in Modelica may contain definitions of constants and
+classes including all kinds of specialized classes, functions, and
+subpackages. By the term subpackage we mean that the package is declared
+inside another package, no inheritance relationship is implied.
+Parameters and variables cannot be declared in a package. The
+definitions in a package should typically be related in some way, which
+is the main reason they are placed in a particular package. Packages are
+useful for a number of reasons:</span></p>
+</div>
+<div id="Ch13.S2.p2" class="ltx_para">
+<ul id="Ch13.S2.I1" class="ltx_itemize">
+<li id="Ch13.S2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Definitions that are related to some particular topic are typically
+grouped into a package. This makes those definitions easier to find
+and the code more understandable.</p>
+</div>
+</li>
+<li id="Ch13.S2.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Packages provide encapsulation and coarse-grained structuring
+that reduces the complexity of large systems. An important example is
+the use of packages for construction of (hierarchical) class
+libraries.</span></p>
+</div>
+</li>
+<li id="Ch13.S2.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Name conflicts between definitions in different packages are
+eliminated since the package name is implicitly prefixed to names of
+definitions declared in a package.</span></p>
+</div>
+</li>
+<li id="Ch13.S2.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I1.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Information hiding and encapsulation can be supported to some
+extent by declaring</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">protected</span> <span class="ltx_text ltx_emph ltx_font_italic">classes, types, and other
+definitions that are available only inside the package and therefore
+inaccessible to outside code.</span></p>
+</div>
+</li>
+<li id="Ch13.S2.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I1.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Modelica defines a method for locating a package by providing a
+standard mapping of package names to storage places, typically file or
+directory locations in the file system. </span></p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch13.S2.p3" class="ltx_para">
+<p class="ltx_p">]</p>
+</div>
+<section id="importing-definitions-from-a-package" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">13.2.1 </span>Importing Definitions from a Package</h3>
+
+<div id="Ch13.S2.SS1.p1" class="ltx_para">
+<p class="ltx_p">The import-clause makes public classes and other public definitions
+declared in some package available for use by shorter names in a class
+or a package. It is the only way of referring to definitions declared in
+some other package for use inside an encapsulated package or class.</p>
+</div>
+<div id="Ch13.S2.SS1.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_emph ltx_font_italic">Import-clauses in a package or class fill the following two
+needs:</span></p>
+</div>
+<div id="Ch13.S2.SS1.p3" class="ltx_para">
+<ul id="Ch13.S2.I2" class="ltx_itemize">
+<li id="Ch13.S2.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">Making definitions from other packages available for use (by shorter
+names) in a package or class.</p>
+</div>
+</li>
+<li id="Ch13.S2.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Explicit declaration of usage dependences on other packages.</span></p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch13.S2.SS1.p4" class="ltx_para">
+<p class="ltx_p">]</p>
+</div>
+<div id="Ch13.S2.SS1.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">An</span> import-clause can occur in one of the following five syntactic forms:</p>
+</div>
+<div id="Ch13.S2.SS1.p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">import</span> <span class="ltx_text ltx_emph ltx_font_italic">packagename<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="font-size:90%;background-color:#FFFFFF;">;</span></span> (qualified import)</p>
+</div>
+<div id="Ch13.S2.SS1.p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">import</span> [<span class="ltx_text ltx_emph ltx_font_italic">packagename</span>.]<span class="ltx_text ltx_emph ltx_font_italic">definitionname<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="font-size:90%;background-color:#FFFFFF;">;</span></span> (single
+definition import)</p>
+</div>
+<div id="Ch13.S2.SS1.p8" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">import</span>
+[<span class="ltx_text ltx_emph ltx_font_italic">packagename</span>.]{<span class="ltx_text ltx_emph ltx_font_italic">def1,def2,…defN</span>}<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">;</span> (multiple
+definition import)</p>
+</div>
+<div id="Ch13.S2.SS1.p9" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">import</span> <span class="ltx_text ltx_emph ltx_font_italic">packagename</span>.*<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">;</span> (unqualified import)</p>
+</div>
+<div id="Ch13.S2.SS1.p10" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">import</span> <span class="ltx_text ltx_emph ltx_font_italic">shortpackagename</span> = <span class="ltx_text ltx_emph ltx_font_italic">packagename<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="font-size:90%;background-color:#FFFFFF;">;</span></span> (renaming
+import)</p>
+</div>
+<div id="Ch13.S2.SS1.p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">import</span> <span class="ltx_text ltx_emph ltx_font_italic">shortpackagename</span> =
+[<span class="ltx_text ltx_emph ltx_font_italic">packagename.]definitionname<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="font-size:90%;background-color:#FFFFFF;">;</span></span> (renaming single def. import)</p>
+</div>
+<div id="Ch13.S2.SS1.p12" class="ltx_para">
+<p class="ltx_p">Here <span class="ltx_text ltx_emph ltx_font_italic">packagename</span> is the fully qualified name of the imported
+package including possible dot notation and <span class="ltx_text ltx_emph ltx_font_italic">definitionname</span> is the
+name of an element in a package. The multiple definition import is
+equivalent to multiple single definition imports with corresponding
+packagename and definition names.</p>
+</div>
+<section id="lookup-of-imported-names" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">13.2.1.1 </span>Lookup of Imported Names</h4>
+
+<div id="Ch13.S2.SS1.SSS1.p1" class="ltx_para">
+<p class="ltx_p">This section only defines how the imported name is looked up in the
+import clause. For lookup in general – including how import clauses are
+used, see <a href="Ch5.html#static-name-lookup" title="5.3 Static Name Lookup ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 5.3</span></a>.</p>
+</div>
+<div id="Ch13.S2.SS1.SSS1.p2" class="ltx_para">
+<p class="ltx_p">Lookup of the name of an imported package or class, e.g. <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A.B.C</span> in the
+clauses <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A.B.C</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#000066;">import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">D</span>=<span class="ltx_text ltx_lst_identifier">A.B.C</span>;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#000066;">import</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A.B.C.</span>*</span></span>, deviates from the
+normal lexical lookup by starting the lexical lookup of the first part
+of the name at the top-level.</p>
+</div>
+<div id="Ch13.S2.SS1.SSS1.p3" class="ltx_para">
+<p class="ltx_p">Qualified import clauses may only refer to packages or elements of
+packages, i.e., in <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A.B.C</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span></span> or <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">D</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=<span class="ltx_text ltx_lst_identifier">A.B.C</span>;</span></span>,
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A.B</span> must be a
+package. Unqualified import clauses may only import from packages, i.e.,
+in <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A.B.</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*;</span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A.B</span> must be a package. [<span class="ltx_text ltx_emph ltx_font_italic">Note: in</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span></span>
+<span class="ltx_text ltx_emph ltx_font_italic">the class</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A</span> <span class="ltx_text ltx_emph ltx_font_italic">can be any class which is an element of the
+unnamed top-level package</span>]</p>
+</div>
+<div id="Ch13.S2.SS1.SSS1.p4" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_emph ltx_font_italic">For example, if the package</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">ComplexNumbers</span> <span class="ltx_text ltx_emph ltx_font_italic">would have
+been declared as a subpackage inside the package</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">Modelica.Math</span><span class="ltx_text ltx_emph ltx_font_italic">,
+its fully qualified name would be</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">Modelica.Math.ComplexNumbers</span><span class="ltx_text ltx_emph ltx_font_italic">.
+Definitionname is the simple name without dot notation of a single
+definition that is imported. A shortpackagename is a simple name without
+dot notation that can be used to refer to the package after import
+instead of the presumably much longer packagename.</span></p>
+</div>
+<div id="Ch13.S2.SS1.SSS1.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">The forms of</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">import</span> <span class="ltx_text ltx_emph ltx_font_italic">are exemplified below assuming that we want to
+access the addition operation of the hypothetical package</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Modelica.Math.ComplexNumbers</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span></span></p>
+</div>
+<div id="Ch13.S2.SS1.SSS1.p6" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICBpbXBvcnQgTW9kZWxpY2EuTWF0aC5Db21wbGV4TnVtYmVyczsgICAgICAgLy8gQWNjZXNzZWQgYnkgQ29tcGxleE51bWJlcnMuQWRkCiAgaW1wb3J0IE1vZGVsaWNhLk1hdGguQ29tcGxleE51bWJlcnMuQWRkOyAgIC8vIEFjY2Vzc2VkIGJ5IEFkZAogIGltcG9ydCBNb2RlbGljYS5NYXRoLkNvbXBsZXhOdW1iZXJzLntBZGQsU3VifTsgLy8gQWNjZXNzZWQgYnkgQWRkIGFuZCBTdWIKICBpbXBvcnQgTW9kZWxpY2EuTWF0aC5Db21wbGV4TnVtYmVycy4qOyAgICAgLy8gQWNjZXNzZWQgYnkgQWRkCiAgaW1wb3J0IENvID0gTW9kZWxpY2EuTWF0aC5Db21wbGV4TnVtYmVyczsgIC8vIEFjY2Vzc2VkIGJ5IENvLkFkZA==">⬇</a></div>
+<div id="lstnumberx3130" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Modelica.Math.ComplexNumbers</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">       </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>Accessed<span class="ltx_text ltx_lst_space"> </span>by<span class="ltx_text ltx_lst_space"> </span>ComplexNumbers.Add</span>
+</div>
+<div id="lstnumberx3131" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Modelica.Math.ComplexNumbers.Add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">   </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>Accessed<span class="ltx_text ltx_lst_space"> </span>by<span class="ltx_text ltx_lst_space"> </span>Add</span>
+</div>
+<div id="lstnumberx3132" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Modelica.Math.ComplexNumbers.</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Sub</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">};</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>Accessed<span class="ltx_text ltx_lst_space"> </span>by<span class="ltx_text ltx_lst_space"> </span>Add<span class="ltx_text ltx_lst_space"> </span>and<span class="ltx_text ltx_lst_space"> </span>Sub</span>
+</div>
+<div id="lstnumberx3133" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Modelica.Math.ComplexNumbers.</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">     </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>Accessed<span class="ltx_text ltx_lst_space"> </span>by<span class="ltx_text ltx_lst_space"> </span>Add</span>
+</div>
+<div id="lstnumberx3134" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Co</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Modelica.Math.ComplexNumbers</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>Accessed<span class="ltx_text ltx_lst_space"> </span>by<span class="ltx_text ltx_lst_space"> </span>Co.Add</span>
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</section>
+<section id="summary-of-rules-for-import-clauses" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">13.2.1.2 </span>Summary of Rules for Import Clauses</h4>
+
+<div id="Ch13.S2.SS1.SSS2.p1" class="ltx_para">
+<p class="ltx_p">The following rules apply to import-clauses:</p>
+</div>
+<div id="Ch13.S2.SS1.SSS2.p2" class="ltx_para">
+<ul id="Ch13.S2.I3" class="ltx_itemize">
+<li id="Ch13.S2.I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I3.i1.p1" class="ltx_para">
+<p class="ltx_p">Import-clauses are <span class="ltx_text ltx_emph ltx_font_italic">not</span> inherited.</p>
+</div>
+</li>
+<li id="Ch13.S2.I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I3.i2.p1" class="ltx_para">
+<p class="ltx_p">Import-clauses are not named elements of a class or package. This
+means that import-clauses cannot be changed by modifiers or
+redeclarations.</p>
+</div>
+</li>
+<li id="Ch13.S2.I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I3.i3.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_emph ltx_font_italic">order</span> of import-clauses does not matter.</p>
+</div>
+</li>
+<li id="Ch13.S2.I3.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I3.i4.p1" class="ltx_para">
+<p class="ltx_p">One can only import <span class="ltx_text ltx_emph ltx_font_italic">from</span> packages, not from other kinds of
+classes. Both packages and classes can be imported <span class="ltx_text ltx_emph ltx_font_italic">into</span> i.e.,
+they may contain import-clauses.
+</p>
+</div>
+</li>
+<li id="Ch13.S2.I3.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I3.i5.p1" class="ltx_para">
+<p class="ltx_p">An imported package or definition should always be referred to by its
+fully qualified name in the import-clause.</p>
+</div>
+</li>
+<li id="Ch13.S2.I3.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I3.i6.p1" class="ltx_para">
+<p class="ltx_p">Multiple qualified import-clauses may not have the same import name.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="mapping-package-class-structures-to-a-hierarchical-file-system" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">13.2.2 </span>Mapping Package/Class Structures to a Hierarchical File System</h3>
+
+<div id="Ch13.S2.SS2.p1" class="ltx_para">
+<p class="ltx_p">Packages/classes may be represented in the hierarchical structure of the
+operating system [<span class="ltx_text ltx_emph ltx_font_italic">the file system</span>]. For classes with version
+information see also <a href="Ch18.html#mapping-of-versions-to-file-system" title="18.8.3 Mapping of Versions to File System ‣ 18.8 Annotations for Version Handling ‣ Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 18.8.3</span></a>. The nature of such an external
+entity falls into one of the following two groups:</p>
+</div>
+<div id="Ch13.S2.SS2.p2" class="ltx_para">
+<ul id="Ch13.S2.I4" class="ltx_itemize">
+<li id="Ch13.S2.I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I4.i1.p1" class="ltx_para">
+<p class="ltx_p">Directory in the file system.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch13.S2.SS2.p3" class="ltx_para">
+<ul id="Ch13.S2.I5" class="ltx_itemize">
+<li id="Ch13.S2.I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch13.S2.I5.i1.p1" class="ltx_para">
+<p class="ltx_p">File in the file system.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch13.S2.SS2.p4" class="ltx_para">
+<p class="ltx_p">Each Modelica file in the file-system is stored in UTF-8 format (defined
+by The Unicode Consortium; <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">http</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#006600;">//www.unicode.org</span></span></span>) and may start with
+the UTF-8 encoded byte order mark (<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">0<span class="ltx_text ltx_lst_identifier">xef</span><span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_identifier">xbb</span><span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_identifier">xbf</span></span>); this is treated as
+white-space in the grammar. <span class="ltx_text ltx_emph ltx_font_italic">[Tools may also store classes in
+data-base systems, but that is not standardized.]</span></p>
+</div>
+<section id="mapping-a-package-class-hierarchy-into-a-directory-hierarchy-structured-entity" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">13.2.2.1 </span>Mapping a Package/Class Hierarchy into a Directory Hierarchy (Structured Entity)</h4>
+
+<div id="Ch13.S2.SS2.SSS1.p1" class="ltx_para">
+<p class="ltx_p">A directory shall contain a node, the file <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">package.mo</span>. The node shall contain a stored-definition that defines a class [A] with a name
+matching the name of the structured entity. [<span class="ltx_text ltx_emph ltx_font_italic">The node typically
+contains documentation and graphical information for a package, but may
+also contain additional elements of the class</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A</span>.]</p>
+</div>
+<div id="Ch13.S2.SS2.SSS1.p2" class="ltx_para">
+<p class="ltx_p">A directory may also contain one or more sub-entities (directories or
+files). The sub-entities are mapped as elements of the class defined by
+their enclosing structured entity. [<span class="ltx_text ltx_emph ltx_font_italic">For example, if directory</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A</span>
+<span class="ltx_text ltx_emph ltx_font_italic">contains the three files</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">package.mo</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">B.mo</span> <span class="ltx_text ltx_emph ltx_font_italic">and</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">C.mo</span>
+<span class="ltx_text ltx_emph ltx_font_italic">the classes defined are</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A.B</span>, <span class="ltx_text ltx_emph ltx_font_italic">and</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A.C.</span>] Two
+sub-entities shall not define classes with identical names [<span class="ltx_text ltx_emph ltx_font_italic">for
+example, a directory shall not contain both the sub-directory</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A</span>
+<span class="ltx_text ltx_emph ltx_font_italic">and the file</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A.mo</span>].</p>
+</div>
+<div id="Ch13.S2.SS2.SSS1.p3" class="ltx_para">
+<p class="ltx_p">In order to preserve the order of sub-entities it is advisable to create
+a file <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">package.order</span> where each line contains the name of one class or
+constant. If a <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">package.order</span> is present when reading a structured entity
+the classes and constants are added in this order; if the contents does
+not exactly match the classes and constants in the package, the
+resulting order is tool specific and a warning may be given. Classes and
+constants that are stored in <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">package.mo</span> are also present in
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">package.order</span> but their relative order should be identical to the one in
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">package.mo</span> (this ensures that the relative order between classes and
+constants stored in different ways is preserved).</p>
+</div>
+</section>
+<section id="mapping-a-package-class-hierarchy-into-a-single-file-nonstructured-entity" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">13.2.2.2 </span>Mapping a Package/Class Hierarchy into a Single File (Nonstructured Entity)</h4>
+
+<div id="Ch13.S2.SS2.SSS2.p1" class="ltx_para">
+<p class="ltx_p">When mapping a package or class-hierarchy to a file [<span class="ltx_text ltx_emph ltx_font_italic">e.g. the
+file</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A.mo</span>], that file shall only define a single class [<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A</span>] with a
+name matching the name of the nonstructured entity. In a file hierarchy
+the files shall have the extension “.mo”.</p>
+</div>
+<div id="Ch13.S2.SS2.SSS2.p2" class="ltx_para">
+<p class="ltx_p">A “.mo” file defining more than one class cannot be part of the mapping
+to file-structure and it is an error if it is loaded from the
+MODELICAPATH</p>
+</div>
+</section>
+<section id="the-within-clause" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">13.2.2.3 </span>The within Clause</h4>
+
+<div id="Ch13.S2.SS2.SSS3.p1" class="ltx_para">
+<p class="ltx_p">A within-clause has the following syntax:</p>
+</div>
+<div id="Ch13.S2.SS2.SSS3.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICB3aXRoaW4gWyBwYWNrYWdlcHJlZml4bmFtZSBdICI7Ig==">⬇</a></div>
+<div id="lstnumberx3135" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">within</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">packageprefixname</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;color:#000000;">";"</span>
+</div>
+</div>
+<p class="ltx_p">A non-top-level entity shall begin with a within-clause which for the
+class defined in the entity specifies the location in the Modelica class
+hierarchy. A top-level class may contain a within-clause with no name.
+For a sub-entity of an enclosing structured entity, the within-clause
+shall designate the class of the enclosing entity; and this class must
+exist and must not have been defined using a short class definition.</p>
+</div>
+<div id="Ch13.S2.SS2.SSS3.p3" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_emph ltx_font_italic">Example: The subpackage</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">Rotational</span> <span class="ltx_text ltx_emph ltx_font_italic">declared within</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">Modelica.Mechanics</span> <span class="ltx_text ltx_emph ltx_font_italic">has the fully qualified name</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">Modelica.Mechanics.Rotational</span><span class="ltx_text ltx_emph ltx_font_italic">, which is formed by concatenating
+the packageprefixname with the short name of the package. The
+declaration of</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">Rotational</span> <span class="ltx_text ltx_emph ltx_font_italic">could be given as below</span>:</p>
+</div>
+<div id="Ch13.S2.SS2.SSS3.p4" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICB3aXRoaW4gTW9kZWxpY2EuTWVjaGFuaWNzOwogIHBhY2thZ2UgUm90YXRpb25hbCAvLyBNb2RlbGljYS5NZWNoYW5pY3MuUm90YXRpb25hbAogICAgLi4u">⬇</a></div>
+<div id="lstnumberx3136" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">within</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Modelica.Mechanics</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx3137" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">package</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Rotational</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="font-size:90%;color:#006600;">//<span class="ltx_text ltx_lst_space"> </span>Modelica.Mechanics.Rotational</span>
+</div>
+<div id="lstnumberx3138" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">...</span>
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</section>
+</section>
+<section id="external-resources" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">13.2.3 </span>External resources</h3>
+
+<div id="Ch13.S2.SS3.p1" class="ltx_para">
+<p class="ltx_p">In order to reference external resources from documentation (such as
+links and images in html-text) and/or to reference images in the Bitmap
+annotation (see <a href="Ch18.html#bitmap" title="18.6.5.6 Bitmap ‣ 18.6.5 Graphical primitives ‣ 18.6 Annotations for Graphical Objects ‣ Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 18.6.5.6</span></a>). URIs should be used, for example
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">file</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#006600;">///</span></span></span> and the URI scheme <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">modelica</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#006600;">//</span></span></span> which can be used to retrieve
+resources associated with a package. [<span class="ltx_text ltx_emph ltx_font_italic">Note scheme names are
+case-insensitive, but the lower-case form should be used, that is
+‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Modelica</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#006600;">//</span></span></span>’ is allowed but ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_upright" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">modelica</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#006600;">//</span></span></span>’ is the
+recommended form.</span>]</p>
+</div>
+<div id="Ch13.S2.SS3.p2" class="ltx_para">
+<p class="ltx_p">The Modelica-scheme has the ability to reference a hierarchical
+structure of resources associated with packages. The same structure is
+used for all kind of resource references, independent of use (external
+file, image in documentation, bitmap in icon layer, and link to external
+file in the documentation), and regardless of the storage mechanism.</p>
+</div>
+<div id="Ch13.S2.SS3.p3" class="ltx_para">
+<p class="ltx_p">Any Modelica-scheme URI containing a slash after the package-name is
+interpreted as a reference to a resource. The ‘authority’ portion of the
+URI is interpreted as a fully qualified package name and the path
+portion of the URI is interpreted as the path (relative to the package)
+of the resource. Each storage scheme can define its own interpretation
+of the path (but care should be taken when converting from one storage
+scheme or when restructuring packages that resource references resolve
+to the same resource). Any storage scheme should be constrained such
+that a resource with a given path should be unique for any package name
+that precedes it. The first part of the path may not be the name of a
+class in the package given by the authority.</p>
+</div>
+<div id="Ch13.S2.SS3.p4" class="ltx_para">
+<p class="ltx_p">When Modelica packages are stored hierarchically in a file-system (i.e.
+package A in a directory A containing ”package.mo”) the resource
+”modelica://A/Resources/C.jpg” should be stored in the file
+”A/Resources/C.jpg”, it is not recommend to use ”modelica://A.B/C.jpg”
+for referencing resources; it could be stored in the file ”A/B/C.jpg” -
+which is counter-intuitive if A.B is stored together with A. When
+Modelica packages are stored in other formats a similar mapping should
+be defined, such that a resource with a given path should be unique for
+any package name that precedes it. The first part of the path may not be
+the name of a class in the package given by the authority. As above for
+”Modelica 3.2.1/package.mo” i.e. resources starting from ”Modelica
+3.2.1”, and ”modelica://Modelica.Mechanics/C.jpg” is ”Modelica
+3.2.1/Mechanics/C.jpg” - regardless of whether Modelica.Mechanics is
+stored in ”Modelica 3.2.1/package.mo”, ”Modelica
+3.2.1/Mechanics/package.mo”, or ”Modelica 3.2.1/Mechanics.mo”.</p>
+</div>
+<div id="Ch13.S2.SS3.p5" class="ltx_para">
+<p class="ltx_p">For a Modelica-package stored as a single file, ”A.mo”, the resource
+”modelica://A/C.jpg” refers to a file ”C.jpg” stored in the same
+directory as ”A.mo”, but using resources in this variant is not
+recommended since multiple packages will share resources.</p>
+</div>
+<div id="Ch13.S2.SS3.p6" class="ltx_para">
+<p class="ltx_p">In case the class-name contains quoted identifiers, the single-quote ”‘”
+and any reserved characters (“:”, “/”, “?”, “#”, “[“,
+“]”, “@”, “!”, “$”, “&amp;”, “(“, “)”, “*”, “+”,
+“,”, “;”, “=”) should be percent-encoded as normal in URIs.
+</p>
+</div>
+<div id="Ch13.S2.SS3.p7" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_emph ltx_font_italic">Example:</span></p>
+</div>
+<div id="Ch13.S2.SS3.p8" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Consider a top-level package</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">Modelica</span> <span class="ltx_text ltx_emph ltx_font_italic">and a class</span>
+Mechanics <span class="ltx_text ltx_emph ltx_font_italic">inside it, a reference such as</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">modelica</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#006600;">//Modelica.Mechanics/C.jpg</span></span></span> <span class="ltx_text ltx_emph ltx_font_italic">is legal, while</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">modelica</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#006600;">//Modelica/Mechanics/C.jpg</span></span></span> <span class="ltx_text ltx_emph ltx_font_italic">is illegal. The reference</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">modelica</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#006600;">//Modelica.Mechanics/C.jpg</span></span></span> <span class="ltx_text ltx_emph ltx_font_italic">must also refer to a different
+resource than</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">modelica</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#006600;">//Modelica/C.jpg</span></span></span><span class="ltx_text ltx_emph ltx_font_italic">.</span>]</p>
+</div>
+</section>
+<section id="the-modelica-library-path-modelicapath" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">13.2.4 </span>The Modelica Library Path – MODELICAPATH</h3>
+
+<div id="Ch13.S2.SS4.p1" class="ltx_para">
+<p class="ltx_p">The top-level scope implicitly contains a number of classes stored
+externally. If a top-level name is not found at global scope, a Modelica
+translator shall look up additional classes in an ordered list of
+library roots, called <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MODELICAPATH</span>. [<span class="ltx_text ltx_emph ltx_font_italic">The implementation of</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MODELICAPATH</span> <span class="ltx_text ltx_emph ltx_font_italic">is tool dependent. In order that a user can work in
+parallel with different Modelica tools, it is advisable to not have this
+list as environment variable, but as a setting in the respective tool.
+Since MODELICAPATH is tool dependent, it is not specified in which way
+the list of library roots is stored. Typically, on a Windows system
+MODELICAPATH is a string with path names separated by “;” whereas on a
+Linux system it is a string with path names separated by a “:”.</span>]</p>
+</div>
+<div id="Ch13.S2.SS4.p2" class="ltx_para">
+<p class="ltx_p">In addition a tool may define an internal list of libraries, since it is
+in general not advisable for a program installation to modify global
+environment variables. The version information for a library (as defined
+in <a href="Ch18.html#annotations-for-version-handling" title="18.8 Annotations for Version Handling ‣ Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 18.8</span></a>) may also be used during this search to search for a
+specific version of the library (e.g. if Modelica library version 2.2 is
+needed and the first directory in MODELICAPATH contain Modelica library
+version 2.1, whereas the second directory contains Modelica version 2.2,
+then Modelica library version 2.2 is loaded from the second directory.).</p>
+</div>
+<div id="Ch13.S2.SS4.p3" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_emph ltx_font_italic">The first part of the path</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A.B.C</span> (<span class="ltx_text ltx_emph ltx_font_italic">i.e.</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A</span>) <span class="ltx_text ltx_emph ltx_font_italic">is
+located by searching the ordered list of roots in</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MODELICAPATH</span>.
+<span class="ltx_text ltx_emph ltx_font_italic">If no root contains</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A</span> <span class="ltx_text ltx_emph ltx_font_italic">the lookup fails</span>. <span class="ltx_text ltx_emph ltx_font_italic">If</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A</span>
+<span class="ltx_text ltx_emph ltx_font_italic">has been found in one of the roots, the rest of the path is
+located in</span> A; <span class="ltx_text ltx_emph ltx_font_italic">if that fails, the entire lookup fails without
+searching</span> <span class="ltx_text ltx_emph ltx_font_italic">for</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">A</span> <span class="ltx_text ltx_emph ltx_font_italic">in any of the remaining roots in</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MODELICAPATH</span>.]</p>
+</div>
+<section id="example-of-searching-modelicapath" class="ltx_subsubsection">
+<h4 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">13.2.4.1 </span>Example of Searching MODELICAPATH</h4>
+
+<div id="Ch13.S2.SS4.SSS1.p1" class="ltx_para">
+<p class="ltx_p">If during lookup a top-level name is not found in the unnamed top-level
+scope, the search continues in the package hierarchies stored in these
+directories. [<a href="#fig:roots" title="Figure 13.1 ‣ 13.2.4.1 Example of Searching MODELICAPATH ‣ 13.2.4 The Modelica Library Path – MODELICAPATH ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref ltx_font_italic"><span class="ltx_text ltx_ref_tag">Figure 13.1</span></a><span class="ltx_text ltx_emph ltx_font_italic"> below shows an example</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MODELICAPATH</span> =
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_string ltx_font_typewriter" style="font-size:90%;color:#000000;background-color:#FFFFFF;">"C:\library;C:\lib1;C:\lib2"</span><span class="ltx_text ltx_emph ltx_font_italic">,
+with three directories containing the roots of the package hierarchies</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">Modelica</span> <span class="ltx_text ltx_emph ltx_font_italic">,</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MyLib</span><span class="ltx_text ltx_emph ltx_font_italic">, and</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">ComplexNumbers</span><span class="ltx_text ltx_emph ltx_font_italic">. The first two are represented as the subdirectories</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:\<span class="ltx_text ltx_lst_identifier">library</span>\<span class="ltx_text ltx_lst_identifier">Modelica</span></span></span> <span class="ltx_text ltx_emph ltx_font_italic">and</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:\<span class="ltx_text ltx_lst_identifier">lib1</span>\<span class="ltx_text ltx_lst_identifier">MyLib</span></span></span><span class="ltx_text ltx_emph ltx_font_italic">, whereas the third is stored
+as the file</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:\<span class="ltx_text ltx_lst_identifier">lib2</span>\<span class="ltx_text ltx_lst_identifier">ComplexNumbers.mo</span></span></span><span class="ltx_text ltx_emph ltx_font_italic">.</span></p>
+</div>
+<figure id="fig:roots" class="ltx_figure">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_figure">Figure 13.1: </span>Roots of package hierarchies, e.g.,
+<span class="ltx_text ltx_font_typewriter">Modelica</span>, <span class="ltx_text ltx_font_typewriter">MyLib</span>, and <span class="ltx_text ltx_font_typewriter">ComplexNumbers</span> in
+<span class="ltx_text ltx_font_typewriter">MODELICAPATH ="C:\library;C:\lib1;C:\lib2"</span>.</figcaption><img src="media/modelicapath.png" id="Ch13.F1.g1" class="ltx_graphics" width="541" height="180" alt="">
+</figure>
+<div id="Ch13.S2.SS4.SSS1.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Assume that we want to access the package</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MyLib.Pack2</span> <span class="ltx_text ltx_emph ltx_font_italic">in
+<a href="#fig:roots" title="Figure 13.1 ‣ 13.2.4.1 Example of Searching MODELICAPATH ‣ 13.2.4 The Modelica Library Path – MODELICAPATH ‣ 13.2 Motivation and Usage of Packages ‣ Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">Figure 13.1</span></a> above, e.g. through an</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">import</span> <span class="ltx_text ltx_emph ltx_font_italic">clause</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">MyLib.Pack2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span></span><span class="ltx_text ltx_emph ltx_font_italic">. During lookup we first try to find a package</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MyLib</span>
+<span class="ltx_text ltx_emph ltx_font_italic">corresponding to the first part of the import name. It is not
+found in the top-level scope since it has not previously been loaded
+into the environment. </span></p>
+</div>
+<div id="Ch13.S2.SS4.SSS1.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">Since the name was not found in the top-level scope the search
+continues in the directories in the</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MODELICAPATH</span> <span class="ltx_text ltx_emph ltx_font_italic">in the specified
+order. For the search to succeed, there must be a subdirectory</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MyLib</span>
+<span class="ltx_text ltx_emph ltx_font_italic">or a file</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MyLib.mo</span> <span class="ltx_text ltx_emph ltx_font_italic">in one of the directories mentioned in
+the</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MODELICAPATH</span><span class="ltx_text ltx_emph ltx_font_italic">. If there is no such subdirectory or file, the
+lookup fails. If</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MyLib</span> <span class="ltx_text ltx_emph ltx_font_italic">is found in one of the directories, the
+rest of the name, in this case</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">Pack2</span><span class="ltx_text ltx_emph ltx_font_italic">, is located in</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MyLib</span><span class="ltx_text ltx_emph ltx_font_italic">.
+If that fails, the entire lookup fails without continuing the search in
+possibly remaining directories.</span></p>
+</div>
+<div id="Ch13.S2.SS4.SSS1.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_emph ltx_font_italic">In this example the name matches the subdirectory named</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MyLib</span>
+<span class="ltx_text ltx_emph ltx_font_italic">in the second directory</span> “<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">C</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:\<span class="ltx_text ltx_lst_identifier">lib1</span></span></span>”
+<span class="ltx_text ltx_emph ltx_font_italic">mentioned in the</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MODELICAPATH</span><span class="ltx_text ltx_emph ltx_font_italic">. This subdirectory must have
+a file</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">package.mo</span> <span class="ltx_text ltx_emph ltx_font_italic">containing a definition of the package</span>
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MyLib</span><span class="ltx_text ltx_emph ltx_font_italic">, according to the Modelica rules on how to map a package
+hierarchy to the file system. The subpackage</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">Pack2</span> <span class="ltx_text ltx_emph ltx_font_italic">is stored in
+its own subdirectory or file in the subdirectory</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MyLib</span><span class="ltx_text ltx_emph ltx_font_italic">. In this
+case the search succeeds and the package</span> <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">MyLib.Pack2</span> <span class="ltx_text ltx_emph ltx_font_italic">is loaded
+into the environment.</span>]</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div>
+<a href="Ch12.html" title="Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a><a href="Ch14.html" title="Chapter 14 Overloaded Operators ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue May 14 15:30:12 2019 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>
