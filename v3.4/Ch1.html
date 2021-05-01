@@ -1,0 +1,320 @@
+<!DOCTYPE html><html>
+<head>
+<title>1 Introduction‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4</title>
+<!--Generated on Tue May 14 15:30:12 2019 by LaTeXML (version 0.8.3) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on April 10, 2017.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="css/LaTeXML-navbar-left.css" type="text/css">
+<script src="css/LatexML-maybeMathJax.js" type="text/javascript"></script>
+<link rel="up" href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="start" href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="prev" href="Chx1.html" title="Preface ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="next" href="Ch2.html" title="Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Chx1.html" title="Preface ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch2.html" title="Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch3.html" title="Chapter 3 Operators and Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch4.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch5.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch6.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch7.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch8.html" title="Chapter 8 Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch9.html" title="Chapter 9 Connectors and Connections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch10.html" title="Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch11.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch12.html" title="Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch13.html" title="Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch14.html" title="Chapter 14 Overloaded Operators ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch15.html" title="Chapter 15 Stream Connectors ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch16.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch17.html" title="Chapter 17 State Machines ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch18.html" title="Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch19.html" title="Chapter 19 Unit Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch20.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A1.html" title="Appendix A Glossary ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A2.html" title="Appendix B Modelica Concrete Syntax ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A3.html" title="Appendix C Modelica DAE Representation ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A4.html" title="Appendix D Derivation of Stream Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A5.html" title="Appendix E Modelica Revision History ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A6.html" title="Appendix F Literature ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+</head>
+<body>
+<nav class="ltx_page_navbar"><a href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica® - A Unified Object-Oriented Language for Systems
+Modeling<span class="ltx_text"> </span>Language
+Specification<span class="ltx_text"> </span>Version 3.4</span></a>
+<div class="ltx_TOC">
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Chx1.html" title="Preface ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></span>
+<ul class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#overview-of-modelica" title="1.1 Overview of Modelica ‣ Chapter 1 Introduction ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1 </span>Overview of Modelica</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#scope-of-the-specification" title="1.2 Scope of the Specification ‣ Chapter 1 Introduction ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>Scope of the Specification</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#some-definitions" title="1.3 Some Definitions ‣ Chapter 1 Introduction ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Some Definitions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#notation-and-grammar" title="1.4 Notation and Grammar ‣ Chapter 1 Introduction ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4 </span>Notation and Grammar</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch2.html" title="Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch3.html" title="Chapter 3 Operators and Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch4.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch5.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch6.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch7.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch8.html" title="Chapter 8 Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch9.html" title="Chapter 9 Connectors and Connections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch10.html" title="Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch11.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch12.html" title="Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch13.html" title="Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch14.html" title="Chapter 14 Overloaded Operators ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch15.html" title="Chapter 15 Stream Connectors ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch16.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch17.html" title="Chapter 17 State Machines ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch18.html" title="Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch19.html" title="Chapter 19 Unit Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch20.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A1.html" title="Appendix A Glossary ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Glossary</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A2.html" title="Appendix B Modelica Concrete Syntax ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A3.html" title="Appendix C Modelica DAE Representation ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A4.html" title="Appendix D Derivation of Stream Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A5.html" title="Appendix E Modelica Revision History ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">E </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A6.html" title="Appendix F Literature ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">F </span>Literature</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div>
+<a href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica® - A Unified Object-Oriented Language for Systems
+Modeling<span class="ltx_text"> </span>Language
+Specification<span class="ltx_text"> </span>Version 3.4</span></a><a href="Chx1.html" title="Preface ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title">Preface</span></a><a href="Ch2.html" title="Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter ltx_authors_1line">
+<h1 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter">Chapter 1 </span>Introduction</h1>
+<div class="ltx_date ltx_role_creation"></div>
+
+<section id="overview-of-modelica" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.1 </span>Overview of Modelica</h2>
+
+<div id="Ch1.S1.p1" class="ltx_para">
+<p class="ltx_p">Modelica is a language for modeling of physical systems, designed to
+support effective library development and model exchange. It is a modern
+language built on acausal modeling with mathematical equations and
+object-oriented constructs to facilitate reuse of modeling knowledge.</p>
+</div>
+</section>
+<section id="scope-of-the-specification" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.2 </span>Scope of the Specification</h2>
+
+<div id="Ch1.S2.p1" class="ltx_para">
+<p class="ltx_p">The semantics of the Modelica language is specified by means of a set of
+rules for translating any class described in the Modelica language to a
+flat Modelica structure.</p>
+</div>
+<div id="Ch1.S2.p2" class="ltx_para">
+<p class="ltx_p">A class (of specialized class model, class or block) intended to be
+simulated on its own is called a simulation model.</p>
+</div>
+<div id="Ch1.S2.p3" class="ltx_para">
+<p class="ltx_p">The flat Modelica structure is also defined for other cases than
+simulation models; including functions (can be used to provide
+algorithmic contents), packages (used as a structuring mechanism), and
+partial models (used as base-models). This allows correctness to be
+verified for those classes, before using them to build the simulation
+model.</p>
+</div>
+<div id="Ch1.S2.p4" class="ltx_para">
+<p class="ltx_p">There are specific semantic restrictions for a simulation model to
+ensure that the model is complete; they allow its flat Modelica
+structure to be further transformed into a set of differential,
+algebraic and discrete equations (= flat hybrid DAE). Note that
+satisfying the semantic restrictions does not guarantee that the model
+can be initialized from the initial conditions and simulated.</p>
+</div>
+<div id="Ch1.S2.p5" class="ltx_para">
+<p class="ltx_p">Modelica was designed to facilitate symbolic transformations of models,
+especially by mapping basically every Modelica language construct to
+continuous or instantaneous equations in the flat Modelica structure.
+Many Modelica models, especially in the associated Modelica Standard
+Library, are higher index systems, and can only be reasonably simulated
+if symbolic index reduction is performed, i.e., equations are
+differentiated and appropriate variables are selected as states, so that
+the resulting system of equations can be transformed to state space form
+(at least locally numerically), i.e., a hybrid DAE of index zero. In
+order to allow this structural analysis, a tool may reject simulating a
+model if parameters cannot be evaluated during translation - due to
+calls of external functions or initial equations/initial algorithms for
+fixed=false parameters. Accepting such models is a quality of
+implementation issue. The Modelica specification does not define how to
+simulate a model. However, it defines a set of equations that the
+simulation result should satisfy as well as possible.</p>
+</div>
+<div id="Ch1.S2.p6" class="ltx_para">
+<p class="ltx_p">The key issues of the translation (or flattening) are:</p>
+</div>
+<div id="Ch1.S2.p7" class="ltx_para">
+<ul id="Ch1.S2.I1" class="ltx_itemize">
+<li id="Ch1.S2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Expansion of inherited base classes</p>
+</div>
+</li>
+<li id="Ch1.S2.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Parameterization of base classes, local classes and components</p>
+</div>
+</li>
+<li id="Ch1.S2.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Generation of connection equations from connect-equations</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch1.S2.p8" class="ltx_para">
+<p class="ltx_p">The flat hybrid DAE form consists of:</p>
+</div>
+<div id="Ch1.S2.p9" class="ltx_para">
+<ul id="Ch1.S2.I2" class="ltx_itemize">
+<li id="Ch1.S2.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">Declarations of variables with the appropriate basic types, prefixes
+and attributes, such as ”<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">parameter</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">v</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=5</span></span>”.</p>
+</div>
+</li>
+<li id="Ch1.S2.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">Equations from equation sections.</p>
+</div>
+</li>
+<li id="Ch1.S2.I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I2.i3.p1" class="ltx_para">
+<p class="ltx_p">Function invocations where an invocation is treated as a set of
+equations which involves all input and all result variables (number of
+equations = number of basic result variables).</p>
+</div>
+</li>
+<li id="Ch1.S2.I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I2.i4.p1" class="ltx_para">
+<p class="ltx_p">Algorithm sections where every section is treated as a set of
+equations which involves the variables occurring in the algorithm
+section (number of equations = number of different assigned
+variables).</p>
+</div>
+</li>
+<li id="Ch1.S2.I2.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="Ch1.S2.I2.i5.p1" class="ltx_para">
+<p class="ltx_p">When-clauses where every when-clause is treated as a set of
+conditionally evaluated equations, also called instantaneous
+equations, which are functions of the variables occurring in the
+clause (number of equations = number of different assigned variables).</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Ch1.S2.p10" class="ltx_para">
+<p class="ltx_p">Therefore, a flat hybrid DAE is seen as a set of equations where some of
+the equations are only conditionally evaluated (e.g. instantaneous
+equations are only evaluated when the corresponding when-condition
+becomes true). Initial setup of the model is specified using
+start-values and instantaneous equations that hold at the initial time
+only.</p>
+</div>
+<div id="Ch1.S2.p11" class="ltx_para">
+<p class="ltx_p">A Modelica class may also contain annotations, i.e. formal comments,
+which specify graphical representations of the class (icon and diagram),
+documentation text for the class, and version information.</p>
+</div>
+</section>
+<section id="some-definitions" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.3 </span>Some Definitions</h2>
+
+<div id="Ch1.S3.p1" class="ltx_para">
+<p class="ltx_p">The semantic specification should be read together with the Modelica
+grammar. Non-normative text, i.e., examples and comments, are enclosed
+in [ ]; comments are set in italics. Additional terms are explained
+in the glossary in <a href="A1.html" title="Appendix A Glossary ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">Appendix A</span></a>. Some important terms are:
+</p>
+</div>
+<div id="Ch1.S3.p2" class="ltx_para">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_l ltx_border_r ltx_border_t"><span class="ltx_text ltx_emph ltx_font_italic">Term</span></th>
+<th class="ltx_td ltx_align_justify ltx_th ltx_th_column ltx_border_r ltx_border_t" style="width:284.5pt;"><span class="ltx_text ltx_emph ltx_wrap ltx_font_italic">Definition</span></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_r ltx_border_t">Component</th>
+<td class="ltx_td ltx_align_justify ltx_border_r ltx_border_t" style="width:284.5pt;">An element defined by the production
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">component</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-<span class="ltx_text ltx_lst_identifier">clause</span></span></span> in the Modelica grammar (basically a
+variable or an instance of a class)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_l ltx_border_r">Element</th>
+<td class="ltx_td ltx_align_justify ltx_border_r" style="width:284.5pt;">Class definitions, extends-clauses and
+component-clauses declared in a class (basically a class
+reference or a component in a declaration).</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_l ltx_border_r">Flattening</th>
+<td class="ltx_td ltx_align_justify ltx_border_b ltx_border_r" style="width:284.5pt;">The translation of a model described in Modelica to the
+corresponding model described as a hybrid DAE, involving expansion of
+inherited base classes, parameterization of base classes, local classes
+and components, and generation of connection equations from
+connect-equations (basically, mapping the hierarchical structure of a
+model into a set of differential, algebraic and discrete equations
+together with the corresponding variable declarations and function
+definitions from the model).</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="notation-and-grammar" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.4 </span>Notation and Grammar</h2>
+
+<div id="Ch1.S4.p1" class="ltx_para">
+<p class="ltx_p">The meta symbols (of the extended BNF-grammar) are defined in <a href="A2.html#lexical-conventions" title="B.1 Lexical conventions ‣ Appendix B Modelica Concrete Syntax ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section B.1</span></a>.
+</p>
+</div>
+<div id="Ch1.S4.p2" class="ltx_para">
+<p class="ltx_p">Boldface denotes keywords of the Modelica language. Keywords are
+reserved words and may not be used as identifiers, with the exception of
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">initial</span> which is a keyword in section headings, and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;background-color:#FFFFFF;">der</span> which is a
+keyword for declaration functions, but it is also possible to call the
+functions <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">initial</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span></span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">der</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(<span class="ltx_text ltx_lst_identifier">...</span>)</span></span>.</p>
+</div>
+<div id="Ch1.S4.p3" class="ltx_para">
+<p class="ltx_p">See <a href="A2.html" title="Appendix B Modelica Concrete Syntax ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">Appendix B</span></a> for a full lexical specification and grammar.</p>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div>
+<a href="Chx1.html" title="Preface ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title">Preface</span></a><a href="Ch2.html" title="Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue May 14 15:30:12 2019 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

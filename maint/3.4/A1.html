@@ -1,0 +1,474 @@
+<!DOCTYPE html><html>
+<head>
+<title>A Glossary‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4</title>
+<!--Generated on Sat May  1 09:01:01 2021 by LaTeXML (version 0.8.3) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on April 10, 2017.-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="css/LaTeXML-navbar-left.css" type="text/css">
+<script src="css/LatexML-maybeMathJax.js" type="text/javascript"></script>
+<link rel="up" href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="start" href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="prev" href="Ch20.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="next" href="A2.html" title="Appendix B Modelica Concrete Syntax ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Chx1.html" title="Preface ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch1.html" title="Chapter 1 Introduction ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch2.html" title="Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch3.html" title="Chapter 3 Operators and Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch4.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch5.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch6.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch7.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch8.html" title="Chapter 8 Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch9.html" title="Chapter 9 Connectors and Connections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch10.html" title="Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch11.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch12.html" title="Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch13.html" title="Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch14.html" title="Chapter 14 Overloaded Operators ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch15.html" title="Chapter 15 Stream Connectors ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch16.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch17.html" title="Chapter 17 State Machines ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch18.html" title="Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch19.html" title="Chapter 19 Unit Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="chapter" href="Ch20.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A2.html" title="Appendix B Modelica Concrete Syntax ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A3.html" title="Appendix C Modelica DAE Representation ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A4.html" title="Appendix D Derivation of Stream Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A5.html" title="Appendix E Modelica Revision History ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+<link rel="appendix" href="A6.html" title="Appendix F Literature ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4">
+</head>
+<body>
+<nav class="ltx_page_navbar"><a href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica® - A Unified Object-Oriented Language for Systems
+Modeling<span class="ltx_text"> </span>Language
+Specification<span class="ltx_text"> </span>Version 3.4</span></a>
+<div class="ltx_TOC">
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Chx1.html" title="Preface ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch1.html" title="Chapter 1 Introduction ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch2.html" title="Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch3.html" title="Chapter 3 Operators and Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch4.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch5.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch6.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch7.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch8.html" title="Chapter 8 Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch9.html" title="Chapter 9 Connectors and Connections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch10.html" title="Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch11.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch12.html" title="Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch13.html" title="Chapter 13 Packages ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch14.html" title="Chapter 14 Overloaded Operators ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch15.html" title="Chapter 15 Stream Connectors ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch16.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch17.html" title="Chapter 17 State Machines ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch18.html" title="Chapter 18 Annotations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch19.html" title="Chapter 19 Unit Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="Ch20.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix ltx_ref_self"><span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Glossary</span></span></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A2.html" title="Appendix B Modelica Concrete Syntax ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A3.html" title="Appendix C Modelica DAE Representation ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A4.html" title="Appendix D Derivation of Stream Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A5.html" title="Appendix E Modelica Revision History ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">E </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="A6.html" title="Appendix F Literature ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">F </span>Literature</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div>
+<a href="MLS.html" title="Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica® - A Unified Object-Oriented Language for Systems
+Modeling<span class="ltx_text"> </span>Language
+Specification<span class="ltx_text"> </span>Version 3.4</span></a><a href="Ch20.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a><a href="A2.html" title="Appendix B Modelica Concrete Syntax ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica Concrete Syntax</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_appendix ltx_authors_1line">
+<h1 class="ltx_title ltx_title_appendix">
+<span class="ltx_tag ltx_tag_appendix">Appendix A </span>Glossary</h1>
+<div class="ltx_date ltx_role_creation"></div>
+
+<div id="A1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">algorithm section</span>: part of a class definition consisting of the
+keyword <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">algorithm</span> followed by a sequence of statements. Like an
+equation, an algorithm section relates variables, i.e. constrains the
+values that these variables can take simultaneously. In contrast to an
+equation section, an algorithm section distinguishes inputs from
+outputs: An algorithm section specifies how to compute output variables
+as a function of given input variables. A Modelica processor may
+actually invert an algorithm section, i.e. compute inputs from given
+outputs, e.g. by search (generate and test), or by deriving an inverse
+algorithm symbolically. (See <a href="Ch11.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">chapter 11</span></a>.)</p>
+</div>
+<div id="A1.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">array</span> or array variable: a component whose components are array
+elements. For an array, the ordering of its components matters: The kth
+element in the sequence of components of an array x is the array element
+with index <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">k</span>, denoted <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[<span class="ltx_text ltx_lst_identifier">k</span>]</span></span>. All elements of an array have the same
+type. An array element may again be an array, i.e. arrays can be nested.
+An array element is hence referenced using n indices in general, where n
+is the number of dimensions of the array. Special cases are matrix (n=2)
+and vector (n=1). Integer indices start with 1, not zero. (See <a href="Ch10.html" title="Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">chapter 10</span></a>.)</p>
+</div>
+<div id="A1.p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">array constructor</span>: an array can be built using the
+array-function – with the shorthand {a, b, …}, and can also
+include an iterator to build an array of expressions. (See <a href="Ch10.html#vector-matrix-and-array-constructors" title="10.4 Vector, Matrix and Array Constructors ‣ Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 10.4</span></a>.)
+</p>
+</div>
+<div id="A1.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">array element</span>: a component contained in an array. An array
+element has no identifier. Instead they are referenced by array access
+expressions called indices that use enumeration values or positive
+integer index values. (See <a href="Ch10.html" title="Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">chapter 10</span></a>.)</p>
+</div>
+<div id="A1.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">assignment</span>: a statement of the form <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">expr</span></span></span>. The expression
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">expr</span> must not have higher variability than x. (See <a href="Ch11.html#simple-assignment-statements" title="11.2.1 Simple Assignment Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 11.2.1</span></a>.)</p>
+</div>
+<div id="A1.p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">attribute</span>: a component contained in a scalar component, such as
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">min</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">max</span>, and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">unit</span>. All attributes are predefined and attribute values
+can only be defined using a modification, such as in <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(<span class="ltx_text ltx_lst_identifier">unit</span>=<span class="ltx_text ltx_lst_string" style="color:#000000;">"kg"</span>)</span></span>.
+Attributes cannot be accessed using dot notation, and are not
+constrained by equations and algorithm sections. E.g. in <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(<span class="ltx_text ltx_lst_identifier">unit</span>=<span class="ltx_text ltx_lst_string" style="color:#000000;">"kg"</span>)<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">y</span>;</span></span> only the values of <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">x</span> and
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">y</span> are declared to be equal,
+but not their unit attributes, nor any other attribute of <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">x</span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">y</span>. (See
+<a href="Ch4.html#predefined-types-and-classes" title="4.8 Predefined Types and Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.8</span></a>.)</p>
+</div>
+<div id="A1.p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">base class</span>: class A is called a base class of B, if class B
+extends class A. This relation is specified by an extends clause in B or
+in one of B’s base classes. A class inherits all elements from its base
+classes, and may modify all non-final elements inherited from base
+classes. (See <a href="Ch7.html#inheritance-extends-clause" title="7.1 Inheritance—Extends Clause ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 7.1</span></a>.)</p>
+</div>
+<div id="A1.p8" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">binding equation</span>: Either a declaration equation or an element
+modification for the value of the variable. A component with a binding
+equation has its value bound to some expression. (See <a href="Ch8.html#equation-categories" title="8.1 Equation Categories ‣ Chapter 8 Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 8.1</span></a>.)</p>
+</div>
+<div id="A1.p9" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">class</span>: a description that generates an object called instance.
+The description consists of a class definition, a modification
+environment that modifies the class definition, an optional list of
+dimension expressions if the class is an array class, and a lexically
+enclosing class for all classes. (See <a href="Ch4.html#class-declarations" title="4.5 Class Declarations ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.5</span></a>.)</p>
+</div>
+<div id="A1.p10" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">class type</span> or <span class="ltx_text ltx_font_bold">inheritance interface</span>: property of a
+class, consisting of a number of attributes and a set of public or
+protected elements consisting of element name, element type, and element
+attributes. (See <a href="Ch6.html#inheritance-interface-or-class-type" title="6.2.2 Inheritance Interface or Class Type ‣ 6.2 Interface or Type ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 6.2.2</span></a>.)</p>
+</div>
+<div id="A1.p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">component</span> or <span class="ltx_text ltx_font_bold">variable</span>: an instance (object) generated
+by a component declaration. Special kinds of components are scalar,
+array, and attribute. (See <a href="Ch4.html#component-declarations" title="4.4 Component Declarations ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.4</span></a>.)</p>
+</div>
+<div id="A1.p12" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">component declaration</span>: an element of a class definition that
+generates a component. A component declaration specifies (1) a component
+name, i.e., an identifier, (2) the class to be flattened in order to
+generate the component, and (3) an optional Boolean parameter
+expression. Generation of the component is suppressed if this parameter
+expression evaluates to false. A component declaration may be overridden
+by an element-redeclaration. (See <a href="Ch4.html#component-declarations" title="4.4 Component Declarations ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.4</span></a>.)
+</p>
+</div>
+<div id="A1.p13" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">component reference</span>: An expression containing a sequence of
+identifiers and indices. A component reference is equivalent to the
+referenced object, which must be a component. A component reference is
+resolved (evaluated) in the scope of a class (or expression for the case
+of a local iterator variable). A scope defines a set of visible
+components and classes. Example reference: <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Ele.Resistor.u</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[21]<span class="ltx_text ltx_lst_identifier">.r</span></span></span> (See
+<a href="Ch4.html#component-declarations" title="4.4 Component Declarations ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.4</span></a> and <a href="Ch10.html#slice-operation" title="10.6.9 Slice Operation ‣ 10.6 Scalar, Vector, Matrix, and Array Operator Functions ‣ Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 10.6.9</span></a>.)</p>
+</div>
+<div id="A1.p14" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">declaration assignment</span>: assignment of the form <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">expression</span></span></span>
+defined by a component declaration. This is similar to a declaration
+equation. In contrast to a declaration equation, a declaration
+assignment is allowed only when declaring a component contained in a
+function. (See <a href="Ch12.html#initialization-and-declaration-assignments-of-components-in-functions" title="12.4.4 Initialization and Declaration Assignments of Components in Functions ‣ 12.4 Function Call ‣ Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 12.4.4</span></a>.)</p>
+</div>
+<div id="A1.p15" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">declaration equation</span>: Equation of the form <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">expression</span></span></span>
+defined by a component declaration. The expression must not have higher
+variability than the declared component x. Unlike other equations, a
+declaration equation can be overridden (replaced or removed) by an
+element modification. (See <a href="Ch4.html#declaration-equations" title="4.4.2.1 Declaration Equations ‣ 4.4.2 Component Declaration Static Semantics ‣ 4.4 Component Declarations ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.4.2.1</span></a>.)</p>
+</div>
+<div id="A1.p16" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">derived class</span> or <span class="ltx_text ltx_font_bold">subclass</span> or <span class="ltx_text ltx_font_bold">extended class</span>:
+class B is called derived from A, if B extends A. (See <a href="Ch7.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">chapter 7</span></a>.)</p>
+</div>
+<div id="A1.p17" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">element</span>: part of a class definition, one of: class definition,
+component declaration, or extends clause. Component declarations and
+class definitions are called named elements. An element is either
+inherited from a base class or local.</p>
+</div>
+<div id="A1.p18" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">element modification</span>: part of a modification, overrides the
+declaration equation in the class used by the instance generated by the
+modified element. Example: <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">vcc</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(<span class="ltx_text ltx_lst_identifier">unit</span>=<span class="ltx_text ltx_lst_string" style="color:#000000;">"V"</span>)=100</span></span>. (See <a href="Ch7.html#modifications" title="7.2 Modifications ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 7.2</span></a>.)</p>
+</div>
+<div id="A1.p19" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">element-redeclaration</span>: part of a modification, replaces one of
+the named elements possibly used to build the instance geneated by the
+element that contains the redeclaration. Example: <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">redeclare</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">type</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Voltage</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#E60000;">Real</span>(<span class="ltx_text ltx_lst_identifier">unit</span>=<span class="ltx_text ltx_lst_string" style="color:#000000;">"V"</span>)</span></span> replaces <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;">type</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Voltage</span></span>. (See <a href="Ch7.html#redeclaration" title="7.3 Redeclaration ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 7.3</span></a>.)</p>
+</div>
+<div id="A1.p20" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">encapsulated</span>: a class that does not depend on where it is
+placed in the package-hierarchy, since its lookup is stopped at the
+encapsulated boundary. (See <a href="Ch5.html#simple-name-lookup" title="5.3.1 Simple Name Lookup ‣ 5.3 Static Name Lookup ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 5.3.1</span></a>).</p>
+</div>
+<div id="A1.p21" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">equation</span>: part of a class definition. A scalar equation relates
+scalar variables, i.e. constrains the values that these variables can
+take simultaneously. When n-1 variables of an equation containing n
+variables are known, the value of the nth variable can be inferred
+(solved for). In contrast to a statement in an algorithm section, an
+equation does not define for which of its variable it is to be solved.
+Special cases are: initial equations, instantaneous equations,
+declaration equations. (See <a href="Ch8.html" title="Chapter 8 Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">chapter 8</span></a>.)</p>
+</div>
+<div id="A1.p22" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">event</span>: something that occurs instantaneously at a specific time
+or when a specific condition occurs. Events are for example defined by
+the condition occurring in a when clause, if clause, or if expression.
+(See <a href="Ch8.html#events-and-synchronization" title="8.5 Events and Synchronization ‣ Chapter 8 Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 8.5</span></a>.)</p>
+</div>
+<div id="A1.p23" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">expression</span>: a term built from operators, function references,
+components, or component references (referring to components) and
+literals. Each expression has a type and a variability. (See <a href="Ch3.html" title="Chapter 3 Operators and Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">chapter 3</span></a>.)</p>
+</div>
+<div id="A1.p24" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">extends clause</span>: an unnamed element of a class definition that
+uses a name and an optional modification to specify a base class of the
+class defined using the class definition. (See <a href="Ch7.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">chapter 7</span></a>.)</p>
+</div>
+<div id="A1.p25" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">flattening</span>: the computation that creates a flattened class of a
+given class, where all inheritance, modification, etc. has been
+performed and all names resolved, consisting of a flat set of equations,
+algorithm sections, component declarations, and functions. (See <a href="Ch5.html#flattening-process" title="5.6 Flattening Process ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 5.6</span></a>.)</p>
+</div>
+<div id="A1.p26" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">function</span>: a class of the specialized class function. (See <a href="Ch12.html" title="Chapter 12 Functions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">chapter 12</span></a>.)</p>
+</div>
+<div id="A1.p27" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">function subtype</span> or <span class="ltx_text ltx_font_bold">function compatible interface</span>: A
+is a function subtype of B iff A is a subtype of B and the additional
+arguments of function A that are not in function B are defined in such a
+way (e.g. additional arguments need to have default values), that A can
+be called at places where B is called. (See <a href="Ch6.html#function-compatibility-or-function-subtyping-for-functions" title="6.5 Function-Compatibility or Function-Subtyping for Functions ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 6.5</span></a>.)
+</p>
+</div>
+<div id="A1.p28" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">identifier</span> or ident: an atomic (not composed) name. Example:
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">Resistor</span> (See <a href="Ch2.html#identifiers-names-and-keywords" title="2.3 Identifiers, Names, and Keywords ‣ Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 2.3</span></a>.)</p>
+</div>
+<div id="A1.p29" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">index</span> or <span class="ltx_text ltx_font_bold">subscript</span>: An expression, typically of
+Integer type or the colon symbol (:), used to reference a component (or
+a range of components) of an array. (See <a href="Ch10.html#array-indexing" title="10.5 Array Indexing ‣ Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 10.5</span></a>.)</p>
+</div>
+<div id="A1.p30" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">inheritance interface</span> or <span class="ltx_text ltx_font_bold">class type</span>: property of a
+class, consisting of a number of attributes and a set of public or
+protected elements consisting of element name, element type, and element
+attributes. (See <a href="Ch6.html#inheritance-interface-or-class-type" title="6.2.2 Inheritance Interface or Class Type ‣ 6.2 Interface or Type ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 6.2.2</span></a>.)</p>
+</div>
+<div id="A1.p31" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">instance</span>: the object generated by a class. An instance contains
+zero or more components (i.e. instances), equations, algorithms, and
+local classes. An instance has a type. Basically, two instances have
+same type, if their important attributes are the same and their public
+components and classes have pair wise equal identifiers and types. More
+specific type equivalence definitions are given e.g. for functions.</p>
+</div>
+<div id="A1.p32" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">instantaneous</span>: An equation or statement is instantaneous if it
+holds only at events, i.e., at single points in time. The equations and
+statements of a when-clause are instantaneous. (See <a href="Ch8.html#when-equations" title="8.3.5 When-Equations ‣ 8.3 Equations in Equation Sections ‣ Chapter 8 Equations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 8.3.5</span></a> and
+<a href="Ch11.html#when-statements" title="11.2.7 When-Statements ‣ 11.2 Statements ‣ Chapter 11 Statements and Algorithm Sections ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 11.2.7</span></a>.)</p>
+</div>
+<div id="A1.p33" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">interface</span>: see type. (See <a href="Ch6.html#interface-or-type" title="6.2 Interface or Type ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 6.2</span></a>.)</p>
+</div>
+<div id="A1.p34" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">literal</span>: a real, integer, boolean, enumeration, or string
+literal. Used to build expressions. (See <a href="Ch2.html#literal-constants" title="2.4 Literal Constants ‣ Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 2.4</span></a>.)</p>
+</div>
+<div id="A1.p35" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">matrix</span>: an array where the number of dimensions is 2. (See
+<a href="Ch10.html" title="Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">chapter 10</span></a>.)</p>
+</div>
+<div id="A1.p36" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">modification</span>: part of an element. Modifies the instance
+generated by that element. A modification contains element modifications
+and element redeclarations. (See <a href="Ch7.html#modifications" title="7.2 Modifications ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 7.2</span></a>.)</p>
+</div>
+<div id="A1.p37" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">modification environment</span>: the modification environment of a
+class defines how to modify the corresponding class definition when
+flattening the class. (See <a href="Ch7.html#modification-environment" title="7.2.2 Modification Environment ‣ 7.2 Modifications ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 7.2.2</span></a>.)</p>
+</div>
+<div id="A1.p38" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">name</span>: Sequence of one or more identifiers. Used to reference a
+class. A class name is resolved in the scope of a class, which defines a
+set of visible classes. Example name: ”<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">Ele.Resistor</span>”. (See <a href="Ch2.html#names" title="2.3.2 Names ‣ 2.3 Identifiers, Names, and Keywords ‣ Chapter 2 Lexical Structure ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 2.3.2</span></a>.)</p>
+</div>
+<div id="A1.p39" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">operator record</span>: A record with user-defined operations;
+defining e.g. multiplication and addition see <a href="Ch14.html" title="Chapter 14 Overloaded Operators ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">chapter 14</span></a>.</p>
+</div>
+<div id="A1.p40" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">partial</span>: a class that is incomplete and cannot be instantiated
+in a simulation model; useful e.g. as a base-class. (See <a href="Ch4.html#component-declaration-static-semantics" title="4.4.2 Component Declaration Static Semantics ‣ 4.4 Component Declarations ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.4.2</span></a>.)
+</p>
+</div>
+<div id="A1.p41" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">partial flattening</span>: first find the names of declared local
+classes and components. Modifiers, if present, are merged to the local
+elements and redeclarations are performed. Then base-classes are looked
+up, flattened and inserted into the class. See also flattening, which
+additionally flattens local elements and performs modifications. (See
+<a href="Ch5.html#flattening-process" title="5.6 Flattening Process ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 5.6</span></a>.)</p>
+</div>
+<div id="A1.p42" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">plug-compatibility</span>: see restricted subtyping and <a href="Ch6.html#plug-compatibility-or-restricted-subtyping" title="6.4 Plug-Compatibility or Restricted Subtyping ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 6.4</span></a>.</p>
+</div>
+<div id="A1.p43" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">predefined type</span>: one of the types <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;background-color:#FFFFFF;">Real</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;background-color:#FFFFFF;">Boolean</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;background-color:#FFFFFF;">Integer</span>,
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords3 ltx_font_typewriter" style="font-size:90%;color:#E60000;background-color:#FFFFFF;">String</span> and types defined as <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">enumeration</span> types. The component
+declarations of the predefined types define attributes such as <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">min</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">max</span>,
+and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">unit</span>. (See <a href="Ch4.html#predefined-types-and-classes" title="4.8 Predefined Types and Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.8</span></a>.)</p>
+</div>
+<div id="A1.p44" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">prefix</span>: property of an element of a class definition which can
+be present or not be present, e.g. <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">final</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">public</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="font-size:90%;color:#000066;background-color:#FFFFFF;">flow</span>. (See <a href="Ch4.html#prefix-rules" title="4.4.2.2 Prefix Rules ‣ 4.4.2 Component Declaration Static Semantics ‣ 4.4 Component Declarations ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.4.2.2</span></a>.)</p>
+</div>
+<div id="A1.p45" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">primitive type</span>: one of the built-in types <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">RealType</span>,
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">BooleanType</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">IntegerType</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">StringType</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;background-color:#FFFFFF;">EnumType</span>. The primitive types are
+used to define attributes and value of predefined types and enumeration
+types. (See <a href="Ch4.html#predefined-types-and-classes" title="4.8 Predefined Types and Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.8</span></a>.)</p>
+</div>
+<div id="A1.p46" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">redeclare</span>: the modifier that changes a replaceable element.
+(See <a href="Ch7.html#redeclaration" title="7.3 Redeclaration ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 7.3</span></a>)
+</p>
+</div>
+<div id="A1.p47" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">replaceable</span>: an element that can be replaced by a different
+element having a compatible interface. (See <a href="Ch7.html#redeclaration" title="7.3 Redeclaration ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 7.3</span></a>)</p>
+</div>
+<div id="A1.p48" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">restricted subtyping</span> or <span class="ltx_text ltx_font_bold">plug-compatibility</span>: a type A
+is a restricted subtype of type B iff A is a subtype of B, and all
+public components present in A but not in B must be default-connectable.
+This is used to avoid introducing, via a redeclaration, an un-connected
+connector in the object/class of type A at a level where a connection is
+not possible. (See <a href="Ch6.html#plug-compatibility-or-restricted-subtyping" title="6.4 Plug-Compatibility or Restricted Subtyping ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 6.4</span></a>.)</p>
+</div>
+<div id="A1.p49" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">scalar</span> or scalar variable: a variable that is not an array.</p>
+</div>
+<div id="A1.p50" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">simple type:</span> Real, Boolean, Integer, String and enumeration
+types</p>
+</div>
+<div id="A1.p51" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">specialized class</span>: one of: model, connector, package, record,
+block, function, type. The class restriction of a class represents an
+assertion regarding the content of the class and restricts its use in
+other classes. For example, a class having the package class restriction
+must only contain classes and constants. (See <a href="Ch4.html#specialized-classes" title="4.6 Specialized Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.6</span></a>.)</p>
+</div>
+<div id="A1.p52" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">subtype</span> or <span class="ltx_text ltx_font_bold">interface compatible</span>: relation between
+types. A is a subtype of (interface compatible with) B iff a number of
+properties of A and B are the same and all important elements of B have
+corresponding elements in A with the same names and their types being
+subtypes of the corresponding element types in B. See also restricted
+subtyping and function restricted subtyping. (See <a href="Ch6.html#interface-compatibility-or-subtyping" title="6.3 Interface Compatibility or Subtyping ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 6.3</span></a>.)</p>
+</div>
+<div id="A1.p53" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">supertype</span>: relation between types. The inverse of subtype. A is
+a subtype of B means that B is a supertype of A. (See <a href="Ch6.html#interface-compatibility-or-subtyping" title="6.3 Interface Compatibility or Subtyping ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 6.3</span></a>.)</p>
+</div>
+<div id="A1.p54" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">transitively nonreplaceable</span>: a class reference is considered
+transitively non-replaceable if there are no replaceable elements in the
+referenced class, or any of its base classes or constraining types
+transitively at any level. (See <a href="Ch6.html#transitively-non-replaceable" title="6.2.1 Transitively non-Replaceable ‣ 6.2 Interface or Type ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 6.2.1</span></a>.)</p>
+</div>
+<div id="A1.p55" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">type</span> or interface: property of an instance, expression, consisting of a number of attributes and a set of public
+elements consisting of element name, element type, and element
+attributes. Note: The concept of class type is a property of a class
+definition. (See <a href="Ch6.html#interface-or-type" title="6.2 Interface or Type ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 6.2</span></a>.)</p>
+</div>
+<div id="A1.p56" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">variability</span>: property of an expression: one of</p>
+<ul id="A1.S0.I1" class="ltx_itemize">
+<li id="A1.S0.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="A1.S0.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">continuous</span>: an expression that may change its value at any
+point in time.</p>
+</div>
+</li>
+<li id="A1.S0.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="A1.S0.I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">discrete</span>: may change its value only at events during
+simulation.</p>
+</div>
+</li>
+<li id="A1.S0.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="A1.S0.I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">parameter</span>: constant during the entire simulation, recommended
+to change for a component.
+</p>
+</div>
+</li>
+<li id="A1.S0.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="A1.S0.I1.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">constant</span>: constant during the entire simulation (can be used
+in a package) .</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="A1.p57" class="ltx_para">
+<p class="ltx_p">Assignments x := expr and binding equations x = expr must satisfy a
+variability constraint: The expression must not have a higher
+variability than component x. (See <a href="Ch3.html#variability-of-expressions" title="3.8 Variability of Expressions ‣ Chapter 3 Operators and Expressions ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 3.8</span></a>.)</p>
+</div>
+<div id="A1.p58" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">variable</span>: synonym for component. (See <a href="Ch4.html#component-declarations" title="4.4 Component Declarations ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">section 4.4</span></a>.)</p>
+</div>
+<div id="A1.p59" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">vector</span>: an array where the number of dimensions is 1. (See
+<a href="Ch10.html" title="Chapter 10 Arrays ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref ltx_refmacro_autoref"><span class="ltx_text ltx_ref_tag">chapter 10</span></a>.)</p>
+</div>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div>
+<a href="Ch20.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a><a href="A2.html" title="Appendix B Modelica Concrete Syntax ‣ Modelica® - A Unified Object-Oriented Language for Systems Modeling Language Specification Version 3.4" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica Concrete Syntax</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Sat May  1 09:01:01 2021 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>

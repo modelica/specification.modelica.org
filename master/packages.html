@@ -1,0 +1,938 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev</title>
+<!--Generated on Thu Feb 19 13:30:11 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on February 19, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/MLS.css" type="text/css">
+<link rel="stylesheet" href="css/MLS-navbar-left.css" type="text/css">
+<script src="LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="./" title="Modelica® Language Specification version 3.7-dev">
+<link rel="start" href="./" title="Modelica® Language Specification version 3.7-dev">
+<link rel="prev" href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="next" href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="bibliography" href="bib.html" title="References ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="index" href="idx.html" title="Index ‣ Modelica® Language Specification version 3.7-dev">
+<meta name="keywords" lang="en" content=", , , , BOM (byte order mark), Modelica, URI, URI scheme, byte order mark, multilingual libraries, translation">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body tabindex=0>
+<nav class="ltx_page_navbar"><a href="./" title="" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.7-dev</span></a>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="preface.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="introduction1.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="lexical-structure.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="operators-and-expressions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="class-predefined-types-and-declarations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="scoping-name-lookup-and-flattening.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="interface-or-type-relationships.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="inheritance-modification-and-redeclaration.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="equations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="connectors-and-connections.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="arrays.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="statements-and-algorithm-sections.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="functions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></span>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#package-as-specialized-class" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.1 </span>Package as Specialized Class</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#importing-definitions-from-a-package" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2 </span>Importing Definitions from a Package</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#lookup-of-imported-names" title="In 13.2 Importing Definitions from a Package ‣ Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2.1 </span>Lookup of Imported Names</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#rules-for-import-clauses" title="In 13.2 Importing Definitions from a Package ‣ Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2.2 </span>Rules for Import-Clauses</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#the-modelica-library-path-modelicapath" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.3 </span>The Modelica Library Path – MODELICAPATH</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#file-system-mapping-of-package-class" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.4 </span>File System Mapping of Package/Class</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#directory-hierarchy-mapping" title="In 13.4 File System Mapping of Package/Class ‣ Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.4.1 </span>Directory Hierarchy Mapping</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#mapping-a-package-class-hierarchy-into-a-single-file-nonstructured-entity" title="In 13.4 File System Mapping of Package/Class ‣ Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.4.2 </span>Single File Mapping</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#the-within-clause" title="In 13.4 File System Mapping of Package/Class ‣ Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.4.3 </span>The within Clause</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#stored-definitions-containing-multiple-class-definitions" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.5 </span>Stored Definitions Containing Multiple Class Definitions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#external-resources" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.6 </span>External Resources</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#multilingual-descriptions" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.7 </span>Multilingual Descriptions</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="overloaded-operators.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="stream-connectors.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="synchronous-language-elements.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="state-machines.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="annotations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="unit-expressions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="the-modelica-standard-library.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-concrete-syntax.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-dae-representation.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="derivation-of-stream-equations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-revision-history.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="bib.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_index"><a href="idx.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+</ol></nav>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="./" title="" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.7-dev</span></a><a href="functions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a><a href="overloaded-operators.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter">
+<h1 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter">Chapter 13 </span>Packages</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Packages in Modelica may contain definitions of constants and classes including all kinds of specialized classes, functions, and subpackages.
+By the term subpackage we mean that the package is declared inside another package, no inheritance relationship is implied.
+Parameters and variables cannot be declared in a package.
+The definitions in a package should typically be related in some way, which is the main reason they are placed in a particular package.
+Packages are useful for a number of reasons:</p>
+<ul id="S0.I1" class="ltx_itemize">
+<li id="S0.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S0.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Definitions that are related to some particular topic are typically grouped into a package.
+This makes those definitions easier to find and the code more understandable.</p>
+</div>
+</li>
+<li id="S0.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S0.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Packages provide encapsulation and coarse-grained structuring that reduces the complexity of large systems.
+An important example is the use of packages for construction of (hierarchical) class libraries.</p>
+</div>
+</li>
+<li id="S0.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S0.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Name conflicts between definitions in different packages are eliminated since the package name is implicitly prefixed to names of definitions declared in a package.</p>
+</div>
+</li>
+<li id="S0.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S0.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">Information hiding and encapsulation can be supported to some extent by declaring <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">protected</span> classes, types, and other definitions that are available only inside the package and therefore inaccessible to outside code.</p>
+</div>
+</li>
+<li id="S0.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S0.I1.i5.p1" class="ltx_para">
+<p class="ltx_p">Modelica defines a method for locating a package by providing a standard mapping of package names to storage places, typically file or directory locations in the file system.</p>
+</div>
+</li>
+</ul>
+</div>
+<section id="package-as-specialized-class" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">13.1 </span>Package as Specialized Class</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">The package concept is a specialized class (<a href="class-predefined-types-and-declarations.html#specialized-classes" title="4.7 Specialized Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">4.7</span></a>), using the keyword <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">package</span>.</p>
+</div>
+</section>
+<section id="importing-definitions-from-a-package" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">13.2 </span>Importing Definitions from a Package</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clause makes public classes and other public definitions declared in some package available for use by shorter names in a class or a package.
+It is the only way of referring to definitions declared in some other package for use inside an encapsulated package or class.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">import</span>-clauses in a package or class fill the following two needs:</span></p>
+<ul id="S2.I1" class="ltx_itemize">
+<li id="S2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Making definitions from other packages available for use (by shorter names) in a package or class.</span></p>
+</div>
+</li>
+<li id="S2.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Explicit declaration of usage dependences on other packages.</span></p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">]</p>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p class="ltx_p">An <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clause can occur in one of the following syntactic forms:</p>
+</div>
+<div id="S2.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter"><math id="S2.p4.m1" class="ltx_Math" alttext="\mathit{definitionname}" display="inline"><mi mathbackground="#FFFFFF">𝑑𝑒𝑓𝑖𝑛𝑖𝑡𝑖𝑜𝑛𝑛𝑎𝑚𝑒</mi></math></span><span class="ltx_text ltx_font_typewriter">;</span></span> (qualified import of top-level definition)</p>
+</div>
+<div id="S2.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter"><math id="S2.p5.m1" class="ltx_Math" alttext="\mathit{packagename}" display="inline"><mi mathbackground="#FFFFFF">𝑝𝑎𝑐𝑘𝑎𝑔𝑒𝑛𝑎𝑚𝑒</mi></math></span><span class="ltx_text ltx_font_typewriter">.</span></span><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_font_typewriter"><math id="S2.p5.m2" class="ltx_Math" alttext="\mathit{definitionname}" display="inline"><mi mathbackground="#FFFFFF">𝑑𝑒𝑓𝑖𝑛𝑖𝑡𝑖𝑜𝑛𝑛𝑎𝑚𝑒</mi></math></span><span class="ltx_text ltx_font_typewriter">;</span></span> (qualified import)</p>
+</div>
+<div id="S2.p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter"><math id="S2.p6.m1" class="ltx_Math" alttext="\mathit{packagename}" display="inline"><mi mathbackground="#FFFFFF">𝑝𝑎𝑐𝑘𝑎𝑔𝑒𝑛𝑎𝑚𝑒</mi></math></span><span class="ltx_text ltx_font_typewriter">.{<math id="S2.p6.m2" class="ltx_Math" alttext="\mathit{def}_{1}" display="inline"><msub><mi mathbackground="#FFFFFF">𝑑𝑒𝑓</mi><mn mathbackground="#FFFFFF">1</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.p6.m3" class="ltx_Math" alttext="\mathit{def}_{2}" display="inline"><msub><mi mathbackground="#FFFFFF">𝑑𝑒𝑓</mi><mn mathbackground="#FFFFFF">2</mn></msub></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.p6.m4" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math>,<span class="ltx_text ltx_lst_space"> </span><math id="S2.p6.m5" class="ltx_Math" alttext="\mathit{def}_{n}" display="inline"><msub><mi mathbackground="#FFFFFF">𝑑𝑒𝑓</mi><mi mathbackground="#FFFFFF">n</mi></msub></math>};</span></span> (multiple definition import)</p>
+</div>
+<div id="S2.p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter"><math id="S2.p7.m1" class="ltx_Math" alttext="\mathit{packagename}" display="inline"><mi mathbackground="#FFFFFF">𝑝𝑎𝑐𝑘𝑎𝑔𝑒𝑛𝑎𝑚𝑒</mi></math></span><span class="ltx_text ltx_font_typewriter">.*;</span></span> (unqualified import)</p>
+</div>
+<div id="S2.p8" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter"><math id="S2.p8.m1" class="ltx_Math" alttext="\mathit{shortname}" display="inline"><mi mathbackground="#FFFFFF">𝑠ℎ𝑜𝑟𝑡𝑛𝑎𝑚𝑒</mi></math></span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=<span class="ltx_text ltx_lst_space"> </span><math id="S2.p8.m2" class="ltx_Math" alttext="\mathit{definitionname}" display="inline"><mi mathbackground="#FFFFFF">𝑑𝑒𝑓𝑖𝑛𝑖𝑡𝑖𝑜𝑛𝑛𝑎𝑚𝑒</mi></math>;</span></span> (renaming import of top-level definition)</p>
+</div>
+<div id="S2.p9" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter"><math id="S2.p9.m1" class="ltx_Math" alttext="\mathit{shortname}" display="inline"><mi mathbackground="#FFFFFF">𝑠ℎ𝑜𝑟𝑡𝑛𝑎𝑚𝑒</mi></math></span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=<span class="ltx_text ltx_lst_space"> </span><math id="S2.p9.m2" class="ltx_Math" alttext="\mathit{packagename}" display="inline"><mi mathbackground="#FFFFFF">𝑝𝑎𝑐𝑘𝑎𝑔𝑒𝑛𝑎𝑚𝑒</mi></math>.</span></span><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_font_typewriter"><math id="S2.p9.m3" class="ltx_Math" alttext="\mathit{definitionname}" display="inline"><mi mathbackground="#FFFFFF">𝑑𝑒𝑓𝑖𝑛𝑖𝑡𝑖𝑜𝑛𝑛𝑎𝑚𝑒</mi></math></span><span class="ltx_text ltx_font_typewriter">;</span></span> (renaming import)</p>
+</div>
+<div id="S2.p10" class="ltx_para">
+<p class="ltx_p">Here <math id="S2.p10.m1" class="ltx_Math" alttext="\mathit{packagename}" display="inline"><mi>𝑝𝑎𝑐𝑘𝑎𝑔𝑒𝑛𝑎𝑚𝑒</mi></math> is the fully qualified name of the imported package including possible dot notation and <math id="S2.p10.m2" class="ltx_Math" alttext="\mathit{definitionname}" display="inline"><mi>𝑑𝑒𝑓𝑖𝑛𝑖𝑡𝑖𝑜𝑛𝑛𝑎𝑚𝑒</mi></math> is the name of an element in a package.
+The multiple definition import is equivalent to multiple single definition imports with corresponding <math id="S2.p10.m3" class="ltx_Math" alttext="\mathit{packagename}" display="inline"><mi>𝑝𝑎𝑐𝑘𝑎𝑔𝑒𝑛𝑎𝑚𝑒</mi></math> and definition names.</p>
+</div>
+<section id="lookup-of-imported-names" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">13.2.1 </span>Lookup of Imported Names</h3>
+
+<div id="S2.SS1.p1" class="ltx_para">
+<p class="ltx_p">This section only defines how the imported name is looked up in the <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clause.
+For lookup in general – including how <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clauses are used – see <a href="scoping-name-lookup-and-flattening.html#static-name-lookup" title="5.3 Static Name Lookup ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">5.3</span></a>.</p>
+</div>
+<div id="S2.SS1.p2" class="ltx_para">
+<p class="ltx_p">Lookup of the name of an imported package or class deviates from the normal lexical lookup.
+For example, consider <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">A</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">B</span>.<span class="ltx_text ltx_lst_identifier">C</span></span></span> in the <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clauses <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">A</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">B</span>.<span class="ltx_text ltx_lst_identifier">C</span>;</span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">D</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A</span>.<span class="ltx_text ltx_lst_identifier">B</span>.<span class="ltx_text ltx_lst_identifier">C</span>;</span></span>, or <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">A</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">B</span>.<span class="ltx_text ltx_lst_identifier">C</span>.*;</span></span>.
+Here, lookup starts with the lexical lookup of the first part of the name (<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>) at the top level.</p>
+</div>
+<div id="S2.SS1.p3" class="ltx_para">
+<p class="ltx_p">Qualified <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clauses may only refer to packages or elements of packages, i.e., in <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">A</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">B</span>.<span class="ltx_text ltx_lst_identifier">C</span>;</span></span> or <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">D</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A</span>.<span class="ltx_text ltx_lst_identifier">B</span>.<span class="ltx_text ltx_lst_identifier">C</span>;</span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">A</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">B</span></span></span> must be a package.
+Unqualified <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clauses may only import from packages, i.e., in <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">A</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">B</span>.*;</span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">A</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">B</span></span></span> must be a package.</p>
+</div>
+<div id="S2.SS1.p4" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">In <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold ltx_font_upright" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">A</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">;</span></span> the class <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span> can be any class which is an element of the unnamed top-level package.
+</span>]</p>
+</div>
+<div id="S2.SS1.p5" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">For example, if the package <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">ComplexNumbers</span> would have been declared as a subpackage inside the package <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">Modelica</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">Math</span></span></span>, its fully qualified name would be <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">Modelica</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">Math</span>.<span class="ltx_text ltx_lst_identifier">ComplexNumbers</span></span></span>.
+<math id="S2.SS1.p5.m1" class="ltx_Math" alttext="\mathit{definitionname}" display="inline"><mi>𝑑𝑒𝑓𝑖𝑛𝑖𝑡𝑖𝑜𝑛𝑛𝑎𝑚𝑒</mi></math> is the simple name without dot notation of a single definition that is imported.
+A <math id="S2.SS1.p5.m2" class="ltx_Math" alttext="\mathit{shortname}" display="inline"><mi>𝑠ℎ𝑜𝑟𝑡𝑛𝑎𝑚𝑒</mi></math> is a simple name without dot notation that can be used to refer to the package after import instead of the presumably much longer <math id="S2.SS1.p5.m3" class="ltx_Math" alttext="\mathit{packagename}" display="inline"><mi>𝑝𝑎𝑐𝑘𝑎𝑔𝑒𝑛𝑎𝑚𝑒</mi></math>.</span></p>
+</div>
+<div id="S2.SS1.p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The forms of <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">import</span> are exemplified below assuming that we want to access the addition operation of the hypothetical package <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">Modelica</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">Math</span>.<span class="ltx_text ltx_lst_identifier">ComplexNumbers</span></span></span>:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW1wb3J0IE1vZGVsaWNhLk1hdGguQ29tcGxleE51bWJlcnM7ICAgICAgIC8vIEFjY2Vzc2VkIGJ5IENvbXBsZXhOdW1iZXJzLkFkZAppbXBvcnQgTW9kZWxpY2EuTWF0aC5Db21wbGV4TnVtYmVycy5BZGQ7ICAgLy8gQWNjZXNzZWQgYnkgQWRkCmltcG9ydCBNb2RlbGljYS5NYXRoLkNvbXBsZXhOdW1iZXJzLntBZGQsU3VifTsgLy8gQWNjZXNzZWQgYnkgQWRkIGFuZCBTdWIKaW1wb3J0IE1vZGVsaWNhLk1hdGguQ29tcGxleE51bWJlcnMuKjsgICAgIC8vIEFjY2Vzc2VkIGJ5IEFkZAppbXBvcnQgQ28gPSBNb2RlbGljYS5NYXRoLkNvbXBsZXhOdW1iZXJzOyAgLy8gQWNjZXNzZWQgYnkgQ28uQWRk" download="">⬇</a></div>
+<div id="lstnumberx3952" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Math</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">ComplexNumbers</span><span class="ltx_text ltx_font_typewriter">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter">       </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Accessed<span class="ltx_text ltx_lst_space"> </span>by<span class="ltx_text ltx_lst_space"> </span>ComplexNumbers.Add</span>
+</div>
+<div id="lstnumberx3953" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Math</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">ComplexNumbers</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Add</span><span class="ltx_text ltx_font_typewriter">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Accessed<span class="ltx_text ltx_lst_space"> </span>by<span class="ltx_text ltx_lst_space"> </span>Add</span>
+</div>
+<div id="lstnumberx3954" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Math</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">ComplexNumbers</span><span class="ltx_text ltx_font_typewriter">.{</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Add</span><span class="ltx_text ltx_font_typewriter">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Sub</span><span class="ltx_text ltx_font_typewriter">};</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Accessed<span class="ltx_text ltx_lst_space"> </span>by<span class="ltx_text ltx_lst_space"> </span>Add<span class="ltx_text ltx_lst_space"> </span>and<span class="ltx_text ltx_lst_space"> </span>Sub</span>
+</div>
+<div id="lstnumberx3955" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Math</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">ComplexNumbers</span><span class="ltx_text ltx_font_typewriter">.*;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter">     </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Accessed<span class="ltx_text ltx_lst_space"> </span>by<span class="ltx_text ltx_lst_space"> </span>Add</span>
+</div>
+<div id="lstnumberx3956" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Co</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Math</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">ComplexNumbers</span><span class="ltx_text ltx_font_typewriter">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Accessed<span class="ltx_text ltx_lst_space"> </span>by<span class="ltx_text ltx_lst_space"> </span>Co.Add</span>
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</section>
+<section id="rules-for-import-clauses" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">13.2.2 </span>Rules for Import-Clauses</h3>
+
+<div id="S2.SS2.p1" class="ltx_para">
+<p class="ltx_p">The following rules apply to <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clauses:</p>
+<ul id="S2.I2" class="ltx_itemize">
+<li id="S2.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clauses are <em class="ltx_emph ltx_font_italic">not</em> inherited.</p>
+</div>
+</li>
+<li id="S2.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clauses are not named elements of a class or package.
+This means that <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clauses cannot be changed by modifiers or redeclarations.</p>
+</div>
+</li>
+<li id="S2.I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i3.p1" class="ltx_para">
+<p class="ltx_p">The <em class="ltx_emph ltx_font_italic">order</em> of <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clauses does not matter.</p>
+</div>
+</li>
+<li id="S2.I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i4.p1" class="ltx_para">
+<p class="ltx_p">One can only import <em class="ltx_emph ltx_font_italic">from</em> packages, not from other kinds of classes.
+Both packages and classes can be imported <em class="ltx_emph ltx_font_italic">into</em>, i.e., they may contain <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clauses.</p>
+</div>
+</li>
+<li id="S2.I2.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i5.p1" class="ltx_para">
+<p class="ltx_p">An imported package or definition should always be referred to by its fully qualified name in the <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clause.</p>
+</div>
+</li>
+<li id="S2.I2.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S2.I2.i6.p1" class="ltx_para">
+<p class="ltx_p">Multiple qualified <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span>-clauses shall not have the same import name (see <a href="scoping-name-lookup-and-flattening.html#simple-name-lookup" title="5.3.1 Simple Name Lookup ‣ 5.3 Static Name Lookup ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">5.3.1</span></a>).</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="the-modelica-library-path-modelicapath" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">13.3 </span>The Modelica Library Path – MODELICAPATH</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p">The top-level scope implicitly contains a number of classes stored externally.
+If a top-level name is not found at global scope, a Modelica translator shall look up additional classes in an ordered list of library roots, called <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">MODELICAPATH</span>.</p>
+</div>
+<div id="S3.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The implementation of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MODELICAPATH</span> is tool dependent.
+In order that a user can work in parallel with different Modelica tools, it is advisable to not have this list as environment variable, but as a setting in the respective tool.
+Since <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MODELICAPATH</span> is tool dependent, it is not specified in which way the list of library roots is stored.
+Typically, on a Windows system <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MODELICAPATH</span> is a string with path names separated by ‘<span class="ltx_text ltx_font_sansserif">;</span>’ whereas on a Linux system it is a string with path names separated by a ‘<span class="ltx_text ltx_font_sansserif">:</span>’.
+</span>]</p>
+</div>
+<div id="S3.p3" class="ltx_para">
+<p class="ltx_p">In addition a tool may define an internal list of libraries, since it is in general not advisable for a program installation to modify global environment variables.
+The version information for a library (as defined in <a href="annotations.html#annotations-for-version-handling" title="18.11 Versions ‣ Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">18.11</span></a>) may also be used during this search to search for a specific version of the library (e.g., if Modelica library version 2.2 is needed and the first directory in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">MODELICAPATH</span> contain Modelica library version 2.1, whereas the second directory contains Modelica version 2.2, then Modelica library version 2.2 is loaded from the second directory.).</p>
+</div>
+<div id="S3.p4" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The first part of the path <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">A</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">B</span>.<span class="ltx_text ltx_lst_identifier">C</span></span></span> (i.e., <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span>) is located by searching the ordered list of roots in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MODELICAPATH</span>.
+If no root contains <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span> the lookup fails.
+If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span> has been found in one of the roots, the rest of the path is located in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span>; if that fails, the entire lookup fails without searching for <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span> in any of the remaining roots in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MODELICAPATH</span>.
+</span>]</p>
+</div>
+<div id="S3.p5" class="ltx_para">
+<p class="ltx_p">If during lookup a top-level name is not found in the unnamed top-level scope, the search continues in the package hierarchies stored in these directories.</p>
+</div>
+<div id="S3.p6" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example :
+<a href="#fig:roots" title="In 13.3 The Modelica Library Path – MODELICAPATH ‣ Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">Figure</span> <span class="ltx_text ltx_ref_tag">13.1</span></a> below shows an example <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MODELICAPATH</span> = <span class="ltx_text ltx_font_sansserif">C:\library;C:\lib1;C:\lib2</span>, with three directories containing the roots of the package hierarchies <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">Modelica</span>, <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MyLib</span>, and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">ComplexNumbers</span>.
+The first two are represented as the subdirectories <span class="ltx_text ltx_font_sansserif">C:\library\Modelica</span> and <span class="ltx_text ltx_font_sansserif">C:\lib1\MyLib</span>, whereas the third is stored as the file <span class="ltx_text ltx_font_sansserif">C:\lib2\ComplexNumbers.mo</span>.</span></p>
+</div>
+<figure id="fig:roots" class="ltx_figure"><object type="image/svg+xml" data="media/modelicapath.svg" id="F1.g1" class="ltx_graphics ltx_centering"></object>
+<figcaption class="ltx_caption ltx_font_italic"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text ltx_font_upright">Figure 13.1</span>: </span>
+Roots of package hierarchies, e.g., <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">Modelica</span>, <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MyLib</span>, and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">ComplexNumbers</span> in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MODELICAPATH</span> = <span class="ltx_text ltx_font_sansserif">C:\library;C:\lib1;C:\lib2</span>.
+</figcaption>
+</figure>
+<div id="S3.p7" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Assume that we want to access the package <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">MyLib</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">Pack2</span></span></span> in <a href="#fig:roots" title="In 13.3 The Modelica Library Path – MODELICAPATH ‣ Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">figure</span> <span class="ltx_text ltx_ref_tag">13.1</span></a> above, e.g., through an <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">import</span>-clause <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold ltx_font_upright" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">MyLib</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">Pack2</span>;</span></span>.
+During lookup we first try to find a package <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MyLib</span> corresponding to the first part of the name in the import-statement.
+It is not found in the top-level scope since it has not previously been loaded into the environment.</span></p>
+</div>
+<div id="S3.p8" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Since the name was not found in the top-level scope the search continues in the directories in the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MODELICAPATH</span> in the specified order.
+For the search to succeed, there must be a subdirectory <span class="ltx_text ltx_font_sansserif">MyLib</span> or a file <span class="ltx_text ltx_font_sansserif">MyLib.mo</span> in one of the directories mentioned in the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MODELICAPATH</span>.
+If there is no such subdirectory or file, the lookup fails.
+If <span class="ltx_text ltx_font_sansserif">MyLib</span> is found in one of the directories, the rest of the name, in this case <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">Pack2</span>, is located in <span class="ltx_text ltx_font_sansserif">MyLib</span>.
+If that fails, the entire lookup fails without continuing the search in possibly remaining directories.</span></p>
+</div>
+<div id="S3.p9" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">In this example the name matches the subdirectory named <span class="ltx_text ltx_font_sansserif">MyLib</span> in the second directory <span class="ltx_text ltx_font_sansserif">C:\lib1</span> mentioned in the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MODELICAPATH</span>.
+This subdirectory must have a file <span class="ltx_text ltx_font_sansserif">package.mo</span> containing a definition of the package <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">MyLib</span>, according to the Modelica rules on how to map a package hierarchy to the file system.
+The subpackage <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">Pack2</span> is stored in its own subdirectory or file in the subdirectory <span class="ltx_text ltx_font_sansserif">MyLib</span>.
+In this case the search succeeds and the package <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">MyLib</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">Pack2</span></span></span> is loaded into the environment.
+</span>]</p>
+</div>
+</section>
+<section id="file-system-mapping-of-package-class" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">13.4 </span>File System Mapping of Package/Class</h2>
+
+<div id="S4.p1" class="ltx_para">
+<p class="ltx_p">A package/class hierarchy may be represented in the hierarchical structure of the operating system (the file system).
+For classes with version information see also <a href="annotations.html#mapping-of-versions-to-file-system" title="18.11.3 Versions in the File System ‣ 18.11 Versions ‣ Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">18.11.3</span></a>.
+The nature of such an external entity falls into one of the following two groups:</p>
+<ul id="S4.I1" class="ltx_itemize">
+<li id="S4.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Directory in the file system.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S4.p2" class="ltx_para">
+<ul id="S4.I2" class="ltx_itemize">
+<li id="S4.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">File in the file system.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S4.p3" class="ltx_para">
+<p class="ltx_p">Each Modelica file in the file system is stored in UTF-8 format (defined by The Unicode Consortium; <a href="https://unicode.org" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://unicode.org</a>).
+A deprecated feature is that the file may start with the UTF-8 encoded BOM (byte order mark; <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">0<span class="ltx_text ltx_lst_identifier">xef</span><span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_identifier">xbb</span><span class="ltx_text ltx_lst_space"> </span>0<span class="ltx_text ltx_lst_identifier">xbf</span></span>); this is treated as white-space in the grammar.
+Since the use of BOM is deprecated, tools can ignore any BOM when reading, and it is recommended to never write it.</p>
+</div>
+<div id="S4.p4" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Tools may also store classes in data-base systems, but that is not standardized.
+</span>]</p>
+</div>
+<section id="directory-hierarchy-mapping" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">13.4.1 </span>Directory Hierarchy Mapping</h3>
+
+<div id="S4.SS1.p1" class="ltx_para">
+<p class="ltx_p">A directory shall contain a node, the file <span class="ltx_text ltx_font_sansserif">package.mo</span>.
+The node shall contain a <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">stored-definition</span> that defines a class <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> with a name matching the name of the structured entity.</p>
+</div>
+<div id="S4.SS1.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The node typically contains documentation and graphical information for a package, but may also contain additional elements of the class <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span>.
+</span>]</p>
+</div>
+<div id="S4.SS1.p3" class="ltx_para">
+<p class="ltx_p">A directory may also contain one or more sub-entities (directories or files).
+The sub-entities are mapped as elements of the class defined by their enclosing structured entity.
+Two sub-entities shall not define classes with identical names</p>
+</div>
+<div id="S4.SS1.p4" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example :
+If directory <span class="ltx_text ltx_font_sansserif">A</span> contains the three files <span class="ltx_text ltx_font_sansserif">package.mo</span>, <span class="ltx_text ltx_font_sansserif">B.mo</span> and <span class="ltx_text ltx_font_sansserif">C.mo</span>, the classes defined are <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span>,
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">A</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">B</span></span></span>, and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">A</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">C</span>.</span></span>
+</span>]</p>
+</div>
+<div id="S4.SS1.p5" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example :
+A directory shall not contain both the sub-directory <span class="ltx_text ltx_font_sansserif">A</span> and the file <span class="ltx_text ltx_font_sansserif">A.mo</span>.
+</span>]</p>
+</div>
+<div id="S4.SS1.p6" class="ltx_para">
+<p class="ltx_p">In order to preserve the order of sub-entities it is advisable to create a file <span class="ltx_text ltx_font_sansserif">package.order</span> where each line contains the name of one class or constant (using its Modelica <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">IDENT</span> form).
+If a <span class="ltx_text ltx_font_sansserif">package.order</span> is present when reading a structured entity the classes and constants are added in this order; if the contents does not exactly match the classes and constants in the package, the resulting order is tool specific and a warning may be given.
+Classes and constants that are stored in <span class="ltx_text ltx_font_sansserif">package.mo</span> are also present in <span class="ltx_text ltx_font_sansserif">package.order</span> but their relative order should be identical to the one in <span class="ltx_text ltx_font_sansserif">package.mo</span> (this ensures that the relative order between classes and constants stored in different ways is preserved).</p>
+</div>
+</section>
+<section id="mapping-a-package-class-hierarchy-into-a-single-file-nonstructured-entity" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">13.4.2 </span>Single File Mapping</h3>
+
+<div id="S4.SS2.p1" class="ltx_para">
+<p class="ltx_p">When mapping a package or class hierarchy to a file (e.g., the file <span class="ltx_text ltx_font_sansserif">A.mo</span>), the file content shall match <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">stored-definition</span> in the grammar.
+In this case, the <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">stored-definition</span> shall only define a single class whose name (here, <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>) matches the name of the nonstructured entity.
+The filename shall have the extension <span class="ltx_text ltx_font_sansserif">mo</span>.</p>
+</div>
+</section>
+<section id="the-within-clause" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">13.4.3 </span>The within Clause</h3>
+
+<div id="S4.SS3.p1" class="ltx_para">
+<p class="ltx_p">A <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">within</span>-clause has the following syntax:</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICB3aXRoaW4gWyBwYWNrYWdlcHJlZml4bmFtZSBdICI7Ig==" download="">⬇</a></div>
+<div id="lstnumberx3957" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">within</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">[</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">packageprefixname</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">";"</span>
+</div>
+</div>
+<p class="ltx_p">A non-top-level entity shall begin with a <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">within</span>-clause which for the class defined in the entity specifies the location in the Modelica class hierarchy.
+A top-level class may contain a <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">within</span>-clause with no name.
+For a sub-entity of an enclosing structured entity, the <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">within</span>-clause shall designate the class of the enclosing entity; and this class must exist and must not have been defined using a short class definition.
+See <a href="#stored-definitions-containing-multiple-class-definitions" title="13.5 Stored Definitions Containing Multiple Class Definitions ‣ Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">13.5</span></a> regarding the use of <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">within</span>-clause when a <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">stored-definition</span> does not hold exactly one class definition.</p>
+</div>
+<div id="S4.SS3.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example :
+The subpackage <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">Rotational</span> declared within <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">Modelica</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">Mechanics</span></span></span> has the fully qualified name <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">Modelica</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">Mechanics</span>.<span class="ltx_text ltx_lst_identifier">Rotational</span></span></span>, which is formed by concatenating the <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">packageprefixname</span> with the short name of the package.
+The declaration of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">Rotational</span> could be given as below:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,d2l0aGluIE1vZGVsaWNhLk1lY2hhbmljczsKcGFja2FnZSBSb3RhdGlvbmFsIC8vIE1vZGVsaWNhLk1lY2hhbmljcy5Sb3RhdGlvbmFsCiAgJFxsZG90cyQ=" download="">⬇</a></div>
+<div id="lstnumberx3958" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">within</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Mechanics</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx3959" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">package</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Rotational</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Modelica.Mechanics.Rotational</span>
+</div>
+<div id="lstnumberx3960" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx3960.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math></span>
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</section>
+</section>
+<section id="stored-definitions-containing-multiple-class-definitions" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">13.5 </span>Stored Definitions Containing Multiple Class Definitions</h2>
+
+<div id="S5.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">stored-definition</span> in the grammar allows for zero or more class definitions, but a <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">stored-definition</span> not containing exactly one class definition can only be used to define top-level classes, cannot be used for file system mapping of packages or class-hierarchies (<a href="#file-system-mapping-of-package-class" title="13.4 File System Mapping of Package/Class ‣ Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">13.4</span></a>), and shall be ignored when searching the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">MODELICAPATH</span> (<a href="#the-modelica-library-path-modelicapath" title="13.3 The Modelica Library Path – MODELICAPATH ‣ Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">13.3</span></a>).
+It follows that any <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">within</span>-clause (<a href="#the-within-clause" title="13.4.3 The within Clause ‣ 13.4 File System Mapping of Package/Class ‣ Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">13.4.3</span></a>) in such a <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">stored-definition</span> shall not contain a <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">packageprefixname</span>.</p>
+</div>
+</section>
+<section id="external-resources" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">13.6 </span>External Resources</h2>
+
+<div id="S6.p1" class="ltx_para">
+<p class="ltx_p">Examples of references to external resources include links and images in HTML documentation, and images in the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">Bitmap</span> annotation (see <a href="annotations.html#bitmap" title="18.9.5.6 Bitmap ‣ 18.9.5 Graphical Primitives ‣ 18.9 Graphical Objects ‣ Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">18.9.5.6</span></a>).
+Absolute URIs should be used, for example <span class="ltx_text ltx_font_sansserif">file:///</span> and the URI scheme <span class="ltx_text ltx_font_sansserif">modelica:/</span> which can be used to retrieve resources associated with a package.
+According to the URI specification scheme names are case-insensitive, but the lower-case form should be used, that is <span class="ltx_text ltx_font_sansserif">Modelica:/</span> is allowed but <span class="ltx_text ltx_font_sansserif">modelica:/</span> is the recommended form.</p>
+</div>
+<div id="S6.p2" class="ltx_para">
+<p class="ltx_p">The Modelica-scheme has the ability to reference a hierarchical structure of resources associated with packages.
+The same structure is used for all kind of resource references, independent of use (external file, image in documentation, bitmap in icon layer, and link to external file in the documentation), and regardless of the storage mechanism.</p>
+</div>
+<div id="S6.p3" class="ltx_para">
+<p class="ltx_p">Any Modelica-scheme URI containing a slash after the package-name is interpreted as a reference to a resource.
+The first <em class="ltx_emph ltx_font_italic">segment</em> of the <em class="ltx_emph ltx_font_italic">path</em> of the URI is interpreted as a fully qualified package name and the rest of the <em class="ltx_emph ltx_font_italic">path</em> of the URI is interpreted as the path (relative to the package) of the resource.
+Each storage scheme can define its own interpretation of the path (but care should be taken when converting from one storage scheme or when restructuring packages that resource references resolve to the same resource).
+Any storage scheme should be constrained such that a resource with a given path should be unique for any package name that precedes it.
+The second segment of the path shall not be the name of a class in the package given by the first segment.</p>
+</div>
+<div id="S6.p4" class="ltx_para">
+<p class="ltx_p">As a deprecated feature the URI may start with <span class="ltx_text ltx_font_sansserif">modelica://</span> and use the host-part of the authority as the fully qualified package name.
+That feature is widely used, but deprecated since host-names are generally case-insensitive.</p>
+</div>
+<div id="S6.p5" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Examples of deprecated URIs would be <span class="ltx_text ltx_font_sansserif">modelica://Modelica/Resources/C.jpg</span> (referring to a resource) and <span class="ltx_text ltx_font_sansserif">modelica://Modelica.Blocks</span> (referring to a package).
+These should be rewritten as <span class="ltx_text ltx_font_sansserif">modelica:/Modelica/Resources/C.jpg</span> and <span class="ltx_text ltx_font_sansserif">modelica:/Modelica.Blocks</span>.
+</span>]</p>
+</div>
+<div id="S6.p6" class="ltx_para">
+<p class="ltx_p">When Modelica packages are stored hierarchically in a file system (i.e., package <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> in a directory <span class="ltx_text ltx_font_sansserif">A</span> containing <span class="ltx_text ltx_font_sansserif">package.mo</span>) the resource
+<span class="ltx_text ltx_font_sansserif">modelica:/A/Resources/C.jpg</span> should be stored in the file <span class="ltx_text ltx_font_sansserif">A/Resources/C.jpg</span>, it is not recommend to use <span class="ltx_text ltx_font_sansserif">modelica:/A.B/C.jpg</span> for referencing resources; it could be stored in the file <span class="ltx_text ltx_font_sansserif">A/B/C.jpg</span> – which is counter-intuitive if <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">A</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">B</span></span></span> is stored together with <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>.
+When Modelica packages are stored in other formats a similar mapping should be defined, such that a resource with a given path should be unique for any package name that precedes it.
+The second segment of the path shall not be the name of a class in the package given by the first segment.
+As above for <span class="ltx_text ltx_font_sansserif">Modelica 3.2.1/package.mo</span>, i.e., resources starting from <span class="ltx_text ltx_font_sansserif">Modelica 3.2.1</span>, and <span class="ltx_text ltx_font_sansserif">modelica:/Modelica.Mechanics/C.jpg</span> is <span class="ltx_text ltx_font_sansserif">Modelica 3.2.1/Mechanics/C.jpg</span> – regardless of whether <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">Mechanics</span></span></span> is stored in <span class="ltx_text ltx_font_sansserif">Modelica 3.2.1/package.mo</span>, <span class="ltx_text ltx_font_sansserif">Modelica 3.2.1/Mechanics.mo</span>, or <span class="ltx_text ltx_font_sansserif">Modelica 3.2.1/Mechanics/package.mo</span>.</p>
+</div>
+<div id="S6.p7" class="ltx_para">
+<p class="ltx_p">When mapping a Modelica URI to a file system path, the file system path shall end in a directory separator if and only if the URI path ends in the segment separator ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">/</span>’.
+For example, if <span class="ltx_text ltx_font_sansserif">modelica:/A/Resources</span> maps to <span class="ltx_text ltx_font_sansserif">A/Resources</span>, then <span class="ltx_text ltx_font_sansserif">modelica:/A/Resources/</span> maps to <span class="ltx_text ltx_font_sansserif">A/Resources/</span>, and vice versa.</p>
+</div>
+<div id="S6.p8" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The use of a trailing segment separator is recommended when the resource is a directory and the file system path will be prepended to relative file paths within the directory.
+If possible, use URIs for specific files or specific sub-directories instead of appending relative paths to a generic URI such as <span class="ltx_text ltx_font_sansserif">modelica:/A/Resources/</span> as the latter creates a dependency on the entire directory.
+</span>]</p>
+</div>
+<div id="S6.p9" class="ltx_para">
+<p class="ltx_p">For a Modelica-package stored as a single file, <span class="ltx_text ltx_font_sansserif">A.mo</span>, the resource <span class="ltx_text ltx_font_sansserif">modelica:/A/C.jpg</span> refers to a file <span class="ltx_text ltx_font_sansserif">C.jpg</span> stored in the same directory as <span class="ltx_text ltx_font_sansserif">A.mo</span>, but using resources in this variant is not recommended since multiple packages will share resources.</p>
+</div>
+<div id="S6.p10" class="ltx_para">
+<p class="ltx_p">In case the name of the class contains quoted identifiers, the single-quote ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">`</span>’ and any reserved characters (‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">:</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">/</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">?</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">#</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">[</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">]</span>’, ‘<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">@</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting"></span>!’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">$</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">&amp;</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">(</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">)</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">*</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">+</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">,</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">;</span>’, ‘<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">=</span>’) should be percent-encoded as normal in URIs.</p>
+</div>
+<div id="S6.p11" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example :
+Consider a top-level package <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">Modelica</span> and a class <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">Mechanics</span> inside it, a reference such as <span class="ltx_text ltx_font_sansserif">modelica:/Modelica.Mechanics/C.jpg</span> is legal, while <span class="ltx_text ltx_font_sansserif">modelica:/Modelica/Mechanics/C.jpg</span> is illegal.
+The references <span class="ltx_text ltx_font_sansserif">modelica:/Modelica.Mechanics/C.jpg</span> and <span class="ltx_text ltx_font_sansserif">modelica:/Modelica/C.jpg</span> must also refer to two distinct resources.
+</span>]</p>
+</div>
+</section>
+<section id="multilingual-descriptions" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">13.7 </span>Multilingual Descriptions</h2>
+
+<div id="S7.p1" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Descriptive texts in a model or library are usually formulated in English.
+This section describes how a tool can present the library in another language.
+Translated Modelica text is provided by external files, so that no modification of the original Modelica text is required.
+</span>]</p>
+</div>
+<div id="S7.p2" class="ltx_para">
+<p class="ltx_p">The texts in following Modelica constructs should be translated:</p>
+<ul id="S7.I1" class="ltx_itemize">
+<li id="S7.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">description strings of component declarations and classes</p>
+</div>
+</li>
+<li id="S7.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">strings in the following annotations:</p>
+<ul id="S7.I1.i2.I1" class="ltx_itemize">
+<li id="S7.I1.i2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S7.I1.i2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Text</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">string</span></span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Text</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">textString</span></span></span></p>
+</div>
+</li>
+<li id="S7.I1.i2.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S7.I1.i2.I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">missingInnerMessage</span>, <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">obsolete</span>, <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">unassignedMessage</span></p>
+</div>
+</li>
+<li id="S7.I1.i2.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S7.I1.i2.I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Dialog</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">group</span></span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Dialog</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">tab</span></span></span></p>
+</div>
+</li>
+<li id="S7.I1.i2.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S7.I1.i2.I1.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Dialog</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">loadSelector</span>.<span class="ltx_text ltx_lst_identifier">caption</span></span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Dialog</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">loadSelector</span>.<span class="ltx_text ltx_lst_identifier">filter</span></span></span>,
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Dialog</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">saveSelector</span>.<span class="ltx_text ltx_lst_identifier">caption</span></span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Dialog</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">saveSelector</span>.<span class="ltx_text ltx_lst_identifier">filter</span></span></span></p>
+</div>
+</li>
+<li id="S7.I1.i2.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S7.I1.i2.I1.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Documentation</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">info</span></span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Documentation</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">revisions</span></span></span></p>
+</div>
+</li>
+<li id="S7.I1.i2.I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S7.I1.i2.I1.i6.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Figure</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">title</span></span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Figure</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">caption</span></span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Figure</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">group</span></span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Plot</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">title</span></span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Axis</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">label</span></span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Curve</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">legend</span></span></span></p>
+</div>
+</li>
+<li id="S7.I1.i2.I1.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S7.I1.i2.I1.i7.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">mustBeConnected</span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="S7.p3" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">None of the translatable constructs can have any impact on simulation results.
+</span>]</p>
+</div>
+<div id="S7.p4" class="ltx_para">
+<p class="ltx_p">Comments (delimited as well as rest-of-line) are not translated.
+Only constructs given entirely by one or more concatenated string literals are translated, using nothing but the operator <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">+</span> for concatenation.
+In order to have parameter values as part of the texts the special substitution syntax is preferable (see <a href="annotations.html#text" title="18.9.5.5 Text ‣ 18.9.5 Graphical Primitives ‣ 18.9 Graphical Objects ‣ Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">18.9.5.5</span></a> and <a href="annotations.html#variable-replacements" title="18.5.2.6 Variable Replacements ‣ 18.5.2 Figures ‣ 18.5 Documentation ‣ Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">18.5.2.6</span></a>), and translators need to be aware of these substrings in order to make good translations.</p>
+</div>
+<div id="S7.p5" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example :
+Consider:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,YW5ub3RhdGlvbigkXGxkb3RzJCwgVGV4dChzdHJpbmcgPSAiMXN0IEZyZXF1ZW5jeTogJWYxIiksCiAgICAgICAgICAgICAgIFRleHQoc3RyaW5nID0gIjJuZCBGcmVxdWVuY3k6ICIgKyBTdHJpbmcodzIgLyAoMiAqIHBpKSkpLCAkXGxkb3RzJCk7" download="">⬇</a></div>
+<div id="lstnumberx3961" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">annotation</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx3961.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math></span><span class="ltx_text ltx_font_typewriter">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Text</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">string</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"1st<span class="ltx_text ltx_lst_space"> </span>Frequency:<span class="ltx_text ltx_lst_space"> </span>%f1"</span><span class="ltx_text ltx_font_typewriter">),</span>
+</div>
+<div id="lstnumberx3962" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">               </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Text</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">string</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"2nd<span class="ltx_text ltx_lst_space"> </span>Frequency:<span class="ltx_text ltx_lst_space"> </span>"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">String</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">w2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">/</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">(2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">pi</span><span class="ltx_text ltx_font_typewriter">))),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx3962.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math></span><span class="ltx_text ltx_font_typewriter">);</span>
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">In this example only <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"1st<span class="ltx_text ltx_lst_space"> </span>Frequency:<span class="ltx_text ltx_lst_space"> </span>%f1"</span> can be translated; the second <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">Text</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">string</span></span></span> doesn’t consist entirely of concatenated string literals, and is hence completely excluded from translation.
+</span>]</p>
+</div>
+<div id="S7.p6" class="ltx_para">
+<p class="ltx_p">The files to support translation must be provided along with the library.
+They must be stored in the resources directory <span class="ltx_text ltx_font_sansserif">modelica://<math id="S7.p6.m1" class="ltx_Math" alttext="\mathit{LibraryName}" display="inline"><mi>𝐿𝑖𝑏𝑟𝑎𝑟𝑦𝑁𝑎𝑚𝑒</mi></math>/Resources/Language/</span>.</p>
+</div>
+<div id="S7.p7" class="ltx_para">
+<p class="ltx_p">Two kind of files in <cite class="ltx_cite ltx_citemacro_citet">Drepper<span class="ltx_text ltx_bib_etal"> et al.</span> (<a href="bib.html#bib9" title="GNU gettext tools, version 0.21" class="ltx_ref">2020</a>)</cite> format have to be provided:</p>
+<ol id="S7.I2" class="ltx_enumerate">
+<li id="S7.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="S7.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">Template file <math id="S7.I2.i1.p1.m1" class="ltx_Math" alttext="\mathit{LibraryName}" display="inline"><mi>𝐿𝑖𝑏𝑟𝑎𝑟𝑦𝑁𝑎𝑚𝑒</mi></math><span class="ltx_text ltx_font_sansserif">.pot</span> (Portable Object Template), one file per library which is stored as the resource <span class="ltx_text ltx_font_sansserif">modelica://<math id="S7.I2.i1.p1.m2" class="ltx_Math" alttext="\mathit{LibraryName}" display="inline"><mi>𝐿𝑖𝑏𝑟𝑎𝑟𝑦𝑁𝑎𝑚𝑒</mi></math>/Resources/Language/<math id="S7.I2.i1.p1.m3" class="ltx_Math" alttext="\mathit{LibraryName}" display="inline"><mi>𝐿𝑖𝑏𝑟𝑎𝑟𝑦𝑁𝑎𝑚𝑒</mi></math>.pot</span>.
+It describes all translatable strings in the library, but does not contain any translations.
+The pattern <math id="S7.I2.i1.p1.m4" class="ltx_Math" alttext="\mathit{LibraryName}" display="inline"><mi>𝐿𝑖𝑏𝑟𝑎𝑟𝑦𝑁𝑎𝑚𝑒</mi></math> denotes the toplevel class name of the library.</p>
+</div>
+</li>
+<li id="S7.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="S7.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">One file for each supported language with the name <math id="S7.I2.i2.p1.m1" class="ltx_Math" alttext="\mathit{LibraryName}" display="inline"><mi>𝐿𝑖𝑏𝑟𝑎𝑟𝑦𝑁𝑎𝑚𝑒</mi></math><span class="ltx_text ltx_font_sansserif">.<math id="S7.I2.i2.p1.m2" class="ltx_Math" alttext="\mathit{language}" display="inline"><mi>𝑙𝑎𝑛𝑔𝑢𝑎𝑔𝑒</mi></math>.po</span> (Portable Object), as the resource <span class="ltx_text ltx_font_sansserif">modelica://<math id="S7.I2.i2.p1.m3" class="ltx_Math" alttext="\mathit{LibraryName}" display="inline"><mi>𝐿𝑖𝑏𝑟𝑎𝑟𝑦𝑁𝑎𝑚𝑒</mi></math>/Resources/Language/<math id="S7.I2.i2.p1.m4" class="ltx_Math" alttext="\mathit{LibraryName}" display="inline"><mi>𝐿𝑖𝑏𝑟𝑎𝑟𝑦𝑁𝑎𝑚𝑒</mi></math>.<math id="S7.I2.i2.p1.m5" class="ltx_Math" alttext="\mathit{language}" display="inline"><mi>𝑙𝑎𝑛𝑔𝑢𝑎𝑔𝑒</mi></math>.po</span>.
+This file is a copy of the associated template file, but extended with the translations in the specified language.
+The pattern <math id="S7.I2.i2.p1.m6" class="ltx_Math" alttext="\mathit{language}" display="inline"><mi>𝑙𝑎𝑛𝑔𝑢𝑎𝑔𝑒</mi></math> stands for the ISO 639-1 language code, e.g., <span class="ltx_text ltx_font_sansserif">de</span> or <span class="ltx_text ltx_font_sansserif">sv</span>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="S7.p8" class="ltx_para">
+<p class="ltx_p">The detailed format of these files is described in <cite class="ltx_cite ltx_citemacro_citet">Drepper<span class="ltx_text ltx_bib_etal"> et al.</span> (<a href="bib.html#bib9" title="GNU gettext tools, version 0.21" class="ltx_ref">2020</a>)</cite>.
+Use of translation files in other formats (including the binary MO file format) is not standardized in Modelica.
+For Modelica translations, only the keywords <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">msgctxt</span>, <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">msgid</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">msgstr</span> are used, meaning that a translation entry looks like this:</p>
+<div class="ltx_listing ltx_lst_language_modelica_short ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,IzogJFxtYXRoaXR7ZmlsZW5hbWV9JDokXG1hdGhpdHtsaW5lTnVtYmVyfSQKIywgbm8tYy1mb3JtYXQKbXNnY3R4dCAkXG1hdGhpdHttZXNzYWdlQ29udGV4dH0kCm1zZ2lkICRcbWF0aGl0e21lc3NhZ2VJZGVudGlmaWVyfSQKbXNnc3RyICRcbWF0aGl0e21lc3NhZ2VUcmFuc2xhdGlvbn0k" download="">⬇</a></div>
+<div id="lstnumberx3963" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">#:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx3963.m1" class="ltx_Math" alttext="\mathit{filename}" display="inline"><mi mathbackground="#FFFFFF">𝑓𝑖𝑙𝑒𝑛𝑎𝑚𝑒</mi></math></span><span class="ltx_text ltx_font_typewriter">:</span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx3963.m2" class="ltx_Math" alttext="\mathit{lineNumber}" display="inline"><mi mathbackground="#FFFFFF">𝑙𝑖𝑛𝑒𝑁𝑢𝑚𝑏𝑒𝑟</mi></math></span>
+</div>
+<div id="lstnumberx3964" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">#,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">no</span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">c</span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">format</span>
+</div>
+<div id="lstnumberx3965" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">msgctxt</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx3965.m1" class="ltx_Math" alttext="\mathit{messageContext}" display="inline"><mi mathbackground="#FFFFFF">𝑚𝑒𝑠𝑠𝑎𝑔𝑒𝐶𝑜𝑛𝑡𝑒𝑥𝑡</mi></math></span>
+</div>
+<div id="lstnumberx3966" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">msgid</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx3966.m1" class="ltx_Math" alttext="\mathit{messageIdentifier}" display="inline"><mi mathbackground="#FFFFFF">𝑚𝑒𝑠𝑠𝑎𝑔𝑒𝐼𝑑𝑒𝑛𝑡𝑖𝑓𝑖𝑒𝑟</mi></math></span>
+</div>
+<div id="lstnumberx3967" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">msgstr</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx3967.m1" class="ltx_Math" alttext="\mathit{messageTranslation}" display="inline"><mi mathbackground="#FFFFFF">𝑚𝑒𝑠𝑠𝑎𝑔𝑒𝑇𝑟𝑎𝑛𝑠𝑙𝑎𝑡𝑖𝑜𝑛</mi></math></span>
+</div>
+</div>
+<p class="ltx_p">The restriction to a few keywords makes it easier for tools to support the format without relying on the implementation from <cite class="ltx_cite ltx_citemacro_citet">Drepper<span class="ltx_text ltx_bib_etal"> et al.</span> (<a href="bib.html#bib9" title="GNU gettext tools, version 0.21" class="ltx_ref">2020</a>)</cite>.</p>
+</div>
+<div id="S7.p9" class="ltx_para">
+<p class="ltx_p">The use of <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">no</span><span class="ltx_text ltx_font_typewriter">-<span class="ltx_text ltx_lst_identifier">c</span>-<span class="ltx_text ltx_lst_identifier">format</span></span></span> ensures that translation tools will not parse <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"%class"</span> as the format specifier <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">%<span class="ltx_text ltx_lst_identifier">c</span></span> followed by <em class="ltx_emph ltx_font_italic">lass</em>.</p>
+</div>
+<div id="S7.p10" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">In the remainder of this section, several facts about the gettext specification are interleaved non-normatively for easy access to some of the gettext basics.
+Always refer to the external gettext specification for full detail or in case of doubt.</span></p>
+</div>
+<div id="S7.p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">All text strings are in double quotes and encoded with UTF-8 characters.
+Comments start with an <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">#</span> and are continued until the end of line.
+Spaces outside strings are ignored and used as separators.</span></p>
+</div>
+<div id="S7.p12" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The files consist of a header and a body.
+The header is marked with an empty <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">msgid</span> and looks like this:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica_short ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,IyBTT01FIERFU0NSSVBUSVZFIFRJVExFLgojIENvcHlyaWdodCAoQykgWUVBUiBUSEUgUEFDS0FHRSdTIENPUFlSSUdIVCBIT0xERVIKIyBUaGlzIGZpbGUgaXMgZGlzdHJpYnV0ZWQgdW5kZXIgdGhlIHNhbWUgbGljZW5zZSBhcyB0aGUgUEFDS0FHRSBwYWNrYWdlLgojIEZJUlNUIEFVVEhPUiA8RU1BSUxAQUREUkVTUz4sIFlFQVIuCiMKIywgZnV6enkKbXNnaWQgIiIKbXNnc3RyICIiCiJQcm9qZWN0LUlkLVZlcnNpb246IFBBQ0tBR0UgVkVSU0lPTlxuIgoiUmVwb3J0LU1zZ2lkLUJ1Z3MtVG86IFxuIgoiUE9ULUNyZWF0aW9uLURhdGU6IDIwMTktMDMtMTUgMTA6NTIrMDEwMFxuIgoiUE8tUmV2aXNpb24tRGF0ZTogWUVBUi1NTy1EQSBITzpNSStaT05FXG4iCiJMYXN0LVRyYW5zbGF0b3I6IEZVTEwgTkFNRSA8RU1BSUxAQUREUkVTUz5cbiIKIkxhbmd1YWdlLVRlYW06IExBTkdVQUdFIDxMTEBsaS5vcmc+XG4iCiJMYW5ndWFnZTogXG4iCiJNSU1FLVZlcnNpb246IDEuMFxuIgoiQ29udGVudC1UeXBlOiB0ZXh0L3BsYWluOyBjaGFyc2V0PVVURi04XG4iCiJDb250ZW50LVRyYW5zZmVyLUVuY29kaW5nOiA4Yml0XG4i" download="">⬇</a></div>
+<div id="lstnumberx3968" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">#</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">SOME</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">DESCRIPTIVE</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">TITLE</span><span class="ltx_text ltx_font_typewriter">.</span>
+</div>
+<div id="lstnumberx3969" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">#</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Copyright</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">C</span><span class="ltx_text ltx_font_typewriter">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">YEAR</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">THE</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">PACKAGE</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">'S<span class="ltx_text ltx_lst_space"> </span>COPYRIGHT<span class="ltx_text ltx_lst_space"> </span>HOLDER</span>
+</div>
+<div id="lstnumberx3970" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">#</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">This</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">file</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">is</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">distributed</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">under</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">the</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">same</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">license</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">as</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">the</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">PACKAGE</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">package.</span>
+</div>
+<div id="lstnumberx3971" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">#</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">FIRST</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">AUTHOR</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">&lt;EMAIL@ADDRESS&gt;,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">YEAR.</span>
+</div>
+<div id="lstnumberx3972" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">#</span>
+</div>
+<div id="lstnumberx3973" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">#,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">fuzzy</span>
+</div>
+<div id="lstnumberx3974" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">msgid</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">""</span>
+</div>
+<div id="lstnumberx3975" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">msgstr</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">""</span>
+</div>
+<div id="lstnumberx3976" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">"Project-Id-Version:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">PACKAGE</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">VERSION\n"</span>
+</div>
+<div id="lstnumberx3977" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">"Report-Msgid-Bugs-To:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">\n"</span>
+</div>
+<div id="lstnumberx3978" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">"POT-Creation-Date:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">2019-03-15</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">10:52+0100\n"</span>
+</div>
+<div id="lstnumberx3979" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">"PO-Revision-Date:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">YEAR-MO-DA</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">HO:MI+ZONE\n"</span>
+</div>
+<div id="lstnumberx3980" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">"Last-Translator:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">FULL</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">NAME</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">&lt;EMAIL@ADDRESS&gt;\n"</span>
+</div>
+<div id="lstnumberx3981" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">"Language-Team:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">LANGUAGE</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">&lt;LL@li.org&gt;\n"</span>
+</div>
+<div id="lstnumberx3982" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">"Language:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">\n"</span>
+</div>
+<div id="lstnumberx3983" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">"MIME-Version:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">1.0\n"</span>
+</div>
+<div id="lstnumberx3984" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">"Content-Type:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">text/plain;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">charset=UTF-8\n"</span>
+</div>
+<div id="lstnumberx3985" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">"Content-Transfer-Encoding:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">8bit\n"'</span>
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">All general terms in the header should be replaced by specific information.</span></p>
+</div>
+<div id="S7.p13" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Following the header, there is one translation entry for each string to be translated.
+It can start with an optional comment describing the location (file name and line number) of the text to translate.
+Multiple occurences of the same string can be listed here, separated by space.
+</span>]</p>
+</div>
+<div id="S7.p14" class="ltx_para">
+<p class="ltx_p">The <math id="S7.p14.m1" class="ltx_Math" alttext="\mathit{messageContext}" display="inline"><mi>𝑚𝑒𝑠𝑠𝑎𝑔𝑒𝐶𝑜𝑛𝑡𝑒𝑥𝑡</mi></math> following the keyword <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">msgctxt</span> shall be the full name of the Modelica class (e.g., <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"Modelica.Blocks.Math.Sin"</span>) where the text appears.
+Short class definitions do not appear here.
+Texts in such classes belong to the enclosing full class definition.</p>
+</div>
+<div id="S7.p15" class="ltx_para">
+<p class="ltx_p">The text string which shall be translated is used as <math id="S7.p15.m1" class="ltx_Math" alttext="\mathit{messageIdentifier}" display="inline"><mi>𝑚𝑒𝑠𝑠𝑎𝑔𝑒𝐼𝑑𝑒𝑛𝑡𝑖𝑓𝑖𝑒𝑟</mi></math> (following the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">msgid</span> keyword), and shall contain the original string from the Modelica code.
+Note that if a <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">msgid</span> string is given more than once in the same context, all occurrences are translated with the same (last) translation!</p>
+</div>
+<div id="S7.p16" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The <math id="S7.p16.m1" class="ltx_Math" alttext="\mathit{messageTranslation}" display="inline"><mi>𝑚𝑒𝑠𝑠𝑎𝑔𝑒𝑇𝑟𝑎𝑛𝑠𝑙𝑎𝑡𝑖𝑜𝑛</mi></math> (following the keyword <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">msgstr</span>) is the translation of <math id="S7.p16.m2" class="ltx_Math" alttext="\mathit{messageIdentifier}" display="inline"><mi>𝑚𝑒𝑠𝑠𝑎𝑔𝑒𝐼𝑑𝑒𝑛𝑡𝑖𝑓𝑖𝑒𝑟</mi></math> and is typically edited using special tools for translators.
+In the template file this string is empty by definition.
+If this is empty in a language specific file the <math id="S7.p16.m3" class="ltx_Math" alttext="\mathit{messageIdentifier}" display="inline"><mi>𝑚𝑒𝑠𝑠𝑎𝑔𝑒𝐼𝑑𝑒𝑛𝑡𝑖𝑓𝑖𝑒𝑟</mi></math> may be used instead.
+</span>]</p>
+</div>
+<div id="S7.p17" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Since in Modelica control sequences also start with a backslash and another backslash is used to use sequences literally or to hide double quotes, no change is required here.
+But Modelica allows strings to go over more than one line, gettext does not.
+Therefore, line breaks in Modelica must be encoded with <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"\n"</span> for gettext.</span></p>
+</div>
+<div id="S7.p18" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">In order to avoid long lines in the translated strings (following <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">msgid</span> or <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">msgstr</span>), strings may be split into smaller parts given on consecutive lines.
+E.g., the Modelica description</span></p>
+<div class="ltx_listing ltx_lst_language_modelica_short ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,IkEKQlwiQyIgKyAiRFxuRSI=" download="">⬇</a></div>
+<div id="lstnumberx3986" class="ltx_listingline">
+<span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"A</span>
+</div>
+<div id="lstnumberx3987" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">B\"C"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string"></span></span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">"D\nE"</span>
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">evaluates to:</span></p>
+</div>
+<div class="ltx_logical-block ltx_minipage ltx_align_middle" style="width:216.8pt;">
+        
+<div id="S7.p19" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">A</span></p>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">B”CD</span></p>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">E</span></p>
+</div>
+      
+</div>
+<div id="S7.p20" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">which in the translation entry looks like:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica_short ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bXNnaWQgIiIKIkFcbiIKIkJcIkNEXG4iCiJFIg==" download="">⬇</a></div>
+<div id="lstnumberx3988" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">msgid</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">""</span>
+</div>
+<div id="lstnumberx3989" class="ltx_listingline">
+<span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"A\n"</span>
+</div>
+<div id="lstnumberx3990" class="ltx_listingline">
+<span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"B\"CD\n"</span>
+</div>
+<div id="lstnumberx3991" class="ltx_listingline">
+<span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"E"</span>
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+<div id="S7.p21" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example :
+Consider a simple sine-source:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,d2l0aGluIE15UGFja2FnZS5Tb3VyY2VzOwptb2RlbCBTaW5lICJTaW5lIgogIHBhcmFtZXRlciBGcmVxdWVuY3kgZj0yICJGcmVxdWVuY3kiOwogIFJlYWxPdXRwdXQgeT1zaW4oMipwaSpmKnRpbWUpOyAvLyBSZWx5aW5nIG9uIGltcG9ydGVkIHR5cGVzCiAgLyogQ291bGQgYWRkIGRldGFpbHMuIE5vdGUgdGhhdCB0aGlzIGlzIG5vdCB0cmFuc2xhdGVkICovCiAgYW5ub3RhdGlvbihJY29uKGdyYXBoaWNzPXtUZXh0KGV4dGVudD17ezAsMH0sezQwLDQwfX0sCiAgICAgICAgICAgICAgICAgICAgICAgIHRleHRTdHJpbmc9IkZyZXF1ZW5jeTogJWYiKX0pKTsKZW5kIFNpbmU7" download="">⬇</a></div>
+<div id="lstnumberx3992" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">within</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">MyPackage</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Sources</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx3993" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Sine</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"Sine"</span>
+</div>
+<div id="lstnumberx3994" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">parameter</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Frequency</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">f</span><span class="ltx_text ltx_font_typewriter">=2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"Frequency"</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx3995" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">RealOutput</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">y</span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">sin</span><span class="ltx_text ltx_font_typewriter">(2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">pi</span><span class="ltx_text ltx_font_typewriter">*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">f</span><span class="ltx_text ltx_font_typewriter">*</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">time</span><span class="ltx_text ltx_font_typewriter">);</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Relying<span class="ltx_text ltx_lst_space"> </span>on<span class="ltx_text ltx_lst_space"> </span>imported<span class="ltx_text ltx_lst_space"> </span>types</span>
+</div>
+<div id="lstnumberx3996" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">/*<span class="ltx_text ltx_lst_space"> </span>Could<span class="ltx_text ltx_lst_space"> </span>add<span class="ltx_text ltx_lst_space"> </span>details.<span class="ltx_text ltx_lst_space"> </span>Note<span class="ltx_text ltx_lst_space"> </span>that<span class="ltx_text ltx_lst_space"> </span>this<span class="ltx_text ltx_lst_space"> </span>is<span class="ltx_text ltx_lst_space"> </span>not<span class="ltx_text ltx_lst_space"> </span>translated<span class="ltx_text ltx_lst_space"> </span>*/</span>
+</div>
+<div id="lstnumberx3997" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">annotation</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Icon</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">graphics</span><span class="ltx_text ltx_font_typewriter">={</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Text</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">extent</span><span class="ltx_text ltx_font_typewriter">={{0,0},{40,40}},</span>
+</div>
+<div id="lstnumberx3998" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">                        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">textString</span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"Frequency:<span class="ltx_text ltx_lst_space"> </span>%f"</span><span class="ltx_text ltx_font_typewriter">)}));</span>
+</div>
+<div id="lstnumberx3999" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Sine</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+</div>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The entries for translating this model into Swedish could look like this:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica_short ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,IzogTXlQYWNrYWdlL1NvdXJjZXMvcGFja2FnZS5tbzoxMDEyNgojLCBuby1jLWZvcm1hdAptc2djdHh0ICJNeVBhY2thZ2UuU291cmNlcy5TaW5lIgptc2dpZCAiU2luZSIKbXNnc3RyICJTaW51cyIKIzogTXlQYWNrYWdlL1NvdXJjZXMvcGFja2FnZS5tbzoxMDEyNwojLCBuby1jLWZvcm1hdAptc2djdHh0ICJNeVBhY2thZ2UuU291cmNlcy5TaW5lIgptc2dpZCAiRnJlcXVlbmN5Igptc2dzdHIgIkZyZWt2ZW5zIgojOiBNeVBhY2thZ2UvU291cmNlcy9wYWNrYWdlLm1vOjEwMTMxCiMsIG5vLWMtZm9ybWF0Cm1zZ2N0eHQgIk15UGFja2FnZS5Tb3VyY2VzLlNpbmUiCm1zZ2lkICJGcmVxdWVuY3k6ICVmIgptc2dzdHIgIkZyZWt2ZW5zOiAlZiI=" download="">⬇</a></div>
+<div id="lstnumberx4000" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">#:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">MyPackage</span><span class="ltx_text ltx_font_typewriter">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Sources</span><span class="ltx_text ltx_font_typewriter">/</span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">package</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">mo</span><span class="ltx_text ltx_font_typewriter">:10126</span>
+</div>
+<div id="lstnumberx4001" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">#,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">no</span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">c</span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">format</span>
+</div>
+<div id="lstnumberx4002" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">msgctxt</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"MyPackage.Sources.Sine"</span>
+</div>
+<div id="lstnumberx4003" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">msgid</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"Sine"</span>
+</div>
+<div id="lstnumberx4004" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">msgstr</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"Sinus"</span>
+</div>
+<div id="lstnumberx4005" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">#:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">MyPackage</span><span class="ltx_text ltx_font_typewriter">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Sources</span><span class="ltx_text ltx_font_typewriter">/</span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">package</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">mo</span><span class="ltx_text ltx_font_typewriter">:10127</span>
+</div>
+<div id="lstnumberx4006" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">#,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">no</span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">c</span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">format</span>
+</div>
+<div id="lstnumberx4007" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">msgctxt</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"MyPackage.Sources.Sine"</span>
+</div>
+<div id="lstnumberx4008" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">msgid</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"Frequency"</span>
+</div>
+<div id="lstnumberx4009" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">msgstr</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"Frekvens"</span>
+</div>
+<div id="lstnumberx4010" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">#:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">MyPackage</span><span class="ltx_text ltx_font_typewriter">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Sources</span><span class="ltx_text ltx_font_typewriter">/</span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">package</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">mo</span><span class="ltx_text ltx_font_typewriter">:10131</span>
+</div>
+<div id="lstnumberx4011" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">#,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">no</span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">c</span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">format</span>
+</div>
+<div id="lstnumberx4012" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">msgctxt</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"MyPackage.Sources.Sine"</span>
+</div>
+<div id="lstnumberx4013" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">msgid</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"Frequency:<span class="ltx_text ltx_lst_space"> </span>%f"</span>
+</div>
+<div id="lstnumberx4014" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">msgstr</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"Frekvens:<span class="ltx_text ltx_lst_space"> </span>%f"</span>
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+<div id="S7.p22" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">To support the translation of these strings a number of free and commercial tools exist in context of GNU gettext.
+</span>]</p>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="functions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a><a href="bib.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">References</span></a><a href="idx.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="index"><span class="ltx_text ltx_ref_title">Index</span></a><a href="overloaded-operators.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Thu Feb 19 13:30:11 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

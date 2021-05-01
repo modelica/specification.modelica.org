@@ -1,0 +1,631 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev</title>
+<!--Generated on Thu Feb 19 13:30:11 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on February 19, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/MLS.css" type="text/css">
+<link rel="stylesheet" href="css/MLS-navbar-left.css" type="text/css">
+<script src="LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="./" title="Modelica® Language Specification version 3.7-dev">
+<link rel="start" href="./" title="Modelica® Language Specification version 3.7-dev">
+<link rel="prev" href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="next" href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="bibliography" href="bib.html" title="References ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="index" href="idx.html" title="Index ‣ Modelica® Language Specification version 3.7-dev">
+<meta name="keywords" lang="en" content=", , comment, component, delimited comment, escape sequence, identifier, keyword, literal, name, reference, rest-of-line comment, string literal">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body tabindex=0>
+<nav class="ltx_page_navbar"><a href="./" title="" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.7-dev</span></a>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="preface.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="introduction1.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></span>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#character-set" title="In Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Character Set</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#comments" title="In Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Comments</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#identifiers-names-and-keywords" title="In Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Identifiers, Names, and Keywords</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#identifiers" title="In 2.3 Identifiers, Names, and Keywords ‣ Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3.1 </span>Identifiers</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#names" title="In 2.3 Identifiers, Names, and Keywords ‣ Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3.2 </span>Names</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#modelica-keywords" title="In 2.3 Identifiers, Names, and Keywords ‣ Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3.3 </span>Modelica Keywords</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#literals" title="In Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4 </span>Literals</span></a>
+<ol class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#floating-point-numbers" title="In 2.4 Literals ‣ Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4.1 </span>Floating Point Numbers</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#integer-literals" title="In 2.4 Literals ‣ Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4.2 </span>Integer Literals</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#boolean-literals" title="In 2.4 Literals ‣ Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4.3 </span>Boolean Literals</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#strings" title="In 2.4 Literals ‣ Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4.4 </span>Strings</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#operator-symbols" title="In Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5 </span>Operator Symbols</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="operators-and-expressions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="class-predefined-types-and-declarations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="scoping-name-lookup-and-flattening.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="interface-or-type-relationships.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="inheritance-modification-and-redeclaration.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="equations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="connectors-and-connections.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="arrays.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="statements-and-algorithm-sections.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="functions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="packages.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="overloaded-operators.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="stream-connectors.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="synchronous-language-elements.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="state-machines.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="annotations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="unit-expressions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="the-modelica-standard-library.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-concrete-syntax.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-dae-representation.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="derivation-of-stream-equations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-revision-history.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="bib.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_index"><a href="idx.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+</ol></nav>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="./" title="" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.7-dev</span></a><a href="introduction1.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a><a href="operators-and-expressions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter">
+<h1 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter">Chapter 2 </span>Lexical Structure</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">This chapter describes several of the basic building blocks of Modelica such as characters and lexical units including identifiers and literals.
+Without question, the smallest building blocks in Modelica are single characters belonging to a character set.
+Characters are combined to form lexical units, also called tokens.
+These tokens are detected by the lexical analysis part of the Modelica translator.
+Examples of tokens are literals, identifiers, and operators.
+Comments are not really lexical units since they are eventually discarded.
+On the other hand, comments are detected by the lexical analyzer before being thrown away.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">The information presented here is derived from the more formal specification in <a href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">appendix</span> <span class="ltx_text ltx_ref_tag">A</span></a>.</p>
+</div>
+<section id="character-set" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.1 </span>Character Set</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">The character set of the Modelica language is Unicode, but restricted to the Unicode characters corresponding to 7-bit ASCII characters for identifiers; see <a href="modelica-concrete-syntax.html#lexical-conventions" title="A.1 Lexical conventions ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">A.1</span></a>.</p>
+</div>
+</section>
+<section id="comments" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.2 </span>Comments</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">There are two kinds of comments in Modelica which are not lexical units in the language and therefore are treated as white-space by a Modelica translator.
+The white-space characters are space, tabulator, and line separators (carriage return and line feed); and white-space cannot occur inside tokens, e.g., <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">&lt;=</span> must be written as two characters without space or comments between them.
+The following comment variants are available:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Ly8gUmVzdC1vZi1saW5lIGNvbW1lbnQ6IEV2ZXJ5dGhpbmcgZnJvbSAvLyB0byB0aGUgZW5kIG9mIHRoZSBsaW5lIGFyZSBpZ25vcmVkLgoiTm90IHBhcnQgb2YgY29tbWVudCIKLyogRGVsaW1pdGVkIGNvbW1lbnQ6IENoYXJhY3RlcnMgYWZ0ZXIgLyogYXJlIGlnbm9yZWQsCiAgaW5jbHVkaW5nIGxpbmUgdGVybWluYXRpb24uIFRoZSBjb21tZW50IGVuZHMgd2l0aCAqLw==" download="">⬇</a></div>
+<div id="lstnumberx16" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Rest-of-line<span class="ltx_text ltx_lst_space"> </span>comment:<span class="ltx_text ltx_lst_space"> </span>Everything<span class="ltx_text ltx_lst_space"> </span>from<span class="ltx_text ltx_lst_space"> </span>//<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>end<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>line<span class="ltx_text ltx_lst_space"> </span>are<span class="ltx_text ltx_lst_space"> </span>ignored.</span>
+</div>
+<div id="lstnumberx17" class="ltx_listingline">
+<span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"Not<span class="ltx_text ltx_lst_space"> </span>part<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>comment"</span>
+</div>
+<div id="lstnumberx18" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">/*<span class="ltx_text ltx_lst_space"> </span>Delimited<span class="ltx_text ltx_lst_space"> </span>comment:<span class="ltx_text ltx_lst_space"> </span>Characters<span class="ltx_text ltx_lst_space"> </span>after<span class="ltx_text ltx_lst_space"> </span>/*<span class="ltx_text ltx_lst_space"> </span>are<span class="ltx_text ltx_lst_space"> </span>ignored,</span>
+</div>
+<div id="lstnumberx19" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;">  </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">including</span><span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;"> </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">line</span><span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;"> </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">termination.</span><span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;"> </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">The</span><span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;"> </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">comment</span><span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;"> </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">ends</span><span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;"> </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">with</span><span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;"> </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">*/</span>
+</div>
+</div>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The comment syntax is identical to that of C++.
+</span>]</p>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p class="ltx_p">Delimited Modelica comments do not nest, i.e., <span class="ltx_text ltx_lst_comment ltx_lst_language_modelica_short ltx_lstlisting ltx_font_sansserif" style="color:#127500;background-color:#FFFFFF;">/*<span class="ltx_text ltx_lst_space"> </span>*/</span> cannot be embedded within <span class="ltx_text ltx_lst_comment ltx_lst_language_modelica_short ltx_lstlisting ltx_font_sansserif" style="color:#127500;background-color:#FFFFFF;">/*<span class="ltx_text ltx_lst_space"> </span><math id="S2.p3.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathcolor="#127500" mathvariant="normal">…</mi></math><span class="ltx_text ltx_lst_space"> </span>*/</span>.
+The following is <em class="ltx_emph ltx_font_italic">invalid</em>:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,LyogSW52YWxpZCBuZXN0aW5nIG9mIGNvbW1lbnRzLCB0aGUgY29tbWVudCBlbmRzIGp1c3QgYmVmb3JlICdlbmQnCm1vZGVsIEludGVyZXN0aW5nCiAgLyogVG8gYmUgZG9uZSAqLwplbmQgSW50ZXJlc3Rpbmc7Ciov" download="">⬇</a></div>
+<div id="lstnumberx20" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">/*<span class="ltx_text ltx_lst_space"> </span>Invalid<span class="ltx_text ltx_lst_space"> </span>nesting<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>comments,<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>comment<span class="ltx_text ltx_lst_space"> </span>ends<span class="ltx_text ltx_lst_space"> </span>just<span class="ltx_text ltx_lst_space"> </span>before<span class="ltx_text ltx_lst_space"> </span>'end'</span>
+</div>
+<div id="lstnumberx21" class="ltx_listingline">
+<span class="ltx_text ltx_font_sansserif" style="color:#127500;">model</span><span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;"> </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">Interesting</span>
+</div>
+<div id="lstnumberx22" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;">  </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">/*</span><span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;"> </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">To</span><span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;"> </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">be</span><span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;"> </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">done</span><span class="ltx_text ltx_lst_space ltx_font_sansserif" style="color:#127500;"> </span><span class="ltx_text ltx_font_sansserif" style="color:#127500;">*/</span>
+</div>
+<div id="lstnumberx23" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Interesting</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx24" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">*/</span>
+</div>
+</div>
+<p class="ltx_p">Rest-of-line comments can safely be used to comment out blocks of code without risk of conflict with comments inside.</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Ly9tb2RlbCBWYWxpZCAvLyBTb21lIG90aGVyIGNvbW1lbnQKLy8gIC8qIFRvIGJlIGRvbmUgKi8KLy9lbmQgVmFsaWQ7" download="">⬇</a></div>
+<div id="lstnumberx25" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//model<span class="ltx_text ltx_lst_space"> </span>Valid<span class="ltx_text ltx_lst_space"> </span>//<span class="ltx_text ltx_lst_space"> </span>Some<span class="ltx_text ltx_lst_space"> </span>other<span class="ltx_text ltx_lst_space"> </span>comment</span>
+</div>
+<div id="lstnumberx26" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space">  </span>/*<span class="ltx_text ltx_lst_space"> </span>To<span class="ltx_text ltx_lst_space"> </span>be<span class="ltx_text ltx_lst_space"> </span>done<span class="ltx_text ltx_lst_space"> </span>*/</span>
+</div>
+<div id="lstnumberx27" class="ltx_listingline">
+<span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//end<span class="ltx_text ltx_lst_space"> </span>Valid;</span>
+</div>
+</div>
+</div>
+<div id="S2.p4" class="ltx_para">
+<p class="ltx_p">There is also a description-string, that is part of the Modelica language and therefore not ignored by the Modelica translator.
+Such a description-string may occur at the end of a declaration, equation, or statement or at the beginning of a class definition.
+For example:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bW9kZWwgVGVtcFJlc2lzdG9yICJUZW1wZXJhdHVyZSBkZXBlbmRlbnQgcmVzaXN0b3IiCiAgJFxsZG90cyQKICBwYXJhbWV0ZXIgUmVhbCBSICJSZXNpc3RhbmNlIGZvciByZWZlcmVuY2UgdGVtcC4iOwogICRcbGRvdHMkCmVuZCBUZW1wUmVzaXN0b3I7" download="">⬇</a></div>
+<div id="lstnumberx28" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">TempResistor</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"Temperature<span class="ltx_text ltx_lst_space"> </span>dependent<span class="ltx_text ltx_lst_space"> </span>resistor"</span>
+</div>
+<div id="lstnumberx29" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx29.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math></span>
+</div>
+<div id="lstnumberx30" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">parameter</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">R</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"Resistance<span class="ltx_text ltx_lst_space"> </span>for<span class="ltx_text ltx_lst_space"> </span>reference<span class="ltx_text ltx_lst_space"> </span>temp."</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx31" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx31.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math></span>
+</div>
+<div id="lstnumberx32" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">TempResistor</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+</div>
+</div>
+</section>
+<section id="identifiers-names-and-keywords" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.3 </span>Identifiers, Names, and Keywords</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Identifiers</em> are sequences of letters, digits, and other characters such as underscore, which are used for <em class="ltx_emph ltx_font_italic">naming</em> various items in the language.
+Certain combinations of letters are <em class="ltx_emph ltx_font_italic">keywords</em> represented as <em class="ltx_emph ltx_font_italic">reserved</em> words in the Modelica grammar and are therefore not available as identifiers.</p>
+</div>
+<section id="identifiers" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.3.1 </span>Identifiers</h3>
+
+<div id="S3.SS1.p1" class="ltx_para">
+<p class="ltx_p">Modelica <em class="ltx_emph ltx_font_italic">identifiers</em>, used for naming classes, variables, constants, and other items, are of two forms.
+The first form always starts with a letter or underscore (‘_’), followed by any number of letters, digits, or underscores.
+Case is significant, i.e., the identifiers <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">Inductor</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">inductor</span> are different.
+The second form (<span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">Q-IDENT</span>) starts with a single quote, followed by a sequence of any printable ASCII character, where single-quote must be preceded by backslash, and terminated by a single quote, e.g., <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">'12H'</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">'13\’H'</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">'+foo'</span>.
+Control characters in quoted identifiers have to use string escapes.
+The single quotes are part of the identifier, i.e., <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">'x'</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">x</span> are distinct identifiers.
+The redundant escapes (<span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">'\?'</span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">'\"'</span>) are the same as the corresponding non-escaped variants (<span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">'?'</span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">'"'</span>), but are only for use in Modelica source code.
+A full BNF definition of the Modelica syntax and lexical units is available in <a href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">appendix</span> <span class="ltx_text ltx_ref_tag">A</span></a>.</p>
+</div>
+<div id="S3.SS1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,SURFTlQgPSBOT04tRElHSVQgeyBESUdJVCB8IE5PTi1ESUdJVCB9IHwgUS1JREVOVApRLUlERU5UID0gIiciIHsgUS1DSEFSIHwgUy1FU0NBUEUgfSAiJyIKTk9OLURJR0lUID0gIl8iIHwgbGV0dGVycyAiYSIgJFxsZG90cyQgInoiIHwgbGV0dGVycyAiQSIgJFxsZG90cyQgIloiCkRJR0lUID0gIjAiIHwgIjEiIHwgIjIiIHwgIjMiIHwgIjQiIHwgIjUiIHwgIjYiIHwgIjciIHwgIjgiIHwgIjkiClEtQ0hBUiA9IE5PTi1ESUdJVCB8IERJR0lUIHwgIiEiIHwgIiMiIHwgIiRcbWJveHtcdGV4dGRvbGxhcn0kIiB8ICIlIiB8ICImIiB8ICIoIiB8ICIpIgogICB8ICIqIiB8ICIrIiB8ICIsIiB8ICItIiB8ICIuIiB8ICIvIiB8ICI6IiB8ICI7IiB8ICI8IiB8ICI+IiB8ICI9IgogICB8ICI/IiB8ICJAIiB8ICJbIiB8ICJdIiB8ICJeIiB8ICJ7IiB8ICJ9IiB8ICJ8IiB8ICJ+IiB8ICIgIiB8ICIiIgpTLUVTQ0FQRSA9ICJcJyIgfCAiXCIiIHwgIlw/IiB8ICJcXCIKICAgfCAiXGEiIHwgIlxiIiB8ICJcZiIgfCAiXG4iIHwgIlxyIiB8ICJcdCIgfCAiXHYi" download="">⬇</a></div>
+<div id="lstnumberx33" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">IDENT</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">NON-DIGIT</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">{</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">DIGIT</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">NON-DIGIT</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">}</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">Q-IDENT</span>
+</div>
+<div id="lstnumberx34" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">Q-IDENT</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"'"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">{</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">Q-CHAR</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">S-ESCAPE</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">}</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"'"</span>
+</div>
+<div id="lstnumberx35" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">NON-DIGIT</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"_"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">letters</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"a"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx35.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math></span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"z"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">letters</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"A"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx35.m2" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math></span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"Z"</span>
+</div>
+<div id="lstnumberx36" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">DIGIT</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"0"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"1"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"2"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"3"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"4"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"5"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"6"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"7"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"8"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"9"</span>
+</div>
+<div id="lstnumberx37" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">Q-CHAR</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">NON-DIGIT</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">DIGIT</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"!"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"#"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"<span class="ltx_text ltx_markedasmath">$</span>"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"%"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"&amp;"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">")"</span>
+</div>
+<div id="lstnumberx38" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"*"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"+"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">","</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"-"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"."</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"/"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">":"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">";"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"&lt;"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"&gt;"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"="</span>
+</div>
+<div id="lstnumberx39" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"?"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"@"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"["</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"]"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"^"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"{"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"}"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"|"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"~"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"<span class="ltx_text ltx_lst_space"> </span>"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">""</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"</span>
+</div>
+<div id="lstnumberx40" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#003378;">S-ESCAPE</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#003378;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#003378;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#003378;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#003378;">"</span><span class="ltx_text ltx_font_typewriter">\'<span class="ltx_text ltx_lst_string"></span></span><span class="ltx_text ltx_font_typewriter" style="color:#003378;">"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#003378;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#003378;">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#003378;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#003378;">"</span><span class="ltx_text ltx_font_typewriter">\<span class="ltx_text ltx_lst_string"></span></span><span class="ltx_text ltx_font_typewriter" style="color:#003378;">""</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string"></span></span><span class="ltx_text ltx_font_typewriter" style="color:#003378;">"\?"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_string"></span></span><span class="ltx_text ltx_font_typewriter" style="color:#003378;">"\\"</span>
+</div>
+<div id="lstnumberx41" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"\a"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"\b"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"\f"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"\n"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"\r"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"\t"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"\v"</span>
+</div>
+</div>
+</div>
+</section>
+<section id="names" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.3.2 </span>Names</h3>
+
+<div id="S3.SS2.p1" class="ltx_para">
+<p class="ltx_p">A <em class="ltx_emph ltx_font_italic">name</em> is an identifier with a certain interpretation or meaning.
+For example, a name may denote an <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Integer</span> variable, a <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span> variable, a function, a type, etc.
+A name may have different meanings in different parts of the code, i.e., different scopes.
+The interpretation of identifiers as names is described in more detail in <a href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">chapter</span> <span class="ltx_text ltx_ref_tag">5</span></a>.
+The meaning of package names is described in more detail in <a href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">chapter</span> <span class="ltx_text ltx_ref_tag">13</span></a>.</p>
+</div>
+<div id="S3.SS2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example :
+A name: <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">Ele</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">Resistor</span></span></span>
+</span>]</p>
+</div>
+<div id="S3.SS2.p3" class="ltx_para">
+<p class="ltx_p">A <em class="ltx_emph ltx_font_italic">component reference</em> is an expression containing a sequence of identifiers and indices.
+A component reference is equivalent to the referenced object, which must be a component.
+A component reference is resolved (evaluated) in the scope of a class (<a href="class-predefined-types-and-declarations.html#component-declarations" title="4.4 Component Declarations ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">4.4</span></a>), or expression for the case of a local iterator variable (<a href="arrays.html#slice-operation" title="10.6.9 Slice Operation ‣ 10.6 Scalar, Vector, Matrix, and Array Operator Functions ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">10.6.9</span></a>).</p>
+</div>
+<div id="S3.SS2.p4" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example :
+A component reference: <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">Ele</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">Resistor</span>.<span class="ltx_text ltx_lst_identifier">u</span>[21].<span class="ltx_text ltx_lst_identifier">r</span></span></span>
+</span>]</p>
+</div>
+</section>
+<section id="modelica-keywords" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.3.3 </span>Modelica Keywords</h3>
+
+<div id="S3.SS3.p1" class="ltx_para">
+<p class="ltx_p">The following Modelica <em class="ltx_emph ltx_font_italic">keywords</em> are reserved words that cannot be used where <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">IDENT</span> is expected in the language grammar (<a href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">appendix</span> <span class="ltx_text ltx_ref_tag">A</span></a>):</p>
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">algorithm</span></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">each</span></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">final</span></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">model</span></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">record</span></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">and</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">else</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">flow</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">not</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">redeclare</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">annotation</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">elseif</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">for</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">operator</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">replaceable</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">block</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">elsewhen</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">function</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">or</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">return</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">break</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">encapsulated</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">if</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">outer</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">stream</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">class</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">end</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">import</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">output</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">then</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">connect</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">enumeration</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">impure</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">package</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">time</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">connector</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">equation</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">in</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">parameter</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">true</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">constant</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">expandable</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">initial</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">partial</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">type</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">constrainedby</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">extends</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">inner</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">protected</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">when</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">der</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">external</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">input</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">public</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">while</span></td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">discrete</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">false</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">loop</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">pure</span></td>
+<td class="ltx_td ltx_align_left ltx_border_t"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">within</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="S3.SS3.p2" class="ltx_para">
+<p class="ltx_p">In particular, it is not allowed to declare an element or enumeration literal with these names.
+This also applies to the identifiers that name the predefined types <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span>, <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Integer</span>, <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Boolean</span>, and <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">String</span>, see <a href="class-predefined-types-and-declarations.html#predefined-types-and-classes" title="4.9 Predefined Types and Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">4.9</span></a>.</p>
+</div>
+<div id="S3.SS3.p3" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example :
+Not all predefined types have names with restrictions:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,dHlwZSBTdGF0ZVNlbGVjdCA9IGVudW1lcmF0aW9uKG9uZSwgdHdvKTsKU3RhdGVTZWxlY3QgcyA9IFN0YXRlU2VsZWN0Lm9uZTsgICAgICAgICAgLy8gT0ssIHVzaW5nIGxvY2FsIFN0YXRlU2VsZWN0LgpSZWFsIHgoc3RhdGVTZWxlY3QgPSBTdGF0ZVNlbGVjdC5uZXZlcik7ICAvLyBFcnJvcjogJ25ldmVyJyBpcyBub3QgYSBsaXRlcmFsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8vIG9mIFN0YXRlU2VsZWN0LgpSZWFsIHkoc3RhdGVTZWxlY3QgPSAuU3RhdGVTZWxlY3QubmV2ZXIpOyAvLyBPSywgdXNpbmcgcHJlZGVmaW5lZCBTdGF0ZVNlbGVjdC4=" download="">⬇</a></div>
+<div id="lstnumberx42" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">type</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">StateSelect</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">enumeration</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">one</span><span class="ltx_text ltx_font_typewriter">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">two</span><span class="ltx_text ltx_font_typewriter">);</span>
+</div>
+<div id="lstnumberx43" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter">StateSelect</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">StateSelect</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">one</span><span class="ltx_text ltx_font_typewriter">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter">          </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>OK,<span class="ltx_text ltx_lst_space"> </span>using<span class="ltx_text ltx_lst_space"> </span>local<span class="ltx_text ltx_lst_space"> </span>StateSelect.</span>
+</div>
+<div id="lstnumberx44" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">x</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">stateSelect</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">StateSelect</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">never</span><span class="ltx_text ltx_font_typewriter">);</span><span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Error:<span class="ltx_text ltx_lst_space"> </span>'never'<span class="ltx_text ltx_lst_space"> </span>is<span class="ltx_text ltx_lst_space"> </span>not<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>literal</span>
+</div>
+<div id="lstnumberx45" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">                                          </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>StateSelect.</span>
+</div>
+<div id="lstnumberx46" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">y</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">stateSelect</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">StateSelect</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">never</span><span class="ltx_text ltx_font_typewriter">);</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>OK,<span class="ltx_text ltx_lst_space"> </span>using<span class="ltx_text ltx_lst_space"> </span>predefined<span class="ltx_text ltx_lst_space"> </span>StateSelect.</span>
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</section>
+</section>
+<section id="literals" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.4 </span>Literals</h2>
+
+<div id="S4.p1" class="ltx_para">
+<p class="ltx_p"><em class="ltx_emph ltx_font_italic">Literals</em> are unnamed constants used to build expressions, and have different forms depending on their type.
+Each of the predefined types in Modelica has a way of expressing unnamed constants of the corresponding type, which is presented in the ensuing subsections.
+Additionally, array literals and record literals can be expressed.</p>
+</div>
+<section id="floating-point-numbers" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.4.1 </span>Floating Point Numbers</h3>
+
+<div id="S4.SS1.p1" class="ltx_para">
+<p class="ltx_p">A floating point number is expressed as a decimal number in the form of a sequence of decimal digits followed by a decimal point, followed by decimal digits, followed by an exponent indicated by <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">E</span> or <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">e</span> followed by a sign and one or more decimal digits.
+The various parts can be omitted, see <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">UNSIGNED-REAL</span> in <a href="modelica-concrete-syntax.html#lexical-conventions" title="A.1 Lexical conventions ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">A.1</span></a> for details and also the examples below.
+The minimal recommended range is that of IEEE double precision floating point numbers, for which the largest representable positive number is <math id="S4.SS1.p1.m1" class="ltx_Math" alttext="1.7976931348623157\times 10^{308}" display="inline"><mrow><mn>1.7976931348623157</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mn>308</mn></msup></mrow></math> and the smallest positive number is <math id="S4.SS1.p1.m2" class="ltx_Math" alttext="2.2250738585072014\times 10^{-308}" display="inline"><mrow><mn>2.2250738585072014</mn><mo lspace="0.222em" rspace="0.222em">×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>308</mn></mrow></msup></mrow></math>.
+For example, the following are floating point number literals:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,MjIuNSwgMy4xNDE1OTI2NTM1ODk3OTMsIDEuMkUtMzU=" download="">⬇</a></div>
+<div id="lstnumberx47" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">22.5,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">3.141592653589793,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">1.2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">E</span><span class="ltx_text ltx_font_typewriter">-35</span>
+</div>
+</div>
+</div>
+<div id="S4.SS1.p2" class="ltx_para">
+<p class="ltx_p">The same floating point number can be represented by different literals.
+For example, all of the following literals denote the same number:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,MTMuLCAxM0UwLCAxLjNlMSwgMC4xM0UyLCAuMTNFMg==" download="">⬇</a></div>
+<div id="lstnumberx48" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter">13.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">13</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">E0</span><span class="ltx_text ltx_font_typewriter">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">1.3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">e1</span><span class="ltx_text ltx_font_typewriter">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">0.13</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">E2</span><span class="ltx_text ltx_font_typewriter">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">.13</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">E2</span>
+</div>
+</div>
+<p class="ltx_p">The last variant shows that that the leading zero is optional (in that case decimal digits must be present).
+Note that <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">13</span> is not in this list, since it is not a floating point number, but can be converted to a floating point number.</p>
+</div>
+</section>
+<section id="integer-literals" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.4.2 </span>Integer Literals</h3>
+
+<div id="S4.SS2.p1" class="ltx_para">
+<p class="ltx_p">Literals of type <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Integer</span> are sequences of decimal digits, e.g., as in the integer numbers <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">33</span>,
+0, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">100</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">30030044</span>.
+The range of supported <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Integer</span> literals shall be at least large enough to represent the largest positive <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">IntegerType</span> value, see <a href="class-predefined-types-and-declarations.html#integer-type" title="4.9.2 Integer Type ‣ 4.9 Predefined Types and Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">4.9.2</span></a>.</p>
+</div>
+<div id="S4.SS2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Negative numbers are formed by unary minus followed by an integer literal.
+</span>]</p>
+</div>
+</section>
+<section id="boolean-literals" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.4.3 </span>Boolean Literals</h3>
+
+<div id="S4.SS3.p1" class="ltx_para">
+<p class="ltx_p">The two <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Boolean</span> literal values are <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">true</span> and <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">false</span>.</p>
+</div>
+</section>
+<section id="strings" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.4.4 </span>Strings</h3>
+
+<div id="S4.SS4.p1" class="ltx_para">
+<p class="ltx_p">String literals appear between double quotes as in <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"between"</span>.
+Any character in the Modelica language character set (see <a href="modelica-concrete-syntax.html#lexical-conventions" title="A.1 Lexical conventions ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">A.1</span></a> for allowed characters) apart from double quote (<span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">""</span>) and backslash (<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">\</span>), including new-line, can be <em class="ltx_emph ltx_font_italic">directly</em> included in a string without using an escape sequence.
+Certain characters in string literals can be represented using escape sequences, i.e., the character is preceded by a backslash (<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">\</span>) within the string.
+Those characters are:</p>
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_th_row ltx_border_t"><span class="ltx_text ltx_font_italic">Character</span></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_t"><span class="ltx_text ltx_font_italic">Description</span></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_tt">
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">\</span>'</th>
+<td class="ltx_td ltx_align_left ltx_border_tt">Single quote, may also appear without backslash in string constants</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row">
+<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">\</span>"</th>
+<td class="ltx_td ltx_align_left">Double quote</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">\?</span></th>
+<td class="ltx_td ltx_align_left">Question-mark, may also appear without backslash in string constants</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">\\</span></th>
+<td class="ltx_td ltx_align_left">Backslash itself</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">\<span class="ltx_text ltx_lst_identifier">a</span></span></th>
+<td class="ltx_td ltx_align_left">Alert (bell, code 7, ctrl-G)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">\<span class="ltx_text ltx_lst_identifier">b</span></span></th>
+<td class="ltx_td ltx_align_left">Backspace (code 8, ctrl-H)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">\<span class="ltx_text ltx_lst_identifier">f</span></span></th>
+<td class="ltx_td ltx_align_left">Form feed (code 12, ctrl-L)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">\<span class="ltx_text ltx_lst_identifier">n</span></span></th>
+<td class="ltx_td ltx_align_left">Newline (code 10, ctrl-J), same as literal newline</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">\<span class="ltx_text ltx_lst_identifier">r</span></span></th>
+<td class="ltx_td ltx_align_left">Carriage return (code 13, ctrl-M)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">\<span class="ltx_text ltx_lst_identifier">t</span></span></th>
+<td class="ltx_td ltx_align_left">Horizontal tab (code 9, ctrl-I)</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_row ltx_border_b"><span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">\<span class="ltx_text ltx_lst_identifier">v</span></span></th>
+<td class="ltx_td ltx_align_left ltx_border_b">Vertical tab (code 11, ctrl-K)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="S4.SS4.p2" class="ltx_para">
+<p class="ltx_p">For example, a string literal containing a tab, the words: <em class="ltx_emph ltx_font_italic">This is</em>, double quote, space, the word: <em class="ltx_emph ltx_font_italic">between</em>, double quote, space, the word: <em class="ltx_emph ltx_font_italic">us</em>, and new-line, would appear as follows:</p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Ilx0VGhpcyBpc1wiIGJldHdlZW5cIiB1c1xuIg==" download="">⬇</a></div>
+<div id="lstnumberx49" class="ltx_listingline">
+<span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"\tThis<span class="ltx_text ltx_lst_space"> </span>is\"<span class="ltx_text ltx_lst_space"> </span>between\"<span class="ltx_text ltx_lst_space"> </span>us\n"</span>
+</div>
+</div>
+</div>
+<div id="S4.SS4.p3" class="ltx_para">
+<p class="ltx_p">Concatenation of string literals in certain situations (see the Modelica grammar) is denoted by the + operator in Modelica, e.g., <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"a"</span> + <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"b"</span> becomes <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"ab"</span>.
+This is useful for expressing long string literals that need to be written on several lines.</p>
+</div>
+<div id="S4.SS4.p4" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"\n"</span> character is used to conceptually indicate the end of a line within a Modelica string.
+Any Modelica program that needs to recognize line endings can check for a single <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"\n"</span> character to do so on any platform.
+It is the responsibility of a Modelica implementation to make any necessary transformations to other representations when writing to or reading from a text file.</p>
+</div>
+<div id="S4.SS4.p5" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">For example, a <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"\n"</span> is written and read as-is in a Unix or Linux implementation, but written as <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"\r\n"</span> pair, and converted back to <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"\n"</span> when read in a Windows implementation.
+</span>]</p>
+</div>
+<div id="S4.SS4.p6" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">For long string comments, e.g., the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">info</span> annotation to store the documentation of a model, it would be very inconvenient, if the string concatenation operator would have to be used for every line of documentation.
+It is assumed that a Modelica tool supports the non-printable newline character when browsing or editing a string literal.
+For example, the following statement defines one string that contains (non-printable) newline characters:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,YXNzZXJ0KG5vRXZlbnQobGVuZ3RoID4gc19zbWFsbCksCiJUaGUgZGlzdGFuY2UgYmV0d2VlbiB0aGUgb3JpZ2luIG9mIGZyYW1lX2EgYW5kIHRoZSBvcmlnaW4gb2YgZnJhbWVfYgpvZiBhIExpbmVGb3JjZVdpdGhNYXNzIGNvbXBvbmVudCBiZWNhbWUgc21hbGxlciBhcyBwYXJhbWV0ZXIgc19zbWFsbAooPSBhIHNtYWxsIG51bWJlciwgZGVmaW5lZCBpbiB0aGUKXCJBZHZhbmNlZFwiIG1lbnUpLiBUaGUgZGlzdGFuY2UgaXMKc2V0IHRvIHNfc21hbGwsIGFsdGhvdWdoIGl0IGlzIHNtYWxsZXIsIHRvIGF2b2lkIGEgZGl2aXNpb24gYnkgemVybwp3aGVuIGNvbXB1dGluZyB0aGUgZGlyZWN0aW9uIG9mIHRoZSBsaW5lIGZvcmNlLiIsCiAgICAgICBsZXZlbCA9IEFzc2VydGlvbkxldmVsLndhcm5pbmcpOw==" download="">⬇</a></div>
+<div id="lstnumberx50" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">assert</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">noEvent</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">length</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">s_small</span><span class="ltx_text ltx_font_typewriter">),</span>
+</div>
+<div id="lstnumberx51" class="ltx_listingline">
+<span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"The<span class="ltx_text ltx_lst_space"> </span>distance<span class="ltx_text ltx_lst_space"> </span>between<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>origin<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>frame_a<span class="ltx_text ltx_lst_space"> </span>and<span class="ltx_text ltx_lst_space"> </span>the<span class="ltx_text ltx_lst_space"> </span>origin<span class="ltx_text ltx_lst_space"> </span>of<span class="ltx_text ltx_lst_space"> </span>frame_b</span>
+</div>
+<div id="lstnumberx52" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">of</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">LineForceWithMass</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">component</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">became</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">smaller</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">as</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">parameter</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">s_small</span>
+</div>
+<div id="lstnumberx53" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">(=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">small</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">number,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">defined</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">in</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">the</span>
+</div>
+<div id="lstnumberx54" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">\"Advanced\"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">menu).</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">The</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">distance</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">is</span>
+</div>
+<div id="lstnumberx55" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">set</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">to</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">s_small,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">although</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">it</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">is</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">smaller,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">to</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">avoid</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">division</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">by</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">zero</span>
+</div>
+<div id="lstnumberx56" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="color:#000000;">when</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">computing</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">the</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">direction</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">of</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">the</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">line</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="color:#000000;"> </span><span class="ltx_text ltx_font_typewriter" style="color:#000000;">force."</span><span class="ltx_text ltx_font_typewriter">,</span>
+</div>
+<div id="lstnumberx57" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">       </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">level</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">AssertionLevel</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">warning</span><span class="ltx_text ltx_font_typewriter">);</span>
+</div>
+</div>
+<p class="ltx_p">]</p>
+</div>
+</section>
+</section>
+<section id="operator-symbols" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.5 </span>Operator Symbols</h2>
+
+<div id="S5.p1" class="ltx_para">
+<p class="ltx_p">The predefined operator symbols are formally defined on page <a href="modelica-concrete-syntax.html#lexical-conventions" title="A.1 Lexical conventions ‣ Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">A.1</span></a> and summarized in the table of operators in <a href="operators-and-expressions.html#operator-precedence-and-associativity" title="3.2 Operator Precedence and Associativity ‣ Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">3.2</span></a>.</p>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="introduction1.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a><a href="bib.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">References</span></a><a href="idx.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="index"><span class="ltx_text ltx_ref_title">Index</span></a><a href="operators-and-expressions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Thu Feb 19 13:30:11 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

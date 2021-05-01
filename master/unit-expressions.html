@@ -1,0 +1,318 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.7-dev</title>
+<!--Generated on Thu Feb 19 13:30:11 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on February 19, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/MLS.css" type="text/css">
+<link rel="stylesheet" href="css/MLS-navbar-left.css" type="text/css">
+<script src="LaTeXML-maybeMathjax.js"></script>
+<link rel="up" href="./" title="Modelica® Language Specification version 3.7-dev">
+<link rel="start" href="./" title="Modelica® Language Specification version 3.7-dev">
+<link rel="prev" href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="next" href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="bibliography" href="bib.html" title="References ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="index" href="idx.html" title="Index ‣ Modelica® Language Specification version 3.7-dev">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body tabindex=0>
+<nav class="ltx_page_navbar"><a href="./" title="" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.7-dev</span></a>
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="preface.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="introduction1.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="lexical-structure.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="operators-and-expressions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="class-predefined-types-and-declarations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="scoping-name-lookup-and-flattening.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="interface-or-type-relationships.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="inheritance-modification-and-redeclaration.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="equations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="connectors-and-connections.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="arrays.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="statements-and-algorithm-sections.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="functions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="packages.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="overloaded-operators.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="stream-connectors.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="synchronous-language-elements.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="state-machines.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="annotations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></span>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#the-syntax-of-unit-expressions" title="In Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19.1 </span>The Syntax of Unit Expressions</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="the-modelica-standard-library.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-concrete-syntax.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-dae-representation.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="derivation-of-stream-equations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-revision-history.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="bib.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_index"><a href="idx.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+</ol></nav>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="./" title="" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.7-dev</span></a><a href="annotations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a><a href="the-modelica-standard-library.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter">
+<h1 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter">Chapter 19 </span>Unit Expressions</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Unless otherwise stated, the syntax and semantics of unit expressions in Modelica (for example, <a href="class-predefined-types-and-declarations.html#real-type" title="4.9.1 Real Type ‣ 4.9 Predefined Types and Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">4.9.1</span></a> or <a href="annotations.html#axis-properties" title="18.5.2.2 Axis Properties ‣ 18.5.2 Figures ‣ 18.5 Documentation ‣ Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">18.5.2.2</span></a>) conform with the international standards <em class="ltx_emph ltx_font_italic">International System of Units (SI)</em> by BIPM superseding parts of ISO 31/0-1992 <em class="ltx_emph ltx_font_italic">General principles concerning quantities, units and symbols</em> and ISO 1000-1992 <em class="ltx_emph ltx_font_italic">SI units and recommendations for the use of their multiples and of certain other units</em>.
+Unfortunately, these standards do not define a formal syntax for unit expressions.
+There are recommendations and Modelica exploits them.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Note that this document uses the American spelling <em class="ltx_emph ltx_font_italic">meter</em>, whereas the SI specification from BIPM uses the British spelling <em class="ltx_emph ltx_font_italic">metre</em>.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Examples for the syntax of unit expressions used in Modelica: <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"N.m"</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"kg.m/s2"</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"kg.m.s-2"</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"1/rad"</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"mm/s"</span>.</p>
+</div>
+<section id="the-syntax-of-unit-expressions" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">19.1 </span>The Syntax of Unit Expressions</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">The Modelica unit string syntax allows neither comments nor white-space, and a unit string shall match the <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">unit-expression</span> rule:</p>
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,dW5pdC1leHByZXNzaW9uIDoKICAgdW5pdC1udW1lcmF0b3IgWyAiLyIgdW5pdC1kZW5vbWluYXRvciBdCgp1bml0LW51bWVyYXRvciA6CiAgICIxIiB8IHVuaXQtZmFjdG9ycyB8ICIoIiB1bml0LWV4cHJlc3Npb24gIikiCgp1bml0LWRlbm9taW5hdG9yOgogICB1bml0LWZhY3RvciB8ICIoIiB1bml0LWV4cHJlc3Npb24gIiki" download="">⬇</a></div>
+<div id="lstnumberx5730" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-expression</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">:</span>
+</div>
+<div id="lstnumberx5731" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-numerator</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">[</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"/"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-denominator</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">]</span>
+</div>
+<div id="lstnumberx5732" class="ltx_listingline">
+</div>
+<div id="lstnumberx5733" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-numerator</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">:</span>
+</div>
+<div id="lstnumberx5734" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"1"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-factors</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-expression</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">")"</span>
+</div>
+<div id="lstnumberx5735" class="ltx_listingline">
+</div>
+<div id="lstnumberx5736" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-denominator</span><span class="ltx_text ltx_font_typewriter">:</span>
+</div>
+<div id="lstnumberx5737" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-factor</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-expression</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">")"</span>
+</div>
+</div>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p class="ltx_p">The unit of measure of a dimension free quantity is denoted by <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"1"</span>.
+The SI standard does not define any precedence between multiplications and divisions.
+The SI standard does not allow multiple units to the right of the division-symbol (<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">/</span>) since the result is ambiguous; either the divisor shall be enclosed in parentheses, or negative exponents used instead of division, for example, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"J/(kg.K)"</span> may be written as <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"J.kg-1.K-1"</span>.</p>
+</div>
+<div id="S1.p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,dW5pdC1mYWN0b3JzIDoKICAgdW5pdC1mYWN0b3IgWyAiLiIgdW5pdC1mYWN0b3JzIF0=" download="">⬇</a></div>
+<div id="lstnumberx5738" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-factors</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">:</span>
+</div>
+<div id="lstnumberx5739" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-factor</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">[</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"."</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-factors</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">]</span>
+</div>
+</div>
+</div>
+<div id="S1.p4" class="ltx_para">
+<p class="ltx_p">The SI standard specifies that a multiplication operator symbol is written as space or as a dot.
+The SI standard requires that this <em class="ltx_emph ltx_font_italic">dot</em> is a bit above the base line: ‘·’, which is not part of ASCII.
+The ISO standard also prefers ‘·’, but Modelica supports the ISO alternative ‘.’, which is an ordinary <em class="ltx_emph ltx_font_italic">dot</em> on the base line.</p>
+</div>
+<div id="S1.p5" class="ltx_para">
+<p class="ltx_p">For example, Modelica does not support <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"Nm"</span> for newton-meter, but requires it to be written as <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"N.m"</span>.</p>
+</div>
+<div id="S1.p6" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,dW5pdC1mYWN0b3IgOgogIHVuaXQtb3BlcmFuZCBbIHVuaXQtZXhwb25lbnQgXQoKdW5pdC1leHBvbmVudCA6CiAgIFsgIisiIHwgIi0iIF0gKCBVTlNJR05FRC1JTlRFR0VSIHwgIigiIFVOU0lHTkVELUlOVEVHRVIgIi8iIFVOU0lHTkVELUlOVEVHRVIgIikiICk=" download="">⬇</a></div>
+<div id="lstnumberx5740" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-factor</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">:</span>
+</div>
+<div id="lstnumberx5741" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-operand</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">[</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-exponent</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">]</span>
+</div>
+<div id="lstnumberx5742" class="ltx_listingline">
+</div>
+<div id="lstnumberx5743" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-exponent</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">:</span>
+</div>
+<div id="lstnumberx5744" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_font_typewriter">[</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"+"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"-"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">UNSIGNED-INTEGER</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"("</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">UNSIGNED-INTEGER</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"/"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">UNSIGNED-INTEGER</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">")"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">)</span>
+</div>
+</div>
+</div>
+<div id="S1.p7" class="ltx_para">
+<p class="ltx_p">The SI standard uses super-script for the exponentation, and does thus not define any operator symbol for exponentiation.
+A <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">unit-factor</span> consists of a <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">unit-operand</span> possibly suffixed by a possibly signed integer or rational number, which is interpreted as an exponent.
+There must be no spacing between the <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">unit-operand</span> and a possible <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">unit-exponent</span>.
+It is recommended to use the simplest representation of exponents, meaning that the explicit <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">+</span> sign should be avoided, that leading zeros should be avoided, that rational exponents are reduced to not have common factors in the numerator and denominator, that rational exponents with denominator 1 should be avoided in favor of plain integer exponents, that the exponent 1 is omitted, and that entire factors with exponent 0 are omitted.</p>
+</div>
+<div id="S1.p8" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_grammar ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,dW5pdC1vcGVyYW5kIDoKICAgdW5pdC1zeW1ib2wgfCB1bml0LXByZWZpeCB1bml0LXN5bWJvbAoKdW5pdC1wcmVmaXggOgogICAiUSIgfCAiUiIgfCAiWSIgfCAiWiIgfCAiRSIgfCAiUCIgfCAiVCIgfCAiRyIgfCAiTSIgfCAiayIgfCAiaCIgfCAiZGEiCiAgIHwgImQiIHwgImMiIHwgIm0iIHwgInUiIHwgIm4iIHwgInAiIHwgImYiIHwgImEiIHwgInoiIHwgInkiIHwgInIiIHwgInEiCgp1bml0LXN5bWJvbCA6CiAgIHVuaXQtY2hhciB7IHVuaXQtY2hhciB9Cgp1bml0LWNoYXIgOgogICBOT04tRElHSVQ=" download="">⬇</a></div>
+<div id="lstnumberx5745" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-operand</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">:</span>
+</div>
+<div id="lstnumberx5746" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-symbol</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-prefix</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-symbol</span>
+</div>
+<div id="lstnumberx5747" class="ltx_listingline">
+</div>
+<div id="lstnumberx5748" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-prefix</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">:</span>
+</div>
+<div id="lstnumberx5749" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"Q"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"R"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"Y"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"Z"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"E"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"P"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"T"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"G"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"M"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"k"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"h"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"da"</span>
+</div>
+<div id="lstnumberx5750" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"d"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"c"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"m"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"u"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"n"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"p"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"f"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"a"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"z"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"y"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"r"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#003378;">"q"</span>
+</div>
+<div id="lstnumberx5751" class="ltx_listingline">
+</div>
+<div id="lstnumberx5752" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-symbol</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">:</span>
+</div>
+<div id="lstnumberx5753" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-char</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">{</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-char</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">}</span>
+</div>
+<div id="lstnumberx5754" class="ltx_listingline">
+</div>
+<div id="lstnumberx5755" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">unit-char</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">:</span>
+</div>
+<div id="lstnumberx5756" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">   </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_italic">NON-DIGIT</span>
+</div>
+</div>
+</div>
+<div id="S1.p9" class="ltx_para">
+<p class="ltx_p">The units required to be recognized are the basic and derived units of the SI system, as well as some units compatible with the SI system listed below, but tools are allowed to additionally support user-defined unit symbols.
+The required unit symbols do not make use of Greek letters, but a unit such as <math id="S1.p9.m1" class="ltx_Math" alttext="\Omega" display="inline"><mi mathvariant="normal">Ω</mi></math> is spelled out as <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"Ohm"</span>.
+Similarly degree is spelled out as <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"deg"</span>, both on its own (for angles) and as part of <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"degC"</span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"degF"</span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"degRk"</span> for temperatures (Celsius, Fahrenheit and Rankine).</p>
+</div>
+<div id="S1.p10" class="ltx_para">
+<p class="ltx_p">It is recommended that non-SI units are only used for the <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">displayUnit</span>-attribute in order to reduce impact of unrecognized unit symbols when using another Modelica tool.</p>
+</div>
+<div id="S1.p11" class="ltx_para">
+<p class="ltx_p">The following are the units required to be recognized in addition to the SI system:</p>
+<ul id="S1.I1" class="ltx_itemize">
+<li id="S1.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">minute <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"min"</span> (1 minute = 60 s)</p>
+</div>
+</li>
+<li id="S1.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">hour <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"h"</span> (1 hour = 3600 s)</p>
+</div>
+</li>
+<li id="S1.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">day <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"d"</span> (1 day = 86400 s)</p>
+</div>
+</li>
+<li id="S1.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">liter <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"l"</span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"L"</span> (1 liter = 1 <math id="S1.I1.i4.p1.m1" class="ltx_Math" alttext="\text{dm}^{3}" display="inline"><msup><mtext>dm</mtext><mn>3</mn></msup></math>)</p>
+</div>
+</li>
+<li id="S1.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i5.p1" class="ltx_para">
+<p class="ltx_p">electronvolt <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"eV"</span> (1 electronvolt = 1.602176634e-19 J)</p>
+</div>
+</li>
+<li id="S1.I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i6.p1" class="ltx_para">
+<p class="ltx_p">degree <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"deg"</span> (1 degree = <math id="S1.I1.i6.p1.m1" class="ltx_Math" alttext="\pi/180" display="inline"><mrow><mi>π</mi><mo>/</mo><mn>180</mn></mrow></math> rad)</p>
+</div>
+</li>
+<li id="S1.I1.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S1.I1.i7.p1" class="ltx_para">
+<p class="ltx_p">debye <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="color:#000000;background-color:#FFFFFF;">"debye"</span> (1 debye = 1e-21 / 299792458 Cm)</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">The first 7 are listed in the SI standard as non-SI units that are acceptable to use with the SI system.</p>
+</div>
+<div id="S1.p12" class="ltx_para">
+<p class="ltx_p">A <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">unit-operand</span> should first be interpreted as a <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">unit-symbol</span> and only if not successful the second alternative assuming a prefixed operand should be exploited.
+There must be no spacing between the <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">unit-symbol</span> and a possible <span class="ltx_text ltx_lst_identifier ltx_lst_language_grammar ltx_lstlisting ltx_font_typewriter ltx_font_italic" style="background-color:#FFFFFF;">unit-prefix</span>.
+The values of the prefixes are according to the ISO standard.
+The letter <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">u</span> is used as a symbol for the prefix <em class="ltx_emph ltx_font_italic">micro</em>.</p>
+</div>
+<div id="S1.p13" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">A tool may present <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"Ohm"</span> as <math id="S1.p13.m1" class="ltx_Math" alttext="\Omega" display="inline"><mi mathvariant="normal">Ω</mi></math> and the prefix <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"u"</span> as <math id="S1.p13.m2" class="ltx_Math" alttext="\mu" display="inline"><mi>μ</mi></math>.
+Exponents such as <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"m2"</span> may be presented as m<sup class="ltx_sup">2</sup>.
+Degrees may be presented as <sup class="ltx_sup">∘</sup>, both for <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"deg"</span> on its own (for angles) and for temperatures – e.g., <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"degC"</span> can be presented as <sup class="ltx_sup">∘</sup>C.
+Note that BIPM have specific recommendations for formatting using these symbols.
+</span>]</p>
+</div>
+<div id="S1.p14" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example :
+The unit expression <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"m"</span> means meter and not milli (10<sup class="ltx_sup">-3</sup>), since prefixes cannot be used in isolation.
+For millimeter use <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"mm"</span> and for square meter, m<sup class="ltx_sup">2</sup>, write <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"m2"</span>.</span></p>
+</div>
+<div id="S1.p15" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The expression <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"mm2"</span> means (10<sup class="ltx_sup">-3</sup>m)<sup class="ltx_sup">2</sup> = 10<sup class="ltx_sup">-6</sup>m<sup class="ltx_sup">2</sup>.
+Note that exponentiation includes the prefix.</span></p>
+</div>
+<div id="S1.p16" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The unit expression <span class="ltx_text ltx_lst_language_modelica_short ltx_lst_string ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#000000;background-color:#FFFFFF;">"T"</span> means tesla, but note that the letter <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">T</span> is also the symbol for the prefix tera which has a multiplier value of 10<sup class="ltx_sup">12</sup>.
+</span>]</p>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="annotations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a><a href="bib.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">References</span></a><a href="idx.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="index"><span class="ltx_text ltx_ref_title">Index</span></a><a href="the-modelica-standard-library.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Thu Feb 19 13:30:11 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

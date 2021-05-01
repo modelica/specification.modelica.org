@@ -1,0 +1,387 @@
+<!DOCTYPE html><html prefix="dcterms: http://purl.org/dc/terms/" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Modelica® Language Specification version 3.7-dev</title>
+<!--Generated on Thu Feb 19 13:30:11 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on February 19, 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/MLS.css" type="text/css">
+<link rel="stylesheet" href="css/MLS-navbar-left.css" type="text/css">
+<script src="LaTeXML-maybeMathjax.js"></script>
+<link rel="next" href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="interface-or-type-relationships.html" title="Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="chapter" href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="appendix" href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="bibliography" href="bib.html" title="References ‣ Modelica® Language Specification version 3.7-dev">
+<link rel="index" href="idx.html" title="Index ‣ Modelica® Language Specification version 3.7-dev">
+<meta name="keywords" lang="en" content="Modelica">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body tabindex=0>
+<nav class="ltx_page_navbar">
+<nav class="ltx_TOC">
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_document ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.7-dev</span></span>
+<ol class="ltx_toclist ltx_toclist_document">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="preface.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="introduction1.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="lexical-structure.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="operators-and-expressions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="class-predefined-types-and-declarations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="scoping-name-lookup-and-flattening.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="interface-or-type-relationships.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="inheritance-modification-and-redeclaration.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="equations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="connectors-and-connections.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="arrays.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="statements-and-algorithm-sections.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="functions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="packages.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="overloaded-operators.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="stream-connectors.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="synchronous-language-elements.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="state-machines.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="annotations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="unit-expressions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="the-modelica-standard-library.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-concrete-syntax.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-dae-representation.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="derivation-of-stream-equations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-revision-history.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="bib.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_index"><a href="idx.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+</ol>
+</li>
+</ol></nav>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="preface.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title">Preface</span></a>
+</div></header>
+<div class="ltx_page_content">
+<article class="ltx_document">
+<div class="ltx_titlepage">
+<div class="ltx_block">
+<object type="image/svg+xml" data="media/Modelica_Language.svg" id="g1" class="ltx_graphics ltx_centering"></object>
+<p class="ltx_p ltx_align_center"><span class="ltx_text" style="font-size:207%;">Modelica<sup class="ltx_sup">®</sup> – A Unified Object-Oriented Language for Systems Modeling</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text" style="font-size:207%;">Language Specification</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text" style="font-size:207%;">Version 3.7-dev</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text" style="font-size:144%;">February 19, 2026</span></p>
+<p class="ltx_p ltx_align_center"><span class="ltx_text" style="font-size:144%;">Modelica Association</span></p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_sansserif ltx_font_bold" style="font-size:120%;">Abstract</span></p>
+<p class="ltx_p">This document defines the Modelica<span id="Ch0.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup>
+          <span class="ltx_tag ltx_tag_note">1</span>
+          
+          
+          
+          
+          
+          
+          
+        <em class="ltx_emph ltx_font_italic">Modelica</em> is a registered trademark of the Modelica Association.
+</span></span></span>
+language, version 3.7-dev, which is developed by the Modelica Association, a non-profit organization with seat in Linköping, Sweden.
+Modelica is a freely available, object-oriented language for modeling of large, complex, and heterogeneous systems.
+It is suited for multi-domain modeling, for example, mechatronic models in robotics, automotive and aerospace applications involving mechanical, electrical, hydraulic control and state machine subsystems, process oriented applications and generation and distribution of electric power.
+Models in Modelica are mathematically described by differential, algebraic and discrete equations.
+No particular variable needs to be solved for manually.
+A Modelica tool will have enough information to decide that automatically.
+Modelica is designed such that available, specialized algorithms can be utilized to enable efficient handling of large models having more than one hundred thousand equations.
+Modelica is suited and used for hardware-in-the-loop simulations and for embedded control systems.
+More information is available at <a href="https://modelica.org" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://modelica.org</a>.</p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Copyright © 1998-2023, Modelica Association (<a href="https://modelica.org" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://modelica.org</a>)</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">All rights reserved.
+Reproduction or use of editorial or pictorial content is permitted, i.e., this document can be freely distributed especially electronically, provided the copyright notice and these conditions are retained.
+No patent liability is assumed with respect to the use of information contained herein.
+While every precaution has been taken in the preparation of this document no responsibility for errors or omissions is assumed.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">The contributors to this and to previous versions of this document are listed in <a href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_tag">appendix</span> <span class="ltx_text ltx_ref_tag">D</span></a>.</p>
+</div>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<nav class="ltx_TOC ltx_list_toc ltx_toc_toc"><h6 class="ltx_title ltx_title_contents">Contents</h6>
+<ol class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="preface.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="introduction1.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="introduction1.html#overview-of-modelica" title="In Chapter 1 Introduction ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1 </span>Overview of Modelica</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="introduction1.html#scope-of-the-specification" title="In Chapter 1 Introduction ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>Scope of the Specification</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="introduction1.html#some-definitions" title="In Chapter 1 Introduction ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Some Definitions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="introduction1.html#notation" title="In Chapter 1 Introduction ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4 </span>Notation</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="lexical-structure.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="lexical-structure.html#character-set" title="In Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Character Set</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="lexical-structure.html#comments" title="In Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Comments</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="lexical-structure.html#identifiers-names-and-keywords" title="In Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Identifiers, Names, and Keywords</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="lexical-structure.html#literals" title="In Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4 </span>Literals</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="lexical-structure.html#operator-symbols" title="In Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5 </span>Operator Symbols</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="operators-and-expressions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="operators-and-expressions.html#expressions" title="In Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="operators-and-expressions.html#operator-precedence-and-associativity" title="In Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Operator Precedence and Associativity</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="operators-and-expressions.html#evaluation-order" title="In Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Evaluation Order</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="operators-and-expressions.html#arithmetic-operators" title="In Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Arithmetic Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="operators-and-expressions.html#equality-relational-and-logical-operators" title="In Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.5 </span>Equality, Relational, and Logical Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="operators-and-expressions.html#miscellaneous-operators-and-variables" title="In Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.6 </span>Miscellaneous Operators and Variables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="operators-and-expressions.html#built-in-intrinsic-operators-with-function-syntax" title="In Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.7 </span>Built-in Operators and Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="operators-and-expressions.html#variability-of-expressions" title="In Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8 </span>Variability of Expressions</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="class-predefined-types-and-declarations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="class-predefined-types-and-declarations.html#access-control-public-and-protected-elements" title="In Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.1 </span>Access Control – Public and Protected Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="class-predefined-types-and-declarations.html#double-declaration-not-allowed" title="In Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.2 </span>Double Declaration not Allowed</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="class-predefined-types-and-declarations.html#declaration-order" title="In Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.3 </span>Declaration Order</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="class-predefined-types-and-declarations.html#component-declarations" title="In Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.4 </span>Component Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="class-predefined-types-and-declarations.html#component-variability" title="In Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.5 </span>Component Variability</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="class-predefined-types-and-declarations.html#class-declarations" title="In Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.6 </span>Class Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="class-predefined-types-and-declarations.html#specialized-classes" title="In Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.7 </span>Specialized Classes</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="class-predefined-types-and-declarations.html#balanced-models" title="In Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.8 </span>Balanced Models</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="class-predefined-types-and-declarations.html#predefined-types-and-classes" title="In Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.9 </span>Predefined Types and Classes</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="scoping-name-lookup-and-flattening.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="scoping-name-lookup-and-flattening.html#flattening-context" title="In Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.1 </span>Flattening Context</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="scoping-name-lookup-and-flattening.html#enclosing-classes" title="In Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.2 </span>Enclosing Classes</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="scoping-name-lookup-and-flattening.html#static-name-lookup" title="In Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.3 </span>Static Name Lookup</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="scoping-name-lookup-and-flattening.html#inner-declarations-instance-hierarchy-name-lookup" title="In Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.4 </span>Inner Declarations - Instance Hierarchy Name Lookup</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="scoping-name-lookup-and-flattening.html#simultaneous-inner-outer-declarations" title="In Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.5 </span>Simultaneous Inner/Outer Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="scoping-name-lookup-and-flattening.html#flattening-process" title="In Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.6 </span>Flattening Process</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="interface-or-type-relationships.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="interface-or-type-relationships.html#interface-terminology" title="In Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.1 </span>Interface Terminology</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="interface-or-type-relationships.html#the-concepts-of-type-interface-and-subtype" title="In Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.2 </span>The Concepts of Type, Interface and Subtype</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="interface-or-type-relationships.html#interface-or-type" title="In Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.3 </span>Interface or Type</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="interface-or-type-relationships.html#interface-compatibility-or-subtyping" title="In Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.4 </span>Interface Compatibility or Subtyping</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="interface-or-type-relationships.html#plug-compatibility-or-restricted-subtyping" title="In Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.5 </span>Plug-Compatibility or Restricted Subtyping</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="interface-or-type-relationships.html#function-compatibility-or-function-subtyping-for-functions" title="In Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.6 </span>Function-Compatibility or Function-Subtyping for Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="interface-or-type-relationships.html#type-compatible-expressions" title="In Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.7 </span>Type Compatible Expressions</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="inheritance-modification-and-redeclaration.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="inheritance-modification-and-redeclaration.html#inheritance-extends-clause" title="In Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7.1 </span>Inheritance – Extends Clause</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="inheritance-modification-and-redeclaration.html#modifications" title="In Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7.2 </span>Modifications</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="inheritance-modification-and-redeclaration.html#redeclaration" title="In Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7.3 </span>Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="inheritance-modification-and-redeclaration.html#selective-model-extension" title="In Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7.4 </span>Selective Model Extension</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="equations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="equations.html#equation-categories" title="In Chapter 8 Equations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8.1 </span>Equation Categories</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="equations.html#flattening-and-lookup-in-equations" title="In Chapter 8 Equations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8.2 </span>Flattening and Lookup in Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="equations.html#equations-in-equation-sections" title="In Chapter 8 Equations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8.3 </span>Equations in Equation Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="equations.html#synchronous-data-flow-principle-and-single-assignment-rule" title="In Chapter 8 Equations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8.4 </span>Synchronous Data-Flow Principle and Single Assignment Rule</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="equations.html#events-and-synchronization" title="In Chapter 8 Equations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8.5 </span>Events and Synchronization</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="equations.html#initialization-initial-equation-and-initial-algorithm" title="In Chapter 8 Equations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8.6 </span>Initialization, initial equation, and initial algorithm</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="connectors-and-connections.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="connectors-and-connections.html#connect-equations-and-connectors" title="In Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9.1 </span>Connect-Equations and Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="connectors-and-connections.html#generation-of-connection-equations" title="In Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9.2 </span>Generation of Connection Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="connectors-and-connections.html#restrictions-of-connections-and-connectors" title="In Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9.3 </span>Restrictions of Connections and Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="connectors-and-connections.html#equation-operators-for-overconstrained-connection-based-equation-systems1" title="In Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9.4 </span>Overconstrained Connections</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="arrays.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="arrays.html#array-declarations" title="In Chapter 10 Arrays ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10.1 </span>Array Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="arrays.html#flexible-array-sizes" title="In Chapter 10 Arrays ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10.2 </span>Flexible Array Sizes</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="arrays.html#built-in-array-functions" title="In Chapter 10 Arrays ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10.3 </span>Built-in Array Operators and Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="arrays.html#vector-matrix-and-array-constructors" title="In Chapter 10 Arrays ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10.4 </span>Vector, Matrix and Array Constructors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="arrays.html#array-indexing" title="In Chapter 10 Arrays ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10.5 </span>Indexing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="arrays.html#scalar-vector-matrix-and-array-operator-functions" title="In Chapter 10 Arrays ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10.6 </span>Scalar, Vector, Matrix, and Array Operator Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="arrays.html#empty-arrays" title="In Chapter 10 Arrays ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10.7 </span>Empty Arrays</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="statements-and-algorithm-sections.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="statements-and-algorithm-sections.html#algorithm-sections" title="In Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.1 </span>Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="statements-and-algorithm-sections.html#statements" title="In Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11.2 </span>Statements</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="functions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="functions.html#function-declaration" title="In Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12.1 </span>Function Declaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="functions.html#function-as-a-specialized-class" title="In Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12.2 </span>Function as a Specialized Class</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="functions.html#pure-modelica-functions" title="In Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12.3 </span>Pure Modelica Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="functions.html#function-call" title="In Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12.4 </span>Function Call</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="functions.html#built-in-functions" title="In Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12.5 </span>Built-in Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="functions.html#record-constructor-functions" title="In Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12.6 </span>Record Constructor Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="functions.html#derivatives-and-inverses-of-functions" title="In Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12.7 </span>Derivatives and Inverses of Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="functions.html#function-inlining-and-event-generation" title="In Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12.8 </span>Function Inlining and Event Generation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="functions.html#external-function-interface" title="In Chapter 12 Functions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12.9 </span>External Function Interface</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="packages.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="packages.html#package-as-specialized-class" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.1 </span>Package as Specialized Class</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="packages.html#importing-definitions-from-a-package" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.2 </span>Importing Definitions from a Package</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="packages.html#the-modelica-library-path-modelicapath" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.3 </span>The Modelica Library Path – MODELICAPATH</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="packages.html#file-system-mapping-of-package-class" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.4 </span>File System Mapping of Package/Class</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="packages.html#stored-definitions-containing-multiple-class-definitions" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.5 </span>Stored Definitions Containing Multiple Class Definitions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="packages.html#external-resources" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.6 </span>External Resources</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="packages.html#multilingual-descriptions" title="In Chapter 13 Packages ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13.7 </span>Multilingual Descriptions</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="overloaded-operators.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="overloaded-operators.html#overview-of-overloaded-operators" title="In Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.1 </span>Overview of Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="overloaded-operators.html#matching-function" title="In Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.2 </span>Matching Function</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="overloaded-operators.html#overloaded-constructors" title="In Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.3 </span>Overloaded Constructors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="overloaded-operators.html#overloaded-string-conversions" title="In Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.4 </span>Overloaded String Conversions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="overloaded-operators.html#overloaded-binary-operations" title="In Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.5 </span>Overloaded Binary Operations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="overloaded-operators.html#overloaded-unary-operations" title="In Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.6 </span>Overloaded Unary Operations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="overloaded-operators.html#example-of-overloading-for-complex-numbers" title="In Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14.7 </span>Example of Overloading for Complex Numbers</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="stream-connectors.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="stream-connectors.html#definition-of-stream-connectors" title="In Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15.1 </span>Definition of Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="stream-connectors.html#instream-and-connection-equations" title="In Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15.2 </span>inStream and Connection Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="stream-connectors.html#actualstream" title="In Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15.3 </span>actualStream</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="synchronous-language-elements.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="synchronous-language-elements.html#rationale-for-clocked-semantics" title="In Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16.1 </span>Rationale for Clocked Semantics</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="synchronous-language-elements.html#definitions" title="In Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16.2 </span>Definitions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="synchronous-language-elements.html#clock-constructors" title="In Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16.3 </span>Clock Constructors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="synchronous-language-elements.html#clocked-state-variables" title="In Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16.4 </span>Clocked State Variables</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="synchronous-language-elements.html#partitioning-operators" title="In Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16.5 </span>Partitioning Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="synchronous-language-elements.html#clocked-when-clause" title="In Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16.6 </span>Clocked When-Clause</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="synchronous-language-elements.html#clock-partitioning" title="In Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16.7 </span>Clock Partitioning</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="synchronous-language-elements.html#continuous-time-equations-in-clocked-partitions" title="In Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16.8 </span>Discretized Sub-Partition</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="synchronous-language-elements.html#initialization-of-clocked-partitions" title="In Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16.9 </span>Initialization of Clocked Partitions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="synchronous-language-elements.html#other-operators" title="In Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16.10 </span>Other Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="synchronous-language-elements.html#semantics" title="In Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16.11 </span>Semantics</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="state-machines.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="state-machines.html#transitions" title="In Chapter 17 State Machines ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17.1 </span>Transitions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="state-machines.html#state-machine-graphics" title="In Chapter 17 State Machines ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17.2 </span>State Machine Graphics</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="state-machines.html#state-machine-semantics" title="In Chapter 17 State Machines ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17.3 </span>State Machine Semantics</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="annotations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#notation-for-annotation-definitions" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.1 </span>Notation for Annotation Definitions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#semantic-restrictions-of-annotation-syntax" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.2 </span>Semantic Restrictions of Annotation Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#expression-evaluation-inside-annotations" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.3 </span>Expression Evaluation Inside Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#vendor-specific-annotations" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.4 </span>Vendor-Specific Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#annotations-for-documentation" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.5 </span>Documentation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#annotations-for-symbolic-processing" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.6 </span>Symbolic Processing</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#annotations-for-simulations" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.7 </span>Simulations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#usage-restrictions" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.8 </span>Usage Restrictions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#annotations-for-graphical-objects" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.9 </span>Graphical Objects</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#annotations-for-the-graphical-user-interface" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.10 </span>Graphical User Interface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#annotations-for-version-handling" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.11 </span>Versions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#access-control-to-protect-intellectual-property" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.12 </span>Access Control to Protect Intellectual Property</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#license-texts" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.13 </span>License Texts</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#annotations-for-functions" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.14 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="annotations.html#annotation-choices-for-modifications-and-redeclarations" title="In Chapter 18 Annotations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18.15 </span>Choices for Modifications and Redeclarations</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter">
+<a href="unit-expressions.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a>
+<ol class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="unit-expressions.html#the-syntax-of-unit-expressions" title="In Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19.1 </span>The Syntax of Unit Expressions</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="the-modelica-standard-library.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix">
+<a href="modelica-concrete-syntax.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modelica Concrete Syntax</span></a>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="modelica-concrete-syntax.html#lexical-conventions" title="In Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.1 </span>Lexical conventions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="modelica-concrete-syntax.html#grammar" title="In Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A.2 </span>Grammar</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-dae-representation.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix">
+<a href="derivation-of-stream-equations.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Derivation of Stream Equations</span></a>
+<ol class="ltx_toclist ltx_toclist_appendix">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="derivation-of-stream-equations.html#mixing-enthalpy" title="In Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C.1 </span>Mixing Enthalpy</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="derivation-of-stream-equations.html#rationale-for-instream" title="In Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C.2 </span>Rationale for inStream</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="derivation-of-stream-equations.html#special-cases-covered-by-the-instream-operator-definition" title="In Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C.3 </span>Special Cases Covered by inStream Definition</span></a></li>
+</ol>
+</li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-revision-history.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="bib.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_index"><a href="idx.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+</ol></nav>
+<div class="ltx_pagination ltx_role_newpage"></div>
+<div class="ltx_rdf" about="" property="dcterms:subject" content="Modelica, modeling, object-oriented, multi-domain"></div>
+
+</article>
+</div>
+<footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="bib.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">References</span></a><a href="idx.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="index"><span class="ltx_text ltx_ref_title">Index</span></a><a href="preface.html" title="In Modelica® Language Specification version 3.7-dev" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title">Preface</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Thu Feb 19 13:30:11 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer>
+</div>
+</body>
+</html>

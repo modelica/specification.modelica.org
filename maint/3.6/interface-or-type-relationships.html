@@ -1,0 +1,1317 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>6 Interface or Type Relationships‣ Modelica® Language Specification version 3.6</title>
+<!--Generated on Thu Mar  9 16:41:18 2023 by LaTeXML (version 0.8.6) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on March 9, 2023.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-report.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="css/MLS.css" type="text/css">
+<link rel="stylesheet" href="css/MLS-navbar-left.css" type="text/css">
+<script src="LaTeXML-maybeMathjax.js" type="text/javascript"></script>
+<link rel="up" href="./" title="Modelica® Language Specification version 3.6">
+<link rel="start" href="./" title="Modelica® Language Specification version 3.6">
+<link rel="prev" href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6">
+<link rel="next" href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6">
+<link rel="chapter" href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6">
+<link rel="appendix" href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6">
+<link rel="appendix" href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6">
+<link rel="appendix" href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6">
+<link rel="appendix" href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6">
+<link rel="bibliography" href="bib.html" title="References ‣ Modelica® Language Specification version 3.6">
+<link rel="index" href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6">
+<meta name="keywords" lang="en" content="class, class type, compatible, compatible interface, default connectable, function, function compatible, function compatible interface, function subtype, function-compatibility, functions, inheritance, inheritance interface, interface, plug compatible, plug compatible interface, plug-compatibility, restricted, restricted subtype, subtype, supertype, transitively non-replaceable, type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body tabindex=0>
+<nav class="ltx_page_navbar"><a href="./" title="Modelica® Language Specification version 3.6" class="ltx_ref" rel="start"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6</span></a>
+<div class="ltx_TOC">
+<ul class="ltx_toclist">
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="preface.html" title="Preface ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title">Preface</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="introduction1.html" title="Chapter 1 Introduction ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Introduction</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="lexical-structure.html" title="Chapter 2 Lexical Structure ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Lexical Structure</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="operators-and-expressions.html" title="Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Operators and Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="class-predefined-types-and-declarations.html" title="Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Classes, Predefined Types, and Declarations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter ltx_ref_self">
+<span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Interface or Type Relationships</span></span>
+<ul class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#interface-terminology" title="6.1 Interface Terminology ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.1 </span>Interface Terminology</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#the-concepts-of-type-interface-and-subtype" title="6.2 The Concepts of Type, Interface and Subtype ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.2 </span>The Concepts of Type, Interface and Subtype</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section">
+<a href="#interface-or-type" title="6.3 Interface or Type ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.3 </span>Interface or Type</span></a>
+<ul class="ltx_toclist ltx_toclist_section">
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#transitively-non-replaceable" title="6.3.1 Transitively Non-Replaceable ‣ 6.3 Interface or Type ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.3.1 </span>Transitively Non-Replaceable</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_subsection"><a href="#inheritance-interface-or-class-type" title="6.3.2 Inheritance Interface or Class Type ‣ 6.3 Interface or Type ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.3.2 </span>Inheritance Interface or Class Type</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#interface-compatibility-or-subtyping" title="6.4 Interface Compatibility or Subtyping ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.4 </span>Interface Compatibility or Subtyping</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#plug-compatibility-or-restricted-subtyping" title="6.5 Plug-Compatibility or Restricted Subtyping ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.5 </span>Plug-Compatibility or Restricted Subtyping</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#function-compatibility-or-function-subtyping-for-functions" title="6.6 Function-Compatibility or Function-Subtyping for Functions ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.6 </span>Function-Compatibility or Function-Subtyping for Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_section"><a href="#type-compatible-expressions" title="6.7 Type Compatible Expressions ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.7 </span>Type Compatible Expressions</span></a></li>
+</ul>
+</li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="equations.html" title="Chapter 8 Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">8 </span>Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="connectors-and-connections.html" title="Chapter 9 Connectors and Connections ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">9 </span>Connectors and Connections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">10 </span>Arrays</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="statements-and-algorithm-sections.html" title="Chapter 11 Statements and Algorithm Sections ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">11 </span>Statements and Algorithm Sections</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="functions.html" title="Chapter 12 Functions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">12 </span>Functions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="packages.html" title="Chapter 13 Packages ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">13 </span>Packages</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">14 </span>Overloaded Operators</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="stream-connectors.html" title="Chapter 15 Stream Connectors ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">15 </span>Stream Connectors</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="synchronous-language-elements.html" title="Chapter 16 Synchronous Language Elements ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">16 </span>Synchronous Language Elements</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="state-machines.html" title="Chapter 17 State Machines ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">17 </span>State Machines</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="annotations.html" title="Chapter 18 Annotations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">18 </span>Annotations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="unit-expressions.html" title="Chapter 19 Unit Expressions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">19 </span>Unit Expressions</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_chapter"><a href="the-modelica-standard-library.html" title="Chapter 20 The Modelica Standard Library ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">20 </span>The Modelica Standard Library</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-concrete-syntax.html" title="Appendix A Modelica Concrete Syntax ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Modelica Concrete Syntax</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-dae-representation.html" title="Appendix B Modelica DAE Representation ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">B </span>Modelica DAE Representation</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="derivation-of-stream-equations.html" title="Appendix C Derivation of Stream Equations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">C </span>Derivation of Stream Equations</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_appendix"><a href="modelica-revision-history.html" title="Appendix D Modelica Revision History ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">D </span>Modelica Revision History</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_bibliography"><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title">References</span></a></li>
+<li class="ltx_tocentry ltx_tocentry_index"><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_title">Index</span></a></li>
+</ul>
+</div>
+</nav>
+<div class="ltx_page_main">
+<header class="ltx_page_header">
+<div>
+<a href="./" title="Modelica® Language Specification version 3.6" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Modelica<sup class="ltx_sup">®</sup> Language Specification version 3.6</span></a><a href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a><a href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a>
+</div></header>
+<div class="ltx_page_content">
+<section class="ltx_chapter">
+<h1 class="ltx_title ltx_title_chapter">
+<span class="ltx_tag ltx_tag_chapter">Chapter 6 </span>Interface or Type Relationships</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">A class or component, e.g., denoted <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>, can in some cases be used at a
+location designed for another class or component, e.g., denoted <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>. In
+Modelica this is the case for replaceable classes (see <a href="inheritance-modification-and-redeclaration.html#redeclaration" title="7.3 Redeclaration ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">7.3</span></a>) and
+for <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">inner</span>/<span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">outer</span> elements (see <a href="scoping-name-lookup-and-flattening.html#inner-declarations-instance-hierarchy-name-lookup" title="5.4 Inner Declarations - Instance Hierarchy Name Lookup ‣ Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">5.4</span></a>).
+Replaceable classes are the
+primary mechanism to create very flexible models. In this chapter, the
+precise rules are defined when <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> can be used at a location designed for
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>. The restrictions are defined in terms of compatibility rules
+(<a href="#interface-compatibility-or-subtyping" title="6.4 Interface Compatibility or Subtyping ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">6.4</span></a> and <a href="#plug-compatibility-or-restricted-subtyping" title="6.5 Plug-Compatibility or Restricted Subtyping ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">6.5</span></a>) between “interfaces” (<a href="#the-concepts-of-type-interface-and-subtype" title="6.2 The Concepts of Type, Interface and Subtype ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">6.2</span></a>); this can
+also be viewed as sub-typing (<a href="#the-concepts-of-type-interface-and-subtype" title="6.2 The Concepts of Type, Interface and Subtype ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">6.2</span></a>).</p>
+</div>
+<section id="interface-terminology" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6.1 </span>Interface Terminology</h2>
+
+<div id="S1.p1" class="ltx_para">
+<p class="ltx_p">In this chapter, two kinds of terminology are used for identical concepts to get better understanding (e.g., by both engineers and computer scientists).
+A short summary of the terms is given in the following table.
+The details are defined in the rest of this chapter.</p>
+</div>
+<div id="Thmdefinitioninner1" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 6.1. <em class="ltx_emph ltx_font_italic">Type <em class="ltx_emph ltx_font_upright">or</em> interface</em>.</h6>
+<div id="Thmdefinitioninner1.p1" class="ltx_para">
+<p class="ltx_p">The “essential” part of the public declaration sections of a class
+that is needed to decide whether <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> can be used instead of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>.</p>
+</div>
+<div id="Thmdefinitioninner1.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">E.g., a declaration <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter ltx_font_upright" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">x</span></span> is part of the type (also called <em class="ltx_emph ltx_font_upright">interface</em>), but <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold ltx_font_upright" style="color:#003378;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">A</span></span> is not.</span>]
+∎</p>
+</div>
+</div>
+<div id="Thmdefinitioninner2" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 6.2. <em class="ltx_emph ltx_font_italic">Class type <em class="ltx_emph ltx_font_upright">or</em> inheritance interface</em>.</h6>
+<div id="Thmdefinitioninner2.p1" class="ltx_para">
+<p class="ltx_p">The “essential” part of the public <em class="ltx_emph ltx_font_italic">and protected</em> declaration sections of a class that is needed to decide whether <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> can be used instead of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>. The class type, also
+called inheritance interface, is needed when inheritance takes place, since then the protected declarations have to be taken into account.
+∎</p>
+</div>
+</div>
+<div id="Thmdefinitioninner3" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 6.3. <em class="ltx_emph ltx_font_italic">Subtype <em class="ltx_emph ltx_font_upright">or</em> compatible interface</em>.</h6>
+<div id="Thmdefinitioninner3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a subtype of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>, or equivalently, the interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is compatible to the interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>, if the “essential” part of the public declaration
+sections of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is also available in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>.</p>
+</div>
+<div id="Thmdefinitioninner3.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">E.g., if <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">B</span> has a declaration <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter ltx_font_upright" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">x</span></span>, this declaration must also be present in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span>.
+If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span> has a declaration <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter ltx_font_upright" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">y</span></span>, this declaration may be present in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">B</span>.</span>]
+∎</p>
+</div>
+</div>
+<div id="S1.p2" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a subtype of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>, then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is said to be a <em class="ltx_emph ltx_font_italic">supertype</em> of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>.</p>
+</div>
+<div id="Thmdefinitioninner4" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 6.4. <em class="ltx_emph ltx_font_italic">Restricted subtype <em class="ltx_emph ltx_font_upright">or</em> plug compatible interface</em>.</h6>
+<div id="Thmdefinitioninner4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a restricted subtype of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>, or equivalently, the interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is plug compatible to the interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>, if <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a subtype of
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> and if connector components in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> that are not in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>, are default connectable.</p>
+</div>
+<div id="Thmdefinitioninner4.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">E.g., it is not allowed that these connectors have variables with the <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">input</span> prefix, because then they must be connected.</span>]</p>
+</div>
+<div id="Thmdefinitioninner4.p3" class="ltx_para">
+<p class="ltx_p">A model or block <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> cannot be used instead of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>, if the particular situation does not allow to make a connection to these additional connectors. In such a case the stricter
+<em class="ltx_emph ltx_font_italic">plug compatible</em> is required for a redeclaration.
+∎</p>
+</div>
+</div>
+<div id="Thmdefinitioninner5" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 6.5. <em class="ltx_emph ltx_font_italic">Function subtype <em class="ltx_emph ltx_font_upright">or</em> function compatible interface</em>.</h6>
+<div id="Thmdefinitioninner5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a function subtype of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>, or equivalently, the interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is function compatible to the interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>, if <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a subtype of
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> and if the additional arguments of function <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> that are not in function <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> are defined in such a way, that <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> can be called at places where
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is called.</p>
+</div>
+<div id="Thmdefinitioninner5.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">E.g., an additional argument must have a default value.</span>]
+∎</p>
+</div>
+</div>
+</section>
+<section id="the-concepts-of-type-interface-and-subtype" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6.2 </span>The Concepts of Type, Interface and Subtype</h2>
+
+<div id="S2.p1" class="ltx_para">
+<p class="ltx_p">A <em class="ltx_emph ltx_font_italic">type</em> can conceptually be viewed as a <em class="ltx_emph ltx_font_italic">set of values</em>. When
+we say that the variable <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">x</span> has the type <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span>, we mean that the value of
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">x</span> belongs to the set of values represented by the type <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span>, i.e.,
+roughly the set of floating point numbers representable by <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span>, for the
+moment ignoring the fact that <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span> is also viewed as a class with
+certain attributes. Analogously, the variable <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">b</span> having <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Boolean</span> type
+means that the value of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">b</span> belongs to the set of values {<span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">false</span>, <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">true</span>}.
+The built-in types <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span>, <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Integer</span>, <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">String</span>,
+<span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Boolean</span> are considered to be
+distinct types.</p>
+</div>
+<div id="S2.p2" class="ltx_para">
+<p class="ltx_p">The <em class="ltx_emph ltx_font_italic">subtype</em> relation between types is analogous to the subset
+relation between sets. A type <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A1</span> being a subtype of type <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> means that
+the set of values corresponding to type <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A1</span> is a subset of the set of
+values corresponding to type <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>.</p>
+</div>
+<div id="S2.p3" class="ltx_para">
+<p class="ltx_p">The type <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Integer</span> is not a subtype of <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span> in Modelica even though the
+set of primitive integer values is a subset of the primitive real values
+since there are some attributes of <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span> that are not part of <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Integer</span>
+(<a href="class-predefined-types-and-declarations.html#predefined-types-and-classes" title="4.8 Predefined Types and Classes ‣ Chapter 4 Classes, Predefined Types, and Declarations ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">4.8</span></a>).</p>
+</div>
+<div id="S2.p4" class="ltx_para">
+<p class="ltx_p">The concept of <em class="ltx_emph ltx_font_italic">interface</em> as defined in <a href="#interface-or-type" title="6.3 Interface or Type ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">6.3</span></a> and used in
+this document is equivalent to the notion of type based on sets in the
+following sense:</p>
+</div>
+<div id="S2.p5" class="ltx_para">
+<p class="ltx_p">An element is characterized by its interface defined by some attributes
+(<a href="#interface-or-type" title="6.3 Interface or Type ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">6.3</span></a>). The <em class="ltx_emph ltx_font_italic">type</em> of the element is the set of values
+having the same interface, i.e., the same attributes.</p>
+</div>
+<div id="S2.p6" class="ltx_para">
+<p class="ltx_p">A <em class="ltx_emph ltx_font_italic">subtype</em> <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A1</span> in relation to another type <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>, means that the
+elements of the set corresponding to <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A1</span> is a subset of the set
+corresponding to <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>, characterized by the elements of that subset having
+additional properties.</p>
+</div>
+<div id="S2.p7" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example:
+A record <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">R</span>: <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold ltx_font_upright" style="color:#003378;">record</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">R</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter ltx_font_upright" style="color:#543D08;">Boolean</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">b</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">R</span>;</span></span></span></p>
+</div>
+<div id="S2.p8" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Another record called <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">R2</span>: <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">R2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter ltx_font_upright" style="color:#543D08;">Boolean</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">b</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords3" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">y</span>;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">R2</span>;</span></span></span></p>
+</div>
+<div id="S2.p9" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">An instance <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">r</span>: <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">R</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">r</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">;</span></span></span></p>
+</div>
+<div id="S2.p10" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">An instance <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">r2</span>: <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">R2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">r2</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">;</span></span></span></p>
+</div>
+<div id="S2.p11" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The type <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">R</span> of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">r</span> can be viewed as the set of all record values having the attributes defined by the interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">R</span>, e.g., the infinite set </span>{<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_italic" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">R</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">(<span class="ltx_text ltx_lst_identifier">b</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">false</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>=1.2)</span></span><span class="ltx_text ltx_font_italic">, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">R</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">(<span class="ltx_text ltx_lst_identifier">b</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">false</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>=3.4)</span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">R</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">(<span class="ltx_text ltx_lst_identifier">b</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>=1.2)</span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">R</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">(<span class="ltx_text ltx_lst_identifier">b</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>=1.2,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">y</span>=2)</span></span>, <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">R</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">(<span class="ltx_text ltx_lst_identifier">b</span>=<span class="ltx_text ltx_lst_keyword" style="color:#003378;">true</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">x</span>=1.2,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">a</span>=2)</span></span>, <math id="S2.p11.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathvariant="normal">…</mi></math></span>}<span class="ltx_text ltx_font_italic">.
+The statement that <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">r</span> has the type (or interface) <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">R</span> means that the value of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">r</span> s to this infinite set.</span></p>
+</div>
+<div id="S2.p12" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The type <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">R2</span> is a subtype of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">R</span> since its instances
+fulfill the additional property of having the component <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter ltx_font_upright" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">y</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">;</span></span>
+in all its values.</span></p>
+</div>
+<figure id="F1" class="ltx_figure"><object type="image/svg+xml" data="media/subtype.svg" id="F1.g1" class="ltx_graphics ltx_centering" aria-label="The type "><p>The type </p></object>
+<figcaption class="ltx_caption ltx_font_italic"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text ltx_font_upright">Figure 6.1</span>: </span>The type <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">R</span> can be defined as the set of record values containing <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">x</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">b</span>. The subtype <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">R2</span> is the subset of values that all contain
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">x</span>, <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">b</span>, and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">y</span>.</figcaption>
+</figure>
+<div id="S2.p13" class="ltx_para">
+<p class="ltx_p">]</p>
+</div>
+</section>
+<section id="interface-or-type" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6.3 </span>Interface or Type</h2>
+
+<div id="S3.p1" class="ltx_para">
+<p class="ltx_p">Based on a flattened class or component we can construct an interface for that flattened class or component.
+The <em class="ltx_emph ltx_font_italic">interface</em> or <em class="ltx_emph ltx_font_italic">type</em> (the terms <em class="ltx_emph ltx_font_italic">interface</em> and <em class="ltx_emph ltx_font_italic">type</em> are equivalent and can be used interchangeably, and are different from <em class="ltx_emph ltx_font_italic">inheritance interface</em> and <em class="ltx_emph ltx_font_italic">class type</em>) is defined as the following information about the flattened element itself:</p>
+<ul id="S3.I1" class="ltx_itemize">
+<li id="S3.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Whether it is replaceable or not.</p>
+</div>
+</li>
+<li id="S3.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Whether the class itself or the class of the component is transitively
+non-replaceable (<a href="#transitively-non-replaceable" title="6.3.1 Transitively Non-Replaceable ‣ 6.3 Interface or Type ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">6.3.1</span></a>), and if not, the reference to the
+replaceable class it refers to.</p>
+</div>
+</li>
+<li id="S3.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Whether it is a component or a class.</p>
+</div>
+</li>
+<li id="S3.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">Additional information about the element:</p>
+<ul id="S3.I1.i4.I1" class="ltx_itemize">
+<li id="S3.I1.i4.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I1.i4.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">flow</span> or <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">stream</span> prefix.</p>
+</div>
+</li>
+<li id="S3.I1.i4.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I1.i4.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Declared variability (<span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">constant</span>, <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">parameter</span>, <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">discrete</span>).</p>
+</div>
+</li>
+<li id="S3.I1.i4.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I1.i4.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">The prefixes <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">input</span> and <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">output</span>.</p>
+</div>
+</li>
+<li id="S3.I1.i4.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I1.i4.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">The prefixes <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">inner</span> and/or <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">outer</span>.</p>
+</div>
+</li>
+<li id="S3.I1.i4.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I1.i4.I1.i5.p1" class="ltx_para">
+<p class="ltx_p">Whether the declaration is <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">final</span>, and in that case its semantics
+contents.</p>
+</div>
+</li>
+<li id="S3.I1.i4.I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I1.i4.I1.i6.p1" class="ltx_para">
+<p class="ltx_p">Array sizes (if any).</p>
+</div>
+</li>
+<li id="S3.I1.i4.I1.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I1.i4.I1.i7.p1" class="ltx_para">
+<p class="ltx_p">Condition of conditional components (if any).</p>
+</div>
+</li>
+<li id="S3.I1.i4.I1.i8" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I1.i4.I1.i8.p1" class="ltx_para">
+<p class="ltx_p">Which kind of specialized class.</p>
+</div>
+</li>
+<li id="S3.I1.i4.I1.i9" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I1.i4.I1.i9.p1" class="ltx_para">
+<p class="ltx_p">For an enumeration type or component of enumeration type the names
+of the enumeration literals in order.</p>
+</div>
+</li>
+<li id="S3.I1.i4.I1.i10" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I1.i4.I1.i10.p1" class="ltx_para">
+<p class="ltx_p">Whether it is a built-in type and the built-in type (<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">RealType</span>,
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">IntegerType</span>, <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">StringType</span> or <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">BooleanType</span>).</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li id="S3.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I1.i5.p1" class="ltx_para">
+<p class="ltx_p">Only for an <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">record</span></span> class and classes derived from <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">ExternalObject</span>: the full name of the operator record base class (i.e., the one containing the operations), or the derived class.
+See <a href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">chapter</span> <span class="ltx_text ltx_ref_tag">14</span></a> and <a href="functions.html#external-objects" title="12.9.7 External Objects ‣ 12.9 External Function Interface ‣ Chapter 12 Functions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">12.9.7</span></a>.</p>
+</div>
+<div id="S3.I1.i5.p2" class="ltx_para">
+<p class="ltx_p">The following item does not apply for an <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">record</span></span> class or class derived from <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">ExternalObject</span>, since the type is already uniquely defined by the full name.</p>
+</div>
+</li>
+<li id="S3.I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I1.i6.p1" class="ltx_para">
+<p class="ltx_p">For each named public element of the class or component (including
+both local and inherited named elements) a tuple comprised of:
+</p>
+<ul id="S3.I1.i6.I1" class="ltx_itemize">
+<li id="S3.I1.i6.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I1.i6.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Name of the element.</p>
+</div>
+</li>
+<li id="S3.I1.i6.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I1.i6.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Interface or type of the element.</p>
+</div>
+<div id="S3.I1.i6.I1.i2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">This might have been modified by modifiers and is thus not necessarily identical to the interface of the original declaration.</span>]</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="S3.p2" class="ltx_para">
+<p class="ltx_p">The corresponding <em class="ltx_emph ltx_font_italic">constraining</em> interface is constructed based on the <em class="ltx_emph ltx_font_italic">constraining</em> type (<a href="inheritance-modification-and-redeclaration.html#constraining-type" title="7.3.2 Constraining Type ‣ 7.3 Redeclaration ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">7.3.2</span></a>) of the declaration (if replaceable – otherwise same as actual
+type) and with the <em class="ltx_emph ltx_font_italic">constraining</em> interface for the named elements.</p>
+</div>
+<div id="S3.p3" class="ltx_para">
+<p class="ltx_p">In a class all references to elements of that class should be limited to their constraining interface.</p>
+</div>
+<div id="S3.p4" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The <em class="ltx_emph ltx_font_upright">constraining interface</em> consists of only the public elements, and if the declaration is replaceable the element is limited to the constraining interface.</span>]</p>
+</div>
+<div id="S3.p5" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The public interface does not contain all of the information about the class or component.
+When using a class as a base class we also need protected elements, and for internal type-checking we need, e.g., import-elements.
+However, the information is sufficient for checking compatibility and for using the class to flatten components.</span>]</p>
+</div>
+<section id="transitively-non-replaceable" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">6.3.1 </span>Transitively Non-Replaceable</h3>
+
+<div id="S3.SS1.p1" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">In several cases it is important that no new elements can be added to the interface of a class, especially considering short class definitions.
+Such classes are defined as <em class="ltx_emph ltx_font_upright">transitively non-replaceable</em>.</span>]</p>
+</div>
+<div id="S3.SS1.p2" class="ltx_para">
+<p class="ltx_p">A class reference is <em class="ltx_emph ltx_font_italic">transitively non-replaceable</em> iff (i.e., <em class="ltx_emph ltx_font_italic">if and only if</em>) all parts of the name satisfy the following:</p>
+<ul id="S3.I2" class="ltx_itemize">
+<li id="S3.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">If the class definition is long it is transitively non-replaceable if
+not declared replaceable.</p>
+</div>
+</li>
+<li id="S3.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">If the class definition is short (i.e., <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">P</span>.<span class="ltx_text ltx_lst_identifier">B</span></span></span>) it is
+transitively non-replaceable if it is non-replaceable and equal to
+class reference (<span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">P</span><span class="ltx_text ltx_font_typewriter">.<span class="ltx_text ltx_lst_identifier">B</span></span></span>) that is transitively non-replaceable.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S3.SS1.p3" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">According to <a href="inheritance-modification-and-redeclaration.html#require-transitively-non-replaceable" title="7.1.4 Require Transitively Non-Replaceable ‣ 7.1 Inheritance – Extends Clause ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">7.1.4</span></a>, for a hierarchical name all parts of the name must be transitively non-replaceable, i.e., in <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold ltx_font_upright" style="color:#003378;">extends</span><span class="ltx_text ltx_lst_space ltx_font_typewriter ltx_font_upright"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">A</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">B</span>.<span class="ltx_text ltx_lst_identifier">C</span></span></span> this implies that <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">A</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">B</span>.<span class="ltx_text ltx_lst_identifier">C</span></span></span> must be transitively non-replaceable, as well as <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">A</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">.<span class="ltx_text ltx_lst_identifier">B</span></span></span>, with the exception of the <em class="ltx_emph ltx_font_upright">class extends redeclaration mechanism</em> see <a href="inheritance-modification-and-redeclaration.html#the-class-extends-redeclaration-mechanism" title="7.3.1 The “class extends” Redeclaration Mechanism ‣ 7.3 Redeclaration ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">7.3.1</span></a>.</span>]</p>
+</div>
+</section>
+<section id="inheritance-interface-or-class-type" class="ltx_subsection">
+<h3 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">6.3.2 </span>Inheritance Interface or Class Type</h3>
+
+<div id="S3.SS2.p1" class="ltx_para">
+<p class="ltx_p">For inheritance, the interface also must include protected elements; this is the only change compared to above.</p>
+</div>
+<div id="S3.SS2.p2" class="ltx_para">
+<p class="ltx_p">Based on a flattened class we can construct an <em class="ltx_emph ltx_font_italic">inheritance interface</em> or <em class="ltx_emph ltx_font_italic">class type</em> for that flattened class.
+The inheritance interface or class type is defined as the following information about the flattened element itself:</p>
+<ul id="S3.I3" class="ltx_itemize">
+<li id="S3.I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I3.i1.p1" class="ltx_para">
+<p class="ltx_p">Whether it is replaceable or not.</p>
+</div>
+</li>
+<li id="S3.I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I3.i2.p1" class="ltx_para">
+<p class="ltx_p">Whether the class itself or the class of the component is transitively
+non-replaceable (<a href="#transitively-non-replaceable" title="6.3.1 Transitively Non-Replaceable ‣ 6.3 Interface or Type ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">6.3.1</span></a>), and if not the reference to
+replaceable class it refers to.</p>
+</div>
+</li>
+<li id="S3.I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I3.i3.p1" class="ltx_para">
+<p class="ltx_p">For each named element of the class (including both local and
+inherited named elements) a tuple comprised of:</p>
+<ul id="S3.I3.i3.I1" class="ltx_itemize">
+<li id="S3.I3.i3.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i3.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Name of the element.</p>
+</div>
+</li>
+<li id="S3.I3.i3.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i3.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Whether the element is component or a class.</p>
+</div>
+</li>
+<li id="S3.I3.i3.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i3.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">For elements that are classes: Inheritance interface or class type of the element.</p>
+</div>
+<div id="S3.I3.i3.I1.i3.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">This might have been modified by modifiers and is thus not necessarily identical to the interface of the original declaration.</span>]</p>
+</div>
+</li>
+<li id="S3.I3.i3.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i3.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">For elements that are components: interface or type of the element.</p>
+</div>
+<div id="S3.I3.i3.I1.i4.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">This might have been modified by modifiers and is thus not necessarily identical to the interface of the original declaration.</span>]</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li id="S3.I3.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S3.I3.i4.p1" class="ltx_para">
+<p class="ltx_p">Additional information about the element:</p>
+<ul id="S3.I3.i4.I1" class="ltx_itemize">
+<li id="S3.I3.i4.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i4.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">flow</span> or <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">stream</span> prefix.</p>
+</div>
+</li>
+<li id="S3.I3.i4.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i4.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Declared variability (<span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">constant</span>, <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">parameter</span>, <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">discrete</span>).</p>
+</div>
+</li>
+<li id="S3.I3.i4.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i4.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">The prefixes <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">input</span> and <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">output</span>.</p>
+</div>
+</li>
+<li id="S3.I3.i4.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i4.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">The prefixes <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">inner</span> and/or <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">outer</span>.</p>
+</div>
+</li>
+<li id="S3.I3.i4.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i4.I1.i5.p1" class="ltx_para">
+<p class="ltx_p">Whether the declaration is <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">final</span>, and in that case its semantics
+contents.</p>
+</div>
+</li>
+<li id="S3.I3.i4.I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i4.I1.i6.p1" class="ltx_para">
+<p class="ltx_p">Array sizes (if any).</p>
+</div>
+</li>
+<li id="S3.I3.i4.I1.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i4.I1.i7.p1" class="ltx_para">
+<p class="ltx_p">Condition of conditional components (if any).</p>
+</div>
+</li>
+<li id="S3.I3.i4.I1.i8" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i4.I1.i8.p1" class="ltx_para">
+<p class="ltx_p">Which kind of specialized class.
+</p>
+</div>
+</li>
+<li id="S3.I3.i4.I1.i9" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i4.I1.i9.p1" class="ltx_para">
+<p class="ltx_p">For an enumeration type or component of enumeration type the names
+of the enumeration literals in order.</p>
+</div>
+</li>
+<li id="S3.I3.i4.I1.i10" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i4.I1.i10.p1" class="ltx_para">
+<p class="ltx_p">Whether it is a built-in type and the built-in type (<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">RealType</span>,
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">IntegerType</span>, <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">StringType</span> or <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">BooleanType</span>).</p>
+</div>
+</li>
+<li id="S3.I3.i4.I1.i11" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S3.I3.i4.I1.i11.p1" class="ltx_para">
+<p class="ltx_p">Visibility (<span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">public</span> or <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">protected</span>).</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="interface-compatibility-or-subtyping" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6.4 </span>Interface Compatibility or Subtyping</h2>
+
+<div id="S4.p1" class="ltx_para">
+<p class="ltx_p">An interface of a class or component <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is compatible with an interface
+of a class or component <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> (or the constraining interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>), or
+equivalently that the type of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a subtype of the type of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>, iff:</p>
+<ul id="S4.I1" class="ltx_itemize">
+<li id="S4.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a class if and only if <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is a class (and thus: <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a component
+if and only if <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is a component).</p>
+</div>
+</li>
+<li id="S4.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> has an <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">record</span></span> base class then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must also have one and it must be the same.
+If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> does not have an operator record base class then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> shall not have one.
+See <a href="overloaded-operators.html" title="Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">chapter</span> <span class="ltx_text ltx_ref_tag">14</span></a>.</p>
+</div>
+</li>
+<li id="S4.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is derived from <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">ExternalObject</span>, then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must also be derived from
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">ExternalObject</span> and have the same full name. If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is not derived from
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">ExternalObject</span> then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> shall not be derived from <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">ExternalObject</span>. See
+<a href="functions.html#external-objects" title="12.9.7 External Objects ‣ 12.9 External Function Interface ‣ Chapter 12 Functions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">12.9.7</span></a>.</p>
+</div>
+</li>
+<li id="S4.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is not replaceable then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> shall not be replaceable.</p>
+</div>
+</li>
+<li id="S4.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i5.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is transitively non-replaceable then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> must be transitively
+non-replaceable (<a href="#transitively-non-replaceable" title="6.3.1 Transitively Non-Replaceable ‣ 6.3 Interface or Type ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">6.3.1</span></a>). For all elements of the inheritance
+interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> there must exist a compatible element with the same
+name and visibility in the inheritance interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>. The interface
+of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> shall not contain any other elements.</p>
+</div>
+<div id="S4.I1.i5.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">We might even extend this to say that <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">B</span> should have the same contents, as in the additional restrictions below.</span>]</p>
+</div>
+</li>
+<li id="S4.I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i6.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is replaceable then for all elements of the component interface
+of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> there must exist a plug-compatible element with the same name in
+the component interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>.</p>
+</div>
+</li>
+<li id="S4.I1.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i7.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is neither transitively non-replaceable nor replaceable then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>
+must be linked to the same class, and for all elements of the
+component interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> there must thus exist a plug-compatible
+element with the same name in the component interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>.</p>
+</div>
+</li>
+<li id="S4.I1.i8" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I1.i8.p1" class="ltx_para">
+<p class="ltx_p">Additional restrictions on the additional information. These elements should either match or have a natural total order:</p>
+<ul id="S4.I1.i8.I1" class="ltx_itemize">
+<li id="S4.I1.i8.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S4.I1.i8.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is a non-replaceable long class definition <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> must also be a
+long class definition.</p>
+</div>
+</li>
+<li id="S4.I1.i8.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S4.I1.i8.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">flow</span> or <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">stream</span> prefix should be matched for compatibility.</p>
+</div>
+</li>
+<li id="S4.I1.i8.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S4.I1.i8.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Declared variability is ordered <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">constant</span> &lt; <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">parameter</span> &lt; <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">discrete</span> &lt; continuous-time (<span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span> without prefix), and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is only compatible with <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> if the declared variability in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is less than or equal the variability in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>.</p>
+</div>
+<div id="S4.I1.i8.I1.i3.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">For a redeclaration of an element the variability prefix is as default inherited by the redeclaration (i.e., no need to repeat <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">parameter</span> when redeclaring a parameter).</span>]</p>
+</div>
+</li>
+<li id="S4.I1.i8.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S4.I1.i8.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">input</span> and <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">output</span> prefixes must be matched. This ensures that the rules regarding inputs/outputs for matching connectors and (non-connector inputs) are preserved, as well as the restriction on blocks.</p>
+</div>
+<div id="S4.I1.i8.I1.i4.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">For a redeclaration of an element the <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">input</span> or <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">output</span> prefix is inherited from the original declaration.</span>]</p>
+</div>
+</li>
+<li id="S4.I1.i8.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S4.I1.i8.I1.i5.p1" class="ltx_para">
+<p class="ltx_p">The <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">inner</span> and/or <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">outer</span> prefixes should be matched.</p>
+</div>
+<div id="S4.I1.i8.I1.i5.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">For a redeclaration of an element the <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">inner</span> and/or <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">outer</span> prefixes are inherited from the original declaration (since it is not
+possible to have <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">inner</span> and/or <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">outer</span> as part of a redeclare).</span>]</p>
+</div>
+</li>
+<li id="S4.I1.i8.I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S4.I1.i8.I1.i6.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is final <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> must also be final and have the same semantic
+contents.</p>
+</div>
+</li>
+<li id="S4.I1.i8.I1.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S4.I1.i8.I1.i7.p1" class="ltx_para">
+<p class="ltx_p">The number of array dimensions in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must be matched.</p>
+</div>
+</li>
+<li id="S4.I1.i8.I1.i8" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S4.I1.i8.I1.i8.p1" class="ltx_para">
+<p class="ltx_p">Conditional components are only compatible with conditional components. The conditions must have equivalent contents (similar to array sizes, except there is no <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">:</span> for conditional
+components).</p>
+</div>
+<div id="S4.I1.i8.I1.i8.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">For a redeclaration of an element the conditional part is inherited from the original.</span>]</p>
+</div>
+</li>
+<li id="S4.I1.i8.I1.i9" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S4.I1.i8.I1.i9.p1" class="ltx_para">
+<p class="ltx_p">A <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">function</span> class is only compatible with a <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">function</span> class, a <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">package</span> class only compatible with a <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">package</span> class, a <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">connector</span> class only with a <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">connector</span> class, a <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">model</span> or <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">block</span> class only compatible with a <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">model</span> or <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">block</span> class, and a <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">type</span> or <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">record</span> class only compatible with a <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">type</span> or <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">record</span> class.</p>
+</div>
+</li>
+<li id="S4.I1.i8.I1.i10" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S4.I1.i8.I1.i10.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is an enumeration type <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> must also be an enumeration type and
+vice versa. If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is an enumeration type not defined as <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">(:)</span> then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>
+must have the same enumeration literals in the same order; if <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is
+an enumeration type defined as <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">(:)</span> then there is no restriction on
+the enumeration type <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>.</p>
+</div>
+</li>
+<li id="S4.I1.i8.I1.i11" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S4.I1.i8.I1.i11.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> is a built-in type then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> must also be of the same built-in
+type and vice versa.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div id="S4.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Intuitively, that the type <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span> is a subtype of the type of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">B</span> means that all important elements of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">B</span> are be present in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span>.</span>]</p>
+</div>
+<div id="S4.p3" class="ltx_para">
+<p class="ltx_p">Plug-compatibility is a further restriction of compatibility (subtyping)
+defined in <a href="#plug-compatibility-or-restricted-subtyping" title="6.5 Plug-Compatibility or Restricted Subtyping ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">6.5</span></a>, and further restricted for functions, see
+<a href="#function-compatibility-or-function-subtyping-for-functions" title="6.6 Function-Compatibility or Function-Subtyping for Functions ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">6.6</span></a>. For a replaceable declaration or modifier the default class
+must be compatible with the constraining class.</p>
+</div>
+<div id="S4.p4" class="ltx_para">
+<p class="ltx_p">For a modifier the following must apply:</p>
+<ul id="S4.I2" class="ltx_itemize">
+<li id="S4.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">The modified element should exist in the element being modified.</p>
+</div>
+</li>
+<li id="S4.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S4.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">The modifier should be compatible with the element being modified, and
+in most cases also plug-compatible, <a href="#plug-compatibility-or-restricted-subtyping" title="6.5 Plug-Compatibility or Restricted Subtyping ‣ Chapter 6 Interface or Type Relationships ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">6.5</span></a>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S4.p5" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">If the original constraining flat class is legal (no references to unknown elements and no illegal use of class/component), and modifiers legal as above, then the resulting flat class will be legal
+(no references to unknown elements and no illegal use of class/component and compatible with original constraining class) and references refer to similar entities.</span>]</p>
+</div>
+</section>
+<section id="plug-compatibility-or-restricted-subtyping" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6.5 </span>Plug-Compatibility or Restricted Subtyping</h2>
+
+<div id="S5.p1" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">If a sub-component is redeclared, see <a href="inheritance-modification-and-redeclaration.html#redeclaration" title="7.3 Redeclaration ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">7.3</span></a>, it is impossible to connect to any new connector. A connector with <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="color:#003378;background-color:#FFFFFF;">input</span> prefix must be connected to, and since one cannot connect across hierarchies, one should not be allowed to introduce such a connector at a level where a connection is not possible. Therefore all public components present in the interface <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">A</span> that are not present in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">B</span> must be connected by default.</span>]</p>
+</div>
+<div id="Thmdefinitioninner6" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 6.6. <em class="ltx_emph ltx_font_italic">Plug-compatibility (= restricted subtyping)</em>.</h6>
+<div id="Thmdefinitioninner6.p1" class="ltx_para">
+<p class="ltx_p">An interface <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is plug-compatible with (a restricted subtype of) an
+interface <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> (or the constraining interface of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>) iff:</p>
+<ul id="S5.I1" class="ltx_itemize">
+<li id="S5.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S5.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is compatible with (subtype of) <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>.</p>
+</div>
+</li>
+<li id="S5.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S5.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">All public components present in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> but not in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must be
+default-connectable (as defined below).</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">∎</p>
+</div>
+</div>
+<div id="Thmdefinitioninner7" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 6.7. <em class="ltx_emph ltx_font_italic">Default connectable</em>.</h6>
+<div id="Thmdefinitioninner7.p1" class="ltx_para">
+<p class="ltx_p">A component of an interface is default-connectable iff:</p>
+<ul id="S5.I2" class="ltx_itemize">
+<li id="S5.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S5.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">All of its components are default connectable.</p>
+</div>
+</li>
+<li id="S5.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S5.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">A connector component must not be an <span class="ltx_text ltx_lst_keyword ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#003378;background-color:#FFFFFF;">input</span>.</p>
+</div>
+<div id="S5.I2.i2.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Otherwise a connection to the input will be missing.</span>]</p>
+</div>
+</li>
+<li id="S5.I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S5.I2.i3.p1" class="ltx_para">
+<p class="ltx_p">A connector component must not be of an expandable connector class.</p>
+</div>
+<div id="S5.I2.i3.p2" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The expandable connector does potentially have inputs.</span>]</p>
+</div>
+</li>
+<li id="S5.I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S5.I2.i4.p1" class="ltx_para">
+<p class="ltx_p">A parameter, constant, or non-connector input must either have a
+binding equation or all of its sub-components must have binding
+equations.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">∎</p>
+</div>
+</div>
+<div id="S5.p2" class="ltx_para">
+<p class="ltx_p">Based on the above definitions, there are the following restrictions:</p>
+<ul id="S5.I3" class="ltx_itemize">
+<li id="S5.I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S5.I3.i1.p1" class="ltx_para">
+<p class="ltx_p">A redeclaration of an inherited top-level component must be
+<em class="ltx_emph ltx_font_italic">compatible</em> <em class="ltx_emph ltx_font_italic">with</em> (subtype of) the constraining interface
+of the element being redeclared.</p>
+</div>
+</li>
+<li id="S5.I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S5.I3.i2.p1" class="ltx_para">
+<p class="ltx_p">In all other cases redeclarations must be <em class="ltx_emph ltx_font_italic">plug-compatible</em> with
+the constraining interface of the element being redeclared.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S5.p3" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">The reason for the difference is that for an inherited
+top-level component it is possible to connect to the additional
+connectors, either in this class or in a derived class.</span></p>
+</div>
+<div id="S5.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Example:</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cGFydGlhbCBtb2RlbCBUd29GbGFuZ2VzCiAgTW9kZWxpY2EuTWVjaGFuaWNzLlJvdGF0aW9uYWwuSW50ZXJmYWNlcy5GbGFuZ2VfYSBmbGFuZ2VfYTsKICBNb2RlbGljYS5NZWNoYW5pY3MuUm90YXRpb25hbC5JbnRlcmZhY2VzLkZsYW5nZV9iIGZsYW5nZV9iOwplbmQgVHdvRmxhbmdlczsKCnBhcnRpYWwgbW9kZWwgRnJpY3Rpb25FbGVtZW50CiAgZXh0ZW5kcyBUd29GbGFuZ2VzOwogICRcbGRvdHMkCmVuZCBGcmljdGlvbkVsZW1lbnQ7Cgptb2RlbCBDbHV0Y2ggImNvbXBhdGlibGUgLSBidXQgbm90IHBsdWctY29tcGF0aWJsZSB3aXRoIEZyaWN0aW9uRWxlbWVudCIKICBNb2RlbGljYS5CbG9ja3MuSW50ZXJmYWNlcy5SZWFsSW5wdXQgcHJlc3N1cmU7CiAgZXh0ZW5kcyBGcmljdGlvbkVsZW1lbnQ7CiAgJFxsZG90cyQKZW5kIENsdXRjaDsKCm1vZGVsIERyaXZlTGluZUJhc2UKICBleHRlbmRzIFR3b0ZsYW5nZXM7CiAgSW5lcnRpYSBKMTsKICByZXBsYWNlYWJsZSBGcmljdGlvbkVsZW1lbnQgZnJpY3Rpb247CmVxdWF0aW9uCiAgY29ubmVjdChmbGFuZ2VfYSwgSjEuZmxhbmdlX2EpOwogIGNvbm5lY3QoSjEuZmxhbmdlX2IsIGZyaWN0aW9uLmZsYW5nZV9hKTsKICBjb25uZWN0KGZyaWN0aW9uLmZsYW5nZV9iLCBmbGFuZ2VfYik7CmVuZCBEcml2ZUxpbmVCYXNlOwoKbW9kZWwgRHJpdmVMaW5lCiAgZXh0ZW5kcyBEcml2ZUxpbmVCYXNlKHJlZGVjbGFyZSBDbHV0Y2ggZnJpY3Rpb24pOwogIENvbnN0YW50IGNvbnN0OwplcXVhdGlvbgogIGNvbm5lY3QoY29uc3QueSwgZnJpdGlvbi5wcmVzc3VyZSk7CiAgLy8gTGVnYWwgY29ubmVjdGlvbiB0byBuZXcgaW5wdXQgY29ubmVjdG9yLgplbmQgRHJpdmVMaW5lOwoKbW9kZWwgVXNlRHJpdmVMaW5lICJpbGxlZ2FsIG1vZGVsIgogIERyaXZlTGluZUJhc2UgYmFzZShyZWRlY2xhcmUgQ2x1dGNoIGZyaWN0aW9uKTsKICAvLyBDYW5ub3QgY29ubmVjdCB0byBmcmljdGlvbi5wcmVzc3VyZQplbmQgVXNlRHJpdmVMaW5lOw==" download="">⬇</a></div>
+<div id="lstnumberx1116" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">partial</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">TwoFlanges</span>
+</div>
+<div id="lstnumberx1117" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Mechanics</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Rotational</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Interfaces</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Flange_a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">flange_a</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1118" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Mechanics</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Rotational</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Interfaces</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Flange_b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">flange_b</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1119" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">TwoFlanges</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1120" class="ltx_listingline">
+</div>
+<div id="lstnumberx1121" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">partial</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">FrictionElement</span>
+</div>
+<div id="lstnumberx1122" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">extends</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">TwoFlanges</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1123" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx1123.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math></span>
+</div>
+<div id="lstnumberx1124" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">FrictionElement</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1125" class="ltx_listingline">
+</div>
+<div id="lstnumberx1126" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Clutch</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"compatible<span class="ltx_text ltx_lst_space"> </span>-<span class="ltx_text ltx_lst_space"> </span>but<span class="ltx_text ltx_lst_space"> </span>not<span class="ltx_text ltx_lst_space"> </span>plug-compatible<span class="ltx_text ltx_lst_space"> </span>with<span class="ltx_text ltx_lst_space"> </span>FrictionElement"</span>
+</div>
+<div id="lstnumberx1127" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Blocks</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Interfaces</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">RealInput</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">pressure</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1128" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">extends</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">FrictionElement</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1129" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx1129.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math></span>
+</div>
+<div id="lstnumberx1130" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Clutch</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1131" class="ltx_listingline">
+</div>
+<div id="lstnumberx1132" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">DriveLineBase</span>
+</div>
+<div id="lstnumberx1133" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">extends</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">TwoFlanges</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1134" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Inertia</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">J1</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1135" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">replaceable</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">FrictionElement</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">friction</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1136" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">equation</span>
+</div>
+<div id="lstnumberx1137" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">connect</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">flange_a</span><span class="ltx_text ltx_font_typewriter">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">J1</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">flange_a</span><span class="ltx_text ltx_font_typewriter">);</span>
+</div>
+<div id="lstnumberx1138" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">connect</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">J1</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">flange_b</span><span class="ltx_text ltx_font_typewriter">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">friction</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">flange_a</span><span class="ltx_text ltx_font_typewriter">);</span>
+</div>
+<div id="lstnumberx1139" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">connect</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">friction</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">flange_b</span><span class="ltx_text ltx_font_typewriter">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">flange_b</span><span class="ltx_text ltx_font_typewriter">);</span>
+</div>
+<div id="lstnumberx1140" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">DriveLineBase</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1141" class="ltx_listingline">
+</div>
+<div id="lstnumberx1142" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">DriveLine</span>
+</div>
+<div id="lstnumberx1143" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">extends</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">DriveLineBase</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">redeclare</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Clutch</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">friction</span><span class="ltx_text ltx_font_typewriter">);</span>
+</div>
+<div id="lstnumberx1144" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Constant</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">const</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1145" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">equation</span>
+</div>
+<div id="lstnumberx1146" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">connect</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">const</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">y</span><span class="ltx_text ltx_font_typewriter">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">frition</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">pressure</span><span class="ltx_text ltx_font_typewriter">);</span>
+</div>
+<div id="lstnumberx1147" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Legal<span class="ltx_text ltx_lst_space"> </span>connection<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>new<span class="ltx_text ltx_lst_space"> </span>input<span class="ltx_text ltx_lst_space"> </span>connector.</span>
+</div>
+<div id="lstnumberx1148" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">DriveLine</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1149" class="ltx_listingline">
+</div>
+<div id="lstnumberx1150" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">UseDriveLine</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="color:#000000;">"illegal<span class="ltx_text ltx_lst_space"> </span>model"</span>
+</div>
+<div id="lstnumberx1151" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">DriveLineBase</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">base</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">redeclare</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Clutch</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">friction</span><span class="ltx_text ltx_font_typewriter">);</span>
+</div>
+<div id="lstnumberx1152" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>Cannot<span class="ltx_text ltx_lst_space"> </span>connect<span class="ltx_text ltx_lst_space"> </span>to<span class="ltx_text ltx_lst_space"> </span>friction.pressure</span>
+</div>
+<div id="lstnumberx1153" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">UseDriveLine</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+</div>
+</div>
+<div id="S5.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">If a subcomponent is redeclared, it is impossible to connect to any new connector. Thus any new connectors must work without being connected, i.e., the default connection of flow variables. That fails for inputs (and expandable connectors may contain inputs). For parameters and non-connector inputs it would be possible to provide bindings in a derived class, but that would require hierarchical modifiers and it would be bad modeling practice that a hierarchical modifier must be used in order to make a model valid. A replaceable class might be used as the class for a sub-component, therefore plug-compatibility is required not only for replaceable sub-components, but also for replaceable classes.</span>]</p>
+</div>
+</section>
+<section id="function-compatibility-or-function-subtyping-for-functions" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6.6 </span>Function-Compatibility or Function-Subtyping for Functions</h2>
+
+<div id="S6.p1" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Functions may be called with either named or positional
+arguments, and thus both the name and order is significant. If a
+function is redeclared, see <a href="inheritance-modification-and-redeclaration.html#redeclaration" title="7.3 Redeclaration ‣ Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">7.3</span></a>, any new arguments must
+have defaults (and be at the end) in order to preserve the meaning of
+existing calls.</span>]</p>
+</div>
+<div id="function-compatibility" class="ltx_theorem ltx_theorem_definitioninner">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Definition 6.8. <em class="ltx_emph ltx_font_italic">Function-compatibility or function-subtyping for functions</em>.</h6>
+<div id="Thmdefinitioninner8.p1" class="ltx_para">
+<p class="ltx_p">A <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">function</span> class <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is <em class="ltx_emph ltx_font_italic">function-compatible with or a function subtype of</em> <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">function</span> class <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> iff (the terms <em class="ltx_emph ltx_font_italic">function-compatible</em> and <em class="ltx_emph ltx_font_italic">function subtype</em> of are synonyms and used interchangeably):</p>
+<ul id="S6.I1" class="ltx_itemize">
+<li id="S6.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S6.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is compatible to (subtype of) <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>.</p>
+</div>
+</li>
+<li id="S6.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S6.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">All public input components of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> have correspondingly named public
+input components of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> in the same order and preceding any additional
+public input components of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>.</p>
+</div>
+</li>
+<li id="S6.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S6.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">All public output components of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> have correspondingly named public
+output components of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> in the same order and preceding any additional
+public output components of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span>.</p>
+</div>
+</li>
+<li id="S6.I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S6.I1.i4.p1" class="ltx_para">
+<p class="ltx_p">A public input component of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> must have a binding assignment if the
+corresponding named element has a binding assignment in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>.</p>
+</div>
+</li>
+<li id="S6.I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S6.I1.i5.p1" class="ltx_para">
+<p class="ltx_p">A public input component of <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> not present in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must have a binding
+assignment.</p>
+</div>
+</li>
+<li id="S6.I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S6.I1.i6.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is impure, then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must also be impure, compare <a href="functions.html#pure-modelica-functions" title="12.3 Pure Modelica Functions ‣ Chapter 12 Functions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">12.3</span></a>.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">∎</p>
+</div>
+</div>
+<div id="S6.p2" class="ltx_para">
+<p class="ltx_p">Based on the above definition the following restriction holds:</p>
+<ul id="S6.I2" class="ltx_itemize">
+<li id="S6.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S6.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">The interface of a redeclared function must be
+<em class="ltx_emph ltx_font_italic">function-compatible with or a function subtype of</em> the
+constraining interface of the function being redeclared.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="S6.p3" class="ltx_para">
+<p class="ltx_p">Note that variability of function calls, see <a href="operators-and-expressions.html#function-variability" title="3.8.1 Function Variability ‣ 3.8 Variability of Expressions ‣ Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">3.8.1</span></a>, cannot be determined using just the interface of a function, as the variabilities of default argument expressions are not expressed by the interface.
+Hence a function redeclaration being function-compatible does not ensure that function calls will fulfill variability requirements, and tools must therefore check variability requirements separately.</p>
+</div>
+<div id="S6.p4" class="ltx_para">
+<p class="ltx_p">[<span class="ltx_text ltx_font_italic">Example:
+Demonstrating a redeclaration using a function-compatible function</span></p>
+<div class="ltx_listing ltx_lst_language_modelica ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnVuY3Rpb24gR3Jhdml0eUludGVyZmFjZQogIGlucHV0IE1vZGVsaWNhLlVuaXRzLlNJLlBvc2l0aW9uIHBvc2l0aW9uWzNdOwogIG91dHB1dCBNb2RlbGljYS5Vbml0cy5TSS5BY2NlbGVyYXRpb24gYWNjZWxlcmF0aW9uWzNdOwplbmQgR3Jhdml0eUludGVyZmFjZTsKCmZ1bmN0aW9uIFBvaW50TWFzc0dyYXZpdHkKICBleHRlbmRzIEdyYXZpdHlJbnRlcmZhY2U7CiAgaW5wdXQgTW9kZWxpY2EuVW5pdHMuU0kuTWFzcyBtOwphbGdvcml0aG0KICBhY2NlbGVyYXRpb24gOj0gLU1vZGVsaWNhLkNvbnN0YW50cy5HKm0qcG9zaXRpb24vKHBvc2l0aW9uKnBvc2l0aW9uKV4xLjU7CmVuZCBQb2ludE1hc3NHcmF2aXR5OwoKbW9kZWwgQm9keQogIE1vZGVsaWNhLk1lY2hhbmljcy5NdWx0aUJvZHkuSW50ZXJmYWNlLkZyYW1lX2EgZnJhbWVfYTsKICByZXBsYWNlYWJsZSBmdW5jdGlvbiBncmF2aXR5ID0gR3Jhdml0eUludGVyZmFjZTsKICBjb25zdGFudCBSZWFsIGZhaWxlZFs6XSA9IGdyYXZpdHkoezEsIDAsIDB9KTsgLy8gTWF5IGZhaWwKZXF1YXRpb24KICBmcmFtZV9hLmYgPSBncmF2aXR5KGZyYW1lX2EucjApOwogIC8vIG9yIGdyYXZpdHkocG9zaXRpb24gPSBmcmFtZV9hLnIwKTsKICBmcmFtZV9hLnQgPSB6ZXJvcygzKTsKZW5kIEJvZHk7Cgptb2RlbCBQbGFuZXRTaW11bGF0aW9uCiAgcGFyYW1ldGVyIE1vZGVsaWNhLlVuaXRzLlNJLk1hc3MgbVN1biA9IDJlMzA7CiAgZnVuY3Rpb24gc3VuR3Jhdml0eSA9IFBvaW50TWFzc0dyYXZpdHkobSA9IG1TdW4pOwogIEJvZHkgcGxhbmV0MShyZWRlY2xhcmUgZnVuY3Rpb24gZ3Jhdml0eSA9IHN1bkdyYXZpdHkpOwogIEJvZHkgcGxhbmV0MihyZWRlY2xhcmUgZnVuY3Rpb24gZ3Jhdml0eSA9IFBvaW50TWFzc0dyYXZpdHkobSA9IDJlMzApKTsKICAkXGxkb3RzJAplbmQgUGxhbmV0U2ltdWxhdGlvbjs=" download="">⬇</a></div>
+<div id="lstnumberx1154" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">GravityInterface</span>
+</div>
+<div id="lstnumberx1155" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Units</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">SI</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Position</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">position</span><span class="ltx_text ltx_font_typewriter">[3];</span>
+</div>
+<div id="lstnumberx1156" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">output</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Units</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">SI</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Acceleration</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">acceleration</span><span class="ltx_text ltx_font_typewriter">[3];</span>
+</div>
+<div id="lstnumberx1157" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">GravityInterface</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1158" class="ltx_listingline">
+</div>
+<div id="lstnumberx1159" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">PointMassGravity</span>
+</div>
+<div id="lstnumberx1160" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">extends</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">GravityInterface</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1161" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">input</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Units</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">SI</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Mass</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1162" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">algorithm</span>
+</div>
+<div id="lstnumberx1163" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">acceleration</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">:=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Constants</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">G</span><span class="ltx_text ltx_font_typewriter">*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m</span><span class="ltx_text ltx_font_typewriter">*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">position</span><span class="ltx_text ltx_font_typewriter">/(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">position</span><span class="ltx_text ltx_font_typewriter">*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">position</span><span class="ltx_text ltx_font_typewriter">)^1.5;</span>
+</div>
+<div id="lstnumberx1164" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">PointMassGravity</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1165" class="ltx_listingline">
+</div>
+<div id="lstnumberx1166" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Body</span>
+</div>
+<div id="lstnumberx1167" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Mechanics</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">MultiBody</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Interface</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Frame_a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">frame_a</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1168" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">replaceable</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">gravity</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">GravityInterface</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1169" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">constant</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">Real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">failed</span><span class="ltx_text ltx_font_typewriter">[:]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">gravity</span><span class="ltx_text ltx_font_typewriter">({1,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">0});</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>May<span class="ltx_text ltx_lst_space"> </span>fail</span>
+</div>
+<div id="lstnumberx1170" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">equation</span>
+</div>
+<div id="lstnumberx1171" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">frame_a</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">f</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">gravity</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">frame_a</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">r0</span><span class="ltx_text ltx_font_typewriter">);</span>
+</div>
+<div id="lstnumberx1172" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_comment ltx_font_sansserif" style="color:#127500;">//<span class="ltx_text ltx_lst_space"> </span>or<span class="ltx_text ltx_lst_space"> </span>gravity(position<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>frame_a.r0);</span>
+</div>
+<div id="lstnumberx1173" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">frame_a</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">t</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">zeros</span><span class="ltx_text ltx_font_typewriter">(3);</span>
+</div>
+<div id="lstnumberx1174" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Body</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1175" class="ltx_listingline">
+</div>
+<div id="lstnumberx1176" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">PlanetSimulation</span>
+</div>
+<div id="lstnumberx1177" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="color:#003378;">parameter</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Modelica</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Units</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">SI</span><span class="ltx_text ltx_font_typewriter">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Mass</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">mSun</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">e30</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+<div id="lstnumberx1178" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">sunGravity</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">PointMassGravity</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">mSun</span><span class="ltx_text ltx_font_typewriter">);</span>
+</div>
+<div id="lstnumberx1179" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Body</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">planet1</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">redeclare</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">gravity</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">sunGravity</span><span class="ltx_text ltx_font_typewriter">);</span>
+</div>
+<div id="lstnumberx1180" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">Body</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">planet2</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">redeclare</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">function</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">gravity</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">PointMassGravity</span><span class="ltx_text ltx_font_typewriter">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">m</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">e30</span><span class="ltx_text ltx_font_typewriter">));</span>
+</div>
+<div id="lstnumberx1181" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter">  </span><span class="ltx_text ltx_font_typewriter"><math id="lstnumberx1181.m1" class="ltx_Math" alttext="\ldots" display="inline"><mi mathbackground="#FFFFFF" mathvariant="normal">…</mi></math></span>
+</div>
+<div id="lstnumberx1182" class="ltx_listingline">
+<span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">PlanetSimulation</span><span class="ltx_text ltx_font_typewriter">;</span>
+</div>
+</div>
+</div>
+<div id="S6.p5" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">Note: <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">PointMassGravity</span> is not function-compatible with
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">GravityInterface</span> (no default for <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">m</span>), but <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">sunGravity</span>
+inside <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">PlanetSimulation</span> is function-compatible with
+<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">GravityInterface</span>.</span></p>
+</div>
+<div id="S6.p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">The constant <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">failed</span> in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">planet1</span>, will violate variability constraints, whereas it will work in <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_upright" style="background-color:#FFFFFF;">planet2</span>.
+The call <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter ltx_font_upright">gravity</span><span class="ltx_text ltx_font_typewriter ltx_font_upright">(<span class="ltx_text ltx_lst_identifier">frame_a</span>.<span class="ltx_text ltx_lst_identifier">r0</span>)</span></span> will work in both of them.</span>]</p>
+</div>
+</section>
+<section id="type-compatible-expressions" class="ltx_section">
+<h2 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6.7 </span>Type Compatible Expressions</h2>
+
+<div id="S7.p1" class="ltx_para">
+<p class="ltx_p">Certain expressions consist of an operator applied to two or more subexpressions (<span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>).
+This includes:</p>
+<ul id="S7.I1" class="ltx_itemize">
+<li id="S7.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">if</span>-expressions, e.g., <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">else</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">B</span></span>.</p>
+</div>
+</li>
+<li id="S7.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Array expressions, e.g., <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">{<span class="ltx_text ltx_lst_identifier">A</span>,<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">B</span>}</span></p>
+</div>
+</li>
+<li id="S7.I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Binary operators if both operands are of simple types, e.g., <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">+<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">B</span></span></span>.
+Binary operators for other types are only defined for operator records, <a href="overloaded-operators.html#overloaded-binary-operations" title="14.5 Overloaded Binary Operations ‣ Chapter 14 Overloaded Operators ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">14.5</span></a>, and do not necessarily require that the operands are type compatible with each other.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">If the subexpressions satisfy the following restrictions they are called type compatible expressions.
+Otherwise the expression is illegal.
+The type of the full expression (e.g., <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">else</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter">B</span></span>) is also defined below.</p>
+<ul id="S7.I2" class="ltx_itemize">
+<li id="S7.I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I2.i1.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a record expression, <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must also be a record expression with the same named elements.
+In an expression that is not an array expression those elements must be type compatible.
+In an array expression the two records may contain elements with different sizes, but apart from that they must be type compatible.
+That generates a heterogenous array of records, see <a href="arrays.html" title="Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">chapter</span> <span class="ltx_text ltx_ref_tag">10</span></a>.
+The type of the full expression is a record comprised of named elements that are type compatible with the corresponding named elements of both <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>.</p>
+</div>
+</li>
+<li id="S7.I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I2.i2.p1" class="ltx_para">
+<p class="ltx_p">The rules for array expressions depend on the operation (the rules for binary operators are given in <a href="arrays.html#scalar-vector-matrix-and-array-operator-functions" title="10.6 Scalar, Vector, Matrix, and Array Operator Functions ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">10.6</span></a>
+and for array concatenation in <a href="arrays.html#array-concatenation" title="10.4.2 Concatenation ‣ 10.4 Vector, Matrix and Array Constructors ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">10.4.2</span></a>).
+The rules for the remaining case of <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">if</span>-expressions and array-expressions are:</p>
+<ul id="S7.I2.i2.I1" class="ltx_itemize">
+<li id="S7.I2.i2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S7.I2.i2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is an array expression then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must also be an array expression, and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">ndims</span><span class="ltx_text ltx_font_typewriter">(<span class="ltx_text ltx_lst_identifier">A</span>)</span></span> = <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">ndims</span><span class="ltx_text ltx_font_typewriter">(<span class="ltx_text ltx_lst_identifier">B</span>)</span></span>.
+The type of the full expression is an array expression with elements compatible with the elements of both <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>.
+If both <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">size</span><span class="ltx_text ltx_font_typewriter">(<span class="ltx_text ltx_lst_identifier">A</span>)</span></span> and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">size</span><span class="ltx_text ltx_font_typewriter">(<span class="ltx_text ltx_lst_identifier">B</span>)</span></span> are known and <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">size</span><span class="ltx_text ltx_font_typewriter">(<span class="ltx_text ltx_lst_identifier">A</span>)</span></span> = <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">size</span><span class="ltx_text ltx_font_typewriter">(<span class="ltx_text ltx_lst_identifier">B</span>)</span></span> then this defines the size of the full expression, otherwise the size of the full expression is not known until the expression is about to be evaluated.
+In case of an <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">if</span>-expression the size of the full expression is defined based on the branch selected, and for other cases <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">size</span><span class="ltx_text ltx_font_typewriter">(<span class="ltx_text ltx_lst_identifier">A</span>)</span></span> = <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords3 ltx_font_typewriter" style="color:#543D08;">size</span><span class="ltx_text ltx_font_typewriter">(<span class="ltx_text ltx_lst_identifier">B</span>)</span></span> must hold at this point.</p>
+</div>
+</li>
+<li id="S7.I2.i2.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item"><span class="ltx_text ltx_font_bold">–</span></span> 
+<div id="S7.I2.i2.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a scalar expression of a simple type <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must also be a scalar expression of a simple type.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li id="S7.I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I2.i3.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span> expression then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must be a <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span> or <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Integer</span> expression.
+The type of the full expression is <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span>, compare <a href="arrays.html#standard-type-coercion" title="10.6.13 Standard Type Coercion ‣ 10.6 Scalar, Vector, Matrix, and Array Operator Functions ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">10.6.13</span></a>, unless the operator is a relational operator (<a href="operators-and-expressions.html#equality-relational-and-logical-operators" title="3.5 Equality, Relational, and Logical Operators ‣ Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">3.5</span></a>) where the type of the full expression is <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Boolean</span>.</p>
+</div>
+</li>
+<li id="S7.I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I2.i4.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is an <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Integer</span> expression then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must be a <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span> or <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Integer</span> expression.
+For exponentiation and division the type of the full expression is <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span> (even if both <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> and <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> are <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Integer</span>) see <a href="arrays.html#element-wise-exponentiation" title="10.6.7 Element-wise Exponentiation ‣ 10.6 Scalar, Vector, Matrix, and Array Operator Functions ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">10.6.7</span></a> and <a href="arrays.html#division-by-numeric-scalars" title="10.6.5 Division by Numeric Scalars ‣ 10.6 Scalar, Vector, Matrix, and Array Operator Functions ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">10.6.5</span></a>, for relational operators the type of the full expression is <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Boolean</span>.
+In other cases the type of the full expression is <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Real</span> or <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Integer</span> (same as <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span>), compare <a href="arrays.html#standard-type-coercion" title="10.6.13 Standard Type Coercion ‣ 10.6 Scalar, Vector, Matrix, and Array Operator Functions ‣ Chapter 10 Arrays ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">10.6.13</span></a>.</p>
+</div>
+</li>
+<li id="S7.I2.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I2.i5.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Boolean</span> expression then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must be a <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Boolean</span> expression and the type of the full expression is <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Boolean</span>.</p>
+</div>
+</li>
+<li id="S7.I2.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I2.i6.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is a <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">String</span> expression then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must be a <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">String</span> expression and the type of the full expression is <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">String</span>, unless the operator is a relational operator (<a href="operators-and-expressions.html#equality-relational-and-logical-operators" title="3.5 Equality, Relational, and Logical Operators ‣ Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">3.5</span></a>) where the type of the full expression is <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Boolean</span>.</p>
+</div>
+</li>
+<li id="S7.I2.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I2.i7.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is an enumeration expression then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must be an enumeration expression and the type of the full expression is enumeration expression, unless the operator is a relational operator (<a href="operators-and-expressions.html#equality-relational-and-logical-operators" title="3.5 Equality, Relational, and Logical Operators ‣ Chapter 3 Operators and Expressions ‣ Modelica® Language Specification version 3.6" class="ltx_ref"><span class="ltx_text ltx_ref_tag">section</span> <span class="ltx_text ltx_ref_tag">3.5</span></a>) where the type of the full expression is <span class="ltx_text ltx_lst_keywords3 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="color:#543D08;background-color:#FFFFFF;">Boolean</span>.
+The enumeration expressions must be defined in terms of an enumeration type with the same enumeration literals in the same order.</p>
+</div>
+</li>
+<li id="S7.I2.i8" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I2.i8.p1" class="ltx_para">
+<p class="ltx_p">For array and <span class="ltx_text ltx_lst_keywords2 ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter ltx_font_bold" style="color:#003378;background-color:#FFFFFF;">if</span>-expressions, if <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> has an <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">record</span></span> base class then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must also have an <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">record</span></span> base class, and it must be the same, and otherwise neither <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> nor <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> may have an <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">record</span></span> base class.
+This is also the <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">operator</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">record</span></span> base class for the full expression, e.g., for <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">(<span class="ltx_text ltx_lst_identifier">cond</span>)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">B</span></span></span>.</p>
+</div>
+</li>
+<li id="S7.I2.i9" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="S7.I2.i9.p1" class="ltx_para">
+<p class="ltx_p">If <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> is derived from <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">ExternalObject</span> then <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> must also be derived from <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">ExternalObject</span> and they must have the same full name; and otherwise neither <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">A</span> nor <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">B</span> may be derived from <span class="ltx_text ltx_lst_identifier ltx_lst_language_modelica_short ltx_lstlisting ltx_font_typewriter" style="background-color:#FFFFFF;">ExternalObject</span>.
+The common full name also defines the type of the full expression, e.g., for <span class="ltx_text ltx_lst_language_modelica_short ltx_lstlisting" style="background-color:#FFFFFF;"><span class="ltx_text ltx_lst_keywords2 ltx_font_typewriter ltx_font_bold" style="color:#003378;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter"> </span><span class="ltx_text ltx_font_typewriter">(<span class="ltx_text ltx_lst_identifier">cond</span>)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">then</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">A</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keywords2 ltx_font_bold" style="color:#003378;">else</span><span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">B</span></span></span>.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</div>
+<footer class="ltx_page_footer">
+<div>
+<a href="scoping-name-lookup-and-flattening.html" title="Chapter 5 Scoping, Name Lookup, and Flattening ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Scoping, Name Lookup, and Flattening</span></a><a href="bib.html" title="References ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">References</span></a><a href="idx.html" title="Index ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="index"><span class="ltx_text ltx_ref_title">Index</span></a><a href="inheritance-modification-and-redeclaration.html" title="Chapter 7 Inheritance, Modification, and Redeclaration ‣ Modelica® Language Specification version 3.6" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">7 </span>Inheritance, Modification, and Redeclaration</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Thu Mar  9 16:41:18 2023 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
+</div></footer>
+</div>
+</body>
+</html>
